@@ -1,0 +1,13 @@
+{
+  "id": "chap_7",
+  "chapterName": "Time & Calendar",
+  "description": "Reading analog clock hands to the minute, 12-hour AM/PM vs 24-hour railway clock conversions, elapsed time timeline calculations, and calendar leap year math.",
+  "learningObjectives": [
+    "Read analog clock hands to exact minute intervals",
+    "Convert between 12-hour AM/PM and 24-hour railway time formats",
+    "Calculate elapsed time intervals across hour boundaries",
+    "Solve calendar leap year and day calculations"
+  ],
+  "keywords": ["time", "clock", "analog clock", "12-hour", "24-hour", "railway time", "am", "pm", "elapsed time", "calendar", "minutes", "seconds", "hours"],
+  "relatedFormulas": ["24-Hour Time = 12-Hour PM + 12:00", "1 Hour = 60 Minutes | 1 Minute = 60 Seconds"]
+}

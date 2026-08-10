@@ -1,0 +1,13 @@
+{
+  "id": "chap_5",
+  "chapterName": "Geometry & 3D Shapes",
+  "description": "2D polygons, lines of symmetry, acute/right/obtuse angle classification, and 3D solids (cube, cuboid, sphere, cylinder, cone, pyramid) with face, edge, and vertex counting.",
+  "learningObjectives": [
+    "Classify Acute, Right, and Obtuse angles",
+    "Identify lines of symmetry in 2D geometric shapes",
+    "Calculate perimeter and area of squares and rectangles",
+    "Count faces, edges, and vertices of 3D solids using Euler's relation"
+  ],
+  "keywords": ["geometry", "3d shapes", "cubes", "spheres", "cylinders", "cones", "pyramids", "faces", "edges", "vertices", "angles", "right angle", "acute", "obtuse", "symmetry", "perimeter", "area"],
+  "relatedFormulas": ["Euler's Formula: Faces + Vertices = Edges + 2", "Rectangle Perimeter = 2 × (Length + Width)", "Square Area = Side × Side"]
+}

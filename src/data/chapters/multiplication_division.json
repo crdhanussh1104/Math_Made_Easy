@@ -1,0 +1,13 @@
+{
+  "id": "chap_3",
+  "chapterName": "Multiplication & Division",
+  "description": "Multiplication of 3-digit by 2-digit numbers, long division with remainders, unitary method word problems, and zero multiplication shortcuts.",
+  "learningObjectives": [
+    "Multiply 3-digit numbers by 2-digit multipliers",
+    "Perform long division with quotients and remainders",
+    "Apply the unitary method to solve rate problems",
+    "Use shortcuts when multiplying by 10, 100, and 1000"
+  ],
+  "keywords": ["multiplication", "division", "quotient", "remainder", "dividend", "divisor", "unitary method", "factors", "multiples", "product"],
+  "relatedFormulas": ["Dividend = (Divisor × Quotient) + Remainder", "Unitary Method: Value of Many → Find 1 → Multiply"]
+}

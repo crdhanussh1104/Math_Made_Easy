@@ -1,0 +1,19 @@
+{
+  "id": "sof_imo",
+  "name": "SOF International Mathematics Olympiad",
+  "shortName": "SOF IMO",
+  "description": "Prestigious international competition testing mathematical reasoning, place value logic, fractions, 3D geometry, measurement conversions, patterns, and logical reasoning for school students.",
+  "targetGrades": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5"],
+  "keywords": ["fractions", "equivalent fractions", "place value", "lakhs", "geometry", "3d shapes", "measurement", "time", "logical reasoning", "word problems", "patterns", "addition", "multiplication"],
+  "difficulty": 4,
+  "skillsTested": ["Higher Order Thinking (HOTS)", "Logical Reasoning", "Mathematical Reasoning", "Problem Solving"],
+  "officialWebsite": "https://sofworld.org/imo",
+  "sampleQuestions": [
+    {
+      "question": "If 3/8 of a pizza is eaten by Rohan and 2/8 by Sam, what fraction of the pizza is left?",
+      "options": ["3/8", "5/8", "1/2", "4/8"],
+      "correct": 0,
+      "explanation": "Total eaten = 3/8 + 2/8 = 5/8. Remaining pizza = 8/8 - 5/8 = 3/8."
+    }
+  ]
+}

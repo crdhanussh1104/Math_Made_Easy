@@ -1,0 +1,13 @@
+{
+  "id": "chap_1",
+  "chapterName": "Large Numbers & Place Value",
+  "description": "5, 6 and 7-digit numbers, Indian and International place value charts, Lakhs, Crores, face value, place value, standard form, and expanded notation.",
+  "learningObjectives": [
+    "Identify digit place values up to 6-digit Lakhs and 7-digit Crores",
+    "Distinguish between Face Value and Place Value",
+    "Convert numbers between Standard Form and Expanded Form",
+    "Apply correct period commas according to the Indian System"
+  ],
+  "keywords": ["place value", "face value", "indian system", "lakhs", "crores", "expanded form", "standard form", "commas", "digits", "periods"],
+  "relatedFormulas": ["Place Value = Digit × Position Value", "Face Value = Digit itself"]
+}

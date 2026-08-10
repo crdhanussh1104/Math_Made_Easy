@@ -1,0 +1,13 @@
+{
+  "id": "chap_2",
+  "chapterName": "Addition & Subtraction",
+  "description": "5-digit column addition with carrying, vertical subtraction with regrouping across zeros, mental math shortcuts, missing digit puzzles, and real-life word problems.",
+  "learningObjectives": [
+    "Add 5-digit numbers vertically with carrying",
+    "Subtract across zeros with borrowing",
+    "Find missing digits in cryptographic math puzzles",
+    "Solve multi-step real-world word problems"
+  ],
+  "keywords": ["addition", "subtraction", "carrying", "borrowing", "regrouping", "zeros", "missing digits", "mental math", "word problems", "sum", "difference"],
+  "relatedFormulas": ["Minuend - Subtrahend = Difference", "Check Subtraction: Difference + Subtrahend = Minuend"]
+}

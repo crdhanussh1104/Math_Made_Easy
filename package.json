@@ -1,0 +1,36 @@
+{
+  "name": "math-made-easy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:all": "playwright test",
+    "test:e2e": "playwright test tests/e2e.spec.js",
+    "test:traversal": "playwright test tests/curriculum_traversal.spec.js",
+    "test:labs": "playwright test tests/interactive_labs.spec.js",
+    "test:strict": "playwright test tests/zero_console_errors.spec.js",
+    "test:report": "playwright show-report"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "framer-motion": "^12.43.0",
+    "lucide-react": "^1.28.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0"
+  }
+}

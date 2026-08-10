@@ -1,0 +1,28 @@
+/* Theme overrides */
+[data-theme="cyber"] {
+  --primary: #00f0ff;
+  --primary-hover: #00c4d1;
+  --primary-shadow: #0099a4;
+  --secondary: #ff007f;
+  --secondary-hover: #d10068;
+  --secondary-shadow: #a40052;
+  --bg-main: #0a0e1a;
+  --bg-card: rgba(16, 23, 42, 0.9);
+  --bg-card-solid: #10172a;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+[data-theme="space"] {
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --primary-shadow: #6d28d9;
+  --secondary: #ec4899;
+  --secondary-hover: #db2777;
+  --secondary-shadow: #be185d;
+  --bg-main: #0b0f19;
+  --bg-card: rgba(24, 18, 43, 0.9);
+  --bg-card-solid: #18122b;
+  --text-main: #f3e8ff;
+  --text-muted: #c084fc;
+}

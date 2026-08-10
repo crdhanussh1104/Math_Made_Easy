@@ -1,0 +1,19 @@
+{
+  "id": "math_kangaroo",
+  "name": "International Math Kangaroo Competition",
+  "shortName": "Math Kangaroo",
+  "description": "World-famous contest emphasizing spatial visualization, 2D and 3D geometry, symmetry lines, angle types, puzzle solving, and creative mathematical thinking.",
+  "targetGrades": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5"],
+  "keywords": ["geometry", "3d shapes", "cubes", "spheres", "symmetry", "angles", "spatial reasoning", "polygons", "perimeter", "area", "patterns", "tessellation"],
+  "difficulty": 4,
+  "skillsTested": ["Spatial Visualization", "Creative Problem Solving", "Geometric Intuition"],
+  "officialWebsite": "https://mathkangaroo.in",
+  "sampleQuestions": [
+    {
+      "question": "How many edges does a solid cube box have in total?",
+      "options": ["6", "8", "12", "16"],
+      "correct": 2,
+      "explanation": "A cube has 6 faces, 8 vertices, and 12 straight edges."
+    }
+  ]
+}

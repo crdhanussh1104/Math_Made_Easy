@@ -1,0 +1,13 @@
+{
+  "id": "chap_4",
+  "chapterName": "Fractions & Decimals",
+  "description": "Proper, improper, and mixed fractions, equivalent fractions, simplification, pizza slice visualizers, tenths, hundredths, and decimal representations.",
+  "learningObjectives": [
+    "Identify Proper, Improper, and Mixed Fractions",
+    "Calculate Equivalent Fractions by scaling numerators and denominators",
+    "Simplify fractions to lowest terms",
+    "Convert tenths and hundredths into Decimal notation"
+  ],
+  "keywords": ["fractions", "equivalent fractions", "numerator", "denominator", "proper fraction", "improper fraction", "mixed fraction", "decimals", "tenths", "hundredths", "simplification"],
+  "relatedFormulas": ["Fraction = Numerator / Denominator", "Equivalent Fraction = (N × k) / (D × k)", "1/10 = 0.1 | 1/100 = 0.01"]
+}

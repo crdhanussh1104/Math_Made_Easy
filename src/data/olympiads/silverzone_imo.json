@@ -1,0 +1,19 @@
+{
+  "id": "silverzone_imo",
+  "name": "SilverZone International Olympiad of Mathematics",
+  "shortName": "SilverZone IOM",
+  "description": "Global competition focusing on mental mathematics, rapid computation, missing digit addition, long division, metric unit conversion, and pattern recognition.",
+  "targetGrades": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5"],
+  "keywords": ["mental math", "addition", "subtraction", "multiplication", "division", "metric units", "kilograms", "liters", "elapsed time", "patterns", "missing digits", "logical reasoning"],
+  "difficulty": 3,
+  "skillsTested": ["Speed Arithmetic", "Pattern Analysis", "Applied Mathematics"],
+  "officialWebsite": "https://silverzone.org/iom",
+  "sampleQuestions": [
+    {
+      "question": "Find the missing digit A in the column addition: 45,A68 + 23,415 = 69,183.",
+      "options": ["6", "7", "8", "9"],
+      "correct": 1,
+      "explanation": "Look at the Hundreds column: A + 4 = 11 → A = 7."
+    }
+  ]
+}

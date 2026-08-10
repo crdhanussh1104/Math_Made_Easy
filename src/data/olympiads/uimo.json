@@ -1,0 +1,19 @@
+{
+  "id": "uimo",
+  "name": "Unified International Mathematics Olympiad",
+  "shortName": "UIMO",
+  "description": "Curriculum-aligned competition evaluating deep conceptual understanding of place value, large numbers, expanded notation, metric conversions, time, and structured word problems.",
+  "targetGrades": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5"],
+  "keywords": ["place value", "indian system", "lakhs", "expanded form", "metric measurement", "conversions", "time", "clock reading", "word problems", "fractions"],
+  "difficulty": 3,
+  "skillsTested": ["Conceptual Clarity", "Curriculum Mastery", "Numerical Accuracy"],
+  "officialWebsite": "https://unifiedcouncil.com/uimo",
+  "sampleQuestions": [
+    {
+      "question": "What is the place value of digit 7 in 7,45,210 according to the Indian System?",
+      "options": ["700", "7,000", "70,000", "7,00,000"],
+      "correct": 3,
+      "explanation": "7 is in the Lakhs position: 7 × 1,00,000 = 7,00,000."
+    }
+  ]
+}

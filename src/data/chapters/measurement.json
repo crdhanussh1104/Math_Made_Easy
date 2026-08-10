@@ -1,0 +1,13 @@
+{
+  "id": "chap_6",
+  "chapterName": "Measurement & Capacity",
+  "description": "Metric unit conversions for length (km, m, cm, mm), mass/weight (kg, g), capacity (L, mL), balance scale weighing, and real-life measurement problems.",
+  "learningObjectives": [
+    "Convert larger metric units into smaller units by multiplying by 100, 1000",
+    "Convert smaller metric units into larger units by dividing",
+    "Solve mass balancing scale weight challenges",
+    "Calculate container liquid capacities in liters and milliliters"
+  ],
+  "keywords": ["measurement", "metric units", "kilograms", "grams", "liters", "milliliters", "meters", "centimeters", "balance scale", "capacity", "conversions", "weight"],
+  "relatedFormulas": ["1 km = 1,000 m | 1 m = 100 cm", "1 kg = 1,000 g | 1 L = 1,000 mL"]
+}
