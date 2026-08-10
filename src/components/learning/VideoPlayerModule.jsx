@@ -242,15 +242,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 Channel: <strong style={{ color: 'var(--text-main)' }}>{currentVideo.channelName}</strong>
               </span>
             </div>
-
-            <a
-              href={currentVideo.originalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ marginLeft: 'auto', fontSize: '0.82rem', fontWeight: '700', color: 'var(--primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}
-            >
-              <span>Watch on YouTube</span> <ExternalLink size={14} />
-            </a>
           </div>
 
           {/* Progress Bar & Mark Complete Button */}
