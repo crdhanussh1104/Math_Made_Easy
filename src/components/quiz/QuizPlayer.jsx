@@ -325,7 +325,9 @@ export const QuizPlayer = ({ chapterId = 'chap_1', practiceMode = 'school', onCo
             {isCorrect ? '🎉 Correct Answer!' : '💡 Step-by-Step Solution Breakdown:'}
           </div>
           <div style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
-            {currentQ.hint}
+            {currentQ.type === 'match_following' && currentQ.pairs
+              ? `Correct Matches: ${currentQ.pairs.map(p => `${p.left} = ${p.right}`).join(', ')}!`
+              : currentQ.hint}
           </div>
         </div>
       )}

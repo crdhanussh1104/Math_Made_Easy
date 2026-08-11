@@ -24,7 +24,7 @@ export const questionsData = {
         { left: 'Lakhs', right: '6 Digits' },
         { left: 'Crores', right: '8 Digits' }
       ],
-      hint: 'Thousands = 4 digits, Ten Thousands = 5 digits, Lakhs = 6 digits!'
+      hint: 'Ten Thousands = 5 digits, Lakhs = 6 digits, Crores = 8 digits!'
     },
     {
       id: 'q_1_4',
