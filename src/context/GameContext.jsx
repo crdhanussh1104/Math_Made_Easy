@@ -136,6 +136,11 @@ export const GameProvider = ({ children }) => {
     setGameState(prev => ({ ...prev, theme: themeName }));
   };
 
+  const changeClass = (classId) => {
+    setGameState(prev => ({ ...prev, selectedClass: classId }));
+    soundFx.playClick();
+  };
+
   return (
     <GameContext.Provider value={{
       gameState,
@@ -150,7 +155,8 @@ export const GameProvider = ({ children }) => {
       completeLesson,
       toggleSound,
       toggleVoice,
-      setTheme
+      setTheme,
+      changeClass
     }}>
       {children}
     </GameContext.Provider>

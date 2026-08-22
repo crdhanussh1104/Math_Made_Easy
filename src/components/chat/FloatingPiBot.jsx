@@ -70,29 +70,29 @@ export const FloatingPiBot = ({ onNavigate }) => {
         onClick={toggleOpen}
         style={{
           position: 'fixed',
-          bottom: '84px',
+          bottom: '24px',
           right: '24px',
           zIndex: 400,
-          width: '60px',
-          height: '60px',
+          width: '48px',
+          height: '48px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #1cb0f6 0%, #00f0ff 100%)',
+          background: 'linear-gradient(135deg, var(--secondary) 0%, var(--secondary-hover) 100%)',
           color: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 10px 25px rgba(28, 176, 246, 0.4)',
+          boxShadow: 'var(--shadow-md)',
           cursor: 'pointer',
-          border: '3px solid #ffffff',
-          transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)'
+          border: '2px solid #ffffff',
+          transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s'
         }}
-        className="animate-float"
+        className="animate-float hover-lift"
         title="Pi-Bot AI Assistant"
       >
-        <Bot size={32} />
+        <Bot size={24} />
         <span style={{
-          position: 'absolute', top: -2, right: -2, width: '14px', height: '14px',
-          backgroundColor: '#58cc02', borderRadius: '50%', border: '2px solid #fff'
+          position: 'absolute', top: -2, right: -2, width: '12px', height: '12px',
+          backgroundColor: 'var(--primary)', borderRadius: '50%', border: '2px solid #fff'
         }} />
       </div>
 

@@ -1,358 +1,592 @@
-import React, { useState, useEffect } from 'react';
-import { questionsData } from '../../data/questions';
+import React, { useState, useEffect, useRef } from 'react';
+import { getQuestionsForTopic, questionsData } from '../../data/questions';
+import { validateAnswer } from '../../utils/answerValidator';
+import { getFormulaForActivity } from '../../data/labFormulaBank';
 import { CardRounded } from '../ui/CardRounded';
 import { Button3D } from '../ui/Button3D';
 import { ProgressBar } from '../ui/ProgressBar';
 import { MascotWidget } from '../ui/MascotWidget';
 import { BadgeChip } from '../ui/BadgeChip';
-import { RewardModal } from '../gamification/RewardModal';
-import { AbacusVisualizer } from '../visualizers/AbacusVisualizer';
-import { FractionPizza } from '../visualizers/FractionPizza';
 import { soundFx } from '../../utils/audioSynth';
-import { speechFx } from '../../utils/speech';
 import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
 import {
-  HelpCircle, CheckCircle, XCircle, ArrowRight, Heart, Flame,
-  Star, Volume2, Sparkles, RefreshCw, Clock, Award, Check, RotateCcw
+  HelpCircle, CheckCircle2, XCircle, ArrowRight, Heart, Flame,
+  Star, Volume2, Sparkles, RefreshCw, Clock, Award, Check, RotateCcw,
+  BookOpen, ChevronRight, CheckCircle, AlertCircle, Bookmark, Lightbulb
 } from 'lucide-react';
 
-export const QuizPlayer = ({ chapterId = 'chap_1', practiceMode = 'school', onComplete, onResetMode }) => {
+export const QuizPlayer = ({
+  chapterId,
+  topicId,
+  themeTitle,
+  topicTitle,
+  classNameText = 'Class 4',
+  practiceMode = 'school',
+  onComplete,
+  onResetMode,
+  onSelectTopic,
+  nextTopicId
+}) => {
   const { gameState, deductHeart, completeLesson, addXP, addGems } = useGame();
-  const rawQuestions = questionsData[chapterId] || questionsData['chap_1'];
+  const inputRef = useRef(null);
 
-  const [questions, setQuestions] = useState(rawQuestions);
+  // Load questions for topicId or fallback to chapterId
+  const activeTopicKey = topicId || chapterId;
+  const initialQuestions = getQuestionsForTopic(activeTopicKey) || questionsData[activeTopicKey] || [];
+
+  const [questions, setQuestions] = useState(initialQuestions);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [blankInput, setBlankInput] = useState('');
-  const [matchedPairs, setMatchedPairs] = useState({});
+  const [userInput, setUserInput] = useState('');
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showFormula, setShowFormula] = useState(false);
+  const [revealSolution, setRevealSolution] = useState(false);
   const [comboCount, setComboCount] = useState(0);
-  const [wrongQuestionIds, setWrongQuestionIds] = useState([]);
-  const [isRetryMode, setIsRetryMode] = useState(false);
+  const [userAnswersHistory, setUserAnswersHistory] = useState([]);
+  const [isQuizCompleted, setIsQuizCompleted] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(practiceMode === 'challenge' ? 45 : 60);
   const [timerActive, setTimerActive] = useState(true);
-  const [showRewardModal, setShowRewardModal] = useState(false);
-  const [scoreCount, setScoreCount] = useState(0);
 
-  const currentQ = questions[currentIndex] || questions[0];
-  const xpRewardPerQ = practiceMode === 'challenge' ? 30 : practiceMode === 'olympiad' ? 25 : 15;
+  const currentQ = questions[currentIndex] || null;
+  const xpRewardPerQ = practiceMode === 'challenge' ? 25 : practiceMode === 'olympiad' ? 20 : 15;
+
+  // Find relevant formula/rule clue if available for this topic or chapter
+  const formulaClue = getFormulaForActivity(topicId) || getFormulaForActivity(chapterId) || null;
+
+  // Re-sync when topicId changes
+  useEffect(() => {
+    const key = topicId || chapterId;
+    const qList = getQuestionsForTopic(key) || questionsData[key] || [];
+    setQuestions(qList);
+    setCurrentIndex(0);
+    setUserInput('');
+    setIsAnswered(false);
+    setIsCorrect(false);
+    setShowHint(false);
+    setShowFormula(false);
+    setRevealSolution(false);
+    setUserAnswersHistory([]);
+    setIsQuizCompleted(false);
+    setComboCount(0);
+  }, [topicId, chapterId]);
+
+  // Focus input when moving to a new question
+  useEffect(() => {
+    if (!isAnswered && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [currentIndex, isAnswered]);
 
   // Live Timer Countdown
   useEffect(() => {
     let interval = null;
-    if (timerActive && timerSeconds > 0 && !isAnswered) {
+    if (timerActive && timerSeconds > 0 && !isAnswered && !isQuizCompleted) {
       interval = setInterval(() => setTimerSeconds(prev => prev - 1), 1000);
     }
     return () => clearInterval(interval);
-  }, [timerActive, timerSeconds, isAnswered]);
+  }, [timerActive, timerSeconds, isAnswered, isQuizCompleted]);
 
-  const handleSelectOption = (index) => {
-    if (isAnswered) return;
-    setSelectedOption(index);
-    soundFx.playClick();
-  };
-
-  const handleMatchSelect = (left, right) => {
-    if (isAnswered) return;
-    setMatchedPairs(prev => ({ ...prev, [left]: right }));
-    soundFx.playClick();
-  };
-
-  const handleCheckAnswer = () => {
-    if (isAnswered) return;
-
-    let correct = false;
-
-    if (currentQ.type === 'fill_blank') {
-      const userVal = blankInput.trim().replace(/,/g, '');
-      const targetVal = String(currentQ.targetValue || currentQ.correctAnswer).replace(/,/g, '');
-      correct = userVal === targetVal;
-    } else if (currentQ.type === 'match_following') {
-      correct = currentQ.pairs.every(p => matchedPairs[p.left] === p.right);
-    } else {
-      correct = selectedOption === currentQ.correct;
+  // Insert math symbol into user input at cursor position
+  const handleInsertSymbol = (sym) => {
+    const input = inputRef.current;
+    if (!input) {
+      setUserInput(prev => prev + sym);
+      return;
     }
+    const start = input.selectionStart || userInput.length;
+    const end = input.selectionEnd || userInput.length;
+    const nextVal = userInput.substring(0, start) + sym + userInput.substring(end);
+    setUserInput(nextVal);
+    setTimeout(() => {
+      input.focus();
+      input.setSelectionRange(start + sym.length, start + sym.length);
+    }, 0);
+  };
+
+  const handleCheckAnswer = (e) => {
+    if (e) e.preventDefault();
+    if (isAnswered || !currentQ || userInput.trim() === '') return;
+
+    const correct = validateAnswer(
+      userInput,
+      currentQ.a || currentQ.correctAnswer,
+      currentQ.acc || currentQ.acceptedAnswers,
+      currentQ.type
+    );
 
     setIsAnswered(true);
     setIsCorrect(correct);
+    if (!correct) {
+      setRevealSolution(false);
+    }
+
+    // Save into history
+    setUserAnswersHistory(prev => [
+      ...prev,
+      {
+        questionIndex: currentIndex + 1,
+        questionText: currentQ.q || currentQ.question,
+        studentAnswer: userInput.trim(),
+        correctAnswer: currentQ.a || currentQ.correctAnswer,
+        isCorrect: correct,
+        explanation: currentQ.exp || currentQ.explanation
+      }
+    ]);
 
     if (correct) {
       soundFx.playCorrect();
       const newCombo = comboCount + 1;
       setComboCount(newCombo);
-      setScoreCount(prev => prev + 1);
       addXP(xpRewardPerQ);
-
       if (newCombo >= 2) triggerConfetti('default');
     } else {
       soundFx.playIncorrect();
       setComboCount(0);
       deductHeart();
-      if (!wrongQuestionIds.includes(currentQ.id)) {
-        setWrongQuestionIds(prev => [...prev, currentQ.id]);
-      }
     }
   };
 
-  const handleVisualizerVerify = (success) => {
-    setIsAnswered(true);
-    setIsCorrect(success);
-    if (success) {
-      soundFx.playCorrect();
-      setComboCount(prev => prev + 1);
-      setScoreCount(prev => prev + 1);
-      addXP(xpRewardPerQ + 10);
-      triggerConfetti('default');
-    } else {
-      soundFx.playIncorrect();
-      setComboCount(0);
-      deductHeart();
-      if (!wrongQuestionIds.includes(currentQ.id)) {
-        setWrongQuestionIds(prev => [...prev, currentQ.id]);
-      }
+  const handleTryAgain = () => {
+    setIsAnswered(false);
+    setIsCorrect(false);
+    setRevealSolution(false);
+    setUserInput('');
+    if (inputRef.current) {
+      inputRef.current.focus();
     }
   };
 
   const handleNextQuestion = () => {
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex(prev => prev + 1);
-      setSelectedOption(null);
-      setBlankInput('');
-      setMatchedPairs({});
+      setUserInput('');
       setIsAnswered(false);
       setIsCorrect(false);
       setShowHint(false);
+      setShowFormula(false);
+      setRevealSolution(false);
+      if (practiceMode === 'challenge') setTimerSeconds(45);
     } else {
-      // Quiz completed!
-      const accuracy = Math.round((scoreCount / questions.length) * 100);
-      completeLesson(`les_${chapterId}`, accuracy);
+      // Completed all questions
+      const correctCount = userAnswersHistory.filter(h => h.isCorrect).length + (isCorrect ? 1 : 0);
+      const accuracy = Math.round((correctCount / questions.length) * 100);
+      completeLesson(`quiz_${activeTopicKey}`, accuracy);
       triggerConfetti('levelUp');
-      setShowRewardModal(true);
+      setIsQuizCompleted(true);
     }
   };
 
-  const handleStartRetryMode = () => {
-    const wrongQs = rawQuestions.filter(q => wrongQuestionIds.includes(q.id));
-    setQuestions(wrongQs);
+  const handleRetakeQuiz = () => {
     setCurrentIndex(0);
-    setSelectedOption(null);
-    setBlankInput('');
-    setMatchedPairs({});
+    setUserInput('');
     setIsAnswered(false);
     setIsCorrect(false);
     setShowHint(false);
-    setShowRewardModal(false);
-    setIsRetryMode(true);
+    setShowFormula(false);
+    setRevealSolution(false);
+    setUserAnswersHistory([]);
+    setIsQuizCompleted(false);
+    setComboCount(0);
   };
 
-  return (
-    <div style={{ width: '100%', maxWidth: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      
-      {/* 1. Header: Practice Mode Badge, Timer, Hearts & XP Indicator */}
-      <CardRounded style={{ padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
-          {/* Practice Mode Pill */}
-          <BadgeChip
-            label={practiceMode === 'challenge' ? '🎮 Challenge Blitz (2x XP)' : practiceMode === 'olympiad' ? '🏆 Olympiad HOTS Mode' : '📘 School Level Mode'}
-            color={practiceMode === 'challenge' ? 'var(--orange)' : practiceMode === 'olympiad' ? 'var(--purple)' : 'var(--primary)'}
-            bg={practiceMode === 'challenge' ? 'var(--warning-light)' : practiceMode === 'olympiad' ? 'var(--purple-light)' : 'var(--primary-light)'}
-            size="md"
-          />
+  if (!questions || questions.length === 0) {
+    return (
+      <div style={{ textAlign: 'center', padding: '40px 20px' }}>
+        <CardRounded>
+          <h2 style={{ fontSize: '1.4rem', color: '#3c3c3c', marginBottom: '10px' }}>No Questions Found</h2>
+          <p style={{ color: '#777', marginBottom: '20px' }}>No questions available for this topic yet.</p>
+          <Button3D onClick={onResetMode} variant="secondary">Back to Syllabus</Button3D>
+        </CardRounded>
+      </div>
+    );
+  }
 
-          {/* Timer Countdown */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: timerSeconds < 15 ? 'var(--accent)' : 'var(--secondary)' }}>
-            <Clock size={18} />
-            <span>00:{String(timerSeconds).padStart(2, '0')}</span>
+  // QUIZ COMPLETED SUMMARY VIEW
+  if (isQuizCompleted) {
+    const totalQ = questions.length;
+    const correctTotal = userAnswersHistory.filter(h => h.isCorrect).length;
+    const scorePct = Math.round((correctTotal / totalQ) * 100);
+
+    return (
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '10px' }}>
+        {/* Header summary card */}
+        <CardRounded style={{ textAlign: 'center', padding: '30px 20px', marginBottom: '24px' }}>
+          <div style={{ fontSize: '3.5rem', marginBottom: '10px' }}>
+            {scorePct >= 80 ? '🏆' : scorePct >= 50 ? '🌟' : '💪'}
           </div>
-        </div>
+          <h2 style={{ fontSize: '1.8rem', fontWeight: '800', color: '#3c3c3c', marginBottom: '6px' }}>
+            {scorePct === 100 ? 'Perfect Score!' : scorePct >= 80 ? 'Outstanding Job!' : scorePct >= 50 ? 'Great Effort!' : 'Keep Practicing!'}
+          </h2>
+          <p style={{ color: '#777', fontSize: '1rem', marginBottom: '20px' }}>
+            {classNameText} • {themeTitle} • {topicTitle}
+          </p>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          {onResetMode && (
-            <button onClick={onResetMode} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.82rem', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <RotateCcw size={14} /> Change Practice Mode
-            </button>
-          )}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '25px', flexWrap: 'wrap' }}>
+            <div style={{ background: '#f0f9ff', border: '2px solid #bae6fd', borderRadius: '16px', padding: '14px 24px', minWidth: '120px' }}>
+              <div style={{ fontSize: '0.85rem', color: '#0284c7', fontWeight: '700', textTransform: 'uppercase' }}>Score</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#0369a1' }}>{correctTotal} / {totalQ}</div>
+            </div>
+            <div style={{ background: '#f0fdf4', border: '2px solid #bbf7d0', borderRadius: '16px', padding: '14px 24px', minWidth: '120px' }}>
+              <div style={{ fontSize: '0.85rem', color: '#16a34a', fontWeight: '700', textTransform: 'uppercase' }}>Accuracy</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#15803d' }}>{scorePct}%</div>
+            </div>
+            <div style={{ background: '#fefce8', border: '2px solid #fef08a', borderRadius: '16px', padding: '14px 24px', minWidth: '120px' }}>
+              <div style={{ fontSize: '0.85rem', color: '#ca8a04', fontWeight: '700', textTransform: 'uppercase' }}>XP Earned</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#a16207' }}>+{correctTotal * xpRewardPerQ}</div>
+            </div>
+          </div>
 
-          <span style={{ fontSize: '0.85rem', fontWeight: '700', fontFamily: 'var(--font-rounded)', color: 'var(--text-muted)' }}>
-            Q {currentIndex + 1} of {questions.length}
-          </span>
-        </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px' }}>
+            <Button3D onClick={handleRetakeQuiz} variant="secondary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <RotateCcw size={18} /> Retake This Topic
+            </Button3D>
+            {nextTopicId && onSelectTopic && (
+              <Button3D onClick={() => onSelectTopic(nextTopicId)} variant="primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                Next Topic <ArrowRight size={18} />
+              </Button3D>
+            )}
+            <Button3D onClick={onResetMode} variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <BookOpen size={18} /> Back to Syllabus
+            </Button3D>
+          </div>
+        </CardRounded>
 
-        <ProgressBar progress={((currentIndex + 1) / questions.length) * 100} showLabel color="var(--primary)" />
-      </CardRounded>
-
-      {/* 2. Mascot & Hints */}
-      <CardRounded style={{ padding: '14px 20px' }}>
-        <MascotWidget
-          message={showHint ? currentQ.hint : isAnswered ? (isCorrect ? '🎉 Great job! Keep going!' : '💡 Let\'s review the step breakdown below.') : 'Take your time and pick your answer!'}
-          mood={showHint ? 'hint' : isAnswered ? (isCorrect ? 'celebrating' : 'thinking') : 'happy'}
-        />
-
-        {!showHint && !isAnswered && (
-          <button
-            onClick={() => setShowHint(true)}
-            style={{
-              alignSelf: 'flex-end', background: 'none', border: 'none',
-              color: 'var(--purple)', fontWeight: '700', cursor: 'pointer',
-              display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.82rem', marginTop: '8px'
-            }}
-          >
-            <HelpCircle size={16} /> Need a Step-by-Step Hint?
-          </button>
-        )}
-      </CardRounded>
-
-      {/* 3. Main Question Container Card */}
-      <CardRounded>
-        <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.3rem', fontWeight: '700', color: 'var(--text-main)', marginBottom: '20px', lineHeight: '1.4' }}>
-          {currentQ.question}
+        {/* Detailed Question Review Table */}
+        <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: '#3c3c3c', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span>📋</span> Question Review Breakdown
         </h3>
 
-        {/* FORMAT A: ABACUS INTERACTIVE */}
-        {currentQ.type === 'abacus_interactive' ? (
-          <AbacusVisualizer targetNumber={currentQ.targetNumber} onVerify={handleVisualizerVerify} />
-        ) : 
-
-        /* FORMAT B: PIZZA FRACTION INTERACTIVE */
-        currentQ.type === 'pizza_interactive' ? (
-          <FractionPizza targetNumerator={currentQ.targetNumerator} targetDenominator={currentQ.targetDenominator} onVerify={handleVisualizerVerify} />
-        ) :
-
-        /* FORMAT C: MATCH THE FOLLOWING */
-        currentQ.type === 'match_following' ? (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-            {currentQ.pairs.map((p, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px', backgroundColor: 'var(--bg-main)', borderRadius: 'var(--radius-md)' }}>
-                <span style={{ fontWeight: '700', fontSize: '0.95rem' }}>{p.left}</span>
-                <select
-                  value={matchedPairs[p.left] || ''}
-                  onChange={(e) => handleMatchSelect(p.left, e.target.value)}
-                  disabled={isAnswered}
-                  style={{ padding: '8px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', fontWeight: '700', outline: 'none' }}
-                >
-                  <option value="">Select Match</option>
-                  {currentQ.pairs.map(pairOpt => (
-                    <option key={pairOpt.right} value={pairOpt.right}>{pairOpt.right}</option>
-                  ))}
-                </select>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          {userAnswersHistory.map((item, idx) => (
+            <CardRounded
+              key={idx}
+              style={{
+                borderLeft: `6px solid ${item.isCorrect ? '#22c55e' : '#ef4444'}`,
+                background: item.isCorrect ? '#fafffa' : '#fffbfa',
+                padding: '16px 20px'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', marginBottom: '8px' }}>
+                <div style={{ fontWeight: '700', color: '#2d3748', fontSize: '1rem', lineHeight: '1.4' }}>
+                  <span style={{ color: '#888', marginRight: '6px' }}>Q{item.questionIndex}.</span>
+                  {item.questionText}
+                </div>
+                <div>
+                  {item.isCorrect ? (
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#dcfce7', color: '#15803d', fontWeight: '700', fontSize: '0.8rem', padding: '4px 10px', borderRadius: '12px', whiteSpace: 'nowrap' }}>
+                      <CheckCircle2 size={14} /> Correct
+                    </span>
+                  ) : (
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#fee2e2', color: '#b91c1c', fontWeight: '700', fontSize: '0.8rem', padding: '4px 10px', borderRadius: '12px', whiteSpace: 'nowrap' }}>
+                      <XCircle size={14} /> Incorrect
+                    </span>
+                  )}
+                </div>
               </div>
-            ))}
-          </div>
-        ) :
 
-        /* FORMAT D: FILL IN THE BLANK */
-        currentQ.type === 'fill_blank' ? (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '0.9rem', marginBottom: '8px' }}>
+                <div>
+                  <span style={{ color: '#666', fontWeight: '600' }}>Your Answer: </span>
+                  <span style={{ fontWeight: '700', color: item.isCorrect ? '#16a34a' : '#dc2626' }}>
+                    {item.studentAnswer || '(No answer)'}
+                  </span>
+                </div>
+                {!item.isCorrect && (
+                  <div>
+                    <span style={{ color: '#666', fontWeight: '600' }}>Correct Answer: </span>
+                    <span style={{ fontWeight: '700', color: '#16a34a' }}>{item.correctAnswer}</span>
+                  </div>
+                )}
+              </div>
+
+              {item.explanation && (
+                <div style={{ fontSize: '0.88rem', color: '#334155', background: 'rgba(0,0,0,0.03)', padding: '10px 14px', borderRadius: '8px', lineHeight: '1.45' }}>
+                  💡 <strong>Explanation:</strong> {item.explanation}
+                </div>
+              )}
+            </CardRounded>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  const questionPrompt = currentQ?.q || currentQ?.question || '';
+  const questionAnswer = currentQ?.a || currentQ?.correctAnswer || '';
+  const questionExp = currentQ?.exp || currentQ?.explanation || '';
+  const questionHint = currentQ?.h || currentQ?.hint || '';
+  const questionDiff = currentQ?.difficulty || (currentIndex < 3 ? 'easy' : currentIndex < 7 ? 'medium' : 'hard');
+
+  // Quick Math Symbols Palette for student convenience
+  const mathSymbols = ['√', 'π', '²', '³', '°', '/', '-', '(', ')', '.', 'x'];
+
+  // ACTIVE QUESTION VIEW
+  return (
+    <div style={{ maxWidth: '750px', margin: '0 auto', padding: '10px' }}>
+      {/* Top Header Card */}
+      <div style={{ marginBottom: '16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
+            <span style={{ display: 'inline-block', background: '#e0f2fe', color: '#0284c7', fontWeight: '800', fontSize: '0.78rem', padding: '3px 10px', borderRadius: '8px', textTransform: 'uppercase' }}>
+              {classNameText}
+            </span>
+            <span style={{ color: '#64748b', fontSize: '0.9rem', fontWeight: '600' }}>
+              {themeTitle}
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#ef4444', fontWeight: '700', fontSize: '0.9rem' }}>
+              <Heart size={16} fill="#ef4444" /> {gameState.hearts}
+            </span>
+            {comboCount >= 2 && (
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#f59e0b', fontWeight: '700', fontSize: '0.9rem' }}>
+                <Flame size={16} fill="#f59e0b" /> {comboCount}x
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Topic Title */}
+        <h2 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#1e293b', marginBottom: '12px' }}>
+          {topicTitle}
+        </h2>
+
+        {/* Progress Bar & Question Counter */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ flex: 1 }}>
+            <ProgressBar value={((currentIndex + (isAnswered ? 1 : 0)) / questions.length) * 100} color="#22c55e" />
+          </div>
+          <span style={{ fontSize: '0.85rem', fontWeight: '800', color: '#64748b', whiteSpace: 'nowrap' }}>
+            Question {currentIndex + 1} of {questions.length}
+          </span>
+        </div>
+      </div>
+
+      {/* Main Question Card */}
+      <CardRounded style={{ padding: '28px 24px', marginBottom: '20px', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ background: '#f1f5f9', color: '#475569', fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase', padding: '4px 10px', borderRadius: '6px' }}>
+              Written Answer
+            </span>
+            <span style={{
+              fontSize: '0.75rem',
+              fontWeight: '800',
+              textTransform: 'uppercase',
+              padding: '4px 10px',
+              borderRadius: '6px',
+              background: questionDiff.toLowerCase() === 'easy' ? '#dcfce7' : questionDiff.toLowerCase() === 'medium' ? '#fef9c3' : '#fee2e2',
+              color: questionDiff.toLowerCase() === 'easy' ? '#15803d' : questionDiff.toLowerCase() === 'medium' ? '#a16207' : '#b91c1c'
+            }}>
+              {questionDiff}
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            {formulaClue && (
+              <button
+                type="button"
+                onClick={() => setShowFormula(!showFormula)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6366f1', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', fontWeight: '700' }}
+              >
+                <Bookmark size={15} /> {showFormula ? 'Hide Rule' : 'Formula / Rule'}
+              </button>
+            )}
+
+            {questionHint && (
+              <button
+                type="button"
+                onClick={() => setShowHint(!showHint)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#f59e0b', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', fontWeight: '700' }}
+              >
+                <HelpCircle size={15} /> {showHint ? 'Hide Hint' : 'Hint'}
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Formula / Rule Clue Box */}
+        {showFormula && formulaClue && (
+          <div style={{ background: '#eef2ff', border: '1.5px solid #c7d2fe', borderRadius: '12px', padding: '12px 16px', marginBottom: '16px', fontSize: '0.9rem', color: '#312e81' }}>
+            <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase', marginBottom: '4px' }}>
+              📖 Reference Rule: {formulaClue.title}
+            </div>
+            <div style={{ fontFamily: 'monospace', fontWeight: '700', fontSize: '1rem', color: '#1e1b4b' }}>
+              {formulaClue.formula}
+            </div>
+          </div>
+        )}
+
+        {/* Hint Box */}
+        {showHint && questionHint && (
+          <div style={{ background: '#fefce8', border: '1px dashed #facc15', borderRadius: '10px', padding: '12px 16px', marginBottom: '16px', fontSize: '0.92rem', color: '#854d0e', lineHeight: '1.45' }}>
+            💡 <strong>Hint:</strong> {questionHint}
+          </div>
+        )}
+
+        {/* Question Text */}
+        <div style={{ fontSize: '1.25rem', fontWeight: '700', color: '#1e293b', lineHeight: '1.55', marginBottom: '24px' }}>
+          {questionPrompt}
+        </div>
+
+        {/* Answer Input Form */}
+        <form onSubmit={handleCheckAnswer}>
+          <div style={{ marginBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <label style={{ fontSize: '0.85rem', fontWeight: '700', color: '#64748b' }}>
+                YOUR ANSWER:
+              </label>
+
+              {/* Quick Math Symbols Helper Bar */}
+              {!isAnswered && (
+                <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+                  {mathSymbols.map(sym => (
+                    <button
+                      key={sym}
+                      type="button"
+                      onClick={() => handleInsertSymbol(sym)}
+                      style={{
+                        padding: '2px 8px',
+                        fontSize: '0.82rem',
+                        fontWeight: '700',
+                        borderRadius: '6px',
+                        border: '1px solid #cbd5e1',
+                        background: '#f8fafc',
+                        color: '#334155',
+                        cursor: 'pointer'
+                      }}
+                      title={`Insert ${sym}`}
+                    >
+                      {sym}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <input
+              ref={inputRef}
               type="text"
-              value={blankInput}
-              onChange={(e) => setBlankInput(e.target.value)}
+              inputMode={currentQ?.type === 'number' ? 'decimal' : 'text'}
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
               disabled={isAnswered}
               placeholder="Type your answer here..."
+              autoFocus
               style={{
-                fontSize: '1.5rem', fontWeight: '800', fontFamily: 'var(--font-rounded)',
-                textAlign: 'center', padding: '14px', borderRadius: 'var(--radius-md)',
-                border: '2px solid var(--border-light)', outline: 'none', backgroundColor: 'var(--bg-main)'
+                width: '100%',
+                padding: '14px 18px',
+                fontSize: '1.15rem',
+                fontWeight: '600',
+                borderRadius: '12px',
+                border: isAnswered
+                  ? isCorrect
+                    ? '2px solid #22c55e'
+                    : '2px solid #ef4444'
+                  : '2px solid #cbd5e1',
+                background: isAnswered ? (isCorrect ? '#f0fdf4' : '#fef2f2') : '#ffffff',
+                color: '#1e293b',
+                outline: 'none',
+                boxSizing: 'border-box',
+                transition: 'all 0.2s ease'
               }}
             />
           </div>
-        ) :
 
-        /* FORMAT E: STANDARD MULTIPLE CHOICE */
-        (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-            {currentQ.options.map((opt, idx) => {
-              const isSelected = selectedOption === idx;
-              let bg = 'var(--bg-card-solid)';
-              let border = '1.5px solid var(--border-light)';
-              if (isSelected) { bg = 'var(--secondary-light)'; border = '2.5px solid var(--secondary)'; }
-              if (isAnswered && idx === currentQ.correct) { bg = 'var(--primary-light)'; border = '2.5px solid var(--primary)'; }
-              if (isAnswered && isSelected && !isCorrect) { bg = 'var(--accent-light)'; border = '2.5px solid var(--accent)'; }
+          {!isAnswered && (
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
+              <Button3D
+                type="submit"
+                variant="primary"
+                disabled={userInput.trim() === ''}
+                style={{ padding: '12px 28px', fontSize: '1rem', fontWeight: '800' }}
+              >
+                Submit Answer
+              </Button3D>
+            </div>
+          )}
+        </form>
 
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleSelectOption(idx)}
-                  disabled={isAnswered}
-                  style={{
-                    padding: '16px 20px', borderRadius: 'var(--radius-md)', border: border,
-                    backgroundColor: bg, color: 'var(--text-main)', fontSize: '1rem',
-                    fontWeight: '600', textAlign: 'left', cursor: isAnswered ? 'default' : 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between'
-                  }}
+        {/* Instant Feedback Banner */}
+        {isAnswered && (
+          <div
+            style={{
+              marginTop: '20px',
+              padding: '18px 20px',
+              borderRadius: '14px',
+              background: isCorrect ? '#f0fdf4' : '#fef2f2',
+              border: `2px solid ${isCorrect ? '#86efac' : '#fca5a5'}`
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+              {isCorrect ? (
+                <>
+                  <CheckCircle2 size={24} color="#16a34a" />
+                  <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#15803d' }}>
+                    ✓ Correct! Well done! 🎉
+                  </span>
+                </>
+              ) : (
+                <>
+                  <XCircle size={24} color="#dc2626" />
+                  <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#b91c1c' }}>
+                    Not quite. Try again!
+                  </span>
+                </>
+              )}
+            </div>
+
+            {!isCorrect && revealSolution && (
+              <div style={{ fontSize: '0.95rem', color: '#7f1d1d', marginBottom: '8px' }}>
+                Correct Answer: <strong style={{ color: '#15803d', fontSize: '1.05rem' }}>{questionAnswer}</strong>
+              </div>
+            )}
+
+            {(isCorrect || revealSolution) && questionExp && (
+              <div style={{ fontSize: '0.92rem', color: '#334155', background: 'rgba(255,255,255,0.85)', padding: '12px 16px', borderRadius: '10px', marginTop: '8px', lineHeight: '1.5' }}>
+                💡 <strong>Explanation:</strong> {questionExp}
+              </div>
+            )}
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: '10px', marginTop: '16px' }}>
+              {!isCorrect && !revealSolution && (
+                <>
+                  <Button3D
+                    onClick={handleTryAgain}
+                    variant="secondary"
+                    style={{ padding: '12px 20px', fontSize: '0.95rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}
+                  >
+                    <RotateCcw size={16} /> Try Again
+                  </Button3D>
+                  <Button3D
+                    onClick={() => setRevealSolution(true)}
+                    variant="outline"
+                    style={{ padding: '12px 18px', fontSize: '0.95rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}
+                  >
+                    <Lightbulb size={16} /> View Solution
+                  </Button3D>
+                </>
+              )}
+
+              {(isCorrect || revealSolution) && (
+                <Button3D
+                  onClick={handleNextQuestion}
+                  variant={isCorrect ? 'primary' : 'outline'}
+                  style={{ padding: '12px 28px', fontSize: '1rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
-                  <span>{opt}</span>
-                  {isAnswered && idx === currentQ.correct && <CheckCircle color="var(--primary)" size={22} />}
-                  {isAnswered && isSelected && !isCorrect && <XCircle color="var(--accent)" size={22} />}
-                </button>
-              );
-            })}
+                  {currentIndex + 1 < questions.length ? (
+                    <>Next Question <ArrowRight size={18} /></>
+                  ) : (
+                    <>View Results <Award size={18} /></>
+                  )}
+                </Button3D>
+              )}
+            </div>
           </div>
-        )}
-
-        {/* Action Check / Next Button */}
-        {!isAnswered ? (
-          !currentQ.type?.includes('interactive') && (
-            <Button3D
-              variant="primary" size="lg" style={{ width: '100%' }} onClick={handleCheckAnswer}
-              disabled={currentQ.type === 'fill_blank' ? !blankInput.trim() : currentQ.type === 'match_following' ? Object.keys(matchedPairs).length < currentQ.pairs.length : selectedOption === null}
-            >
-              Check Answer
-            </Button3D>
-          )
-        ) : (
-          <Button3D variant="secondary" size="lg" style={{ width: '100%' }} onClick={handleNextQuestion} icon={ArrowRight}>
-            {currentIndex + 1 < questions.length ? 'Next Question' : 'Finish Quiz'}
-          </Button3D>
         )}
       </CardRounded>
-
-      {/* 4. Detailed Step-by-Step Explanation Banner */}
-      {isAnswered && (
-        <div
-          className="animate-pop"
-          style={{
-            padding: '20px', borderRadius: 'var(--radius-lg)',
-            backgroundColor: isCorrect ? 'var(--primary-light)' : 'var(--accent-light)',
-            border: `2px solid ${isCorrect ? 'var(--primary)' : 'var(--accent)'}`,
-            display: 'flex', flexDirection: 'column', gap: '8px'
-          }}
-        >
-          <div style={{ fontWeight: '800', fontFamily: 'var(--font-rounded)', fontSize: '1.1rem', color: isCorrect ? 'var(--primary)' : 'var(--accent)' }}>
-            {isCorrect ? '🎉 Correct Answer!' : '💡 Step-by-Step Solution Breakdown:'}
-          </div>
-          <div style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
-            {currentQ.type === 'match_following' && currentQ.pairs
-              ? `Correct Matches: ${currentQ.pairs.map(p => `${p.left} = ${p.right}`).join(', ')}!`
-              : currentQ.hint}
-          </div>
-        </div>
-      )}
-
-      {/* Quiz Completion Reward Modal */}
-      <RewardModal
-        isOpen={showRewardModal}
-        onContinue={() => {
-          setShowRewardModal(false);
-          if (onComplete) onComplete();
-        }}
-        score={Math.round((scoreCount / questions.length) * 100)}
-        xpEarned={practiceMode === 'challenge' ? 150 : practiceMode === 'olympiad' ? 100 : 60}
-        gemsEarned={25}
-      />
-
-      {/* Retry Incorrect Questions Banner */}
-      {showRewardModal && wrongQuestionIds.length > 0 && (
-        <div style={{ textAlign: 'center', marginTop: '10px' }}>
-          <Button3D variant="warning" size="lg" onClick={handleStartRetryMode} icon={RefreshCw}>
-            Retry Incorrect Questions ({wrongQuestionIds.length})
-          </Button3D>
-        </div>
-      )}
-
     </div>
   );
 };

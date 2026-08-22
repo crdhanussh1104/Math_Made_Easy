@@ -46,7 +46,7 @@ function AppContent() {
       <OfflineNotice />
 
       {/* Top Header */}
-      <HeaderStats onNavigate={setCurrentPage} />
+      <HeaderStats currentPage={currentPage} onNavigate={setCurrentPage} />
 
       {/* Main Content Area filling wide screens with rich proportions */}
       <main
@@ -101,65 +101,6 @@ function AppContent() {
 
       {/* Global Floating Pi-Bot Assistant */}
       <FloatingPiBot onNavigate={setCurrentPage} />
-
-      {/* Glassmorphic Bottom Navigation Bar */}
-      <nav
-        aria-label="Main Navigation"
-        style={{
-          position: 'fixed',
-          bottom: '16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 200,
-          backgroundColor: 'var(--bg-card)',
-          backdropFilter: 'var(--glass-blur)',
-          WebkitBackdropFilter: 'var(--glass-blur)',
-          borderRadius: 'var(--radius-full)',
-          border: '1px solid var(--glass-border)',
-          boxShadow: 'var(--shadow-lg)',
-          padding: '8px 16px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          maxWidth: '92vw',
-          overflowX: 'auto'
-        }}
-      >
-        {navItems.map(item => {
-          const Icon = item.icon;
-          const isActive = currentPage === item.id;
-
-          return (
-            <button
-              key={item.id}
-              data-testid={`nav-${item.id}`}
-              onClick={() => setCurrentPage(item.id)}
-              aria-label={item.label}
-              aria-current={isActive ? 'page' : undefined}
-              className="hover-lift"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '8px 14px',
-                borderRadius: 'var(--radius-full)',
-                border: 'none',
-                backgroundColor: isActive ? 'var(--primary)' : 'transparent',
-                color: isActive ? '#ffffff' : 'var(--text-muted)',
-                fontWeight: '700',
-                fontFamily: 'var(--font-rounded)',
-                fontSize: '0.85rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              <Icon size={18} />
-              {isActive && <span>{item.label}</span>}
-            </button>
-          );
-        })}
-      </nav>
     </div>
   );
 }

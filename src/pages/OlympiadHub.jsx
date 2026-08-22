@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { class4Chapters } from '../data/chapters';
+import { getChaptersForClass } from '../data/chapters';
 import { olympiadInsightsData } from '../data/olympiadData';
 import { olympiadRecEngine } from '../services/olympiadRecommendation';
 import { CardRounded } from '../components/ui/CardRounded';
@@ -16,7 +16,11 @@ import {
 } from 'lucide-react';
 
 export const OlympiadHub = ({ onNavigate, onSelectChapter }) => {
-  const { addXP, addGems } = useGame();
+  const { gameState, addXP, addGems } = useGame();
+  
+  const selectedClassId = gameState.selectedClass || 'class4';
+  const chapters = getChaptersForClass(selectedClassId);
+
   const [weeklyChallengeDone, setWeeklyChallengeDone] = useState(false);
   const [showRewardModal, setShowRewardModal] = useState(false);
   const [activeTab, setActiveTab] = useState('competitions'); // competitions, readiness, roadmap, calendar, practice, badges
@@ -320,7 +324,10 @@ export const OlympiadHub = ({ onNavigate, onSelectChapter }) => {
       {/* TAB 4: PRACTICE QUESTION SETS */}
       {activeTab === 'practice' && (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-          {class4Chapters.map(chap => {
+          {chapters.length === 0 ? (
+            <div style={{ color: 'var(--text-muted)' }}>Olympiad practice sets coming soon.</div>
+          ) : (
+          chapters.map(chap => {
             const insight = olympiadInsightsData[chap.id];
 
             return (
@@ -352,7 +359,7 @@ export const OlympiadHub = ({ onNavigate, onSelectChapter }) => {
                 </Button3D>
               </CardRounded>
             );
-          })}
+          }))}
         </div>
       )}
 

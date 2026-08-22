@@ -1,44 +1,50 @@
 :root {
-  /* Duolingo & Apple Education Color Palette */
-  --primary: #58cc02;
-  --primary-hover: #46a302;
-  --primary-shadow: #46a302;
-  --primary-light: #e5f9d8;
+  /* Earthy Brown Education Color Palette */
+  --primary: #9C725D;
+  --primary-hover: #795548;
+  --primary-shadow: #795548;
+  --primary-light: #E8D5C4;
 
   --secondary: #1cb0f6;
   --secondary-hover: #1899d6;
   --secondary-shadow: #1899d6;
   --secondary-light: #ddf4ff;
 
+  /* Pastel Accents */
+  --accent-yellow: #F9D978;
+  --accent-green: #BFDFA8;
+  --accent-blue: #BFDCE8;
+  --accent-purple: #D9C4E8;
+  
   --accent: #ff4b4b;
   --accent-shadow: #ea2b2b;
   --accent-light: #ffdfe0;
 
-  --warning: #ffc800;
-  --warning-shadow: #e5b200;
+  --warning: #F9D978;
+  --warning-shadow: #d1b665;
   --warning-light: #fff8d6;
 
   --purple: #ce82ff;
   --purple-shadow: #b25bf0;
-  --purple-light: #f6e5ff;
+  --purple-light: #D9C4E8;
 
-  --teal: #2bdeac;
-  --teal-shadow: #1eb389;
+  --teal: #BFDFA8;
+  --teal-shadow: #a1bc8e;
 
   --orange: #ff9600;
   --orange-shadow: #e08400;
 
-  /* Glassmorphism & Neutral Tones */
-  --bg-main: #f7f9fc;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-solid: #ffffff;
-  --glass-border: rgba(255, 255, 255, 0.6);
+  /* Backgrounds & Text */
+  --bg-main: #FFF8F0;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-solid: #FFFFFF;
+  --glass-border: rgba(156, 114, 93, 0.2);
   --glass-blur: blur(16px);
-  --text-main: #2b3a4a;
-  --text-muted: #6f8093;
-  --text-light: #94a3b8;
-  --border-light: #e2e8f0;
-  --border-card: #e5e9f0;
+  --text-main: #3D332D;
+  --text-muted: #756A63;
+  --text-light: #a89e98;
+  --border-light: #E8DED5;
+  --border-card: #E8DED5;
 
   /* Shadows & Depth */
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -54,8 +60,8 @@
   --radius-full: 9999px;
 
   /* Standardized Typography Tokens */
-  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-rounded: 'Fredoka', 'Quicksand', 'Outfit', sans-serif;
+  --font-sans: 'Noto Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-rounded: 'Noto Sans', sans-serif;
   --font-family: var(--font-sans);
 
   --fs-xs: 0.8rem;

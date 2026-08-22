@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { class4Chapters } from '../data/chapters';
-import { formulaBookData } from '../data/formulas';
+import React, { useState, useEffect, useMemo } from 'react';
+import { getChaptersForClass } from '../data/chapters';
+import { getClassFormulaCards, getFormulaCardsForChapter, getFormulaCardsForTopic } from '../data/classFormulaCards';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
 import { ProgressBar } from '../components/ui/ProgressBar';
@@ -27,31 +27,52 @@ import { soundFx } from '../utils/audioSynth';
 import {
   Tv, BookOpen, FileText, Lightbulb, HelpCircle, Bot, Sparkles,
   CheckCircle2, Star, Flame, Bookmark, ArrowRight, Volume2, Trophy,
-  ChevronDown, ChevronUp, ZoomIn, ZoomOut, Eye, AlertTriangle, Check, X
+  ChevronDown, ChevronUp, ZoomIn, ZoomOut, Eye, AlertTriangle, Check, X, Clock
 } from 'lucide-react';
 
-export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigate }) => {
+export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   const { gameState, completeLesson, addXP, toggleBookmark } = useGame();
   
-  const [activeChapId, setActiveChapId] = useState(selectedChapterId || 'chap_1');
+  const selectedClassId = gameState.selectedClass || 'class4';
+  const classNum = parseInt(selectedClassId.replace(/\D/g, ''), 10) || 4;
+  const chapters = getChaptersForClass(selectedClassId);
+
+  const [activeChapId, setActiveChapId] = useState(selectedChapterId || (chapters.length > 0 ? chapters[0].id : null));
   const [activeLessonIdx, setActiveLessonIdx] = useState(0);
   const [workspaceTab, setWorkspaceTab] = useState('video');
 
-  // Textbook reader state
-  const [textbookPage, setTextbookPage] = useState(1);
-  const [textbookZoom, setTextbookZoom] = useState(100);
+  useEffect(() => {
+    if (selectedChapterId && chapters.some(c => c.id === selectedChapterId)) {
+      setActiveChapId(selectedChapterId);
+    } else if (chapters.length > 0) {
+      setActiveChapId(chapters[0].id);
+    } else {
+      setActiveChapId(null);
+    }
+    setActiveLessonIdx(0);
+  }, [selectedClassId, selectedChapterId]);
 
   // Reward Modal state
   const [showRewardModal, setShowRewardModal] = useState(false);
 
-  const activeChap = class4Chapters.find(c => c.id === activeChapId) || class4Chapters[0];
+  if (!chapters || chapters.length === 0) {
+    return (
+      <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
+        <h2>Syllabus for {selectedClassId.replace('class', 'Class ')} is coming soon!</h2>
+      </div>
+    );
+  }
+
+  const activeChap = chapters.find(c => c.id === activeChapId) || chapters[0];
   const activeLesson = activeChap.lessons[activeLessonIdx] || activeChap.lessons[0];
 
-  // Relevant formulas for current chapter
-  const relevantFormulas = formulaBookData.filter(f =>
-    f.category.toLowerCase().includes(activeChap.title.split(' ')[0].toLowerCase()) ||
-    f.title.toLowerCase().includes(activeChap.title.split(' ')[0].toLowerCase())
-  );
+  // Strictly Class-Specific & Topic-Specific formulas for current lesson/chapter
+  const relevantFormulas = useMemo(() => {
+    if (!activeLesson?.id) return [];
+    const topicCards = getFormulaCardsForTopic(activeLesson.id);
+    if (topicCards.length > 0) return topicCards;
+    return getFormulaCardsForChapter(activeChap.id, classNum);
+  }, [activeLesson?.id, activeChap.id, classNum]);
 
   const handleLessonComplete = () => {
     completeLesson(activeLesson.id, 100);
@@ -69,7 +90,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
       
       {/* 1. Header: Chapter & Lesson Navigator */}
       <CardRounded style={{
-        background: `linear-gradient(135deg, ${activeChap.color} 0%, #1cb0f6 100%)`,
+        background: `linear-gradient(135deg, ${activeChap.color || '#4f46e5'} 0%, #1cb0f6 100%)`,
         color: '#ffffff',
         padding: '24px 28px',
         display: 'flex',
@@ -80,10 +101,10 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: 'rgba(255,255,255,0.25)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
-              Class 4 ICSE
+              Class {classNum} ICSE
             </span>
             <span style={{ fontSize: '0.85rem', fontWeight: '700', opacity: 0.9 }}>
-              Chapter {activeChap.number} of 7
+              Chapter {activeChap.number || 1} of {chapters.length}
             </span>
           </div>
 
@@ -108,9 +129,9 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
               cursor: 'pointer'
             }}
           >
-            {class4Chapters.map(c => (
+            {chapters.map(c => (
               <option key={c.id} value={c.id} style={{ color: '#000' }}>
-                Ch {c.number}: {c.title}
+                Ch {c.number || ''}: {c.title}
               </option>
             ))}
           </select>
@@ -141,7 +162,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
                   borderRadius: 'var(--radius-full)',
                   border: 'none',
                   backgroundColor: isCurrent ? '#ffffff' : 'rgba(255,255,255,0.2)',
-                  color: isCurrent ? activeChap.color : '#ffffff',
+                  color: isCurrent ? (activeChap.color || '#4f46e5') : '#ffffff',
                   fontWeight: '700',
                   fontFamily: 'var(--font-rounded)',
                   fontSize: '0.85rem',
@@ -152,7 +173,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
                   gap: '6px'
                 }}
               >
-                {isDone ? <CheckCircle2 size={16} /> : <span>Lesson {idx + 1}</span>}
+                {isDone ? <CheckCircle2 size={16} /> : <span>Topic {idx + 1}</span>}
                 <span>{les.title}</span>
               </button>
             );
@@ -164,14 +185,14 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
       <CardRounded style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', padding: '16px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: '1 1 300px' }}>
           <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-            Lesson Progress:
+            Topic Progress:
           </div>
-          <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color} showLabel />
+          <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color || '#4f46e5'} showLabel />
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.95rem' }}>
           <div style={{ color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Star size={20} fill="var(--secondary)" /> +{activeLesson.xp} XP
+            <Star size={20} fill="var(--secondary)" /> +{activeLesson.xp || 15} XP
           </div>
           <div style={{ color: 'var(--orange)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <Flame size={20} fill="var(--orange)" /> {gameState.streak} Streak
@@ -202,7 +223,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
                 padding: '10px 18px',
                 borderRadius: 'var(--radius-full)',
                 border: 'none',
-                backgroundColor: isActive ? activeChap.color : 'var(--bg-card-solid)',
+                backgroundColor: isActive ? (activeChap.color || '#4f46e5') : 'var(--bg-card-solid)',
                 color: isActive ? '#ffffff' : 'var(--text-muted)',
                 fontWeight: '700',
                 fontFamily: 'var(--font-rounded)',
@@ -212,7 +233,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
                 alignItems: 'center',
                 gap: '8px',
                 whiteSpace: 'nowrap',
-                boxShadow: isActive ? `0 4px 10px ${activeChap.color}40` : 'var(--shadow-sm)',
+                boxShadow: isActive ? `0 4px 10px ${activeChap.color || '#4f46e5'}40` : 'var(--shadow-sm)',
                 transition: 'all 0.2s ease'
               }}
             >
@@ -236,7 +257,11 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
 
       {/* TAB 2: INTERACTIVE NOTES */}
       {workspaceTab === 'notes' && (
-        <InteractiveNotes chapter={activeChap} />
+        <InteractiveNotes
+          chapter={activeChap}
+          activeLesson={activeLesson}
+          classId={classNum}
+        />
       )}
 
       {/* TAB 3: OLYMPIAD INSIGHTS & RECOMMENDATION ENGINE */}
@@ -247,78 +272,43 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
         </div>
       )}
 
-      {/* TAB 4: FLIPBOOK TEXTBOOK READER */}
+      {/* TAB 4: FLIPBOOK TEXTBOOK READER (Clean Placeholder) */}
       {workspaceTab === 'textbook' && (
-        <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '700' }}>
-                Textbook Reader: Page {textbookPage} of 12
-              </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                Official ICSE Mathematics Class 4 Flipbook View
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <button onClick={() => setTextbookZoom(z => Math.max(80, z - 10))} title="Zoom Out" style={{ padding: '8px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', backgroundColor: 'var(--bg-card-solid)', cursor: 'pointer' }}>
-                <ZoomOut size={18} />
-              </button>
-              <span style={{ fontSize: '0.85rem', fontWeight: '700' }}>{textbookZoom}%</span>
-              <button onClick={() => setTextbookZoom(z => Math.min(140, z + 10))} title="Zoom In" style={{ padding: '8px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', backgroundColor: 'var(--bg-card-solid)', cursor: 'pointer' }}>
-                <ZoomIn size={18} />
-              </button>
-
-              <button
-                onClick={() => toggleBookmark(`textbook_${activeChap.id}_p${textbookPage}`)}
-                style={{
-                  padding: '8px 14px', borderRadius: 'var(--radius-full)', border: 'none',
-                  backgroundColor: gameState.bookmarks.includes(`textbook_${activeChap.id}_p${textbookPage}`) ? 'var(--warning-light)' : 'var(--bg-main)',
-                  color: 'var(--orange)', fontWeight: '700', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px'
-                }}
-              >
-                <Bookmark size={16} fill={gameState.bookmarks.includes(`textbook_${activeChap.id}_p${textbookPage}`) ? 'var(--orange)' : 'none'} />
-                Bookmark
-              </button>
-            </div>
+        <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'center', padding: '40px 24px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', color: '#475569', fontSize: '0.8rem', fontWeight: '800', padding: '4px 12px', borderRadius: 'var(--radius-full)', textTransform: 'uppercase' }}>
+              <BookOpen size={16} /> Official ICSE Mathematics • Class {classNum}
+            </span>
           </div>
+
+          <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.6rem', fontWeight: '800', color: '#1e293b' }}>
+            Textbook Reader
+          </h3>
 
           <div style={{
-            backgroundColor: 'var(--bg-card-solid)',
-            padding: '28px',
-            borderRadius: 'var(--radius-md)',
-            border: '2px solid var(--border-light)',
-            boxShadow: 'var(--shadow-sm)',
-            transform: `scale(${textbookZoom / 100})`,
-            transformOrigin: 'top center',
-            transition: 'transform 0.2s ease',
-            lineHeight: '1.8',
-            fontSize: '1rem',
-            whiteSpace: 'pre-wrap'
+            maxWidth: '560px',
+            margin: '0 auto',
+            padding: '30px 24px',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+            border: '2px dashed #cbd5e1',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px'
           }}>
-            {activeChap.textbookContent}
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
-            <Button3D
-              variant="outline"
-              disabled={textbookPage <= 1}
-              onClick={() => { setTextbookPage(p => Math.max(1, p - 1)); soundFx.playClick(); }}
-            >
-              Previous Page
-            </Button3D>
-
-            <span style={{ fontWeight: '700', fontFamily: 'var(--font-rounded)' }}>
-              Page {textbookPage} / 12
-            </span>
-
-            <Button3D
-              variant="secondary"
-              disabled={textbookPage >= 12}
-              onClick={() => { setTextbookPage(p => Math.min(12, p + 1)); soundFx.playClick(); }}
-            >
-              Next Page
-            </Button3D>
+            <Clock size={36} color="#64748b" />
+            <div style={{ fontSize: '1.15rem', fontWeight: '800', color: '#334155' }}>
+              Textbook content will be added soon.
+            </div>
+            <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: '1.5', margin: 0 }}>
+              The official textbook chapters and reader pages for <strong>{activeChap.title}</strong> are currently being digitized and formatted for ICSE Class {classNum}.
+            </p>
+            <div style={{ marginTop: '6px' }}>
+              <span style={{ display: 'inline-block', background: '#e0f2fe', color: '#0284c7', fontWeight: '800', fontSize: '0.8rem', padding: '4px 12px', borderRadius: '8px', textTransform: 'uppercase' }}>
+                Coming Soon
+              </span>
+            </div>
           </div>
         </CardRounded>
       )}
@@ -327,15 +317,31 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
       {workspaceTab === 'formulas' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '700' }}>
-              3D Flip Formula Cards
-            </h3>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-              {(relevantFormulas.length > 0 ? relevantFormulas : formulaBookData).map(form => (
-                <FormulaCard3D key={form.id} formulaData={form} />
-              ))}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
+                  Class {classNum} ICSE • {activeChap.title}
+                </span>
+                <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '700', color: '#1e293b' }}>
+                  3D Flip Formula & Rule Cards
+                </h3>
+              </div>
+              <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: '600' }}>
+                {relevantFormulas.length} {relevantFormulas.length === 1 ? 'Card' : 'Cards'} Available
+              </span>
             </div>
+
+            {relevantFormulas.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '30px 20px', color: '#64748b' }}>
+                <p>No formula cards available for this topic yet.</p>
+              </div>
+            ) : (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+                {relevantFormulas.map(form => (
+                  <FormulaCard3D key={form.id} formulaData={form} />
+                ))}
+              </div>
+            )}
           </CardRounded>
 
           {/* Integrated Olympiad Insights below Formula Cards and above Quiz */}
@@ -346,15 +352,15 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
       {/* TAB 6: PRACTICE VISUALIZER */}
       {workspaceTab === 'practice' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {activeChap.id === 'chap_1' ? (
+          {activeChap.id === 'chap_1' || activeChap.id === 'c4_chap_1' ? (
             <AbacusVisualizer targetNumber={420513} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_4' ? (
+          ) : activeChap.id === 'chap_4' || activeChap.id === 'c4_chap_4' ? (
             <FractionPizza targetNumerator={3} targetDenominator={8} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_5' ? (
+          ) : activeChap.id === 'chap_5' || activeChap.id === 'c4_chap_5' ? (
             <ShapeBuilder onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_6' ? (
+          ) : activeChap.id === 'chap_6' || activeChap.id === 'c4_chap_6' ? (
             <BalanceScale targetWeightsCount={4} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_7' ? (
+          ) : activeChap.id === 'chap_7' || activeChap.id === 'c4_chap_7' ? (
             <ClockInteractive targetHour={3} targetMinute={30} onVerify={handleLessonComplete} />
           ) : (
             <GraphBuilder />
@@ -366,6 +372,10 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
       {workspaceTab === 'quiz' && (
         <QuizPlayer
           chapterId={activeChap.id}
+          topicId={activeLesson?.id}
+          themeTitle={activeChap.themeName || activeChap.title}
+          topicTitle={activeLesson?.title || activeChap.title}
+          classNameText={`Class ${classNum} ICSE`}
           onComplete={handleLessonComplete}
         />
       )}
@@ -383,10 +393,11 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
           setWorkspaceTab('video');
         }}
         score={100}
-        xpEarned={activeLesson.xp}
+        xpEarned={activeLesson.xp || 15}
         gemsEarned={15}
       />
 
     </div>
   );
 };
+

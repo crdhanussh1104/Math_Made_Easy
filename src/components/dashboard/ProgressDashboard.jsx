@@ -2,11 +2,14 @@ import React from 'react';
 import { useGame } from '../../context/GameContext';
 import { CardRounded } from '../ui/CardRounded';
 import { ProgressBar } from '../ui/ProgressBar';
-import { class4Chapters } from '../../data/chapters';
+import { getChaptersForClass } from '../../data/chapters';
 import { Trophy, Award, Flame, Star, CheckCircle } from 'lucide-react';
 
 export const ProgressDashboard = () => {
   const { gameState } = useGame();
+  
+  const selectedClassId = gameState.selectedClass || 'class4';
+  const chapters = getChaptersForClass(selectedClassId);
 
   const avgAccuracy = gameState.accuracyHistory.length > 0
     ? Math.round(gameState.accuracyHistory.reduce((a, b) => a + b, 0) / gameState.accuracyHistory.length)
@@ -17,10 +20,10 @@ export const ProgressDashboard = () => {
       {/* Header */}
       <div>
         <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-main)' }}>
-          Class 4 Math Performance & Progress
+          {selectedClassId.replace('class', 'Class ')} Math Performance & Progress
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-          Track ICSE Class 4 topic mastery, quiz accuracy, and daily learning habits.
+          Track ICSE {selectedClassId.replace('class', 'Class ')} topic mastery, quiz accuracy, and daily learning habits.
         </p>
       </div>
 
@@ -45,24 +48,27 @@ export const ProgressDashboard = () => {
       {/* Topic Mastery Progress List */}
       <CardRounded>
         <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '700', marginBottom: '16px' }}>
-          ICSE Class 4 Chapter Mastery
+          ICSE {selectedClassId.replace('class', 'Class ')} Chapter Mastery
         </h3>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {class4Chapters.map(chap => {
-            const completedCount = chap.lessons.filter(l => gameState.completedLessons.includes(l.id)).length;
-            const pct = Math.round((completedCount / chap.lessons.length) * 100);
+          {chapters.length === 0 ? (
+            <div style={{ color: 'var(--text-muted)' }}>Syllabus coming soon.</div>
+          ) : (
+            chapters.map(chap => {
+              const completedCount = chap.lessons.filter(l => gameState.completedLessons.includes(l.id)).length;
+              const pct = Math.round((completedCount / chap.lessons.length) * 100);
 
-            return (
-              <div key={chap.id} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: '700', fontSize: '0.95rem' }}>
-                  <span>{chap.title}</span>
-                  <span style={{ color: chap.color }}>{pct}% Mastered</span>
+              return (
+                <div key={chap.id} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: '700', fontSize: '0.95rem' }}>
+                    <span>{chap.title}</span>
+                    <span style={{ color: chap.color }}>{pct}% Mastered</span>
                 </div>
                 <ProgressBar progress={pct} color={chap.color} />
               </div>
             );
-          })}
+          }))}
         </div>
       </CardRounded>
     </div>

@@ -2,7 +2,7 @@
 @import './animations.css';
 @import './themes.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -92,4 +92,11 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
 }

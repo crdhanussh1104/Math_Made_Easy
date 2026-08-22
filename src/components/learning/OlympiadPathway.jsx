@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { class4Chapters } from '../../data/chapters';
+import { getChaptersForClass } from '../../data/chapters';
 import { olympiadExamPapers } from '../../data/olympiadPapers';
 import { CardRounded } from '../ui/CardRounded';
 import { Button3D } from '../ui/Button3D';
@@ -11,15 +11,19 @@ import { useGame } from '../../context/GameContext';
 import { Trophy, Star, ArrowRight, Award, ShieldCheck, CheckCircle2, HelpCircle, FileText, Clock, Sparkles } from 'lucide-react';
 
 export const OlympiadPathway = ({ onSelectChapter, onNavigate }) => {
-  const { addXP, addGems } = useGame();
+  const { gameState, addXP, addGems } = useGame();
+  
+  const selectedClassId = gameState.selectedClass || 'class4';
+  const chapters = getChaptersForClass(selectedClassId);
+
   const [selectedChapId, setSelectedChapId] = useState(null);
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
 
-  const activeChap = class4Chapters.find(c => c.id === selectedChapId);
-  const activePapers = selectedChapId ? (olympiadExamPapers[selectedChapId] || olympiadExamPapers['chap_1']) : [];
+  const activeChap = chapters.find(c => c.id === selectedChapId);
+  const activePapers = selectedChapId ? (olympiadExamPapers[selectedChapId] || []) : [];
   const activeQuestion = activePapers[currentQuestionIdx];
 
   const handleOpenPaper = (chapId) => {
@@ -81,7 +85,7 @@ export const OlympiadPathway = ({ onSelectChapter, onNavigate }) => {
               15-Years Real Olympiad Previous Papers (2010 - 2025)
             </span>
             <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.8rem', fontWeight: '800', marginTop: '6px' }}>
-              🏆 Olympiad Readiness Pathway & HOTS Papers
+              🏆 {selectedClassId.replace('class', 'Class ')} Olympiad Readiness Pathway & HOTS Papers
             </h3>
             <p style={{ fontSize: '0.95rem', opacity: 0.95, marginTop: '4px' }}>
               Solve genuine previous year questions from SOF IMO, SilverZone, NSTSE & Math Kangaroo!
@@ -95,7 +99,12 @@ export const OlympiadPathway = ({ onSelectChapter, onNavigate }) => {
 
         {/* Chapters Olympiad Readiness Grid */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-          {class4Chapters.map((chap) => (
+          {chapters.length === 0 ? (
+            <div style={{ padding: '20px', textAlign: 'center', color: 'var(--text-muted)' }}>
+              Olympiad pathways for this class are coming soon!
+            </div>
+          ) : (
+          chapters.map((chap) => (
             <div
               key={chap.id}
               style={{
@@ -146,8 +155,9 @@ export const OlympiadPathway = ({ onSelectChapter, onNavigate }) => {
                   Solve 15-Yr Olympiad Paper
                 </Button3D>
               </div>
+              </div>
             </div>
-          ))}
+          }))}
         </div>
       </CardRounded>
 
