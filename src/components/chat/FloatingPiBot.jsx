@@ -6,26 +6,28 @@ import { speechFx } from '../../utils/speech';
 import { soundFx } from '../../utils/audioSynth';
 import { solveMathQuestion } from '../../services/aiMathSolver';
 import { useGame } from '../../context/GameContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const FloatingPiBot = ({ onNavigate }) => {
   const { markAskedPiBot } = useGame();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState('full'); // 'full' vs 'hint'
   const [messages, setMessages] = useState([
     {
       sender: 'pibot',
-      text: "Hi there! I'm Pi-Bot, your AI Math Tutor for Class 4 ICSE! Ask me ANY calculation, math doubt, or universal concept question!"
+      text: t('pibot_greeting')
     }
   ]);
   const [input, setInput] = useState('');
   const [isListening, setIsListening] = useState(false);
 
   const quickPrompts = [
-    { text: "What are applications of trigonometry", category: "Trigonometry" },
-    { text: "Solve 24 * 3 using Lattice", category: "Math" },
-    { text: "Is 135 divisible by 9?", category: "Divisibility" },
-    { text: "HCF of 12 and 18", category: "HCF" },
-    { text: "If radius is 6 cm find diameter", category: "Circle" }
+    { text: t('pibot_quick_algebra') },
+    { text: t('pibot_quick_geometry') },
+    { text: t('pibot_quick_fractions') },
+    { text: "HCF of 12 and 18" },
+    { text: "If radius is 6 cm find diameter" }
   ];
 
   const toggleOpen = () => {
@@ -87,7 +89,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
           transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s'
         }}
         className="animate-float hover-lift"
-        title="Pi-Bot AI Assistant"
+        title={t('pibot_title')}
       >
         <Bot size={24} />
         <span style={{
@@ -136,10 +138,10 @@ export const FloatingPiBot = ({ onNavigate }) => {
               </div>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.1rem', fontWeight: '800' }}>
-                  Pi-Bot AI Math Tutor
+                  {t('pibot_title')}
                 </h3>
                 <span style={{ fontSize: '0.72rem', opacity: 0.9, fontWeight: '700' }}>
-                  Answers Every Universal Math Question!
+                  24/7 AI Math Companion
                 </span>
               </div>
             </div>
@@ -169,7 +171,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
                 fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.78rem', cursor: 'pointer'
               }}
             >
-              📖 Step-by-Step
+              📖 {t('solution')}
             </button>
             <button
               onClick={() => setMode('hint')}
@@ -180,7 +182,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
                 fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.78rem', cursor: 'pointer'
               }}
             >
-              💡 Give Me a Hint
+              💡 {t('hints')}
             </button>
           </div>
 
@@ -234,7 +236,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
           <div style={{ padding: '12px', display: 'flex', gap: '8px', backgroundColor: 'var(--bg-card-solid)', borderTop: '1px solid var(--border-light)' }}>
             <input
               type="text"
-              placeholder={isListening ? "Listening to your voice..." : "Ask Pi-Bot any math question or problem..."}
+              placeholder={isListening ? "Listening to your voice..." : t('pibot_placeholder')}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
@@ -254,7 +256,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
             {/* Mic Voice Input Button */}
             <button
               onClick={handleToggleVoiceInput}
-              title="Voice Input (Listening)"
+              title="Voice Input"
               style={{
                 padding: '10px',
                 borderRadius: 'var(--radius-md)',
@@ -269,7 +271,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
             </button>
 
             <Button3D variant="secondary" size="sm" onClick={() => handleSend()} icon={Send}>
-              Send
+              {t('pibot_send')}
             </Button3D>
           </div>
         </div>
@@ -277,3 +279,4 @@ export const FloatingPiBot = ({ onNavigate }) => {
     </>
   );
 };
+

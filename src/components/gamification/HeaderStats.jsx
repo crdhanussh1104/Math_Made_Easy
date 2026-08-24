@@ -1,17 +1,20 @@
 import React from 'react';
 import { useGame } from '../../context/GameContext';
+import { useLanguage } from '../../context/LanguageContext';
 import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem } from 'lucide-react';
 import { ClassSelector } from '../ui/ClassSelector';
+import { LanguageSelector } from '../ui/LanguageSelector';
 
 export const HeaderStats = ({ currentPage, onNavigate }) => {
   const { gameState } = useGame();
+  const { t } = useLanguage();
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'learn', label: 'Learn', icon: BookOpen },
-    { id: 'quiz', label: 'Practice', icon: HelpCircle },
-    { id: 'threeLab', label: 'Lab', icon: Box },
-    { id: 'profile', label: 'Profile', icon: User }
+    { id: 'home', label: t('nav_home'), icon: Home },
+    { id: 'learn', label: t('nav_learn'), icon: BookOpen },
+    { id: 'quiz', label: t('nav_practice'), icon: HelpCircle },
+    { id: 'threeLab', label: t('nav_lab'), icon: Box },
+    { id: 'profile', label: t('nav_profile'), icon: User }
   ];
 
   return (
@@ -28,8 +31,8 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
       gap: '16px',
       boxShadow: 'var(--shadow-sm)'
     }}>
-      {/* Brand Logo & Class Switcher */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+      {/* Brand Logo, Class Switcher & Language Switcher */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <div
           onClick={() => onNavigate && onNavigate('home')}
           style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
@@ -51,8 +54,11 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
           </div>
         </div>
 
-        {/* New Class Selector */}
+        {/* Class Selector */}
         <ClassSelector />
+
+        {/* Global Language Selector */}
+        <LanguageSelector />
       </div>
 
       {/* Main Navigation */}
@@ -99,19 +105,20 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
       <div className="hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '500', fontSize: '0.85rem', color: '#fff8d6' }} title="Real Daily Learning Streak">
           <Flame size={16} fill="#ff9600" color="#ff9600" />
-          <span>{gameState.streak} day streak</span>
+          <span>{t('header_streak', { streak: gameState.streak })}</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '500', fontSize: '0.85rem', color: '#ddf4ff' }} title="XP Points">
           <Star size={16} fill="#1cb0f6" color="#1cb0f6" />
-          <span>{gameState.xp} XP</span>
+          <span>{t('header_xp', { xp: gameState.xp })}</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '500', fontSize: '0.85rem', color: '#f6e5ff' }} title="Gems">
           <Gem size={16} fill="#ce82ff" color="#ce82ff" />
-          <span>{gameState.gems} gems</span>
+          <span>{t('header_gems', { gems: gameState.gems })}</span>
         </div>
       </div>
     </header>
   );
 };
+

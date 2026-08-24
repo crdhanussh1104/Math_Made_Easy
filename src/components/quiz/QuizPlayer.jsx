@@ -10,6 +10,7 @@ import { BadgeChip } from '../ui/BadgeChip';
 import { soundFx } from '../../utils/audioSynth';
 import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
+import { useLanguage } from '../../context/LanguageContext';
 import {
   HelpCircle, CheckCircle2, XCircle, ArrowRight, Heart, Flame,
   Star, Volume2, Sparkles, RefreshCw, Clock, Award, Check, RotateCcw,
@@ -29,7 +30,9 @@ export const QuizPlayer = ({
   nextTopicId
 }) => {
   const { gameState, deductHeart, completeLesson, addXP, addGems } = useGame();
+  const { t } = useLanguage();
   const inputRef = useRef(null);
+
 
   // Load questions for topicId or fallback to chapterId
   const activeTopicKey = topicId || chapterId;
@@ -503,7 +506,7 @@ export const QuizPlayer = ({
                 disabled={userInput.trim() === ''}
                 style={{ padding: '12px 28px', fontSize: '1rem', fontWeight: '800' }}
               >
-                Submit Answer
+                {t('quiz_check_answer')}
               </Button3D>
             </div>
           )}
@@ -525,14 +528,14 @@ export const QuizPlayer = ({
                 <>
                   <CheckCircle2 size={24} color="#16a34a" />
                   <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#15803d' }}>
-                    ✓ Correct! Well done! 🎉
+                    {t('quiz_correct_feedback')}
                   </span>
                 </>
               ) : (
                 <>
                   <XCircle size={24} color="#dc2626" />
                   <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#b91c1c' }}>
-                    Not quite. Try again!
+                    {t('quiz_incorrect_feedback')}
                   </span>
                 </>
               )}
@@ -540,13 +543,13 @@ export const QuizPlayer = ({
 
             {!isCorrect && revealSolution && (
               <div style={{ fontSize: '0.95rem', color: '#7f1d1d', marginBottom: '8px' }}>
-                Correct Answer: <strong style={{ color: '#15803d', fontSize: '1.05rem' }}>{questionAnswer}</strong>
+                {t('solution')}: <strong style={{ color: '#15803d', fontSize: '1.05rem' }}>{questionAnswer}</strong>
               </div>
             )}
 
             {(isCorrect || revealSolution) && questionExp && (
               <div style={{ fontSize: '0.92rem', color: '#334155', background: 'rgba(255,255,255,0.85)', padding: '12px 16px', borderRadius: '10px', marginTop: '8px', lineHeight: '1.5' }}>
-                💡 <strong>Explanation:</strong> {questionExp}
+                💡 <strong>{t('solution')}:</strong> {questionExp}
               </div>
             )}
 
@@ -558,14 +561,14 @@ export const QuizPlayer = ({
                     variant="secondary"
                     style={{ padding: '12px 20px', fontSize: '0.95rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}
                   >
-                    <RotateCcw size={16} /> Try Again
+                    <RotateCcw size={16} /> {t('try_again')}
                   </Button3D>
                   <Button3D
                     onClick={() => setRevealSolution(true)}
                     variant="outline"
                     style={{ padding: '12px 18px', fontSize: '0.95rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}
                   >
-                    <Lightbulb size={16} /> View Solution
+                    <Lightbulb size={16} /> {t('solution')}
                   </Button3D>
                 </>
               )}
@@ -577,9 +580,9 @@ export const QuizPlayer = ({
                   style={{ padding: '12px 28px', fontSize: '1rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
                   {currentIndex + 1 < questions.length ? (
-                    <>Next Question <ArrowRight size={18} /></>
+                    <>{t('quiz_next_question')} <ArrowRight size={18} /></>
                   ) : (
-                    <>View Results <Award size={18} /></>
+                    <>{t('quiz_finish')} <Award size={18} /></>
                   )}
                 </Button3D>
               )}
@@ -588,5 +591,6 @@ export const QuizPlayer = ({
         )}
       </CardRounded>
     </div>
+
   );
 };

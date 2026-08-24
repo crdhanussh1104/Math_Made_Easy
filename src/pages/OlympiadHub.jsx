@@ -8,6 +8,7 @@ import { BadgeChip } from '../components/ui/BadgeChip';
 import { ProgressBar } from '../components/ui/ProgressBar';
 import { RewardModal } from '../components/gamification/RewardModal';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import { soundFx } from '../utils/audioSynth';
 import { triggerConfetti } from '../utils/confetti';
 import {
@@ -17,6 +18,7 @@ import {
 
 export const OlympiadHub = ({ onNavigate, onSelectChapter }) => {
   const { gameState, addXP, addGems } = useGame();
+  const { t } = useLanguage();
   
   const selectedClassId = gameState.selectedClass || 'class4';
   const chapters = getChaptersForClass(selectedClassId);
@@ -26,6 +28,7 @@ export const OlympiadHub = ({ onNavigate, onSelectChapter }) => {
   const [activeTab, setActiveTab] = useState('competitions'); // competitions, readiness, roadmap, calendar, practice, badges
 
   const readinessTopics = olympiadRecEngine.getReadinessTracker();
+
 
   // 1. Supported Competitions Detailed Data
   const supportedCompetitions = [

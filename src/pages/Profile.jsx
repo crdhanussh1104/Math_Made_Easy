@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
 import { BadgeChip } from '../components/ui/BadgeChip';
 import { ProgressBar } from '../components/ui/ProgressBar';
 import { WardrobeShop } from '../components/profile/WardrobeShop';
+import { LanguageSelector } from '../components/ui/LanguageSelector';
 import { badgesData } from '../data/avatarShop';
-import { User, Award, Shield, Star, Zap, Crown, Flame, Gem, Sparkles } from 'lucide-react';
+import { User, Award, Shield, Star, Zap, Crown, Flame, Gem, Sparkles, Globe, Volume2, VolumeX, Moon, Sun } from 'lucide-react';
 
 export const Profile = () => {
-  const { gameState } = useGame();
+  const { gameState, toggleSound, toggleVoice, setTheme } = useGame();
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('wardrobe'); // 'wardrobe' | 'stats'
 
   // Evolution Titles
@@ -17,8 +20,6 @@ export const Profile = () => {
     : gameState.level >= 10 ? 'Wizard Mathemagician 🧙'
     : gameState.level >= 5 ? 'Math Knight 🛡️'
     : 'Novice Explorer 🎓';
-
-  const unlockedCount = (gameState.unlockedBadges || []).length;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%', maxWidth: '100%' }}>
@@ -35,19 +36,19 @@ export const Profile = () => {
                 {evolutionTitle}
               </span>
               <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '2.2rem', fontWeight: '800', marginTop: '6px' }}>
-                Math Explorer
+                {t('profile_title')}
               </h2>
               <div style={{ fontSize: '0.95rem', opacity: 0.95, display: 'flex', alignItems: 'center', gap: '12px', marginTop: '4px' }}>
-                <span>Level {gameState.level}</span>
+                <span>{t('level', { level: gameState.level })}</span>
                 <span>•</span>
-                <span>{gameState.xp} total XP</span>
+                <span>{t('header_xp', { xp: gameState.xp })}</span>
               </div>
             </div>
           </div>
 
           <div style={{ display: 'flex', gap: '12px' }}>
             <div style={{ backgroundColor: 'rgba(0,0,0,0.2)', padding: '12px 20px', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: '700', opacity: 0.8 }}>GEMS</div>
+              <div style={{ fontSize: '0.75rem', fontWeight: '700', opacity: 0.8 }}>{t('header_gems', { gems: '' }).toUpperCase()}</div>
               <div style={{ fontSize: '1.4rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: '#ffc800' }}>💎 {gameState.gems}</div>
             </div>
             <div style={{ backgroundColor: 'rgba(0,0,0,0.2)', padding: '12px 20px', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
@@ -58,7 +59,24 @@ export const Profile = () => {
         </div>
       </CardRounded>
 
-      {/* 2. Badges & Achievements Gallery */}
+      {/* 2. Language & App Preferences Settings */}
+      <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Globe size={24} color="var(--primary)" />
+          <div>
+            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.3rem', fontWeight: '800', margin: 0 }}>
+              {t('profile_settings_language')} / {t('select_language')}
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: '4px 0 0 0' }}>
+              Switch the language for all lessons, quizzes, 3D math labs, and AI tutor interactions.
+            </p>
+          </div>
+        </div>
+
+        <LanguageSelector variant="settings-grid" />
+      </CardRounded>
+
+      {/* 3. Badges & Achievements Gallery */}
       <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '800' }}>
           Trophies & Badges Gallery 🏆
@@ -88,9 +106,10 @@ export const Profile = () => {
         </div>
       </CardRounded>
 
-      {/* 3. Avatar Wardrobe & Customization Shop */}
+      {/* 4. Avatar Wardrobe & Customization Shop */}
       <WardrobeShop />
 
     </div>
   );
 };
+

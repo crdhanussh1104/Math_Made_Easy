@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import { mathLabRegistry, getLabsForClass } from '../data/mathLabRegistry';
 import { LabActivityCard } from '../components/lab/LabActivityCard';
 import { LabWorkspace } from '../components/lab/LabWorkspace';
@@ -17,6 +18,7 @@ import {
 
 export const ThreeLab = () => {
   const { gameState, changeClass, addXP, addGems, markVisited3DLab } = useGame();
+  const { t } = useLanguage();
   
   // Current active class in the lab (default to gameState.selectedClass or class4)
   const currentClassId = gameState.selectedClass || 'class4';
@@ -88,17 +90,17 @@ export const ThreeLab = () => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: 'rgba(255,255,255,0.25)', padding: '4px 14px', borderRadius: 'var(--radius-full)' }}>
-                ICSE Classes 1 to 10 Curriculum Lab
+                {t('lab_title')} • {t('class_label', { classNum: currentClassNum })}
               </span>
               <span style={{ fontSize: '0.82rem', fontWeight: '800', backgroundColor: '#f0fdf4', color: '#166534', padding: '4px 12px', borderRadius: 'var(--radius-full)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <ShieldCheck size={16} /> 100% Curriculum Mapped
+                <ShieldCheck size={16} /> 100% Interactive
               </span>
             </div>
             <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '2.4rem', fontWeight: '800', marginTop: '6px', lineHeight: '1.2' }}>
-              Interactive Mathematics Laboratory 🧪
+              {t('lab_title')} 🧪
             </h2>
             <p style={{ fontSize: '1.05rem', opacity: 0.95, marginTop: '8px', maxWidth: '750px' }}>
-              Touch, drag, construct, rotate, calculate, and experiment with mathematical concepts across all ICSE Classes 1 through 10!
+              {t('lab_subtitle')}
             </p>
           </div>
         </div>
@@ -107,7 +109,7 @@ export const ThreeLab = () => {
       {/* Class Selector Bar: Classes 1 to 10 */}
       <div style={{ background: '#ffffff', padding: '16px 20px', borderRadius: '16px', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' }}>
         <div style={{ fontSize: '0.85rem', fontWeight: '800', color: '#475569', textTransform: 'uppercase', marginBottom: '10px' }}>
-          Select Class (ICSE Curriculum):
+          {t('select_language')}:
         </div>
         <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(cNum => {
@@ -132,7 +134,7 @@ export const ThreeLab = () => {
                   transition: 'all 0.15s ease'
                 }}
               >
-                Class {cNum}
+                {t('class_label', { classNum: cNum })}
               </button>
             );
           })}
@@ -146,7 +148,7 @@ export const ThreeLab = () => {
           <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
           <input
             type="text"
-            placeholder={`Search Class ${currentClassNum} labs...`}
+            placeholder={t('search_placeholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
@@ -180,7 +182,7 @@ export const ThreeLab = () => {
                 transition: 'all 0.15s ease'
               }}
             >
-              {th === 'all' ? 'All Themes' : th.replace(/^Theme \d+:\s*/, '')}
+              {th === 'all' ? t('library_all') : th.replace(/^Theme \d+:\s*/, '')}
             </button>
           ))}
         </div>
@@ -215,3 +217,4 @@ export const ThreeLab = () => {
     </div>
   );
 };
+

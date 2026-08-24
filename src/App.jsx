@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GameProvider } from './context/GameContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { HeaderStats } from './components/gamification/HeaderStats';
 import { FloatingPiBot } from './components/chat/FloatingPiBot';
 import { OfflineNotice } from './components/ui/OfflineNotice';
@@ -108,7 +109,10 @@ function AppContent() {
 export default function App() {
   return (
     <GameProvider>
-      <AppContent />
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
     </GameProvider>
   );
 }
+

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { FormulaBook } from '../components/library/FormulaBook';
 import { ChatWindow } from '../components/chat/ChatWindow';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Library = () => {
   const { gameState } = useGame();
+  const { t } = useLanguage();
   const [tab, setTab] = useState('formulas');
 
   const selectedClassId = gameState.selectedClass || 'class4';
@@ -15,10 +17,10 @@ export const Library = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
           <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.8rem', fontWeight: '800' }}>
-            Class {classNum} Math Digital Library & AI Tutor
+            {t('class_label', { classNum })} {t('library_title')}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            Reference ICSE Class {classNum} math formulas, definitions, and get instant answers from Pi-Bot!
+            {t('library_subtitle')}
           </p>
         </div>
 
@@ -35,7 +37,7 @@ export const Library = () => {
               cursor: 'pointer'
             }}
           >
-            Formula Book
+            {t('tab_cards')}
           </button>
           <button
             onClick={() => setTab('ai')}
@@ -49,7 +51,7 @@ export const Library = () => {
               cursor: 'pointer'
             }}
           >
-            Ask Pi-Bot AI
+            {t('home_pibot_ask_btn')}
           </button>
         </div>
       </div>
@@ -58,4 +60,5 @@ export const Library = () => {
     </div>
   );
 };
+
 

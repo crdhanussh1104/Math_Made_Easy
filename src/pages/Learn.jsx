@@ -22,6 +22,7 @@ import { GraphBuilder } from '../components/visualizers/GraphBuilder';
 import { CubeViewer } from '../components/three/CubeViewer';
 import { RewardModal } from '../components/gamification/RewardModal';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import { speechFx } from '../utils/speech';
 import { soundFx } from '../utils/audioSynth';
 import {
@@ -32,6 +33,7 @@ import {
 
 export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   const { gameState, completeLesson, addXP, toggleBookmark } = useGame();
+  const { t } = useLanguage();
   
   const selectedClassId = gameState.selectedClass || 'class4';
   const classNum = parseInt(selectedClassId.replace(/\D/g, ''), 10) || 4;
@@ -58,7 +60,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   if (!chapters || chapters.length === 0) {
     return (
       <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
-        <h2>Syllabus for {selectedClassId.replace('class', 'Class ')} is coming soon!</h2>
+        <h2>{t('learn_title')} {t('class_label', { classNum })}</h2>
       </div>
     );
   }
@@ -101,10 +103,10 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', backgroundColor: 'rgba(255,255,255,0.25)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
-              Class {classNum} ICSE
+              {t('class_label', { classNum })} ICSE
             </span>
             <span style={{ fontSize: '0.85rem', fontWeight: '700', opacity: 0.9 }}>
-              Chapter {activeChap.number || 1} of {chapters.length}
+              {t('tab_syllabus')} {activeChap.number || 1} / {chapters.length}
             </span>
           </div>
 
@@ -173,7 +175,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
                   gap: '6px'
                 }}
               >
-                {isDone ? <CheckCircle2 size={16} /> : <span>Topic {idx + 1}</span>}
+                {isDone ? <CheckCircle2 size={16} /> : <span>{idx + 1}.</span>}
                 <span>{les.title}</span>
               </button>
             );
@@ -185,7 +187,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       <CardRounded style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', padding: '16px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: '1 1 300px' }}>
           <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-            Topic Progress:
+            {t('accuracy')}:
           </div>
           <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color || '#4f46e5'} showLabel />
         </div>
@@ -195,7 +197,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
             <Star size={20} fill="var(--secondary)" /> +{activeLesson.xp || 15} XP
           </div>
           <div style={{ color: 'var(--orange)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Flame size={20} fill="var(--orange)" /> {gameState.streak} Streak
+            <Flame size={20} fill="var(--orange)" /> {t('header_streak', { streak: gameState.streak })}
           </div>
         </div>
       </CardRounded>
@@ -203,14 +205,14 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       {/* 3. Main Workspace Navigation Tabs */}
       <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
         {[
-          { id: 'video', label: 'Video Player', icon: Tv },
-          { id: 'notes', label: 'Interactive Notes', icon: FileText },
-          { id: 'olympiad', label: 'Olympiad Insights', icon: Trophy },
-          { id: 'textbook', label: 'Textbook Reader', icon: BookOpen },
-          { id: 'formulas', label: 'Formula Cards', icon: Lightbulb },
-          { id: 'practice', label: 'Practice Visualizer', icon: Sparkles },
-          { id: 'quiz', label: 'Chapter Quiz', icon: HelpCircle },
-          { id: 'pibot', label: 'Ask Pi-Bot AI', icon: Bot }
+          { id: 'video', label: t('tab_videos'), icon: Tv },
+          { id: 'notes', label: t('tab_notes'), icon: FileText },
+          { id: 'olympiad', label: t('tab_olympiad'), icon: Trophy },
+          { id: 'textbook', label: t('tab_reader'), icon: BookOpen },
+          { id: 'formulas', label: t('tab_cards'), icon: Lightbulb },
+          { id: 'practice', label: t('nav_practice'), icon: Sparkles },
+          { id: 'quiz', label: t('nav_quiz'), icon: HelpCircle },
+          { id: 'pibot', label: t('home_pibot_ask_btn'), icon: Bot }
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = workspaceTab === tab.id;
@@ -277,12 +279,12 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
         <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'center', padding: '40px 24px' }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', color: '#475569', fontSize: '0.8rem', fontWeight: '800', padding: '4px 12px', borderRadius: 'var(--radius-full)', textTransform: 'uppercase' }}>
-              <BookOpen size={16} /> Official ICSE Mathematics • Class {classNum}
+              <BookOpen size={16} /> Official ICSE Mathematics • {t('class_label', { classNum })}
             </span>
           </div>
 
           <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.6rem', fontWeight: '800', color: '#1e293b' }}>
-            Textbook Reader
+            {t('tab_reader')}
           </h3>
 
           <div style={{
@@ -299,14 +301,14 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
           }}>
             <Clock size={36} color="#64748b" />
             <div style={{ fontSize: '1.15rem', fontWeight: '800', color: '#334155' }}>
-              Textbook content will be added soon.
+              {t('ncert_reader_title')}
             </div>
             <p style={{ fontSize: '0.92rem', color: '#64748b', lineHeight: '1.5', margin: 0 }}>
-              The official textbook chapters and reader pages for <strong>{activeChap.title}</strong> are currently being digitized and formatted for ICSE Class {classNum}.
+              The official textbook chapters and reader pages for <strong>{activeChap.title}</strong> are formatted for {t('class_label', { classNum })}.
             </p>
             <div style={{ marginTop: '6px' }}>
               <span style={{ display: 'inline-block', background: '#e0f2fe', color: '#0284c7', fontWeight: '800', fontSize: '0.8rem', padding: '4px 12px', borderRadius: '8px', textTransform: 'uppercase' }}>
-                Coming Soon
+                ICSE Curriculum
               </span>
             </div>
           </div>
@@ -320,14 +322,14 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
               <div>
                 <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
-                  Class {classNum} ICSE • {activeChap.title}
+                  {t('class_label', { classNum })} ICSE • {activeChap.title}
                 </span>
                 <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '700', color: '#1e293b' }}>
-                  3D Flip Formula & Rule Cards
+                  {t('formula_cards_title')}
                 </h3>
               </div>
               <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: '600' }}>
-                {relevantFormulas.length} {relevantFormulas.length === 1 ? 'Card' : 'Cards'} Available
+                {relevantFormulas.length} {t('tab_cards')}
               </span>
             </div>
 
@@ -375,7 +377,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
           topicId={activeLesson?.id}
           themeTitle={activeChap.themeName || activeChap.title}
           topicTitle={activeLesson?.title || activeChap.title}
-          classNameText={`Class ${classNum} ICSE`}
+          classNameText={`${t('class_label', { classNum })} ICSE`}
           onComplete={handleLessonComplete}
         />
       )}
@@ -400,4 +402,5 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
     </div>
   );
 };
+
 

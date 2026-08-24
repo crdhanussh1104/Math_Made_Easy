@@ -3,19 +3,21 @@ import { QuizPlayer } from '../components/quiz/QuizPlayer';
 import { getChaptersForClass } from '../data/chapters';
 import { getQuestionsForTopic } from '../data/questions';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
 import { BookOpen, CheckCircle, ChevronRight, Sparkles, Award } from 'lucide-react';
 
 export const Quiz = ({ selectedChapterId, onNavigate }) => {
   const { gameState } = useGame();
+  const { t } = useLanguage();
   
   const selectedClassId = gameState.selectedClass || 'class4';
   const chapters = getChaptersForClass(selectedClassId);
 
   // Derive class display name dynamically for all Classes 1 to 10
   const classNum = selectedClassId ? selectedClassId.replace(/\D/g, '') : '4';
-  const classDisplayName = `Class ${classNum} ICSE`;
+  const classDisplayName = `${t('class_label', { classNum })} ICSE`;
 
   // Find active chapter
   const [activeChapterId, setActiveChapterId] = useState(
@@ -82,13 +84,13 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
               {classDisplayName}
             </span>
             <span style={{ fontWeight: '800', color: '#1e293b', fontSize: '1.05rem' }}>
-              Topic Quiz
+              {t('quiz_title')}
             </span>
           </div>
 
           {/* Theme Dropdown */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: '700', color: '#64748b' }}>Theme:</label>
+            <label style={{ fontSize: '0.85rem', fontWeight: '700', color: '#64748b' }}>{t('tab_syllabus')}:</label>
             <select
               value={activeChapterId || ''}
               onChange={(e) => {
@@ -121,7 +123,7 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
         {/* Topic Pills */}
         <div>
           <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '8px' }}>
-            Select Topic (10 Questions Each):
+            {t('nav_practice')} ({t('chapter_lessons', { count: lessons.length })}):
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {lessons.map((lesson, idx) => {
@@ -169,3 +171,4 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
     </div>
   );
 };
+

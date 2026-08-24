@@ -2,14 +2,17 @@ import React from 'react';
 import { getChaptersForClass } from '../data/chapters';
 import { AvatarCharacter } from '../components/avatar/AvatarCharacter';
 import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Play, BookOpen, HelpCircle, Box, Trophy, Lightbulb
 } from 'lucide-react';
 
 export const Home = ({ onNavigate, onSelectChapter }) => {
   const { gameState } = useGame();
+  const { t } = useLanguage();
   
   const selectedClassId = gameState.selectedClass || 'class4';
+  const classNum = selectedClassId.replace('class', '');
   const chapters = getChaptersForClass(selectedClassId);
 
   // Daily Math Spark Quote
@@ -63,16 +66,15 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: '700', color: 'var(--text-main)', marginBottom: '8px' }}>
-            👋 Welcome back!
+            👋 {t('home_hero_title')}
           </h1>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
-            Ready for today's math adventure in {selectedClassId.replace('class', 'Class ')}? 🚀<br/>
-            Continue your lesson or try a quick challenge.
+            {t('home_hero_desc')}
           </p>
           <div style={{ display: 'flex', gap: '16px', color: 'var(--text-main)', fontWeight: '600', fontSize: '0.95rem' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🔥 {gameState.streak} Day Streak</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>⭐ {gameState.xp} XP</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🏆 {(gameState.claimedMissions || []).length} Badges</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🔥 {t('header_streak', { streak: gameState.streak })}</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>⭐ {t('header_xp', { xp: gameState.xp })}</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🏆 {(gameState.claimedMissions || []).length} {t('completed')}</span>
           </div>
         </div>
         <div style={{ flexShrink: 0, paddingRight: '20px' }}>
@@ -83,7 +85,7 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       {/* 2. Continue Learning */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <h2 style={{ fontSize: '1.3rem', color: 'var(--text-main)', fontWeight: '700', paddingLeft: '8px' }}>
-          📚 Continue Learning
+          📚 {t('continue')} {t('nav_learn')}
         </h2>
         {chapters.length > 0 && resumeChap ? (
           <div style={{
@@ -96,13 +98,13 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
           }}>
             <div style={{ flex: 1, minWidth: '250px' }}>
               <div style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '4px' }}>
-                Chapter {resumeChap.number}
+                {t('tab_syllabus')} • {t('class_label', { classNum })}
               </div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: 'var(--text-main)', marginBottom: '4px' }}>
                 {resumeChap.title}
               </h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
-                Next up: <strong>{uncompletedLesson?.title || "Complete Chapter!"}</strong>
+                {t('next')}: <strong>{uncompletedLesson?.title || t('completed')}</strong>
               </p>
               
               {/* Progress Bar Container */}
@@ -117,7 +119,7 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
                   }} />
                 </div>
                 <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-muted)' }}>
-                  {realProgressPct}% complete
+                  {realProgressPct}% {t('completed')}
                 </span>
               </div>
             </div>
@@ -145,12 +147,12 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
               }}
             >
               <Play size={20} fill="currentColor" />
-              Continue
+              {t('continue')}
             </button>
           </div>
         ) : (
           <div style={{ ...cardStyle, textAlign: 'center', color: 'var(--text-muted)' }}>
-            Curriculum content for {selectedClassId.replace('class', 'Class ')} is coming soon! Check back later.
+            Curriculum content for {t('class_label', { classNum })} is coming soon! Check back later.
           </div>
         )}
       </div>
@@ -158,32 +160,32 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       {/* 3. Quick Actions */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <h2 style={{ fontSize: '1.3rem', color: 'var(--text-main)', fontWeight: '700', paddingLeft: '8px' }}>
-          What do you want to do?
+          {t('explore')}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
           
           <div onClick={() => onNavigate('learn')} className="hover-lift" style={{ ...cardStyle, backgroundColor: 'var(--accent-blue)', cursor: 'pointer', padding: '20px' }}>
             <BookOpen size={28} color="#2b3a4a" style={{ marginBottom: '12px' }} />
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>Learn</h3>
-            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>Explore syllabus & chapters</p>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>{t('nav_learn')}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>{t('learn_subtitle', { classNum })}</p>
           </div>
 
           <div onClick={() => onNavigate('quiz')} className="hover-lift" style={{ ...cardStyle, backgroundColor: 'var(--accent-green)', cursor: 'pointer', padding: '20px' }}>
             <HelpCircle size={28} color="#2b3a4a" style={{ marginBottom: '12px' }} />
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>Practice</h3>
-            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>Practice questions & quizzes</p>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>{t('nav_practice')}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>{t('quiz_subtitle')}</p>
           </div>
 
           <div onClick={() => onNavigate('threeLab')} className="hover-lift" style={{ ...cardStyle, backgroundColor: 'var(--accent-purple)', cursor: 'pointer', padding: '20px' }}>
             <Box size={28} color="#2b3a4a" style={{ marginBottom: '12px' }} />
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>Math Lab</h3>
-            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>Interactive 3D activities</p>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>{t('nav_lab')}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>{t('lab_subtitle')}</p>
           </div>
 
           <div onClick={() => onNavigate('olympiadHub')} className="hover-lift" style={{ ...cardStyle, backgroundColor: 'var(--accent-yellow)', cursor: 'pointer', padding: '20px' }}>
             <Trophy size={28} color="#2b3a4a" style={{ marginBottom: '12px' }} />
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>Challenge</h3>
-            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>Try Olympiad challenges</p>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#2b3a4a' }}>{t('nav_olympiad')}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#2b3a4a', opacity: 0.8, marginTop: '4px' }}>{t('olympiad_subtitle')}</p>
           </div>
 
         </div>
@@ -192,7 +194,7 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       {/* 4. Chapters Section */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <h2 style={{ fontSize: '1.3rem', color: 'var(--text-main)', fontWeight: '700', paddingLeft: '8px' }}>
-          📚 Explore Your Chapters
+          📚 {t('home_curriculum_title')} ({t('class_label', { classNum })})
         </h2>
         {chapters.length > 0 ? (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px' }}>
@@ -205,7 +207,7 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
                   {chap.title}
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '6px' }}>
-                  {chap.lessons.length} topics
+                  {t('chapter_lessons', { count: chap.lessons.length })}
                 </p>
               </div>
             ))}
@@ -231,7 +233,7 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
         </div>
         <div>
           <h4 style={{ fontSize: '0.9rem', fontWeight: '700', color: '#D49A00', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>
-            Daily Math Spark
+            {t('home_fact_title')}
           </h4>
           <p style={{ fontSize: '1.05rem', fontWeight: '500', color: 'var(--text-main)', fontStyle: 'italic', marginBottom: '8px', lineHeight: '1.4' }}>
             "{dailyQuote.text}"
@@ -245,3 +247,4 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
     </div>
   );
 };
+

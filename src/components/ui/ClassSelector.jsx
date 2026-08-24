@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useGame } from '../../context/GameContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const ClassSelector = () => {
   const { gameState, changeClass } = useGame();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   
   const selectedClassId = gameState.selectedClass || 'class4';
-  const selectedClassDisplay = `Class ${selectedClassId.replace('class', '')}`;
+  const classNum = selectedClassId.replace('class', '');
+  const selectedClassDisplay = t('class_label', { classNum });
 
   const classes = Array.from({ length: 10 }, (_, i) => ({
     id: `class${i + 1}`,
-    name: `Class ${i + 1}`
+    name: t('class_label', { classNum: i + 1 })
   }));
 
   return (
@@ -81,4 +84,5 @@ export const ClassSelector = () => {
     </div>
   );
 };
+
 
