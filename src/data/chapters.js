@@ -3581,9 +3581,14 @@ export const class1Chapters = [
     olympiadStars: 1,
     olympiadRating: "1 Star",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/D0Ajq682yrA",
+    youtubeUrl: "https://www.youtube.com/embed/OppJhqU4sSI",
     playlist: [
-      { id: "v_c1_1", type: "primary", videoId: "D0Ajq682yrA", title: "Numbers 1 to 20 Counting", duration: "08:00 mins", creatorName: "Math Made Easy", channelName: "Educational Math", themeName: "Theme 1: Numbers 1 to 20" }
+      { id: "v_c1_1_count", type: "primary", videoId: "OppJhqU4sSI", title: "Learning to Count to Nine (Happy Counting)", duration: "06:15 mins", creatorName: "Happy Counting", channelName: "Happy Counting Kids", themeName: "Theme 1: Numbers 1 to 20 & Zero" },
+      { id: "v_c1_1_zero", type: "primary", videoId: "ZlsyWhfvvVg", title: "What is Zero 0? (Periwinkle)", duration: "04:45 mins", creatorName: "Periwinkle", channelName: "Periwinkle", themeName: "Theme 1: Numbers 1 to 20 & Zero" },
+      { id: "v_c1_1_names", type: "primary", videoId: "y78Dv0vTmDU", title: "Learn Numbers 1 to 20 & Number Names", duration: "10:30 mins", creatorName: "Early Learning", channelName: "Early Learning", themeName: "Theme 1: Numbers 1 to 20 & Zero" },
+      { id: "v_c1_1_comp", type: "primary", videoId: "E34PAOGYRNk", title: "Comparing Numbers: Greater Than Less Than", duration: "07:15 mins", creatorName: "Kids Academy", channelName: "Kids Academy", themeName: "Theme 1: Numbers 1 to 20 & Zero" },
+      { id: "v_c1_1_ord", type: "primary", videoId: "BdVlwetlzOM", title: "Ordinal Numbers 1st to 10th for Kids", duration: "06:40 mins", creatorName: "Kids Academy", channelName: "Kids Academy", themeName: "Theme 1: Numbers 1 to 20 & Zero" },
+      { id: "v_c1_1_odd", type: "primary", videoId: "rn-PegNGakQ", title: "Odd and Even Numbers for Kids", duration: "05:50 mins", creatorName: "Stars Educational", channelName: "Stars Kids Learning", themeName: "Theme 1: Numbers 1 to 20 & Zero" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 1: Numbers 1 to 20 & Zero",
     textbookContent: "# Numbers 1 to 20 & Zero\n\nCounting objects from 1 to 20, understanding 0, comparing numbers.",
@@ -3613,9 +3618,12 @@ export const class1Chapters = [
     olympiadStars: 1,
     olympiadRating: "1 Star",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/zVhQY173Yyo",
+    youtubeUrl: "https://www.youtube.com/embed/Hwr4gEHepOo",
     playlist: [
-      { id: "v_c1_2", type: "primary", videoId: "zVhQY173Yyo", title: "Tens and Ones | Place Value", duration: "07:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 2: Numbers up to 99" }
+      { id: "v_c1_2_tens", type: "primary", videoId: "Hwr4gEHepOo", title: "Ones & Tens: Counting by Tens | Periwinkle", duration: "07:20 mins", creatorName: "Periwinkle", channelName: "Periwinkle", themeName: "Theme 2: Numbers up to 99" },
+      { id: "v_c1_2_pv", type: "primary", videoId: "1F3AycEDksY", title: "Tens and Ones Base-10 Blocks", duration: "09:10 mins", creatorName: "First Grade Math", channelName: "Primary Learning", themeName: "Theme 2: Numbers up to 99" },
+      { id: "v_c1_2_abacus", type: "primary", videoId: "AOtHL193kos", title: "Place Value: Tens & Ones for Kids | Twinkl", duration: "06:30 mins", creatorName: "Twinkl", channelName: "Twinkl Kids TV", themeName: "Theme 2: Numbers up to 99" },
+      { id: "v_c1_2_comp", type: "primary", videoId: "V_5FyHVRHCY", title: "Comparing 2-Digit Numbers (<, >, =)", duration: "06:50 mins", creatorName: "Math Learning", channelName: "Math Learning", themeName: "Theme 2: Numbers up to 99" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 2: Numbers up to 99",
     textbookContent: "# Numbers up to 99\n\nGrouping into tens and ones, forming 2-digit numbers.",
@@ -3640,9 +3648,10 @@ export const class1Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/Fe8u2I3vmHU",
+    youtubeUrl: "https://www.youtube.com/embed/eJv6EAVrhdo",
     playlist: [
-      { id: "v_c1_3", type: "primary", videoId: "Fe8u2I3vmHU", title: "Basic Addition and Subtraction", duration: "09:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Operations" }
+      { id: "v_c1_3_add", type: "primary", videoId: "eJv6EAVrhdo", title: "Numberblocks Additions (Combining Sets & Line)", duration: "11:20 mins", creatorName: "Numberblocks", channelName: "Numberblocks Official", themeName: "Theme 3: Operations" },
+      { id: "v_c1_3_sub", type: "primary", videoId: "fny08Url8ik", title: "Numberblocks Subtraction for Kids up to 20", duration: "12:10 mins", creatorName: "Numberblocks", channelName: "Numberblocks Official", themeName: "Theme 3: Operations" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 3: Addition & Subtraction",
     textbookContent: "# Addition & Subtraction\n\nVisual joining and taking away, number line hops.",
@@ -3668,9 +3677,11 @@ export const class1Chapters = [
     olympiadStars: 1,
     olympiadRating: "1 Star",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/guNdJ5MtX1A",
+    youtubeUrl: "https://www.youtube.com/embed/ss55d3vLyts",
     playlist: [
-      { id: "v_c1_4", type: "primary", videoId: "guNdJ5MtX1A", title: "2D and 3D Shapes for Class 1", duration: "06:45 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 4: Geometry" }
+      { id: "v_c1_4_2d", type: "primary", videoId: "ss55d3vLyts", title: "2D Shapes for Kids (Circle, Square, Triangle)", duration: "06:10 mins", creatorName: "Kids Learning Tube", channelName: "Kids Learning Tube", themeName: "Theme 4: Geometry" },
+      { id: "v_c1_4_3d", type: "primary", videoId: "4JZSK74GpW8", title: "3D Shapes: Cube, Sphere, Cone & Cylinder", duration: "07:35 mins", creatorName: "Primary Math Academy", channelName: "Primary Math Academy", themeName: "Theme 4: Geometry" },
+      { id: "v_c1_4_spatial", type: "primary", videoId: "8kcbajwxEfE", title: "Spatial Relationships (Top/Bottom, Inside/Out)", duration: "05:40 mins", creatorName: "Kids Academy", channelName: "Kids Academy", themeName: "Theme 4: Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 4: Geometry",
     textbookContent: "# Geometry\n\nCircle, square, rectangle, triangle. Rolling and sliding 3D objects.",
@@ -3695,9 +3706,11 @@ export const class1Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/k4fJ8y9N9_k",
+    youtubeUrl: "https://www.youtube.com/embed/nuYWIM4_S-o",
     playlist: [
-      { id: "v_c1_5", type: "primary", videoId: "k4fJ8y9N9_k", title: "Measurement of Length, Weight, Time", duration: "08:15 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 5: Measurement" }
+      { id: "v_c1_5_len", type: "primary", videoId: "nuYWIM4_S-o", title: "Taller & Shorter: Nonstandard Measurement", duration: "06:55 mins", creatorName: "Early Childhood Math", channelName: "Early Childhood Math", themeName: "Theme 5: Measurement" },
+      { id: "v_c1_5_sid", type: "primary", videoId: "-aU0f6ajtJE", title: "Sid the Science Kid: Nonstandard Measurement", duration: "05:30 mins", creatorName: "Sid the Science Kid", channelName: "PBS Kids Official", themeName: "Theme 5: Measurement" },
+      { id: "v_c1_5_time", type: "primary", videoId: "rYiBDOOPtYw", title: "Days of the Week and Months of the Year", duration: "07:45 mins", creatorName: "Kids Learning Tube", channelName: "Kids Learning Tube", themeName: "Theme 5: Measurement" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 5: Measurement",
     textbookContent: "# Measurement\n\nNon-standard units, balance scales, and reading o'clock time.",
@@ -3720,9 +3733,10 @@ export const class1Chapters = [
     olympiadStars: 1,
     olympiadRating: "1 Star",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/PWu6b_8BqCg",
+    youtubeUrl: "https://www.youtube.com/embed/RgaMt4dI4rY",
     playlist: [
-      { id: "v_c1_6", type: "primary", videoId: "PWu6b_8BqCg", title: "Patterns and Simple Data Handling", duration: "07:10 mins", creatorName: "Educational Videos", channelName: "Math Channel", themeName: "Theme 6: Data & Patterns" }
+      { id: "v_c1_6_sort", type: "primary", videoId: "8kcbajwxEfE", title: "Sorting by Color & Size (Kids Academy)", duration: "05:40 mins", creatorName: "Kids Academy", channelName: "Kids Academy", themeName: "Theme 6: Data & Patterns" },
+      { id: "v_c1_6_pat", type: "primary", videoId: "RgaMt4dI4rY", title: "Repeating Patterns Collection (ABAB & ABC)", duration: "06:20 mins", creatorName: "Early Patterns Math", channelName: "Early Patterns Math", themeName: "Theme 6: Data & Patterns" }
     ],
     textbookTitle: "ICSE Mathematics Class 1 - Theme 6: Data Handling & Patterns",
     textbookContent: "# Data Handling & Patterns\n\nSorting items into categories, counting picture charts, repeating sequences.",

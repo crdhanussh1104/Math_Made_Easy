@@ -4013,6 +4013,796 @@ export const lessonVideoRegistry = {
       channelName: 'Khan Academy',
       themeName: 'Theme 6: Data Handling & Probability'
     }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 1: NUMBERS 1 TO 20 & ZERO
+  // =========================================================================
+  'c1_les_1_1': [
+    {
+      id: 'vid_c1_1_1_hc',
+      type: 'primary',
+      tabLabel: '🎥 Counting to 9 (Happy Counting)',
+      videoId: 'OppJhqU4sSI',
+      title: 'Learning to Count to Nine – Happy Counting (Ep.8)',
+      youtubeUrl: 'https://www.youtube.com/embed/OppJhqU4sSI',
+      originalUrl: 'https://www.youtube.com/watch?v=OppJhqU4sSI',
+      duration: '06:15 mins',
+      creatorName: 'Happy Counting',
+      channelName: 'Happy Counting Kids',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_1_count',
+      type: 'revision',
+      tabLabel: '🔄 Counting & Numbers 1-20',
+      videoId: 'y78Dv0vTmDU',
+      title: 'Learn Numbers 1 to 20 | Counting & Number Names',
+      youtubeUrl: 'https://www.youtube.com/embed/y78Dv0vTmDU',
+      originalUrl: 'https://www.youtube.com/watch?v=y78Dv0vTmDU',
+      duration: '10:30 mins',
+      creatorName: 'Educational Kids',
+      channelName: 'Early Learning',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_2': [
+    {
+      id: 'vid_c1_1_2_peri',
+      type: 'primary',
+      tabLabel: '🎥 Concept of Zero (Periwinkle)',
+      videoId: 'ZlsyWhfvvVg',
+      title: "What is 'Zero' 0? | Periwinkle",
+      youtubeUrl: 'https://www.youtube.com/embed/ZlsyWhfvvVg',
+      originalUrl: 'https://www.youtube.com/watch?v=ZlsyWhfvvVg',
+      duration: '04:45 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_3': [
+    {
+      id: 'vid_c1_1_3_ka',
+      type: 'primary',
+      tabLabel: '🎓 Numbers up to 20 (Kids Academy)',
+      videoId: 'yAbEYE7QdHk',
+      title: 'Learn Numbers up to 20 | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/yAbEYE7QdHk',
+      originalUrl: 'https://www.youtube.com/watch?v=yAbEYE7QdHk',
+      duration: '08:20 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_3_num',
+      type: 'revision',
+      tabLabel: '🔄 Counting 10 to 20 (Number Names)',
+      videoId: 'y78Dv0vTmDU',
+      title: 'Learn Numbers 10 to 20 & Counting Blocks',
+      youtubeUrl: 'https://www.youtube.com/embed/y78Dv0vTmDU',
+      originalUrl: 'https://www.youtube.com/watch?v=y78Dv0vTmDU',
+      duration: '10:30 mins',
+      creatorName: 'Early Learning',
+      channelName: 'Early Learning',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_4': [
+    {
+      id: 'vid_c1_1_4_names',
+      type: 'primary',
+      tabLabel: '🎥 Number Names 1 to 20',
+      videoId: 'y78Dv0vTmDU',
+      title: 'Learn Numbers 1 to 20 | Counting & Number Names (One to Twenty)',
+      youtubeUrl: 'https://www.youtube.com/embed/y78Dv0vTmDU',
+      originalUrl: 'https://www.youtube.com/watch?v=y78Dv0vTmDU',
+      duration: '10:30 mins',
+      creatorName: 'Early Learning',
+      channelName: 'Early Learning',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_4_ka',
+      type: 'revision',
+      tabLabel: '🎓 Number Spelling & Words (Kids Academy)',
+      videoId: 'yAbEYE7QdHk',
+      title: 'Spelling Numbers One to Twenty | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/yAbEYE7QdHk',
+      originalUrl: 'https://www.youtube.com/watch?v=yAbEYE7QdHk',
+      duration: '08:20 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_5': [
+    {
+      id: 'vid_c1_1_5_ka',
+      type: 'primary',
+      tabLabel: '🎓 Comparing Numbers (Kids Academy)',
+      videoId: 'E34PAOGYRNk',
+      title: 'Comparing Numbers for Kids – Greater Than Less Than | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/E34PAOGYRNk',
+      originalUrl: 'https://www.youtube.com/watch?v=E34PAOGYRNk',
+      duration: '07:15 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_5_comp',
+      type: 'revision',
+      tabLabel: '🔄 Comparing Numbers up to 20',
+      videoId: 'V_5FyHVRHCY',
+      title: 'Comparison of Numbers up to 20 (> , < , =)',
+      youtubeUrl: 'https://www.youtube.com/embed/V_5FyHVRHCY',
+      originalUrl: 'https://www.youtube.com/watch?v=V_5FyHVRHCY',
+      duration: '06:50 mins',
+      creatorName: 'Math Learning',
+      channelName: 'Math Learning',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_6': [
+    {
+      id: 'vid_c1_1_6_ka',
+      type: 'primary',
+      tabLabel: '🎓 Number Sequence & Positions (Kids Academy)',
+      videoId: 'E34PAOGYRNk',
+      title: 'Before, After and Between Numbers 1 to 20 | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/E34PAOGYRNk',
+      originalUrl: 'https://www.youtube.com/watch?v=E34PAOGYRNk',
+      duration: '07:15 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_6_matho',
+      type: 'revision',
+      tabLabel: '🔄 Number Position Practice (Matholia)',
+      videoId: 'Vdnj9gPEAFI',
+      title: 'Before, After, and Between Number Practice | Matholia',
+      youtubeUrl: 'https://www.youtube.com/embed/Vdnj9gPEAFI',
+      originalUrl: 'https://www.youtube.com/watch?v=Vdnj9gPEAFI',
+      duration: '08:40 mins',
+      creatorName: 'Matholia',
+      channelName: 'Matholia',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_7': [
+    {
+      id: 'vid_c1_1_7_matho',
+      type: 'primary',
+      tabLabel: '🎥 Ordering Numbers to 20 (Matholia)',
+      videoId: 'Vdnj9gPEAFI',
+      title: 'Comparing and Arranging Numbers to 20 | Matholia',
+      youtubeUrl: 'https://www.youtube.com/embed/Vdnj9gPEAFI',
+      originalUrl: 'https://www.youtube.com/watch?v=Vdnj9gPEAFI',
+      duration: '08:40 mins',
+      creatorName: 'Matholia',
+      channelName: 'Matholia',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_7_ka',
+      type: 'revision',
+      tabLabel: '🎓 Increasing & Decreasing Order (Kids Academy)',
+      videoId: 'E34PAOGYRNk',
+      title: 'Ordering Numbers from Least to Greatest & Greatest to Least',
+      youtubeUrl: 'https://www.youtube.com/embed/E34PAOGYRNk',
+      originalUrl: 'https://www.youtube.com/watch?v=E34PAOGYRNk',
+      duration: '07:15 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_8': [
+    {
+      id: 'vid_c1_1_8_ka',
+      type: 'primary',
+      tabLabel: '🎓 Number Line 0 to 20 (Kids Academy)',
+      videoId: 'yAbEYE7QdHk',
+      title: 'Number Line Representation from 0 to 20 | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/yAbEYE7QdHk',
+      originalUrl: 'https://www.youtube.com/watch?v=yAbEYE7QdHk',
+      duration: '08:20 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    },
+    {
+      id: 'vid_c1_1_8_matho',
+      type: 'revision',
+      tabLabel: '🔄 Locating Numbers on Line (Matholia)',
+      videoId: 'Vdnj9gPEAFI',
+      title: 'Finding Numbers on the Number Line | Matholia',
+      youtubeUrl: 'https://www.youtube.com/embed/Vdnj9gPEAFI',
+      originalUrl: 'https://www.youtube.com/watch?v=Vdnj9gPEAFI',
+      duration: '08:40 mins',
+      creatorName: 'Matholia',
+      channelName: 'Matholia',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_9': [
+    {
+      id: 'vid_c1_1_9_ka',
+      type: 'primary',
+      tabLabel: '🎓 Ordinal Numbers 1-10 (Kids Academy)',
+      videoId: 'BdVlwetlzOM',
+      title: 'Ordinal Numbers 1-10 for Kids | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/BdVlwetlzOM',
+      originalUrl: 'https://www.youtube.com/watch?v=BdVlwetlzOM',
+      duration: '06:40 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  'c1_les_1_10': [
+    {
+      id: 'vid_c1_1_10_stars',
+      type: 'primary',
+      tabLabel: '🎥 Odd & Even Numbers for Kids',
+      videoId: 'rn-PegNGakQ',
+      title: 'Stars Teach Odd and Even Numbers for Kids | Pairing up to 20',
+      youtubeUrl: 'https://www.youtube.com/embed/rn-PegNGakQ',
+      originalUrl: 'https://www.youtube.com/watch?v=rn-PegNGakQ',
+      duration: '05:50 mins',
+      creatorName: 'Stars Educational',
+      channelName: 'Stars Kids Learning',
+      themeName: 'Theme 1: Numbers 1 to 20 & Zero'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 2: NUMBERS UP TO 99 & PLACE VALUE
+  // =========================================================================
+  'c1_les_2_1': [
+    {
+      id: 'vid_c1_2_1_peri',
+      type: 'primary',
+      tabLabel: '🎥 Ones & Tens – Counting by Tens (Periwinkle)',
+      videoId: 'Hwr4gEHepOo',
+      title: 'Ones & Tens | Counting by Tens (10, 20...90) | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/Hwr4gEHepOo',
+      originalUrl: 'https://www.youtube.com/watch?v=Hwr4gEHepOo',
+      duration: '07:20 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    },
+    {
+      id: 'vid_c1_2_1_fg',
+      type: 'revision',
+      tabLabel: '🔄 Counting in Tens (First Grade)',
+      videoId: '1F3AycEDksY',
+      title: 'Counting by Tens and Building 2-Digit Numbers',
+      youtubeUrl: 'https://www.youtube.com/embed/1F3AycEDksY',
+      originalUrl: 'https://www.youtube.com/watch?v=1F3AycEDksY',
+      duration: '09:10 mins',
+      creatorName: 'First Grade Math',
+      channelName: 'Primary Learning',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    }
+  ],
+
+  'c1_les_2_2': [
+    {
+      id: 'vid_c1_2_2_fg',
+      type: 'primary',
+      tabLabel: '🎥 Tens and Ones – Base-10 Blocks',
+      videoId: '1F3AycEDksY',
+      title: 'Place Value First Grade – Tens and Ones (Base-10 Blocks)',
+      youtubeUrl: 'https://www.youtube.com/embed/1F3AycEDksY',
+      originalUrl: 'https://www.youtube.com/watch?v=1F3AycEDksY',
+      duration: '09:10 mins',
+      creatorName: 'First Grade Math',
+      channelName: 'Primary Learning',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    },
+    {
+      id: 'vid_c1_2_2_peri',
+      type: 'revision',
+      tabLabel: '🔄 Tens & Ones Grouping (Periwinkle)',
+      videoId: 'Hwr4gEHepOo',
+      title: 'Grouping Objects into Tens and Ones | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/Hwr4gEHepOo',
+      originalUrl: 'https://www.youtube.com/watch?v=Hwr4gEHepOo',
+      duration: '07:20 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    }
+  ],
+
+  'c1_les_2_3': [
+    {
+      id: 'vid_c1_2_3_twinkl',
+      type: 'primary',
+      tabLabel: '🎥 Place Value: Tens & Ones (Twinkl)',
+      videoId: 'AOtHL193kos',
+      title: 'Place Value: Tens & Ones for Kids (Abacus & Place Value Strips) | Twinkl',
+      youtubeUrl: 'https://www.youtube.com/embed/AOtHL193kos',
+      originalUrl: 'https://www.youtube.com/watch?v=AOtHL193kos',
+      duration: '06:30 mins',
+      creatorName: 'Twinkl',
+      channelName: 'Twinkl Kids TV',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    },
+    {
+      id: 'vid_c1_2_3_fg',
+      type: 'revision',
+      tabLabel: '🔄 Abacus Representation',
+      videoId: '1F3AycEDksY',
+      title: 'Tens & Ones Strips and Visual Abacus | First Grade',
+      youtubeUrl: 'https://www.youtube.com/embed/1F3AycEDksY',
+      originalUrl: 'https://www.youtube.com/watch?v=1F3AycEDksY',
+      duration: '09:10 mins',
+      creatorName: 'First Grade Math',
+      channelName: 'Primary Learning',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    }
+  ],
+
+  'c1_les_2_4': [
+    {
+      id: 'vid_c1_2_4_names',
+      type: 'primary',
+      tabLabel: '🎥 Number Names 21 to 99',
+      videoId: 'y78Dv0vTmDU',
+      title: 'Counting and Number Names up to 100 | Early Learning',
+      youtubeUrl: 'https://www.youtube.com/embed/y78Dv0vTmDU',
+      originalUrl: 'https://www.youtube.com/watch?v=y78Dv0vTmDU',
+      duration: '10:30 mins',
+      creatorName: 'Early Learning',
+      channelName: 'Early Learning',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    },
+    {
+      id: 'vid_c1_2_4_peri',
+      type: 'revision',
+      tabLabel: '🔄 Numbers up to 99 (Periwinkle)',
+      videoId: 'Hwr4gEHepOo',
+      title: 'Number Names & Formation 21 to 99 | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/Hwr4gEHepOo',
+      originalUrl: 'https://www.youtube.com/watch?v=Hwr4gEHepOo',
+      duration: '07:20 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    }
+  ],
+
+  'c1_les_2_5': [
+    {
+      id: 'vid_c1_2_5_comp',
+      type: 'primary',
+      tabLabel: '🎥 Comparing 2-Digit Numbers',
+      videoId: 'V_5FyHVRHCY',
+      title: 'Comparison of 2-Digit Numbers up to 99 (<, >, =)',
+      youtubeUrl: 'https://www.youtube.com/embed/V_5FyHVRHCY',
+      originalUrl: 'https://www.youtube.com/watch?v=V_5FyHVRHCY',
+      duration: '06:50 mins',
+      creatorName: 'Math Learning',
+      channelName: 'Math Learning',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    },
+    {
+      id: 'vid_c1_2_5_ka',
+      type: 'revision',
+      tabLabel: '🎓 Greater Than & Less Than (Kids Academy)',
+      videoId: 'E34PAOGYRNk',
+      title: 'Greater Than, Less Than for 2-Digit Numbers | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/E34PAOGYRNk',
+      originalUrl: 'https://www.youtube.com/watch?v=E34PAOGYRNk',
+      duration: '07:15 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 2: Numbers up to 99 & Place Value'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 3: ADDITION & SUBTRACTION
+  // =========================================================================
+  'c1_les_3_1': [
+    {
+      id: 'vid_c1_3_1_nb',
+      type: 'primary',
+      tabLabel: '🎥 Concept of Addition (Numberblocks)',
+      videoId: 'eJv6EAVrhdo',
+      title: 'Numberblocks – Additions / Combining & Joining Sets up to 9',
+      youtubeUrl: 'https://www.youtube.com/embed/eJv6EAVrhdo',
+      originalUrl: 'https://www.youtube.com/watch?v=eJv6EAVrhdo',
+      duration: '11:20 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  'c1_les_3_2': [
+    {
+      id: 'vid_c1_3_2_nb',
+      type: 'primary',
+      tabLabel: '🎥 Addition on Number Line (Numberblocks)',
+      videoId: 'eJv6EAVrhdo',
+      title: 'Numberblocks – Addition on the Number Line (Hopping Forward)',
+      youtubeUrl: 'https://www.youtube.com/embed/eJv6EAVrhdo',
+      originalUrl: 'https://www.youtube.com/watch?v=eJv6EAVrhdo',
+      duration: '11:20 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  'c1_les_3_3': [
+    {
+      id: 'vid_c1_3_3_nb',
+      type: 'primary',
+      tabLabel: '🎥 Addition up to 20 & Zero Property (Numberblocks)',
+      videoId: 'eJv6EAVrhdo',
+      title: 'Numberblocks – Addition of Numbers up to 20 & Zero Property (a + 0 = a)',
+      youtubeUrl: 'https://www.youtube.com/embed/eJv6EAVrhdo',
+      originalUrl: 'https://www.youtube.com/watch?v=eJv6EAVrhdo',
+      duration: '11:20 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    },
+    {
+      id: 'vid_c1_3_3_peri',
+      type: 'revision',
+      tabLabel: '🔄 Adding Zero Concept (Periwinkle)',
+      videoId: 'ZlsyWhfvvVg',
+      title: 'Adding Zero Property | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZlsyWhfvvVg',
+      originalUrl: 'https://www.youtube.com/watch?v=ZlsyWhfvvVg',
+      duration: '04:45 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  'c1_les_3_4': [
+    {
+      id: 'vid_c1_3_4_nb',
+      type: 'primary',
+      tabLabel: '🎥 Subtraction for Kids (Numberblocks)',
+      videoId: 'fny08Url8ik',
+      title: 'Subtraction for Kids | Numbers up to 20 | Numberblocks',
+      youtubeUrl: 'https://www.youtube.com/embed/fny08Url8ik',
+      originalUrl: 'https://www.youtube.com/watch?v=fny08Url8ik',
+      duration: '12:10 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  'c1_les_3_5': [
+    {
+      id: 'vid_c1_3_5_nb',
+      type: 'primary',
+      tabLabel: '🎥 Subtraction on Number Line (Numberblocks)',
+      videoId: 'fny08Url8ik',
+      title: 'Numberblocks – Subtraction on the Number Line (Hopping Backward)',
+      youtubeUrl: 'https://www.youtube.com/embed/fny08Url8ik',
+      originalUrl: 'https://www.youtube.com/watch?v=fny08Url8ik',
+      duration: '12:10 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  'c1_les_3_6': [
+    {
+      id: 'vid_c1_3_6_add',
+      type: 'primary',
+      tabLabel: '🎥 Column Addition Concepts (Numberblocks)',
+      videoId: 'eJv6EAVrhdo',
+      title: 'Vertical/Column Addition Foundations (No Regrouping) | Numberblocks',
+      youtubeUrl: 'https://www.youtube.com/embed/eJv6EAVrhdo',
+      originalUrl: 'https://www.youtube.com/watch?v=eJv6EAVrhdo',
+      duration: '11:20 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    },
+    {
+      id: 'vid_c1_3_6_sub',
+      type: 'revision',
+      tabLabel: '🔄 Column Subtraction Concepts (Numberblocks)',
+      videoId: 'fny08Url8ik',
+      title: 'Vertical/Column Subtraction Foundations (No Regrouping) | Numberblocks',
+      youtubeUrl: 'https://www.youtube.com/embed/fny08Url8ik',
+      originalUrl: 'https://www.youtube.com/watch?v=fny08Url8ik',
+      duration: '12:10 mins',
+      creatorName: 'Numberblocks',
+      channelName: 'Numberblocks Official',
+      themeName: 'Theme 3: Addition & Subtraction'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 4: GEOMETRY & SHAPES
+  // =========================================================================
+  'c1_les_4_1': [
+    {
+      id: 'vid_c1_4_1_shapes',
+      type: 'primary',
+      tabLabel: '🎥 2D Shapes for Kids in English',
+      videoId: 'ss55d3vLyts',
+      title: 'SHAPES for Kids in English (Circle, Square, Rectangle, Triangle)',
+      youtubeUrl: 'https://www.youtube.com/embed/ss55d3vLyts',
+      originalUrl: 'https://www.youtube.com/watch?v=ss55d3vLyts',
+      duration: '06:10 mins',
+      creatorName: 'English Shapes Kids',
+      channelName: 'Kids Learning Tube',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    }
+  ],
+
+  'c1_les_4_2': [
+    {
+      id: 'vid_c1_4_2_3d',
+      type: 'primary',
+      tabLabel: '🎥 3D Shapes for Kids (Cube, Sphere, Cone, Cylinder)',
+      videoId: '4JZSK74GpW8',
+      title: '3D Shapes for Kids | Cube, Sphere, Cone & Cylinder | Rolling & Sliding',
+      youtubeUrl: 'https://www.youtube.com/embed/4JZSK74GpW8',
+      originalUrl: 'https://www.youtube.com/watch?v=4JZSK74GpW8',
+      duration: '07:35 mins',
+      creatorName: 'Kids Shapes Academy',
+      channelName: 'Primary Math Academy',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    }
+  ],
+
+  'c1_les_4_3': [
+    {
+      id: 'vid_c1_4_3_lines',
+      type: 'primary',
+      tabLabel: '🎥 Straight & Curved Lines',
+      videoId: 'ss55d3vLyts',
+      title: 'Straight Lines & Curved Lines (Horizontal, Vertical, Slanting)',
+      youtubeUrl: 'https://www.youtube.com/embed/ss55d3vLyts',
+      originalUrl: 'https://www.youtube.com/watch?v=ss55d3vLyts',
+      duration: '06:10 mins',
+      creatorName: 'Kids Shapes Academy',
+      channelName: 'Kids Learning Tube',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    },
+    {
+      id: 'vid_c1_4_3_solid',
+      type: 'revision',
+      tabLabel: '🔄 Curved & Flat Surfaces in 3D',
+      videoId: '4JZSK74GpW8',
+      title: 'Flat vs Curved Faces & Rolling and Sliding | 3D Shapes',
+      youtubeUrl: 'https://www.youtube.com/embed/4JZSK74GpW8',
+      originalUrl: 'https://www.youtube.com/watch?v=4JZSK74GpW8',
+      duration: '07:35 mins',
+      creatorName: 'Primary Math Academy',
+      channelName: 'Primary Math Academy',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    }
+  ],
+
+  'c1_les_4_4': [
+    {
+      id: 'vid_c1_4_4_ka',
+      type: 'primary',
+      tabLabel: '🎓 Spatial Relationships & Positions (Kids Academy)',
+      videoId: '8kcbajwxEfE',
+      title: 'Spatial Relationships: Top/Bottom, On/Under, Inside/Outside, Near/Far | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/8kcbajwxEfE',
+      originalUrl: 'https://www.youtube.com/watch?v=8kcbajwxEfE',
+      duration: '05:40 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    },
+    {
+      id: 'vid_c1_4_4_pos',
+      type: 'revision',
+      tabLabel: '🔄 Positions Around Us',
+      videoId: 'ss55d3vLyts',
+      title: 'Shapes and Spatial Positions for Kindergarten & Class 1',
+      youtubeUrl: 'https://www.youtube.com/embed/ss55d3vLyts',
+      originalUrl: 'https://www.youtube.com/watch?v=ss55d3vLyts',
+      duration: '06:10 mins',
+      creatorName: 'Kids Learning Tube',
+      channelName: 'Kids Learning Tube',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    }
+  ],
+
+  'c1_les_4_5': [
+    {
+      id: 'vid_c1_4_5_trace',
+      type: 'primary',
+      tabLabel: '🎥 Tracing Faces of 3D Objects',
+      videoId: '4JZSK74GpW8',
+      title: 'Tracing 2D Boundaries of 3D Objects (Discovering Faces)',
+      youtubeUrl: 'https://www.youtube.com/embed/4JZSK74GpW8',
+      originalUrl: 'https://www.youtube.com/watch?v=4JZSK74GpW8',
+      duration: '07:35 mins',
+      creatorName: 'Kids Shapes Academy',
+      channelName: 'Primary Math Academy',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    },
+    {
+      id: 'vid_c1_4_5_flat',
+      type: 'revision',
+      tabLabel: '🔄 2D Faces from Solids',
+      videoId: 'ss55d3vLyts',
+      title: '2D Shapes and Face Outlines of Solid Objects',
+      youtubeUrl: 'https://www.youtube.com/embed/ss55d3vLyts',
+      originalUrl: 'https://www.youtube.com/watch?v=ss55d3vLyts',
+      duration: '06:10 mins',
+      creatorName: 'Kids Learning Tube',
+      channelName: 'Kids Learning Tube',
+      themeName: 'Theme 4: Geometry (Shapes and Space)'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 5: MEASUREMENT & TIME
+  // =========================================================================
+  'c1_les_5_1': [
+    {
+      id: 'vid_c1_5_1_len',
+      type: 'primary',
+      tabLabel: '🎥 Non-Standard Length Comparison',
+      videoId: 'nuYWIM4_S-o',
+      title: 'Taller and Shorter / Nonstandard Measurement for Kids',
+      youtubeUrl: 'https://www.youtube.com/embed/nuYWIM4_S-o',
+      originalUrl: 'https://www.youtube.com/watch?v=nuYWIM4_S-o',
+      duration: '06:55 mins',
+      creatorName: 'Kids Early Math',
+      channelName: 'Early Childhood Math',
+      themeName: 'Theme 5: Measurement (Length, Weight, Capacity, Time, Money)'
+    },
+    {
+      id: 'vid_c1_5_1_sid',
+      type: 'revision',
+      tabLabel: '🔄 Nonstandard Measurement (Sid the Science Kid)',
+      videoId: '-aU0f6ajtJE',
+      title: 'Sid the Science Kid – Nonstandard Measurement & Comparing Length',
+      youtubeUrl: 'https://www.youtube.com/embed/-aU0f6ajtJE',
+      originalUrl: 'https://www.youtube.com/watch?v=-aU0f6ajtJE',
+      duration: '05:30 mins',
+      creatorName: 'Sid the Science Kid',
+      channelName: 'PBS Kids Official',
+      themeName: 'Theme 5: Measurement (Length, Weight, Capacity, Time, Money)'
+    }
+  ],
+
+  'c1_les_5_2': [
+    {
+      id: 'vid_c1_5_2_wt',
+      type: 'primary',
+      tabLabel: '🎥 Weight & Capacity Comparison',
+      videoId: 'nuYWIM4_S-o',
+      title: 'Heavier vs Lighter / Holds More vs Holds Less Comparison for Kids',
+      youtubeUrl: 'https://www.youtube.com/embed/nuYWIM4_S-o',
+      originalUrl: 'https://www.youtube.com/watch?v=nuYWIM4_S-o',
+      duration: '06:55 mins',
+      creatorName: 'Kids Early Math',
+      channelName: 'Early Childhood Math',
+      themeName: 'Theme 5: Measurement (Length, Weight, Capacity, Time, Money)'
+    },
+    {
+      id: 'vid_c1_5_2_sid',
+      type: 'revision',
+      tabLabel: '🔄 Comparing Weight & Balance (Sid the Science Kid)',
+      videoId: '-aU0f6ajtJE',
+      title: 'Measuring Weight, Capacity and Balance Scales | Sid the Science Kid',
+      youtubeUrl: 'https://www.youtube.com/embed/-aU0f6ajtJE',
+      originalUrl: 'https://www.youtube.com/watch?v=-aU0f6ajtJE',
+      duration: '05:30 mins',
+      creatorName: 'Sid the Science Kid',
+      channelName: 'PBS Kids Official',
+      themeName: 'Theme 5: Measurement (Length, Weight, Capacity, Time, Money)'
+    }
+  ],
+
+  'c1_les_5_3': [
+    {
+      id: 'vid_c1_5_3_cal',
+      type: 'primary',
+      tabLabel: '🎥 Days of Week & Months of Year',
+      videoId: 'rYiBDOOPtYw',
+      title: 'Days of the Week and Months of the Year for Kids | Reading O’clock Time',
+      youtubeUrl: 'https://www.youtube.com/embed/rYiBDOOPtYw',
+      originalUrl: 'https://www.youtube.com/watch?v=rYiBDOOPtYw',
+      duration: '07:45 mins',
+      creatorName: 'Kids Calendar Academy',
+      channelName: 'Kids Learning Tube',
+      themeName: 'Theme 5: Measurement (Length, Weight, Capacity, Time, Money)'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 1 - CHAPTER 6: DATA HANDLING & PATTERNS
+  // =========================================================================
+  'c1_les_6_1': [
+    {
+      id: 'vid_c1_6_1_ka',
+      type: 'primary',
+      tabLabel: '🎓 Sorting & Grouping (Kids Academy)',
+      videoId: '8kcbajwxEfE',
+      title: 'Sorting by Color and Size | Attribute Grouping | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/8kcbajwxEfE',
+      originalUrl: 'https://www.youtube.com/watch?v=8kcbajwxEfE',
+      duration: '05:40 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 6: Data Handling & Patterns'
+    }
+  ],
+
+  'c1_les_6_2': [
+    {
+      id: 'vid_c1_6_2_pic',
+      type: 'primary',
+      tabLabel: '🎓 Picture Charts & Tally Counting (Kids Academy)',
+      videoId: '8kcbajwxEfE',
+      title: 'Picture Charts & Counting Tally Marks (Interpreting Simple Data) | Kids Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/8kcbajwxEfE',
+      originalUrl: 'https://www.youtube.com/watch?v=8kcbajwxEfE',
+      duration: '05:40 mins',
+      creatorName: 'Kids Academy',
+      channelName: 'Kids Academy',
+      themeName: 'Theme 6: Data Handling & Patterns'
+    },
+    {
+      id: 'vid_c1_6_2_pat',
+      type: 'revision',
+      tabLabel: '🔄 Counting & Chart Data',
+      videoId: 'RgaMt4dI4rY',
+      title: 'Visual Data Organization and Counting Sequences',
+      youtubeUrl: 'https://www.youtube.com/embed/RgaMt4dI4rY',
+      originalUrl: 'https://www.youtube.com/watch?v=RgaMt4dI4rY',
+      duration: '06:20 mins',
+      creatorName: 'Early Patterns Math',
+      channelName: 'Early Patterns Math',
+      themeName: 'Theme 6: Data Handling & Patterns'
+    }
+  ],
+
+  'c1_les_6_3': [
+    {
+      id: 'vid_c1_6_3_pat',
+      type: 'primary',
+      tabLabel: '🎥 Patterns Collection (ABAB & ABC)',
+      videoId: 'RgaMt4dI4rY',
+      title: 'Patterns Collection – ABAB & ABC Repeating Shape & Color Patterns',
+      youtubeUrl: 'https://www.youtube.com/embed/RgaMt4dI4rY',
+      originalUrl: 'https://www.youtube.com/watch?v=RgaMt4dI4rY',
+      duration: '06:20 mins',
+      creatorName: 'Early Patterns Math',
+      channelName: 'Early Patterns Math',
+      themeName: 'Theme 6: Data Handling & Patterns'
+    }
   ]
 };
 
