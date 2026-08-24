@@ -3118,6 +3118,901 @@ export const lessonVideoRegistry = {
       channelName: 'Magnet Brains',
       themeName: 'Theme 10: Patterns'
     }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 1: NUMBER SYSTEM
+  // =========================================================================
+  'c7_les_1_1': [
+    {
+      id: 'vid_c7_1_1_pw',
+      type: 'primary',
+      tabLabel: '🎓 Integers Full Explanation (PW ICSE)',
+      videoId: 's0QF8zRNwrg',
+      title: 'Integers Full Explanation, Operations & Properties | PW ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/s0QF8zRNwrg',
+      originalUrl: 'https://www.youtube.com/watch?v=s0QF8zRNwrg',
+      duration: '22:15 mins',
+      creatorName: 'Physics Wallah Foundation',
+      channelName: 'PW ICSE',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_1_lh',
+      type: 'revision',
+      tabLabel: '🔄 Multiplication & Division (LearnoHub)',
+      videoId: '_FsItWMY-Mk',
+      title: 'Integers Multiplication, Division & Properties | LearnoHub',
+      youtubeUrl: 'https://www.youtube.com/embed/_FsItWMY-Mk',
+      originalUrl: 'https://www.youtube.com/watch?v=_FsItWMY-Mk',
+      duration: '18:40 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 7',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_1_math7',
+      type: 'extra',
+      tabLabel: '✨ Intro & Properties (Mathematics Class VII)',
+      videoId: 'w-pCV3dLr7c',
+      title: 'Integers Introduction & Properties | Class VII',
+      youtubeUrl: 'https://www.youtube.com/embed/w-pCV3dLr7c',
+      originalUrl: 'https://www.youtube.com/watch?v=w-pCV3dLr7c',
+      duration: '15:10 mins',
+      creatorName: 'Mathematics Class VII',
+      channelName: 'Class VII Maths',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_1_pw_alt',
+      type: 'extra',
+      tabLabel: '🎥 Integers Comprehensive Class (PW)',
+      videoId: '7QjhVrz60So',
+      title: 'Integers Complete Masterclass | PW',
+      youtubeUrl: 'https://www.youtube.com/embed/7QjhVrz60So',
+      originalUrl: 'https://www.youtube.com/watch?v=7QjhVrz60So',
+      duration: '25:30 mins',
+      creatorName: 'PW ICSE',
+      channelName: 'PW Foundation',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_2': [
+    {
+      id: 'vid_c7_1_2_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Rational Numbers Full Chapter (knkg learn easy)',
+      videoId: 'V4RoSBZheMM',
+      title: 'Rational Numbers Full Chapter Explanation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/V4RoSBZheMM',
+      originalUrl: 'https://www.youtube.com/watch?v=V4RoSBZheMM',
+      duration: '20:50 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_2_ln',
+      type: 'revision',
+      tabLabel: '🔄 Number Line Representation (Learning Notebook)',
+      videoId: 'psWBTcEmJaY',
+      title: 'Rational Numbers on Number Line & Operations | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/psWBTcEmJaY',
+      originalUrl: 'https://www.youtube.com/watch?v=psWBTcEmJaY',
+      duration: '14:35 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_2_pw',
+      type: 'extra',
+      tabLabel: '🎓 Complete Revision (PW ICSE)',
+      videoId: 'rTLPC-MrbAg',
+      title: 'Rational Numbers Complete Revision | PW ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/rTLPC-MrbAg',
+      originalUrl: 'https://www.youtube.com/watch?v=rTLPC-MrbAg',
+      duration: '28:10 mins',
+      creatorName: 'Physics Wallah Foundation',
+      channelName: 'PW ICSE',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_3': [
+    {
+      id: 'vid_c7_1_3_pw',
+      type: 'primary',
+      tabLabel: '🎓 Operations on Rational Numbers (PW ICSE)',
+      videoId: 'rTLPC-MrbAg',
+      title: 'Rational Numbers Operations (+, -, ×, ÷) | PW ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/rTLPC-MrbAg',
+      originalUrl: 'https://www.youtube.com/watch?v=rTLPC-MrbAg',
+      duration: '28:10 mins',
+      creatorName: 'PW ICSE',
+      channelName: 'Physics Wallah Foundation',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_3_ln',
+      type: 'revision',
+      tabLabel: '🔄 Operations & Between Numbers (Learning Notebook)',
+      videoId: 'psWBTcEmJaY',
+      title: 'Operations on Rational Numbers & Finding Numbers in Between | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/psWBTcEmJaY',
+      originalUrl: 'https://www.youtube.com/watch?v=psWBTcEmJaY',
+      duration: '14:35 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_3_knkg',
+      type: 'extra',
+      tabLabel: '✨ Rational Numbers Practice (knkg learn easy)',
+      videoId: 'V4RoSBZheMM',
+      title: 'Rational Numbers Concepts & Operations | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/V4RoSBZheMM',
+      originalUrl: 'https://www.youtube.com/watch?v=V4RoSBZheMM',
+      duration: '20:50 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_4': [
+    {
+      id: 'vid_c7_1_4_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Decimals & Rational Numbers (knkg learn easy)',
+      videoId: 'V4RoSBZheMM',
+      title: 'Decimals & Rational Numbers: Terminating & Repeating Decimals | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/V4RoSBZheMM',
+      originalUrl: 'https://www.youtube.com/watch?v=V4RoSBZheMM',
+      duration: '20:50 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_4_pw',
+      type: 'revision',
+      tabLabel: '🎓 Decimal Representation (PW ICSE)',
+      videoId: 'rTLPC-MrbAg',
+      title: 'Decimals and Rational Numbers Conversion | PW ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/rTLPC-MrbAg',
+      originalUrl: 'https://www.youtube.com/watch?v=rTLPC-MrbAg',
+      duration: '28:10 mins',
+      creatorName: 'PW ICSE',
+      channelName: 'Physics Wallah Foundation',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_5': [
+    {
+      id: 'vid_c7_1_5_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Exponents Full Chapter (knkg learn easy)',
+      videoId: 'zQMFQJtrTQk',
+      title: 'Exponents Full Chapter Explanation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/zQMFQJtrTQk',
+      originalUrl: 'https://www.youtube.com/watch?v=zQMFQJtrTQk',
+      duration: '24:15 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_5_mb',
+      type: 'revision',
+      tabLabel: '🔄 Intro to Exponents & Powers (Magnet Brains)',
+      videoId: 'G5CthZgi6oE',
+      title: 'Introduction to Exponents and Powers | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/G5CthZgi6oE',
+      originalUrl: 'https://www.youtube.com/watch?v=G5CthZgi6oE',
+      duration: '16:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_5_ka',
+      type: 'extra',
+      tabLabel: '🎓 Laws of Exponents (Khan Academy)',
+      videoId: 'kITJ6qH7jS0',
+      title: 'Laws of Exponents & Power Rules | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/kITJ6qH7jS0',
+      originalUrl: 'https://www.youtube.com/watch?v=kITJ6qH7jS0',
+      duration: '10:25 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_6': [
+    {
+      id: 'vid_c7_1_6_ka',
+      type: 'primary',
+      tabLabel: '🎓 Scientific Notation Concepts (Khan Academy)',
+      videoId: 'kITJ6qH7jS0',
+      title: 'Standard & Scientific Notation for Very Large/Small Numbers | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/kITJ6qH7jS0',
+      originalUrl: 'https://www.youtube.com/watch?v=kITJ6qH7jS0',
+      duration: '10:25 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_6_knkg',
+      type: 'revision',
+      tabLabel: '🎥 Standard Form / Scientific Notation (knkg learn easy)',
+      videoId: 'zQMFQJtrTQk',
+      title: 'Expressing Numbers in Standard Form | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/zQMFQJtrTQk',
+      originalUrl: 'https://www.youtube.com/watch?v=zQMFQJtrTQk',
+      duration: '24:15 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_6_mb',
+      type: 'extra',
+      tabLabel: '🔄 Powers & Scientific Form (Magnet Brains)',
+      videoId: 'G5CthZgi6oE',
+      title: 'Scientific Notation & Standard Form Applications | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/G5CthZgi6oE',
+      originalUrl: 'https://www.youtube.com/watch?v=G5CthZgi6oE',
+      duration: '16:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  'c7_les_1_7': [
+    {
+      id: 'vid_c7_1_7_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Sets Full Chapter (knkg learn easy)',
+      videoId: '28v-sWx7NbI',
+      title: 'Sets Full Chapter Explanation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/28v-sWx7NbI',
+      originalUrl: 'https://www.youtube.com/watch?v=28v-sWx7NbI',
+      duration: '22:30 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 1: Number System'
+    },
+    {
+      id: 'vid_c7_1_7_gv',
+      type: 'revision',
+      tabLabel: '🔄 Intro to Sets & Venn Diagrams (Ganit Vigyan)',
+      videoId: 'mDrMcKIP0HI',
+      title: 'Introduction to Sets, Operations & Venn Diagrams | Ganit Vigyan',
+      youtubeUrl: 'https://www.youtube.com/embed/mDrMcKIP0HI',
+      originalUrl: 'https://www.youtube.com/watch?v=mDrMcKIP0HI',
+      duration: '17:15 mins',
+      creatorName: 'Ganit Vigyan',
+      channelName: 'Ganit Vigyan ICSE',
+      themeName: 'Theme 1: Number System'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 2: COMMERCIAL MATHEMATICS
+  // =========================================================================
+  'c7_les_2_1': [
+    {
+      id: 'vid_c7_2_1_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Ratio and Proportion Full Chapter (knkg learn easy)',
+      videoId: '1KXGW3WQo48',
+      title: 'Ratio and Proportion Full Chapter Explanation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/1KXGW3WQo48',
+      originalUrl: 'https://www.youtube.com/watch?v=1KXGW3WQo48',
+      duration: '26:10 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 2: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c7_2_1_mb',
+      type: 'revision',
+      tabLabel: '🔄 Ratio & Proportion Concepts (Magnet Brains)',
+      videoId: 'ko1L3N8TxCk',
+      title: 'Ratio and Proportion & Comparing Quantities | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/ko1L3N8TxCk',
+      originalUrl: 'https://www.youtube.com/watch?v=ko1L3N8TxCk',
+      duration: '20:45 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Commercial Mathematics'
+    }
+  ],
+
+  'c7_les_2_2': [
+    {
+      id: 'vid_c7_2_2_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Unitary Method Full Chapter (knkg learn easy)',
+      videoId: 'rVnIS_vvV7Y',
+      title: 'Unitary Method Full Chapter: Direct & Inverse Variation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/rVnIS_vvV7Y',
+      originalUrl: 'https://www.youtube.com/watch?v=rVnIS_vvV7Y',
+      duration: '18:50 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 2: Commercial Mathematics'
+    }
+  ],
+
+  'c7_les_2_3': [
+    {
+      id: 'vid_c7_2_3_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Percentage Full Chapter (knkg learn easy)',
+      videoId: 'zzpEi3pCa2s',
+      title: 'Percentages Full Chapter Explanation | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/zzpEi3pCa2s',
+      originalUrl: 'https://www.youtube.com/watch?v=zzpEi3pCa2s',
+      duration: '23:30 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 2: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c7_2_3_byjus',
+      type: 'revision',
+      tabLabel: '🔄 Percentages & Applications (BYJU\'S / Magnet Brains)',
+      videoId: 'ko1L3N8TxCk',
+      title: 'Percentages and Real-World Applications | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/ko1L3N8TxCk',
+      originalUrl: 'https://www.youtube.com/watch?v=ko1L3N8TxCk',
+      duration: '20:45 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Commercial Mathematics'
+    }
+  ],
+
+  'c7_les_2_4': [
+    {
+      id: 'vid_c7_2_4_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Profit, Loss & Discount (knkg learn easy)',
+      videoId: 'iHv3r_BRftc',
+      title: 'Profit, Loss and Discount Full Chapter | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/iHv3r_BRftc',
+      originalUrl: 'https://www.youtube.com/watch?v=iHv3r_BRftc',
+      duration: '25:15 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 2: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c7_2_4_mb',
+      type: 'revision',
+      tabLabel: '🔄 Profit & Loss Concepts (Magnet Brains)',
+      videoId: 'Rer3z37BsPI',
+      title: 'Profit and Loss Complete Concepts & Formulae | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/Rer3z37BsPI',
+      originalUrl: 'https://www.youtube.com/watch?v=Rer3z37BsPI',
+      duration: '19:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c7_2_4_ds',
+      type: 'extra',
+      tabLabel: '✨ CP, SP & Overhead Expenses (DeltaStep)',
+      videoId: 'RtgSqqRy8t0',
+      title: 'Cost Price, Selling Price & Overheads | DeltaStep',
+      youtubeUrl: 'https://www.youtube.com/embed/RtgSqqRy8t0',
+      originalUrl: 'https://www.youtube.com/watch?v=RtgSqqRy8t0',
+      duration: '12:40 mins',
+      creatorName: 'DeltaStep',
+      channelName: 'DeltaStep',
+      themeName: 'Theme 2: Commercial Mathematics'
+    }
+  ],
+
+  'c7_les_2_5': [
+    {
+      id: 'vid_c7_2_5_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Simple Interest Full Chapter (knkg learn easy)',
+      videoId: '__tWvXZ-AnQ',
+      title: 'Simple Interest Full Chapter: SI = PRT/100 | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/__tWvXZ-AnQ',
+      originalUrl: 'https://www.youtube.com/watch?v=__tWvXZ-AnQ',
+      duration: '21:05 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 2: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c7_2_5_mb',
+      type: 'revision',
+      tabLabel: '🔄 Simple Interest & Comparing Quantities (Magnet Brains)',
+      videoId: 'ko1L3N8TxCk',
+      title: 'Simple Interest & Interest Applications | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/ko1L3N8TxCk',
+      originalUrl: 'https://www.youtube.com/watch?v=ko1L3N8TxCk',
+      duration: '20:45 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Commercial Mathematics'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 3: ALGEBRA
+  // =========================================================================
+  'c7_les_3_1': [
+    {
+      id: 'vid_c7_3_1_knkg1',
+      type: 'primary',
+      tabLabel: '🎥 Algebraic Expressions Part 1 (knkg learn easy)',
+      videoId: '8xe0mpASlwI',
+      title: 'Algebraic Expressions Part 1: Terms, Factors, Coefficients | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/8xe0mpASlwI',
+      originalUrl: 'https://www.youtube.com/watch?v=8xe0mpASlwI',
+      duration: '22:40 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c7_3_1_ka',
+      type: 'revision',
+      tabLabel: '🎓 Algebraic Expressions (Khan Academy)',
+      videoId: 'NybHckSEQBI',
+      title: 'Algebraic Expressions and Linear Equations | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/NybHckSEQBI',
+      originalUrl: 'https://www.youtube.com/watch?v=NybHckSEQBI',
+      duration: '12:45 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 3: Algebra'
+    }
+  ],
+
+  'c7_les_3_2': [
+    {
+      id: 'vid_c7_3_2_knkg2',
+      type: 'primary',
+      tabLabel: '🎥 Algebraic Expressions Part 2 (knkg learn easy)',
+      videoId: 'TPvsA1Fxe9o',
+      title: 'Algebraic Expressions Part 2: Addition and Subtraction | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/TPvsA1Fxe9o',
+      originalUrl: 'https://www.youtube.com/watch?v=TPvsA1Fxe9o',
+      duration: '24:10 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c7_3_2_knkg1',
+      type: 'revision',
+      tabLabel: '🔄 Terms & Operations (knkg learn easy)',
+      videoId: '8xe0mpASlwI',
+      title: 'Algebraic Expressions Concepts & Terms | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/8xe0mpASlwI',
+      originalUrl: 'https://www.youtube.com/watch?v=8xe0mpASlwI',
+      duration: '22:40 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 3: Algebra'
+    }
+  ],
+
+  'c7_les_3_3': [
+    {
+      id: 'vid_c7_3_3_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Multiplication of Expressions (knkg learn easy)',
+      videoId: 'TPvsA1Fxe9o',
+      title: 'Multiplication of Algebraic Expressions: Monomials & Binomials | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/TPvsA1Fxe9o',
+      originalUrl: 'https://www.youtube.com/watch?v=TPvsA1Fxe9o',
+      duration: '24:10 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c7_3_3_ka',
+      type: 'revision',
+      tabLabel: '🎓 Polynomial Multiplication (Khan Academy)',
+      videoId: 'NybHckSEQBI',
+      title: 'Polynomial Operations & Equations | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/NybHckSEQBI',
+      originalUrl: 'https://www.youtube.com/watch?v=NybHckSEQBI',
+      duration: '12:45 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 3: Algebra'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 4: GEOMETRY & CONSTRUCTIONS
+  // =========================================================================
+  'c7_les_4_1': [
+    {
+      id: 'vid_c7_4_1_ka',
+      type: 'primary',
+      tabLabel: '🎓 Lines, Angles & Transversals (Khan Academy)',
+      videoId: '302eJ3TzJQU',
+      title: 'Lines and Angles: Complementary, Supplementary, Vertically Opposite | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/302eJ3TzJQU',
+      originalUrl: 'https://www.youtube.com/watch?v=302eJ3TzJQU',
+      duration: '15:20 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c7_4_1_ttl',
+      type: 'revision',
+      tabLabel: '🔄 Pairs of Angles (TicTacLearn English)',
+      videoId: 'lc7OFlTjfWk',
+      title: 'Angles and Lines Relationships | TicTacLearn English',
+      youtubeUrl: 'https://www.youtube.com/embed/lc7OFlTjfWk',
+      originalUrl: 'https://www.youtube.com/watch?v=lc7OFlTjfWk',
+      duration: '08:45 mins',
+      creatorName: 'TicTacLearn English',
+      channelName: 'TicTacLearn English',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_2': [
+    {
+      id: 'vid_c7_4_2_ka',
+      type: 'primary',
+      tabLabel: '🎓 Parallel Lines and Transversal (Khan Academy)',
+      videoId: '302eJ3TzJQU',
+      title: 'Parallel Lines & Transversal: Alternate, Corresponding & Co-Interior | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/302eJ3TzJQU',
+      originalUrl: 'https://www.youtube.com/watch?v=302eJ3TzJQU',
+      duration: '15:20 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_3': [
+    {
+      id: 'vid_c7_4_3_ttl',
+      type: 'primary',
+      tabLabel: '🎥 Properties of Triangles (TicTacLearn English)',
+      videoId: 'lc7OFlTjfWk',
+      title: 'Properties of Triangles: Angle Sum Property & Exterior Angle | TicTacLearn English',
+      youtubeUrl: 'https://www.youtube.com/embed/lc7OFlTjfWk',
+      originalUrl: 'https://www.youtube.com/watch?v=lc7OFlTjfWk',
+      duration: '08:45 mins',
+      creatorName: 'TicTacLearn English',
+      channelName: 'TicTacLearn English',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c7_4_3_mb',
+      type: 'revision',
+      tabLabel: '🔄 Triangles & Theorems (Magnet Brains)',
+      videoId: '_MOwVO03ihk',
+      title: 'Triangles and Properties | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/_MOwVO03ihk',
+      originalUrl: 'https://www.youtube.com/watch?v=_MOwVO03ihk',
+      duration: '18:30 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_4': [
+    {
+      id: 'vid_c7_4_4_mb',
+      type: 'primary',
+      tabLabel: '🎥 Pythagoras Theorem (Magnet Brains)',
+      videoId: '_MOwVO03ihk',
+      title: 'Pythagoras Theorem & Pythagorean Triplets | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/_MOwVO03ihk',
+      originalUrl: 'https://www.youtube.com/watch?v=_MOwVO03ihk',
+      duration: '18:30 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c7_4_4_bg',
+      type: 'revision',
+      tabLabel: '🔄 Pythagoras Animated (Bodhaguru)',
+      videoId: 'ae07ASw0jHo',
+      title: 'Pythagoras Theorem Applications (Animated) | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/ae07ASw0jHo',
+      originalUrl: 'https://www.youtube.com/watch?v=ae07ASw0jHo',
+      duration: '09:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c7_4_4_ttl',
+      type: 'extra',
+      tabLabel: '✨ Right Triangles & Pythagoras (TicTacLearn English)',
+      videoId: 'lc7OFlTjfWk',
+      title: 'Right-Angled Triangles and Pythagoras Property | TicTacLearn English',
+      youtubeUrl: 'https://www.youtube.com/embed/lc7OFlTjfWk',
+      originalUrl: 'https://www.youtube.com/watch?v=lc7OFlTjfWk',
+      duration: '08:45 mins',
+      creatorName: 'TicTacLearn English',
+      channelName: 'TicTacLearn English',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_5': [
+    {
+      id: 'vid_c7_4_5_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Symmetry Line & Rotational (knkg learn easy)',
+      videoId: 'sqXP5YJKmNc',
+      title: 'Symmetry Full Chapter: Line & Rotational Symmetry | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/sqXP5YJKmNc',
+      originalUrl: 'https://www.youtube.com/watch?v=sqXP5YJKmNc',
+      duration: '16:20 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_6': [
+    {
+      id: 'vid_c7_4_6_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Visualising Solid Shapes (knkg learn easy)',
+      videoId: '3S679ct6ddM',
+      title: 'Visualising Solid Shapes Full Chapter | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/3S679ct6ddM',
+      originalUrl: 'https://www.youtube.com/watch?v=3S679ct6ddM',
+      duration: '18:45 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c7_les_4_7': [
+    {
+      id: 'vid_c7_4_7_ka',
+      type: 'primary',
+      tabLabel: '🎓 Congruence of Triangles (Khan Academy)',
+      videoId: '302eJ3TzJQU',
+      title: 'Congruence Criteria (SSS, SAS, ASA, RHS) & Constructions | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/302eJ3TzJQU',
+      originalUrl: 'https://www.youtube.com/watch?v=302eJ3TzJQU',
+      duration: '15:20 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c7_4_7_mb',
+      type: 'revision',
+      tabLabel: '🔄 Geometric Constructions (Magnet Brains)',
+      videoId: '_MOwVO03ihk',
+      title: 'Geometric Constructions and Congruence | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/_MOwVO03ihk',
+      originalUrl: 'https://www.youtube.com/watch?v=_MOwVO03ihk',
+      duration: '18:30 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 5: MENSURATION
+  // =========================================================================
+  'c7_les_5_1': [
+    {
+      id: 'vid_c7_5_1_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Perimeter and Area (knkg learn easy)',
+      videoId: 'd-SRwlOHV9w',
+      title: 'Perimeter and Area Full Chapter | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/d-SRwlOHV9w',
+      originalUrl: 'https://www.youtube.com/watch?v=d-SRwlOHV9w',
+      duration: '27:40 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 5: Mensuration'
+    }
+  ],
+
+  'c7_les_5_2': [
+    {
+      id: 'vid_c7_5_2_knkg',
+      type: 'primary',
+      tabLabel: '🎥 Area of Parallelogram & Triangle (knkg learn easy)',
+      videoId: 'd-SRwlOHV9w',
+      title: 'Area of Parallelogram & Triangle | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/d-SRwlOHV9w',
+      originalUrl: 'https://www.youtube.com/watch?v=d-SRwlOHV9w',
+      duration: '27:40 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 5: Mensuration'
+    },
+    {
+      id: 'vid_c7_5_2_ma',
+      type: 'revision',
+      tabLabel: '🔄 Polygon Area Calculation (Math Antics)',
+      videoId: 'rSVMrPu0__U',
+      title: 'Area of 2D Polygons | Math Antics',
+      youtubeUrl: 'https://www.youtube.com/embed/rSVMrPu0__U',
+      originalUrl: 'https://www.youtube.com/watch?v=rSVMrPu0__U',
+      duration: '12:10 mins',
+      creatorName: 'Math Antics',
+      channelName: 'Math Antics',
+      themeName: 'Theme 5: Mensuration'
+    }
+  ],
+
+  'c7_les_5_3': [
+    {
+      id: 'vid_c7_5_3_ma',
+      type: 'primary',
+      tabLabel: '🎥 Circles Circumference & Area (Math Antics)',
+      videoId: 'rSVMrPu0__U',
+      title: 'Circles: Circumference & Area (C = 2πr, Area = πr²) | Math Antics',
+      youtubeUrl: 'https://www.youtube.com/embed/rSVMrPu0__U',
+      originalUrl: 'https://www.youtube.com/watch?v=rSVMrPu0__U',
+      duration: '12:10 mins',
+      creatorName: 'Math Antics',
+      channelName: 'Math Antics',
+      themeName: 'Theme 5: Mensuration'
+    },
+    {
+      id: 'vid_c7_5_3_knkg',
+      type: 'revision',
+      tabLabel: '🔄 Circle & Pathway Problems (knkg learn easy)',
+      videoId: 'd-SRwlOHV9w',
+      title: 'Circle Circumference, Area & Ring Problems | knkg learn easy',
+      youtubeUrl: 'https://www.youtube.com/embed/d-SRwlOHV9w',
+      originalUrl: 'https://www.youtube.com/watch?v=d-SRwlOHV9w',
+      duration: '27:40 mins',
+      creatorName: 'knkg learn easy',
+      channelName: 'knkg learn easy',
+      themeName: 'Theme 5: Mensuration'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 7 - CHAPTER 6: DATA HANDLING & PROBABILITY
+  // =========================================================================
+  'c7_les_6_1': [
+    {
+      id: 'vid_c7_6_1_ln',
+      type: 'primary',
+      tabLabel: '🎥 Mean, Median, Mode (Learning Notebook)',
+      videoId: 'sS6t-2j11Xs',
+      title: 'Measures of Central Tendency: Mean, Median, Mode | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/sS6t-2j11Xs',
+      originalUrl: 'https://www.youtube.com/watch?v=sS6t-2j11Xs',
+      duration: '14:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 6: Data Handling & Probability'
+    },
+    {
+      id: 'vid_c7_6_1_ttl',
+      type: 'revision',
+      tabLabel: '🔄 Range, Mean, Median, Mode (TicTacLearn English)',
+      videoId: 'wRSYeM1z3X0',
+      title: 'Measures of Central Tendency & Range | TicTacLearn English',
+      youtubeUrl: 'https://www.youtube.com/embed/wRSYeM1z3X0',
+      originalUrl: 'https://www.youtube.com/watch?v=wRSYeM1z3X0',
+      duration: '09:30 mins',
+      creatorName: 'TicTacLearn English',
+      channelName: 'TicTacLearn English',
+      themeName: 'Theme 6: Data Handling & Probability'
+    },
+    {
+      id: 'vid_c7_6_1_ka',
+      type: 'extra',
+      tabLabel: '🎓 Finding Mean, Median, Mode (Khan Academy)',
+      videoId: 'k3aKKasOmIw',
+      title: 'Statistics: Finding Mean, Median and Mode | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/k3aKKasOmIw',
+      originalUrl: 'https://www.youtube.com/watch?v=k3aKKasOmIw',
+      duration: '08:50 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Data Handling & Probability'
+    },
+    {
+      id: 'vid_c7_6_1_lh',
+      type: 'extra',
+      tabLabel: '✨ Mean/Median/Mode Class 7 (LearnoHub)',
+      videoId: 'G9vk3QfBSGM',
+      title: 'Mean, Median and Mode Class 7 | LearnoHub',
+      youtubeUrl: 'https://www.youtube.com/embed/G9vk3QfBSGM',
+      originalUrl: 'https://www.youtube.com/watch?v=G9vk3QfBSGM',
+      duration: '19:40 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 7',
+      themeName: 'Theme 6: Data Handling & Probability'
+    }
+  ],
+
+  'c7_les_6_2': [
+    {
+      id: 'vid_c7_6_2_ka',
+      type: 'primary',
+      tabLabel: '🎓 Double Bar Graphs (Khan Academy)',
+      videoId: '8v_GvF6m-p0',
+      title: 'Double Bar Graphs: Reading & Interpreting Data | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/8v_GvF6m-p0',
+      originalUrl: 'https://www.youtube.com/watch?v=8v_GvF6m-p0',
+      duration: '11:45 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Data Handling & Probability'
+    },
+    {
+      id: 'vid_c7_6_2_ln',
+      type: 'revision',
+      tabLabel: '🔄 Bar Graphs & Data (Learning Notebook)',
+      videoId: 'sS6t-2j11Xs',
+      title: 'Data Representation & Bar Graphs | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/sS6t-2j11Xs',
+      originalUrl: 'https://www.youtube.com/watch?v=sS6t-2j11Xs',
+      duration: '14:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 6: Data Handling & Probability'
+    }
+  ],
+
+  'c7_les_6_3': [
+    {
+      id: 'vid_c7_6_3_ka1',
+      type: 'primary',
+      tabLabel: '🎓 Chance & Basic Probability (Khan Academy)',
+      videoId: '8v_GvF6m-p0',
+      title: 'Chance & Basic Probability: Coins, Dice & Single Events | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/8v_GvF6m-p0',
+      originalUrl: 'https://www.youtube.com/watch?v=8v_GvF6m-p0',
+      duration: '11:45 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Data Handling & Probability'
+    },
+    {
+      id: 'vid_c7_6_3_ka2',
+      type: 'revision',
+      tabLabel: '🔄 Simple Events Probability (Khan Academy)',
+      videoId: 'k3aKKasOmIw',
+      title: 'Probability of Simple Events | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/k3aKKasOmIw',
+      originalUrl: 'https://www.youtube.com/watch?v=k3aKKasOmIw',
+      duration: '08:50 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Data Handling & Probability'
+    }
   ]
 };
 

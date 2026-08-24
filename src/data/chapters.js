@@ -4085,9 +4085,12 @@ export const class7Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/5Uq1vQG6f4E",
+    youtubeUrl: "https://www.youtube.com/embed/s0QF8zRNwrg",
     playlist: [
-      { id: "v_c7_1", type: "primary", videoId: "5Uq1vQG6f4E", title: "Rational Numbers and Exponent Laws", duration: "13:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Number System" }
+      { id: "v_c7_1_pw", type: "primary", videoId: "s0QF8zRNwrg", title: "Integers: Operations & Properties", duration: "22:15 mins", creatorName: "PW ICSE", channelName: "Physics Wallah Foundation", themeName: "Theme 1: Number System" },
+      { id: "v_c7_1_rat", type: "primary", videoId: "V4RoSBZheMM", title: "Rational Numbers Full Chapter", duration: "20:50 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 1: Number System" },
+      { id: "v_c7_1_exp", type: "primary", videoId: "zQMFQJtrTQk", title: "Exponents & Powers Full Chapter", duration: "24:15 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 1: Number System" },
+      { id: "v_c7_1_set", type: "primary", videoId: "28v-sWx7NbI", title: "Sets Full Chapter Explanation", duration: "22:30 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 1: Number System" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 1: Number System",
     textbookContent: "# Number System\n\nRational numbers (p/q), laws of exponents, sets operations, and Venn diagrams.",
@@ -4114,9 +4117,13 @@ export const class7Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/rq7w8Vv3j9s",
+    youtubeUrl: "https://www.youtube.com/embed/1KXGW3WQo48",
     playlist: [
-      { id: "v_c7_2", type: "primary", videoId: "rq7w8Vv3j9s", title: "Profit Loss and Simple Interest", duration: "14:15 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 2: Commercial Math" }
+      { id: "v_c7_2_rat", type: "primary", videoId: "1KXGW3WQo48", title: "Ratio and Proportion Full Chapter", duration: "26:10 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 2: Commercial Math" },
+      { id: "v_c7_2_uni", type: "primary", videoId: "rVnIS_vvV7Y", title: "Unitary Method: Direct & Inverse", duration: "18:50 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 2: Commercial Math" },
+      { id: "v_c7_2_per", type: "primary", videoId: "zzpEi3pCa2s", title: "Percentage Full Chapter", duration: "23:30 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 2: Commercial Math" },
+      { id: "v_c7_2_pl", type: "primary", videoId: "iHv3r_BRftc", title: "Profit, Loss & Discount", duration: "25:15 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 2: Commercial Math" },
+      { id: "v_c7_2_si", type: "primary", videoId: "__tWvXZ-AnQ", title: "Simple Interest: SI = PRT/100", duration: "21:05 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 2: Commercial Math" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 2: Commercial Mathematics",
     textbookContent: "# Commercial Mathematics\n\nProfit % = (P/CP) × 100, Loss % = (L/CP) × 100, Simple Interest SI = (P × R × T) / 100.",
@@ -4141,9 +4148,11 @@ export const class7Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/NybHckSEQBI",
+    youtubeUrl: "https://www.youtube.com/embed/8xe0mpASlwI",
     playlist: [
-      { id: "v_c7_3", type: "primary", videoId: "NybHckSEQBI", title: "Algebraic Expressions and Linear Equations", duration: "12:45 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Algebra" }
+      { id: "v_c7_3_pt1", type: "primary", videoId: "8xe0mpASlwI", title: "Algebraic Expressions Part 1: Terms & Factors", duration: "22:40 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 3: Algebra" },
+      { id: "v_c7_3_pt2", type: "primary", videoId: "TPvsA1Fxe9o", title: "Algebraic Expressions Part 2: Operations & Multiplication", duration: "24:10 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 3: Algebra" },
+      { id: "v_c7_3_ka", type: "primary", videoId: "NybHckSEQBI", title: "Algebraic Expressions and Linear Equations", duration: "12:45 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Algebra" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 3: Algebra",
     textbookContent: "# Algebra\n\nMultiplying monomials by polynomials, solving linear equations.",
@@ -4168,7 +4177,11 @@ export const class7Chapters = [
     readinessLevel: "Advanced Readiness",
     youtubeUrl: "https://www.youtube.com/embed/302eJ3TzJQU",
     playlist: [
-      { id: "v_c7_4", type: "primary", videoId: "302eJ3TzJQU", title: "Parallel Lines, Congruence and Pythagoras Theorem", duration: "15:20 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 4: Geometry" }
+      { id: "v_c7_4_ka", type: "primary", videoId: "302eJ3TzJQU", title: "Parallel Lines, Angles & Congruence", duration: "15:20 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 4: Geometry" },
+      { id: "v_c7_4_pyt", type: "primary", videoId: "_MOwVO03ihk", title: "Pythagoras Theorem & Triplets", duration: "18:30 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 4: Geometry" },
+      { id: "v_c7_4_pyt_bg", type: "primary", videoId: "ae07ASw0jHo", title: "Pythagoras Application Animated", duration: "09:15 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 4: Geometry" },
+      { id: "v_c7_4_sym", type: "primary", videoId: "sqXP5YJKmNc", title: "Symmetry (Line & Rotational)", duration: "16:20 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 4: Geometry" },
+      { id: "v_c7_4_sol", type: "primary", videoId: "3S679ct6ddM", title: "Visualising Solid Shapes", duration: "18:45 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 4: Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 4: Geometry",
     textbookContent: "# Geometry\n\nAlternate, corresponding, co-interior angles. Pythagoras theorem.",
@@ -4195,9 +4208,10 @@ export const class7Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/rSVMrPu0__U",
+    youtubeUrl: "https://www.youtube.com/embed/d-SRwlOHV9w",
     playlist: [
-      { id: "v_c7_5", type: "primary", videoId: "rSVMrPu0__U", title: "Circumference and Area of Circle & Parallelogram", duration: "12:10 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 5: Mensuration" }
+      { id: "v_c7_5_knkg", type: "primary", videoId: "d-SRwlOHV9w", title: "Perimeter and Area Full Chapter", duration: "27:40 mins", creatorName: "knkg learn easy", channelName: "knkg learn easy", themeName: "Theme 5: Mensuration" },
+      { id: "v_c7_5_cir", type: "primary", videoId: "rSVMrPu0__U", title: "Circumference & Area of Circles", duration: "12:10 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 5: Mensuration" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 5: Mensuration",
     textbookContent: "# Mensuration\n\nCircle: C = 2πr, Area = πr². Parallelogram: b × h.",
@@ -4220,9 +4234,13 @@ export const class7Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/8v_GvF6m-p0",
+    youtubeUrl: "https://www.youtube.com/embed/sS6t-2j11Xs",
     playlist: [
-      { id: "v_c7_6", type: "primary", videoId: "8v_GvF6m-p0", title: "Mean, Median, Mode and Double Bar Graphs", duration: "11:45 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Data Handling" }
+      { id: "v_c7_6_ln", type: "primary", videoId: "sS6t-2j11Xs", title: "Mean, Median, Mode & Central Tendency", duration: "14:20 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 6: Data Handling" },
+      { id: "v_c7_6_ttl", type: "primary", videoId: "wRSYeM1z3X0", title: "Range, Mean, Median, Mode", duration: "09:30 mins", creatorName: "TicTacLearn English", channelName: "TicTacLearn English", themeName: "Theme 6: Data Handling" },
+      { id: "v_c7_6_ka", type: "primary", videoId: "k3aKKasOmIw", title: "Finding Mean, Median and Mode", duration: "08:50 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Data Handling" },
+      { id: "v_c7_6_lh", type: "primary", videoId: "G9vk3QfBSGM", title: "Mean, Median and Mode Class 7", duration: "19:40 mins", creatorName: "LearnoHub", channelName: "LearnoHub - Class 7", themeName: "Theme 6: Data Handling" },
+      { id: "v_c7_6_bg", type: "primary", videoId: "8v_GvF6m-p0", title: "Double Bar Graphs & Chance Probability", duration: "11:45 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Data Handling" }
     ],
     textbookTitle: "ICSE Mathematics Class 7 - Theme 6: Data Handling",
     textbookContent: "# Data Handling & Probability\n\nMean = Sum / Count. Median = middle value.",
