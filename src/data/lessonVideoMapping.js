@@ -3121,6 +3121,2482 @@ export const lessonVideoRegistry = {
   ],
 
   // =========================================================================
+  
+  // =========================================================================
+  
+  // =========================================================================
+  
+  // =========================================================================
+  // CLASS 3 - THEME 1: NUMBERS (4-DIGIT NUMBERS)
+  // =========================================================================
+  'c3_les_1_1': [
+    {
+      id: 'vid_c3_1_1_ln',
+      type: 'primary',
+      tabLabel: '🎥 Place Values & Number Names (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Class 3 Maths Chapter 1 Place Values & Number Names | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Numbers up to 9999'
+    },
+    {
+      id: 'vid_c3_1_1_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Ones, Tens, Hundreds, Thousands (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Place Values For Kids: Ones, Tens, Hundreds, Thousands | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Numbers up to 9999'
+    },
+    {
+      id: 'vid_c3_1_1_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Place Value Animation (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Place Value | Mathematics Grade 3 | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Numbers up to 9999'
+    }
+  ],
+
+  'c3_les_1_2': [
+    {
+      id: 'vid_c3_1_2_ln',
+      type: 'primary',
+      tabLabel: '🎥 Place Value vs Face Value (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Place Value and Face Value in 4-Digit Numbers | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Numbers up to 9999'
+    },
+    {
+      id: 'vid_c3_1_2_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Understanding Digits (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Place Value Charts for Primary Kids | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Numbers up to 9999'
+    },
+    {
+      id: 'vid_c3_1_2_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Place Value Visualised (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Place Value Made Fun & Simple | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Numbers up to 9999'
+    }
+  ],
+
+  'c3_les_1_3': [
+    {
+      id: 'vid_c3_1_3_ln',
+      type: 'primary',
+      tabLabel: '🎥 Expanded Form Stepwise (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Expanded Form & Standard Form up to 9999 | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Expanded Form'
+    },
+    {
+      id: 'vid_c3_1_3_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Expanded Form for Kids (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Writing Numbers in Expanded Form | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Expanded Form'
+    },
+    {
+      id: 'vid_c3_1_3_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Standard Form Conversion (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Expanded Notation and Standard Form | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Expanded Form'
+    }
+  ],
+
+  'c3_les_1_4': [
+    {
+      id: 'vid_c3_1_4_ln',
+      type: 'primary',
+      tabLabel: '🎥 Comparing & Ordering Numbers (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Comparing 4-Digit Numbers (Ascending & Descending) | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Comparing Numbers'
+    },
+    {
+      id: 'vid_c3_1_4_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Greater Than & Less Than (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Comparing Thousands and Hundreds | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Comparing Numbers'
+    },
+    {
+      id: 'vid_c3_1_4_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Ascending & Descending Order (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Ordering 4-Digit Numbers | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Comparing Numbers'
+    }
+  ],
+
+  'c3_les_1_5': [
+    {
+      id: 'vid_c3_1_5_ln',
+      type: 'primary',
+      tabLabel: '🎥 Successor & Predecessor (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Successor and Predecessor of 4-Digit Numbers | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Successor & Predecessor'
+    },
+    {
+      id: 'vid_c3_1_5_tutway',
+      type: 'revision',
+      tabLabel: '🎓 After, Before & Between (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Before, After and Between Numbers up to 9999 | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Successor & Predecessor'
+    },
+    {
+      id: 'vid_c3_1_5_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ +1 and -1 Rules (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Successor and Predecessor Rules | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Successor & Predecessor'
+    }
+  ],
+
+  'c3_les_1_6': [
+    {
+      id: 'vid_c3_1_6_ln',
+      type: 'primary',
+      tabLabel: '🎥 Greatest & Smallest Numbers from Digits (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Forming Greatest and Smallest Numbers with Given Digits | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Number Formation'
+    },
+    {
+      id: 'vid_c3_1_6_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Digit Arrangement Tricks (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Arranging Digits to Make Large and Small Numbers | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Number Formation'
+    },
+    {
+      id: 'vid_c3_1_6_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Zero in Number Formation (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Forming 4-Digit Numbers with Zero | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Number Formation'
+    }
+  ],
+
+  'c3_les_1_7': [
+    {
+      id: 'vid_c3_1_7_ln',
+      type: 'primary',
+      tabLabel: '🎥 Skip Counting by 10s, 100s, 1000s (Learning Notebook)',
+      videoId: 'lzJ-KVAPS_A',
+      title: 'Skip Counting Patterns up to 9999 | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/lzJ-KVAPS_A',
+      originalUrl: 'https://www.youtube.com/watch?v=lzJ-KVAPS_A',
+      duration: '16:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Skip Counting'
+    },
+    {
+      id: 'vid_c3_1_7_tutway',
+      type: 'revision',
+      tabLabel: '🎓 Fast Skip Counting for Kids (TutWay)',
+      videoId: 'hthF1nDJhoE',
+      title: 'Skip Counting by 10, 50, 100 and 1000 | TutWay',
+      youtubeUrl: 'https://www.youtube.com/embed/hthF1nDJhoE',
+      originalUrl: 'https://www.youtube.com/watch?v=hthF1nDJhoE',
+      duration: '08:15 mins',
+      creatorName: 'TutWay',
+      channelName: 'TutWay',
+      themeName: 'Theme 1: Skip Counting'
+    },
+    {
+      id: 'vid_c3_1_7_periwinkle',
+      type: 'extra',
+      tabLabel: '✨ Number Line Skip Counting (Periwinkle)',
+      videoId: 'tqZ2r2Kujxk',
+      title: 'Skip Counting Number Patterns | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/tqZ2r2Kujxk',
+      originalUrl: 'https://www.youtube.com/watch?v=tqZ2r2Kujxk',
+      duration: '07:30 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 1: Skip Counting'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 3 - THEME 2: NUMBER OPERATIONS & MONEY
+  // =========================================================================
+  'c3_les_2_1': [
+    {
+      id: 'vid_c3_2_1_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Addition with Regrouping / Carrying (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Maths: Add Three-Digit Numbers with Carrying | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Addition'
+    },
+    {
+      id: 'vid_c3_2_1_ln',
+      type: 'revision',
+      tabLabel: '🎓 4-Digit Addition Stepwise (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Class 3 Addition of 4-Digit Numbers with Regrouping | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Addition'
+    },
+    {
+      id: 'vid_c3_2_1_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Addition for Kids Masterclass (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Addition for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Addition'
+    }
+  ],
+
+  'c3_les_2_2': [
+    {
+      id: 'vid_c3_2_2_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Subtraction with Borrowing (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Maths: Three-Digit Subtraction with Borrowing | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Subtraction'
+    },
+    {
+      id: 'vid_c3_2_2_ln',
+      type: 'revision',
+      tabLabel: '🎓 4-Digit Subtraction Regrouping (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Class 3 Subtraction with Borrowing across Zeros | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Subtraction'
+    },
+    {
+      id: 'vid_c3_2_2_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Subtraction for Kids Lesson (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Subtraction for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Subtraction'
+    }
+  ],
+
+  'c3_les_2_3': [
+    {
+      id: 'vid_c3_2_3_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Multiplication as Repeated Addition (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Multiplication Concepts and Arrays | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Multiplication'
+    },
+    {
+      id: 'vid_c3_2_3_ln',
+      type: 'revision',
+      tabLabel: '🎓 Multiplication Tables & Patterns (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Multiplication Tables and Properties | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Multiplication'
+    },
+    {
+      id: 'vid_c3_2_3_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Multiplication for Kids (>1M Views) (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Multiplication for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Multiplication'
+    }
+  ],
+
+  'c3_les_2_4': [
+    {
+      id: 'vid_c3_2_4_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 2-Digit & 3-Digit Multiplication (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Multiplying 2-Digit Numbers Stepwise | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Multiplication'
+    },
+    {
+      id: 'vid_c3_2_4_ln',
+      type: 'revision',
+      tabLabel: '🎓 Lattice & Standard Multiplication (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Lattice and Column Multiplication Methods | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Multiplication'
+    },
+    {
+      id: 'vid_c3_2_4_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Multiplication Word Problems (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Multiplication Word Problems for Grade 3 | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Multiplication'
+    }
+  ],
+
+  'c3_les_2_5': [
+    {
+      id: 'vid_c3_2_5_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Division as Equal Sharing (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Division Concept: Equal Sharing & Grouping | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Division'
+    },
+    {
+      id: 'vid_c3_2_5_ln',
+      type: 'revision',
+      tabLabel: '🎓 Division by Repeated Subtraction (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Division as Repeated Subtraction | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Division'
+    },
+    {
+      id: 'vid_c3_2_5_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Division for Kids (>1M Views) (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Division for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Division'
+    }
+  ],
+
+  'c3_les_2_6': [
+    {
+      id: 'vid_c3_2_6_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Long Division by 1-Digit Divisor (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Long Division Step-by-Step for Class 3 | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Division'
+    },
+    {
+      id: 'vid_c3_2_6_ln',
+      type: 'revision',
+      tabLabel: '🎓 Quotient & Remainder Check (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Finding Quotient & Remainder with Verification | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Division'
+    },
+    {
+      id: 'vid_c3_2_6_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Simple Division Rules (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Long Division Made Super Easy for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Division'
+    }
+  ],
+
+  'c3_les_2_7': [
+    {
+      id: 'vid_c3_2_7_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Money: Rupees & Paise (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Understanding Indian Money: Rupees and Paise | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Money'
+    },
+    {
+      id: 'vid_c3_2_7_ln',
+      type: 'revision',
+      tabLabel: '🎓 Cash Memos & Bills (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Creating and Calculating Bills and Cash Memos | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Money'
+    },
+    {
+      id: 'vid_c3_2_7_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Money Word Problems (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Money Addition and Subtraction for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Money'
+    }
+  ],
+
+  'c3_les_2_8': [
+    {
+      id: 'vid_c3_2_8_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Estimation & Rounding to Nearest 10 & 100 (Bodhaguru)',
+      videoId: 'sX89e9jQyFE',
+      title: 'Estimation of Sums and Differences | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/sX89e9jQyFE',
+      originalUrl: 'https://www.youtube.com/watch?v=sX89e9jQyFE',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 2: Estimation'
+    },
+    {
+      id: 'vid_c3_2_8_ln',
+      type: 'revision',
+      tabLabel: '🎓 Rounding Rules for Class 3 (Learning Notebook)',
+      videoId: 'd7k61f3kFz0',
+      title: 'Rounding to Nearest 10 and 100 Explained | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/d7k61f3kFz0',
+      originalUrl: 'https://www.youtube.com/watch?v=d7k61f3kFz0',
+      duration: '18:45 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 2: Estimation'
+    },
+    {
+      id: 'vid_c3_2_8_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Mental Math Estimation (Homeschool Pop)',
+      videoId: 'eW2DXRZGTOo',
+      title: 'Mental Math and Estimation Tricks for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/eW2DXRZGTOo',
+      originalUrl: 'https://www.youtube.com/watch?v=eW2DXRZGTOo',
+      duration: '12:30 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 2: Estimation'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 3 - THEME 3: GEOMETRY & SPATIAL UNDERSTANDING
+  // =========================================================================
+  'c3_les_3_1': [
+    {
+      id: 'vid_c3_3_1_periwinkle',
+      type: 'primary',
+      tabLabel: '🎥 Straight & Curved Lines (Periwinkle)',
+      videoId: 'ZXU28FhYY_M',
+      title: 'Points, Lines, Rays & Line Segments | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZXU28FhYY_M',
+      originalUrl: 'https://www.youtube.com/watch?v=ZXU28FhYY_M',
+      duration: '06:15 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c3_3_1_global',
+      type: 'revision',
+      tabLabel: '🎓 Line Types & Basic Concepts (GlobalShiksha)',
+      videoId: '5L4QYx91WvA',
+      title: 'Straight, Horizontal, Vertical & Curved Lines | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/5L4QYx91WvA',
+      originalUrl: 'https://www.youtube.com/watch?v=5L4QYx91WvA',
+      duration: '12:40 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c3_3_1_digi',
+      type: 'extra',
+      tabLabel: '✨ Lines on Dot Grid (Digi Nurture)',
+      videoId: 'g5YemvYOjRo',
+      title: 'Drawing Lines on Dot Grids | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/g5YemvYOjRo',
+      originalUrl: 'https://www.youtube.com/watch?v=g5YemvYOjRo',
+      duration: '09:50 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 3: Geometry'
+    }
+  ],
+
+  'c3_les_3_2': [
+    {
+      id: 'vid_c3_3_2_periwinkle',
+      type: 'primary',
+      tabLabel: '🎥 Tangram 7-Piece Puzzles (Periwinkle)',
+      videoId: 'ZXU28FhYY_M',
+      title: 'Tangrams and Shape Creations | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZXU28FhYY_M',
+      originalUrl: 'https://www.youtube.com/watch?v=ZXU28FhYY_M',
+      duration: '06:15 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: Tangrams'
+    },
+    {
+      id: 'vid_c3_3_2_global',
+      type: 'revision',
+      tabLabel: '🎓 Dot Grids & Geoboard Shapes (GlobalShiksha)',
+      videoId: '5L4QYx91WvA',
+      title: 'Dot Grids, Geoboards and Tangram Shapes | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/5L4QYx91WvA',
+      originalUrl: 'https://www.youtube.com/watch?v=5L4QYx91WvA',
+      duration: '12:40 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 3: Tangrams'
+    },
+    {
+      id: 'vid_c3_3_2_digi',
+      type: 'extra',
+      tabLabel: '✨ Tiling & Tangrams Hands-on (Digi Nurture)',
+      videoId: 'g5YemvYOjRo',
+      title: 'Tiling and Tangrams Class 3 | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/g5YemvYOjRo',
+      originalUrl: 'https://www.youtube.com/watch?v=g5YemvYOjRo',
+      duration: '09:50 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 3: Tangrams'
+    }
+  ],
+
+  'c3_les_3_3': [
+    {
+      id: 'vid_c3_3_3_periwinkle',
+      type: 'primary',
+      tabLabel: '🎥 2D Shape Properties: Sides & Vertices (Periwinkle)',
+      videoId: 'ZXU28FhYY_M',
+      title: 'Properties of 2D Shapes (Square, Rectangle, Triangle, Circle) | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZXU28FhYY_M',
+      originalUrl: 'https://www.youtube.com/watch?v=ZXU28FhYY_M',
+      duration: '06:15 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: 2D Shapes'
+    },
+    {
+      id: 'vid_c3_3_3_global',
+      type: 'revision',
+      tabLabel: '🎓 Diagonals & Characteristics (GlobalShiksha)',
+      videoId: '5L4QYx91WvA',
+      title: '2D Shapes: Sides, Corners and Diagonals | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/5L4QYx91WvA',
+      originalUrl: 'https://www.youtube.com/watch?v=5L4QYx91WvA',
+      duration: '12:40 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 3: 2D Shapes'
+    },
+    {
+      id: 'vid_c3_3_3_digi',
+      type: 'extra',
+      tabLabel: '✨ 2D Shapes in Daily Life (Digi Nurture)',
+      videoId: 'g5YemvYOjRo',
+      title: 'Identifying 2D Shapes in Real Objects | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/g5YemvYOjRo',
+      originalUrl: 'https://www.youtube.com/watch?v=g5YemvYOjRo',
+      duration: '09:50 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 3: 2D Shapes'
+    }
+  ],
+
+  'c3_les_3_4': [
+    {
+      id: 'vid_c3_3_4_periwinkle',
+      type: 'primary',
+      tabLabel: '🎥 3D Solids: Faces, Edges & Vertices (Periwinkle)',
+      videoId: 'ZXU28FhYY_M',
+      title: '3D Solid Figures (Cube, Cuboid, Sphere, Cylinder, Cone) | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZXU28FhYY_M',
+      originalUrl: 'https://www.youtube.com/watch?v=ZXU28FhYY_M',
+      duration: '06:15 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: 3D Shapes'
+    },
+    {
+      id: 'vid_c3_3_4_global',
+      type: 'revision',
+      tabLabel: '🎓 Line Drawings of 3D Objects (GlobalShiksha)',
+      videoId: '5L4QYx91WvA',
+      title: 'Faces, Edges, and Vertices of Solid Shapes | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/5L4QYx91WvA',
+      originalUrl: 'https://www.youtube.com/watch?v=5L4QYx91WvA',
+      duration: '12:40 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 3: 3D Shapes'
+    },
+    {
+      id: 'vid_c3_3_4_digi',
+      type: 'extra',
+      tabLabel: '✨ 3D Shapes Real-Life Examples (Digi Nurture)',
+      videoId: 'g5YemvYOjRo',
+      title: 'Solid Shapes and Flat Surfaces | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/g5YemvYOjRo',
+      originalUrl: 'https://www.youtube.com/watch?v=g5YemvYOjRo',
+      duration: '09:50 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 3: 3D Shapes'
+    }
+  ],
+
+  'c3_les_3_5': [
+    {
+      id: 'vid_c3_3_5_periwinkle',
+      type: 'primary',
+      tabLabel: '🎥 Tessellation & Tiling without Gaps (Periwinkle)',
+      videoId: 'ZXU28FhYY_M',
+      title: 'Tessellation | Mathematics Grade 3 (~477K views) | Periwinkle',
+      youtubeUrl: 'https://www.youtube.com/embed/ZXU28FhYY_M',
+      originalUrl: 'https://www.youtube.com/watch?v=ZXU28FhYY_M',
+      duration: '06:15 mins',
+      creatorName: 'Periwinkle',
+      channelName: 'Periwinkle',
+      themeName: 'Theme 3: Tessellation'
+    },
+    {
+      id: 'vid_c3_3_5_global',
+      type: 'revision',
+      tabLabel: '🎓 Tiling Patterns on Grids (GlobalShiksha)',
+      videoId: '5L4QYx91WvA',
+      title: 'Tessellation and Tiling Patterns in Architecture | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/5L4QYx91WvA',
+      originalUrl: 'https://www.youtube.com/watch?v=5L4QYx91WvA',
+      duration: '12:40 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 3: Tessellation'
+    },
+    {
+      id: 'vid_c3_3_5_digi',
+      type: 'extra',
+      tabLabel: '✨ Hands-on Tiling Activity (Digi Nurture)',
+      videoId: 'g5YemvYOjRo',
+      title: 'Maths Class 3 | Tiling and Tangrams | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/g5YemvYOjRo',
+      originalUrl: 'https://www.youtube.com/watch?v=g5YemvYOjRo',
+      duration: '09:50 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 3: Tessellation'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 3 - THEME 4: MEASUREMENT & TIME
+  // =========================================================================
+  'c3_les_4_1': [
+    {
+      id: 'vid_c3_4_1_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Length Measurement (cm, m) (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Maths: Measurement Length - English | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Measurement'
+    },
+    {
+      id: 'vid_c3_4_1_ln',
+      type: 'revision',
+      tabLabel: '🎓 Measuring with Ruler & Tape (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Centimeters and Meters Conversion (1 m = 100 cm) | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Measurement'
+    },
+    {
+      id: 'vid_c3_4_1_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Units of Length for Kids (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'Length & Distance Measurement for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Measurement'
+    }
+  ],
+
+  'c3_les_4_2': [
+    {
+      id: 'vid_c3_4_2_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Weight & Capacity (g, kg, mL, L) (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Maths: Measurement Weight & Capacity - English | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Weight & Capacity'
+    },
+    {
+      id: 'vid_c3_4_2_ln',
+      type: 'revision',
+      tabLabel: '🎓 Measuring Mass and Volume (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Grams, Kilograms, Millilitres & Litres | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Weight & Capacity'
+    },
+    {
+      id: 'vid_c3_4_2_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Weight & Liquid Volume Visuals (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'Mass and Volume Concepts for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Weight & Capacity'
+    }
+  ],
+
+  'c3_les_4_3': [
+    {
+      id: 'vid_c3_4_3_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Reading Clock to 5 Minutes (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Maths: Time and Clock - English | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Time'
+    },
+    {
+      id: 'vid_c3_4_3_ln',
+      type: 'revision',
+      tabLabel: '🎓 12-Hour vs 24-Hour Clock (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Class 3 Time: AM, PM and 24-Hour Notation | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Time'
+    },
+    {
+      id: 'vid_c3_4_3_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Telling Time on Analog & Digital Clocks (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'Telling Time for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Time'
+    }
+  ],
+
+  'c3_les_4_4': [
+    {
+      id: 'vid_c3_4_4_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Calendar, Months & Days (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Understanding Calendar and Days of the Week | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Calendar'
+    },
+    {
+      id: 'vid_c3_4_4_ln',
+      type: 'revision',
+      tabLabel: '🎓 Leap Years & Elapsed Time (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Calendar, Months, Leap Years & Elapsed Time | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Calendar'
+    },
+    {
+      id: 'vid_c3_4_4_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Calendar Skills for Kids (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'Reading Calendar and Calculating Time Duration | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Calendar'
+    }
+  ],
+
+  'c3_les_4_5': [
+    {
+      id: 'vid_c3_4_5_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Perimeter by Counting Grid Units (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Finding Perimeter of 2D Shapes on Grid | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Perimeter'
+    },
+    {
+      id: 'vid_c3_4_5_ln',
+      type: 'revision',
+      tabLabel: '🎓 Perimeter of Simple Figures (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Perimeter Concept and Calculations for Class 3 | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Perimeter'
+    },
+    {
+      id: 'vid_c3_4_5_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Perimeter Introduction for Kids (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'Perimeter of Polygons Made Simple | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Perimeter'
+    }
+  ],
+
+  'c3_les_4_6': [
+    {
+      id: 'vid_c3_4_6_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Pan Balance & Non-Standard Units (Bodhaguru)',
+      videoId: 'yKkYx7Xw6vU',
+      title: 'Balancing and Weighing with Pan Balance | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/yKkYx7Xw6vU',
+      originalUrl: 'https://www.youtube.com/watch?v=yKkYx7Xw6vU',
+      duration: '11:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Pan Balance'
+    },
+    {
+      id: 'vid_c3_4_6_ln',
+      type: 'revision',
+      tabLabel: '🎓 Estimating Mass with Balance Scales (Learning Notebook)',
+      videoId: 'rQ_w7fK6aV8',
+      title: 'Estimating and Comparing Weights | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/rQ_w7fK6aV8',
+      originalUrl: 'https://www.youtube.com/watch?v=rQ_w7fK6aV8',
+      duration: '16:20 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 4: Pan Balance'
+    },
+    {
+      id: 'vid_c3_4_6_homeschool',
+      type: 'extra',
+      tabLabel: '✨ Balance Scale Weight Activities (Homeschool Pop)',
+      videoId: 'X_f-u7D2b_c',
+      title: 'How Pan Balance Works for Kids | Homeschool Pop',
+      youtubeUrl: 'https://www.youtube.com/embed/X_f-u7D2b_c',
+      originalUrl: 'https://www.youtube.com/watch?v=X_f-u7D2b_c',
+      duration: '10:10 mins',
+      creatorName: 'Homeschool Pop',
+      channelName: 'Homeschool Pop',
+      themeName: 'Theme 4: Pan Balance'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 3 - THEME 5: DATA HANDLING
+  // =========================================================================
+  'c3_les_5_1': [
+    {
+      id: 'vid_c3_5_1_global',
+      type: 'primary',
+      tabLabel: '🎥 Data Collection & Frequency Tables (GlobalShiksha)',
+      videoId: 'C_TA4ma5F8A',
+      title: 'Class 3 Maths - Data Handling & Tally Marks | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/C_TA4ma5F8A',
+      originalUrl: 'https://www.youtube.com/watch?v=C_TA4ma5F8A',
+      duration: '08:45 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 5: Data Handling'
+    },
+    {
+      id: 'vid_c3_5_1_instyn',
+      type: 'revision',
+      tabLabel: '🎓 Tally Charts Free Tutorial (instyn education)',
+      videoId: 'FiFSOvt8u9w',
+      title: 'Grade 3 Maths Data Handling Free Tutorial | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/FiFSOvt8u9w',
+      originalUrl: 'https://www.youtube.com/watch?v=FiFSOvt8u9w',
+      duration: '12:15 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 5: Data Handling'
+    },
+    {
+      id: 'vid_c3_5_1_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Smart Charts & Frequency Tables (Bodhaguru)',
+      videoId: 'PWu6b_8BqCg',
+      title: 'Smart Charts and Data Organisation | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/PWu6b_8BqCg',
+      originalUrl: 'https://www.youtube.com/watch?v=PWu6b_8BqCg',
+      duration: '09:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 5: Data Handling'
+    }
+  ],
+
+  'c3_les_5_2': [
+    {
+      id: 'vid_c3_5_2_global',
+      type: 'primary',
+      tabLabel: '🎥 Pictographs with Scale Keys (GlobalShiksha)',
+      videoId: 'C_TA4ma5F8A',
+      title: 'Drawing and Reading Pictographs with Keys | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/C_TA4ma5F8A',
+      originalUrl: 'https://www.youtube.com/watch?v=C_TA4ma5F8A',
+      duration: '08:45 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 5: Pictographs'
+    },
+    {
+      id: 'vid_c3_5_2_instyn',
+      type: 'revision',
+      tabLabel: '🎓 Pictograph Scale Interpretation (instyn education)',
+      videoId: 'FiFSOvt8u9w',
+      title: 'Interpreting Pictographs in Class 3 Maths | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/FiFSOvt8u9w',
+      originalUrl: 'https://www.youtube.com/watch?v=FiFSOvt8u9w',
+      duration: '12:15 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 5: Pictographs'
+    },
+    {
+      id: 'vid_c3_5_2_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Pictograph Visual Stories (Bodhaguru)',
+      videoId: 'PWu6b_8BqCg',
+      title: 'Pictorial Representation of Data | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/PWu6b_8BqCg',
+      originalUrl: 'https://www.youtube.com/watch?v=PWu6b_8BqCg',
+      duration: '09:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 5: Pictographs'
+    }
+  ],
+
+  'c3_les_5_3': [
+    {
+      id: 'vid_c3_5_3_global',
+      type: 'primary',
+      tabLabel: '🎥 Tally Marks & Simple Bar Charts (GlobalShiksha)',
+      videoId: 'C_TA4ma5F8A',
+      title: 'Tally Marks and Bar Graph Basics | GlobalShiksha',
+      youtubeUrl: 'https://www.youtube.com/embed/C_TA4ma5F8A',
+      originalUrl: 'https://www.youtube.com/watch?v=C_TA4ma5F8A',
+      duration: '08:45 mins',
+      creatorName: 'GlobalShiksha',
+      channelName: 'GlobalShiksha',
+      themeName: 'Theme 5: Tally Marks'
+    },
+    {
+      id: 'vid_c3_5_3_instyn',
+      type: 'revision',
+      tabLabel: '🎓 Counting in Bundles of 5 (instyn education)',
+      videoId: 'FiFSOvt8u9w',
+      title: 'Tally Marks Rules (Bundles of 5) | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/FiFSOvt8u9w',
+      originalUrl: 'https://www.youtube.com/watch?v=FiFSOvt8u9w',
+      duration: '12:15 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 5: Tally Marks'
+    },
+    {
+      id: 'vid_c3_5_3_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Drawing Conclusions from Data (Bodhaguru)',
+      videoId: 'PWu6b_8BqCg',
+      title: 'Reading and Interpreting Simple Charts | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/PWu6b_8BqCg',
+      originalUrl: 'https://www.youtube.com/watch?v=PWu6b_8BqCg',
+      duration: '09:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 5: Tally Marks'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 3 - THEME 6: PATTERNS
+  // =========================================================================
+  'c3_les_6_1': [
+    {
+      id: 'vid_c3_6_1_instyn',
+      type: 'primary',
+      tabLabel: '🎥 Line of Symmetry & Reflection (instyn education)',
+      videoId: 'glxvnwPrUTI',
+      title: 'Grade 3 Maths Patterns & Symmetry Free Tutorial | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/glxvnwPrUTI',
+      originalUrl: 'https://www.youtube.com/watch?v=glxvnwPrUTI',
+      duration: '14:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 6: Patterns'
+    },
+    {
+      id: 'vid_c3_6_1_digi',
+      type: 'revision',
+      tabLabel: '🎓 Mirror Reflection Patterns (Digi Nurture)',
+      videoId: 'KKuvfpQqU-s',
+      title: 'Maths Class 3 Patterns, Rules & Symmetry | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/KKuvfpQqU-s',
+      originalUrl: 'https://www.youtube.com/watch?v=KKuvfpQqU-s',
+      duration: '10:25 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 6: Patterns'
+    },
+    {
+      id: 'vid_c3_6_1_whitestar',
+      type: 'extra',
+      tabLabel: '✨ Symmetry in Nature & Shapes (White Star Junior)',
+      videoId: 'ItVfvb5EA4o',
+      title: 'Patterns in Our Surroundings | White Star Junior',
+      youtubeUrl: 'https://www.youtube.com/embed/ItVfvb5EA4o',
+      originalUrl: 'https://www.youtube.com/watch?v=ItVfvb5EA4o',
+      duration: '08:50 mins',
+      creatorName: 'White Star Junior',
+      channelName: 'White Star Junior',
+      themeName: 'Theme 6: Patterns'
+    }
+  ],
+
+  'c3_les_6_2': [
+    {
+      id: 'vid_c3_6_2_instyn',
+      type: 'primary',
+      tabLabel: '🎥 Rotational Turns (Quarter & Half Turns) (instyn education)',
+      videoId: 'glxvnwPrUTI',
+      title: 'Rotational Turns in Patterns (Quarter Turn & Half Turn) | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/glxvnwPrUTI',
+      originalUrl: 'https://www.youtube.com/watch?v=glxvnwPrUTI',
+      duration: '14:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 6: Rotational Turns'
+    },
+    {
+      id: 'vid_c3_6_2_digi',
+      type: 'revision',
+      tabLabel: '🎓 Turning Shapes in Patterns (Digi Nurture)',
+      videoId: 'KKuvfpQqU-s',
+      title: 'Pattern Rules with Turns | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/KKuvfpQqU-s',
+      originalUrl: 'https://www.youtube.com/watch?v=KKuvfpQqU-s',
+      duration: '10:25 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 6: Rotational Turns'
+    },
+    {
+      id: 'vid_c3_6_2_whitestar',
+      type: 'extra',
+      tabLabel: '✨ Unit of Repeat Patterns (White Star Junior)',
+      videoId: 'ItVfvb5EA4o',
+      title: 'Repeating and Rotating Patterns | White Star Junior',
+      youtubeUrl: 'https://www.youtube.com/embed/ItVfvb5EA4o',
+      originalUrl: 'https://www.youtube.com/watch?v=ItVfvb5EA4o',
+      duration: '08:50 mins',
+      creatorName: 'White Star Junior',
+      channelName: 'White Star Junior',
+      themeName: 'Theme 6: Rotational Turns'
+    }
+  ],
+
+  'c3_les_6_3': [
+    {
+      id: 'vid_c3_6_3_instyn',
+      type: 'primary',
+      tabLabel: '🎥 Growing & Shrinking Number Sequences (instyn education)',
+      videoId: 'glxvnwPrUTI',
+      title: 'Growing and Shrinking Number Patterns | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/glxvnwPrUTI',
+      originalUrl: 'https://www.youtube.com/watch?v=glxvnwPrUTI',
+      duration: '14:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 6: Number Sequences'
+    },
+    {
+      id: 'vid_c3_6_3_digi',
+      type: 'revision',
+      tabLabel: '🎓 Odd/Even Pattern Rules (Digi Nurture)',
+      videoId: 'KKuvfpQqU-s',
+      title: 'Number Patterns and Odd/Even Rules | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/KKuvfpQqU-s',
+      originalUrl: 'https://www.youtube.com/watch?v=KKuvfpQqU-s',
+      duration: '10:25 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 6: Number Sequences'
+    },
+    {
+      id: 'vid_c3_6_3_whitestar',
+      type: 'extra',
+      tabLabel: '✨ Number Pattern Puzzles (White Star Junior)',
+      videoId: 'ItVfvb5EA4o',
+      title: 'Finding the Rule in Number Patterns | White Star Junior',
+      youtubeUrl: 'https://www.youtube.com/embed/ItVfvb5EA4o',
+      originalUrl: 'https://www.youtube.com/watch?v=ItVfvb5EA4o',
+      duration: '08:50 mins',
+      creatorName: 'White Star Junior',
+      channelName: 'White Star Junior',
+      themeName: 'Theme 6: Number Sequences'
+    }
+  ],
+
+  // CLASS 6 - THEME 1: NUMBER SYSTEM
+  // =========================================================================
+  'c6_les_1_1': [
+    {
+      id: 'vid_c6_1_1_bodhaguru',
+      type: 'primary',
+      tabLabel: '🎥 Indian Number System (Bodhaguru)',
+      videoId: 'WjFpRoX6x04',
+      title: 'Indian Number System - Place Value | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/WjFpRoX6x04',
+      originalUrl: 'https://www.youtube.com/watch?v=WjFpRoX6x04',
+      duration: '08:30 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 1: Number System (Place Value)'
+    },
+    {
+      id: 'vid_c6_1_1_mb',
+      type: 'revision',
+      tabLabel: '🎓 Knowing Our Numbers (Magnet Brains)',
+      videoId: 'nmZqMu3tNoY',
+      title: 'Knowing Our Numbers / Place Value Full Chapter | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/nmZqMu3tNoY',
+      originalUrl: 'https://www.youtube.com/watch?v=nmZqMu3tNoY',
+      duration: '45:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Number System (Place Value)'
+    },
+    {
+      id: 'vid_c6_1_1_ln',
+      type: 'extra',
+      tabLabel: '✨ Indian vs International System (Learning Notebook)',
+      videoId: 'oFKcTwVk5FY',
+      title: 'Indian vs International Number System Comparison | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/oFKcTwVk5FY',
+      originalUrl: 'https://www.youtube.com/watch?v=oFKcTwVk5FY',
+      duration: '14:15 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Number System (Place Value)'
+    }
+  ],
+
+  'c6_les_1_2': [
+    {
+      id: 'vid_c6_1_2_mb',
+      type: 'primary',
+      tabLabel: '🎓 Whole Numbers Full Chapter (Magnet Brains)',
+      videoId: 'oJl6Xjm-Kwk',
+      title: 'Whole Numbers Full Chapter Explanation | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/oJl6Xjm-Kwk',
+      originalUrl: 'https://www.youtube.com/watch?v=oJl6Xjm-Kwk',
+      duration: '38:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Natural & Whole Numbers'
+    },
+    {
+      id: 'vid_c6_1_2_pw',
+      type: 'revision',
+      tabLabel: '🎥 Natural & Whole Numbers (PW Little Champs)',
+      videoId: 'Ys5MlXpEi4o',
+      title: 'Natural & Whole Numbers Class 6 Lecture | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/Ys5MlXpEi4o',
+      originalUrl: 'https://www.youtube.com/watch?v=Ys5MlXpEi4o',
+      duration: '28:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 1: Natural & Whole Numbers'
+    },
+    {
+      id: 'vid_c6_1_2_ka',
+      type: 'extra',
+      tabLabel: '✨ Number Line & Properties (Khan Academy)',
+      videoId: 'yE8w0-R53W0',
+      title: 'Number Line & Whole Number Properties | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/yE8w0-R53W0',
+      originalUrl: 'https://www.youtube.com/watch?v=yE8w0-R53W0',
+      duration: '10:15 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 1: Natural & Whole Numbers'
+    }
+  ],
+
+  'c6_les_1_3': [
+    {
+      id: 'vid_c6_1_3_mb',
+      type: 'primary',
+      tabLabel: '🎓 Integers Full Chapter (Magnet Brains)',
+      videoId: 'wKo0OozohaI',
+      title: 'Integers Full Chapter Explanation | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/wKo0OozohaI',
+      originalUrl: 'https://www.youtube.com/watch?v=wKo0OozohaI',
+      duration: '52:00 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Negative Numbers & Integers'
+    },
+    {
+      id: 'vid_c6_1_3_instyn',
+      type: 'revision',
+      tabLabel: '🔄 Grade 6 Integers Tutorial (instyn education)',
+      videoId: 'BVVrp7WkcCM',
+      title: 'Grade 6 Integers Free Tutorial (~195K views) | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/BVVrp7WkcCM',
+      originalUrl: 'https://www.youtube.com/watch?v=BVVrp7WkcCM',
+      duration: '18:30 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 1: Negative Numbers & Integers'
+    },
+    {
+      id: 'vid_c6_1_3_pw',
+      type: 'extra',
+      tabLabel: '✨ Integers Part 1 (PW Little Champs)',
+      videoId: '04YFdlLzanU',
+      title: 'Integers Part 1 - Class 6 | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/04YFdlLzanU',
+      originalUrl: 'https://www.youtube.com/watch?v=04YFdlLzanU',
+      duration: '32:10 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 1: Negative Numbers & Integers'
+    }
+  ],
+
+  'c6_les_1_4': [
+    {
+      id: 'vid_c6_1_4_mb',
+      type: 'primary',
+      tabLabel: '🎓 Integers Operations & Number Line (Magnet Brains)',
+      videoId: 'wKo0OozohaI',
+      title: 'Operations on Integers (Addition & Subtraction) | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/wKo0OozohaI',
+      originalUrl: 'https://www.youtube.com/watch?v=wKo0OozohaI',
+      duration: '52:00 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Operations on Integers'
+    },
+    {
+      id: 'vid_c6_1_4_instyn',
+      type: 'revision',
+      tabLabel: '🔄 Integers Operations Stepwise (instyn education)',
+      videoId: 'BVVrp7WkcCM',
+      title: 'Integers Addition, Subtraction & Rules | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/BVVrp7WkcCM',
+      originalUrl: 'https://www.youtube.com/watch?v=BVVrp7WkcCM',
+      duration: '18:30 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 1: Operations on Integers'
+    },
+    {
+      id: 'vid_c6_1_4_pw',
+      type: 'extra',
+      tabLabel: '✨ Integers Operations Practice (PW Little Champs)',
+      videoId: '04YFdlLzanU',
+      title: 'Integers Rules and Practice Problems | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/04YFdlLzanU',
+      originalUrl: 'https://www.youtube.com/watch?v=04YFdlLzanU',
+      duration: '32:10 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 1: Operations on Integers'
+    }
+  ],
+
+  'c6_les_1_5': [
+    {
+      id: 'vid_c6_1_5_instyn',
+      type: 'primary',
+      tabLabel: '🎥 Grade 6 Sets I Free Tutorial (instyn education)',
+      videoId: 'fjameOg-bcg',
+      title: 'Grade 6 Sets I Free Tutorial (Beginner Friendly) | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/fjameOg-bcg',
+      originalUrl: 'https://www.youtube.com/watch?v=fjameOg-bcg',
+      duration: '16:45 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 1: Sets'
+    },
+    {
+      id: 'vid_c6_1_5_digi',
+      type: 'revision',
+      tabLabel: '🔄 Sets Class 6 Animation (Digi Nurture)',
+      videoId: 'brnhfXYS2TI',
+      title: 'Sets Class 6 Clear English Animation | Digi Nurture / Kriti Educational',
+      youtubeUrl: 'https://www.youtube.com/embed/brnhfXYS2TI',
+      originalUrl: 'https://www.youtube.com/watch?v=brnhfXYS2TI',
+      duration: '14:20 mins',
+      creatorName: 'Digi Nurture',
+      channelName: 'Kriti Educational',
+      themeName: 'Theme 1: Sets'
+    },
+    {
+      id: 'vid_c6_1_5_ka',
+      type: 'extra',
+      tabLabel: '✨ Introduction to Sets (Khan Academy)',
+      videoId: 'SkBqaB3UQRI',
+      title: 'Introduction to Sets & Notation | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/SkBqaB3UQRI',
+      originalUrl: 'https://www.youtube.com/watch?v=SkBqaB3UQRI',
+      duration: '12:00 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 1: Sets'
+    }
+  ],
+
+  'c6_les_1_6': [
+    {
+      id: 'vid_c6_1_6_mb',
+      type: 'primary',
+      tabLabel: '🎓 Fractions Full Chapter (Magnet Brains)',
+      videoId: 'FqMTNNE-J3I',
+      title: 'Fractions Full Chapter Class 6 | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/FqMTNNE-J3I',
+      originalUrl: 'https://www.youtube.com/watch?v=FqMTNNE-J3I',
+      duration: '48:30 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Fractions'
+    },
+    {
+      id: 'vid_c6_1_6_byju',
+      type: 'revision',
+      tabLabel: "🔄 Fractions One Shot (BYJU'S)",
+      videoId: 'J0bMkpAzjEo',
+      title: "Fractions One Shot Class 6-8 | BYJU'S",
+      youtubeUrl: 'https://www.youtube.com/embed/J0bMkpAzjEo',
+      originalUrl: 'https://www.youtube.com/watch?v=J0bMkpAzjEo',
+      duration: '25:15 mins',
+      creatorName: "BYJU'S",
+      channelName: "BYJU'S Class 6-8",
+      themeName: 'Theme 1: Fractions'
+    },
+    {
+      id: 'vid_c6_1_6_ka',
+      type: 'extra',
+      tabLabel: '✨ Conceptual Fractions Series (Khan Academy)',
+      videoId: 'n0FZhQ_GkKw',
+      title: 'Fractions Conceptual English Series Grade 6 | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/n0FZhQ_GkKw',
+      originalUrl: 'https://www.youtube.com/watch?v=n0FZhQ_GkKw',
+      duration: '11:40 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 1: Fractions'
+    }
+  ],
+
+  'c6_les_1_7': [
+    {
+      id: 'vid_c6_1_7_mb',
+      type: 'primary',
+      tabLabel: '🎓 Decimals Full Chapter (Magnet Brains)',
+      videoId: 'KP-ooqJexRI',
+      title: 'Decimals Full Chapter Class 6 | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/KP-ooqJexRI',
+      originalUrl: 'https://www.youtube.com/watch?v=KP-ooqJexRI',
+      duration: '46:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Decimals'
+    },
+    {
+      id: 'vid_c6_1_7_byju',
+      type: 'revision',
+      tabLabel: "🔄 Decimals One Shot (BYJU'S)",
+      videoId: 'mYV0HSsJu8A',
+      title: "Decimals Class 6 One Shot | BYJU'S",
+      youtubeUrl: 'https://www.youtube.com/embed/mYV0HSsJu8A',
+      originalUrl: 'https://www.youtube.com/watch?v=mYV0HSsJu8A',
+      duration: '22:45 mins',
+      creatorName: "BYJU'S",
+      channelName: "BYJU'S Class 6-8",
+      themeName: 'Theme 1: Decimals'
+    },
+    {
+      id: 'vid_c6_1_7_ln',
+      type: 'extra',
+      tabLabel: '✨ Decimal Place Value & Operations (Learning Notebook)',
+      videoId: 'LTW8X3h2H3I',
+      title: 'Decimal Place Value & Operations | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/LTW8X3h2H3I',
+      originalUrl: 'https://www.youtube.com/watch?v=LTW8X3h2H3I',
+      duration: '15:30 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Decimals'
+    }
+  ],
+
+  'c6_les_1_8': [
+    {
+      id: 'vid_c6_1_8_mb',
+      type: 'primary',
+      tabLabel: '🎓 HCF & LCM / Playing with Numbers (Magnet Brains)',
+      videoId: 'tA_K6TDQbEg',
+      title: 'HCF & LCM / Playing with Numbers | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/tA_K6TDQbEg',
+      originalUrl: 'https://www.youtube.com/watch?v=tA_K6TDQbEg',
+      duration: '54:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 1: Playing with Numbers'
+    },
+    {
+      id: 'vid_c6_1_8_pw',
+      type: 'revision',
+      tabLabel: '🔄 Playing with Numbers Full Chapter (PW Little Champs)',
+      videoId: 'NNFqyAGtbZM',
+      title: 'Playing with Numbers Full Chapter in 1 Video (~350K+ views) | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/NNFqyAGtbZM',
+      originalUrl: 'https://www.youtube.com/watch?v=NNFqyAGtbZM',
+      duration: '35:50 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 1: Playing with Numbers'
+    },
+    {
+      id: 'vid_c6_1_8_ln',
+      type: 'extra',
+      tabLabel: '✨ LCM and HCF Clear Methods (Learning Notebook)',
+      videoId: 'eQ9hlxAylLg',
+      title: 'LCM and HCF Clear Methods | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/eQ9hlxAylLg',
+      originalUrl: 'https://www.youtube.com/watch?v=eQ9hlxAylLg',
+      duration: '19:10 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 1: Playing with Numbers'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 6 - THEME 2: RATIO & PROPORTION
+  // =========================================================================
+  'c6_les_2_1': [
+    {
+      id: 'vid_c6_2_1_pw',
+      type: 'primary',
+      tabLabel: '🎥 Ratio & Proportion Full Chapter (PW Little Champs)',
+      videoId: '5wDF_RZMVZ0',
+      title: 'Ratio and Proportion Full Chapter in 1 Video (~500K views) | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/5wDF_RZMVZ0',
+      originalUrl: 'https://www.youtube.com/watch?v=5wDF_RZMVZ0',
+      duration: '42:15 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Ratio & Proportion'
+    },
+    {
+      id: 'vid_c6_2_1_mb',
+      type: 'revision',
+      tabLabel: '🎓 Ratio & Proportion Series (Magnet Brains)',
+      videoId: 'uRasKMHgKKQ',
+      title: 'Unitary Method / Ratio & Proportion Series | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/uRasKMHgKKQ',
+      originalUrl: 'https://www.youtube.com/watch?v=uRasKMHgKKQ',
+      duration: '36:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Ratio & Proportion'
+    },
+    {
+      id: 'vid_c6_2_1_instyn',
+      type: 'extra',
+      tabLabel: '✨ Grade 6 Ratio & Proportions (instyn education)',
+      videoId: '3pnVuX0fdDc',
+      title: 'Grade 6 Ratio and Proportions Free Tutorial (~143K views) | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/3pnVuX0fdDc',
+      originalUrl: 'https://www.youtube.com/watch?v=3pnVuX0fdDc',
+      duration: '20:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 2: Ratio & Proportion'
+    }
+  ],
+
+  'c6_les_2_2': [
+    {
+      id: 'vid_c6_2_2_pw',
+      type: 'primary',
+      tabLabel: '🎥 Proportions & Means/Extremes (PW Little Champs)',
+      videoId: '5wDF_RZMVZ0',
+      title: 'Proportion, Continued Proportion & Properties | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/5wDF_RZMVZ0',
+      originalUrl: 'https://www.youtube.com/watch?v=5wDF_RZMVZ0',
+      duration: '42:15 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Ratio & Proportion'
+    },
+    {
+      id: 'vid_c6_2_2_mb',
+      type: 'revision',
+      tabLabel: '🎓 Proportion Rules & Solved Examples (Magnet Brains)',
+      videoId: 'uRasKMHgKKQ',
+      title: 'Proportion and Extreme/Mean Terms | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/uRasKMHgKKQ',
+      originalUrl: 'https://www.youtube.com/watch?v=uRasKMHgKKQ',
+      duration: '36:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Ratio & Proportion'
+    },
+    {
+      id: 'vid_c6_2_2_instyn',
+      type: 'extra',
+      tabLabel: '✨ Proportion Concept & Applications (instyn education)',
+      videoId: '3pnVuX0fdDc',
+      title: 'Understanding Proportion and Examples | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/3pnVuX0fdDc',
+      originalUrl: 'https://www.youtube.com/watch?v=3pnVuX0fdDc',
+      duration: '20:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 2: Ratio & Proportion'
+    }
+  ],
+
+  'c6_les_2_3': [
+    {
+      id: 'vid_c6_2_3_pw',
+      type: 'primary',
+      tabLabel: '🎥 Unitary Method & Direct Variation (PW Little Champs)',
+      videoId: '5wDF_RZMVZ0',
+      title: 'Unitary Method & Direct Variation | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/5wDF_RZMVZ0',
+      originalUrl: 'https://www.youtube.com/watch?v=5wDF_RZMVZ0',
+      duration: '42:15 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Unitary Method'
+    },
+    {
+      id: 'vid_c6_2_3_mb',
+      type: 'revision',
+      tabLabel: '🎓 Unitary Method Stepwise Problems (Magnet Brains)',
+      videoId: 'uRasKMHgKKQ',
+      title: 'Unitary Method Word Problems | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/uRasKMHgKKQ',
+      originalUrl: 'https://www.youtube.com/watch?v=uRasKMHgKKQ',
+      duration: '36:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Unitary Method'
+    },
+    {
+      id: 'vid_c6_2_3_instyn',
+      type: 'extra',
+      tabLabel: '✨ Speed, Distance, Time Basics (instyn education)',
+      videoId: '3pnVuX0fdDc',
+      title: 'Unitary Method & Real-Life Problems | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/3pnVuX0fdDc',
+      originalUrl: 'https://www.youtube.com/watch?v=3pnVuX0fdDc',
+      duration: '20:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 2: Unitary Method'
+    }
+  ],
+
+  'c6_les_2_4': [
+    {
+      id: 'vid_c6_2_4_pw',
+      type: 'primary',
+      tabLabel: '🎥 Percentage Concept & Conversion (PW Little Champs)',
+      videoId: '5wDF_RZMVZ0',
+      title: 'Percentage and Fraction/Decimal Conversion | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/5wDF_RZMVZ0',
+      originalUrl: 'https://www.youtube.com/watch?v=5wDF_RZMVZ0',
+      duration: '42:15 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Percentage'
+    },
+    {
+      id: 'vid_c6_2_4_mb',
+      type: 'revision',
+      tabLabel: '🎓 Percentage Applications (Magnet Brains)',
+      videoId: 'uRasKMHgKKQ',
+      title: 'Percentages & Daily Life Applications | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/uRasKMHgKKQ',
+      originalUrl: 'https://www.youtube.com/watch?v=uRasKMHgKKQ',
+      duration: '36:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Percentage'
+    },
+    {
+      id: 'vid_c6_2_4_instyn',
+      type: 'extra',
+      tabLabel: '✨ Percentage Quick Methods (instyn education)',
+      videoId: '3pnVuX0fdDc',
+      title: 'Percentage Fundamentals | instyn education',
+      youtubeUrl: 'https://www.youtube.com/embed/3pnVuX0fdDc',
+      originalUrl: 'https://www.youtube.com/watch?v=3pnVuX0fdDc',
+      duration: '20:10 mins',
+      creatorName: 'instyn education',
+      channelName: 'instyn education',
+      themeName: 'Theme 2: Percentage'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 6 - THEME 3: ALGEBRA
+  // =========================================================================
+  'c6_les_3_1': [
+    {
+      id: 'vid_c6_3_1_math6',
+      type: 'primary',
+      tabLabel: '🎥 Introduction to Algebra (Mathematics Class VI)',
+      videoId: 'T8XY_wL9G1o',
+      title: 'Introduction to Algebra (Millions of Views) | Mathematics Class VI',
+      youtubeUrl: 'https://www.youtube.com/embed/T8XY_wL9G1o',
+      originalUrl: 'https://www.youtube.com/watch?v=T8XY_wL9G1o',
+      duration: '38:50 mins',
+      creatorName: 'Mathematics Class VI',
+      channelName: 'Mathematics Class VI',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c6_3_1_mb',
+      type: 'revision',
+      tabLabel: '🎓 Algebra Full Chapter & Exercises (Magnet Brains)',
+      videoId: '9fQZpjSHPSU',
+      title: 'Algebra Full Chapter Explanation & Exercise | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/9fQZpjSHPSU',
+      originalUrl: 'https://www.youtube.com/watch?v=9fQZpjSHPSU',
+      duration: '48:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c6_3_1_ka',
+      type: 'extra',
+      tabLabel: '✨ Variables & Expressions (Khan Academy)',
+      videoId: 'NybHckSEQBI',
+      title: 'Introduction to Algebra & Variables | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/NybHckSEQBI',
+      originalUrl: 'https://www.youtube.com/watch?v=NybHckSEQBI',
+      duration: '15:30 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 3: Algebra'
+    }
+  ],
+
+  'c6_les_3_2': [
+    {
+      id: 'vid_c6_3_2_math6',
+      type: 'primary',
+      tabLabel: '🎥 Expressions, Terms & Coefficients (Mathematics Class VI)',
+      videoId: 'T8XY_wL9G1o',
+      title: 'Algebraic Terms, Coefficients & Like/Unlike Terms | Mathematics Class VI',
+      youtubeUrl: 'https://www.youtube.com/embed/T8XY_wL9G1o',
+      originalUrl: 'https://www.youtube.com/watch?v=T8XY_wL9G1o',
+      duration: '38:50 mins',
+      creatorName: 'Mathematics Class VI',
+      channelName: 'Mathematics Class VI',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c6_3_2_mb',
+      type: 'revision',
+      tabLabel: '🎓 Operations on Expressions (Magnet Brains)',
+      videoId: '9fQZpjSHPSU',
+      title: 'Addition & Subtraction of Algebraic Expressions | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/9fQZpjSHPSU',
+      originalUrl: 'https://www.youtube.com/watch?v=9fQZpjSHPSU',
+      duration: '48:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Algebra'
+    },
+    {
+      id: 'vid_c6_3_2_ka',
+      type: 'extra',
+      tabLabel: '✨ Evaluating Expressions (Khan Academy)',
+      videoId: 'NybHckSEQBI',
+      title: 'Evaluating Algebraic Expressions with Variables | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/NybHckSEQBI',
+      originalUrl: 'https://www.youtube.com/watch?v=NybHckSEQBI',
+      duration: '15:30 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 3: Algebra'
+    }
+  ],
+
+  'c6_les_3_3': [
+    {
+      id: 'vid_c6_3_3_math6',
+      type: 'primary',
+      tabLabel: '🎥 Linear Equations in One Variable (Mathematics Class VI)',
+      videoId: 'T8XY_wL9G1o',
+      title: 'Forming & Solving Linear Equations | Mathematics Class VI',
+      youtubeUrl: 'https://www.youtube.com/embed/T8XY_wL9G1o',
+      originalUrl: 'https://www.youtube.com/watch?v=T8XY_wL9G1o',
+      duration: '38:50 mins',
+      creatorName: 'Mathematics Class VI',
+      channelName: 'Mathematics Class VI',
+      themeName: 'Theme 3: Linear Equations'
+    },
+    {
+      id: 'vid_c6_3_3_mb',
+      type: 'revision',
+      tabLabel: '🎓 Solving Equations by Transposition (Magnet Brains)',
+      videoId: '9fQZpjSHPSU',
+      title: 'Linear Equations Transposition Method | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/9fQZpjSHPSU',
+      originalUrl: 'https://www.youtube.com/watch?v=9fQZpjSHPSU',
+      duration: '48:20 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Linear Equations'
+    },
+    {
+      id: 'vid_c6_3_3_ka',
+      type: 'extra',
+      tabLabel: '✨ Linear Equations Conceptual Walkthrough (Khan Academy)',
+      videoId: 'NybHckSEQBI',
+      title: 'Solving One-Step Linear Equations | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/NybHckSEQBI',
+      originalUrl: 'https://www.youtube.com/watch?v=NybHckSEQBI',
+      duration: '15:30 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 3: Linear Equations'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 6 - THEME 4: GEOMETRY & CONSTRUCTIONS
+  // =========================================================================
+  'c6_les_4_1': [
+    {
+      id: 'vid_c6_4_1_mb',
+      type: 'primary',
+      tabLabel: '🎓 Basic Geometrical Ideas (Magnet Brains)',
+      videoId: 'OOWFSNOWsVs',
+      title: 'Angles & Basic Geometrical Ideas | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/OOWFSNOWsVs',
+      originalUrl: 'https://www.youtube.com/watch?v=OOWFSNOWsVs',
+      duration: '44:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c6_4_1_pw',
+      type: 'revision',
+      tabLabel: '🎥 Points, Lines, Rays & Planes (PW Little Champs)',
+      videoId: 'cK3UNTDrCmc',
+      title: 'Understanding Elementary Shapes & 3-D Solids | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/cK3UNTDrCmc',
+      originalUrl: 'https://www.youtube.com/watch?v=cK3UNTDrCmc',
+      duration: '32:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Geometry'
+    },
+    {
+      id: 'vid_c6_4_1_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Lines & Intersections (Bodhaguru)',
+      videoId: '7FBkbljcPe4',
+      title: 'Lines, Symmetry & Compass Constructions | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/7FBkbljcPe4',
+      originalUrl: 'https://www.youtube.com/watch?v=7FBkbljcPe4',
+      duration: '18:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Geometry'
+    }
+  ],
+
+  'c6_les_4_2': [
+    {
+      id: 'vid_c6_4_2_mb',
+      type: 'primary',
+      tabLabel: '🎓 Angle Types & Measurements (Magnet Brains)',
+      videoId: 'OOWFSNOWsVs',
+      title: 'Types of Angles: Acute, Right, Obtuse, Straight, Reflex | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/OOWFSNOWsVs',
+      originalUrl: 'https://www.youtube.com/watch?v=OOWFSNOWsVs',
+      duration: '44:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Angles'
+    },
+    {
+      id: 'vid_c6_4_2_pw',
+      type: 'revision',
+      tabLabel: '🎥 Angle Classification & Protractor (PW Little Champs)',
+      videoId: 'cK3UNTDrCmc',
+      title: 'Angles and Classification | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/cK3UNTDrCmc',
+      originalUrl: 'https://www.youtube.com/watch?v=cK3UNTDrCmc',
+      duration: '32:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Angles'
+    },
+    {
+      id: 'vid_c6_4_2_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Compass Angle Constructions (Bodhaguru)',
+      videoId: '7FBkbljcPe4',
+      title: 'Constructing Angles using Compass (60°, Bisectors) | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/7FBkbljcPe4',
+      originalUrl: 'https://www.youtube.com/watch?v=7FBkbljcPe4',
+      duration: '18:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Angles'
+    }
+  ],
+
+  'c6_les_4_3': [
+    {
+      id: 'vid_c6_4_3_mb',
+      type: 'primary',
+      tabLabel: '🎓 Triangles & Angle Sum Property (Magnet Brains)',
+      videoId: 'OOWFSNOWsVs',
+      title: 'Classification of Triangles & Angle Sum Property (180°) | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/OOWFSNOWsVs',
+      originalUrl: 'https://www.youtube.com/watch?v=OOWFSNOWsVs',
+      duration: '44:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Triangles'
+    },
+    {
+      id: 'vid_c6_4_3_pw',
+      type: 'revision',
+      tabLabel: '🎥 Triangles by Sides & Angles (PW Little Champs)',
+      videoId: 'cK3UNTDrCmc',
+      title: 'Types of Triangles (Equilateral, Isosceles, Scalene) | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/cK3UNTDrCmc',
+      originalUrl: 'https://www.youtube.com/watch?v=cK3UNTDrCmc',
+      duration: '32:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Triangles'
+    },
+    {
+      id: 'vid_c6_4_3_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Triangle Properties & Proofs (Bodhaguru)',
+      videoId: '7FBkbljcPe4',
+      title: 'Triangle Properties and Angle Sum Verification | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/7FBkbljcPe4',
+      originalUrl: 'https://www.youtube.com/watch?v=7FBkbljcPe4',
+      duration: '18:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Triangles'
+    }
+  ],
+
+  'c6_les_4_4': [
+    {
+      id: 'vid_c6_4_4_mb',
+      type: 'primary',
+      tabLabel: '🎓 Quadrilaterals & Polygons (Magnet Brains)',
+      videoId: 'OOWFSNOWsVs',
+      title: 'Properties of Quadrilaterals: Parallelogram, Rectangle, Rhombus, Trapezium | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/OOWFSNOWsVs',
+      originalUrl: 'https://www.youtube.com/watch?v=OOWFSNOWsVs',
+      duration: '44:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: Quadrilaterals'
+    },
+    {
+      id: 'vid_c6_4_pw',
+      type: 'revision',
+      tabLabel: '🎥 Quadrilateral Classification (PW Little Champs)',
+      videoId: 'cK3UNTDrCmc',
+      title: 'Quadrilaterals and Polygons Exploration | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/cK3UNTDrCmc',
+      originalUrl: 'https://www.youtube.com/watch?v=cK3UNTDrCmc',
+      duration: '32:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Quadrilaterals'
+    },
+    {
+      id: 'vid_c6_4_4_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Quadrilateral Properties (Bodhaguru)',
+      videoId: '7FBkbljcPe4',
+      title: 'Polygons, Regular vs Irregular & Symmetry | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/7FBkbljcPe4',
+      originalUrl: 'https://www.youtube.com/watch?v=7FBkbljcPe4',
+      duration: '18:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: Quadrilaterals'
+    }
+  ],
+
+  'c6_les_4_5': [
+    {
+      id: 'vid_c6_4_5_mb',
+      type: 'primary',
+      tabLabel: '🎓 3D Shapes & Euler Formula (Magnet Brains)',
+      videoId: 'OOWFSNOWsVs',
+      title: '3D Solid Shapes, Nets & Euler Formula (F + V - E = 2) | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/OOWFSNOWsVs',
+      originalUrl: 'https://www.youtube.com/watch?v=OOWFSNOWsVs',
+      duration: '44:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 4: 3D Shapes & Nets'
+    },
+    {
+      id: 'vid_c6_4_5_pw',
+      type: 'revision',
+      tabLabel: '🎥 Faces, Edges, Vertices & Nets (PW Little Champs)',
+      videoId: 'cK3UNTDrCmc',
+      title: '3D Solids (Cube, Cuboid, Cylinder, Cone, Prism, Pyramid) & Nets | PW Little Champs',
+      youtubeUrl: 'https://www.youtube.com/embed/cK3UNTDrCmc',
+      originalUrl: 'https://www.youtube.com/watch?v=cK3UNTDrCmc',
+      duration: '32:45 mins',
+      creatorName: 'PW Little Champs',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: 3D Shapes & Nets'
+    },
+    {
+      id: 'vid_c6_4_5_bodhaguru',
+      type: 'extra',
+      tabLabel: '✨ Symmetry & Compass Constructions (Bodhaguru)',
+      videoId: '7FBkbljcPe4',
+      title: 'Symmetry, Reflections and Compass Constructions | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/7FBkbljcPe4',
+      originalUrl: 'https://www.youtube.com/watch?v=7FBkbljcPe4',
+      duration: '18:15 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 4: 3D Shapes & Nets'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 6 - THEME 5: MENSURATION (PERIMETER & AREA)
+  // =========================================================================
+  'c6_les_5_1': [
+    {
+      id: 'vid_c6_5_1_ln',
+      type: 'primary',
+      tabLabel: '🎥 Perimeter Complete Walkthrough (Learning Notebook)',
+      videoId: 'cUNbLBtCHiU',
+      title: 'Class 6 Mensuration / Perimeter and Area (Complete) | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/cUNbLBtCHiU',
+      originalUrl: 'https://www.youtube.com/watch?v=cUNbLBtCHiU',
+      duration: '35:30 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 5: Mensuration'
+    },
+    {
+      id: 'vid_c6_5_1_curious',
+      type: 'revision',
+      tabLabel: '🔄 Perimeter of Polygons & Regular Shapes (CuriousJr / PW)',
+      videoId: 'AAB0VL9qORM',
+      title: 'Understanding Mensuration Perimeter and Area | CuriousJr / PW',
+      youtubeUrl: 'https://www.youtube.com/embed/AAB0VL9qORM',
+      originalUrl: 'https://www.youtube.com/watch?v=AAB0VL9qORM',
+      duration: '26:15 mins',
+      creatorName: 'CuriousJr / PW',
+      channelName: 'CuriousJr',
+      themeName: 'Theme 5: Mensuration'
+    },
+    {
+      id: 'vid_c6_5_1_mb',
+      type: 'extra',
+      tabLabel: '✨ Perimeter Overview & Formulas (Magnet Brains)',
+      videoId: 'MFMnfRr4eXY',
+      title: 'Perimeter and Area Chapter Overview | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/MFMnfRr4eXY',
+      originalUrl: 'https://www.youtube.com/watch?v=MFMnfRr4eXY',
+      duration: '40:50 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 5: Mensuration'
+    }
+  ],
+
+  'c6_les_5_2': [
+    {
+      id: 'vid_c6_5_2_ln',
+      type: 'primary',
+      tabLabel: '🎥 Area of Rectangle & Square (Learning Notebook)',
+      videoId: 'cUNbLBtCHiU',
+      title: 'Area of Rectangle (l × b) and Square (s²) | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/cUNbLBtCHiU',
+      originalUrl: 'https://www.youtube.com/watch?v=cUNbLBtCHiU',
+      duration: '35:30 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 5: Area'
+    },
+    {
+      id: 'vid_c6_5_2_curious',
+      type: 'revision',
+      tabLabel: '🔄 Area Units & Conversion (CuriousJr / PW)',
+      videoId: 'AAB0VL9qORM',
+      title: 'Standard Units (cm², m²) and Conversion of Units | CuriousJr / PW',
+      youtubeUrl: 'https://www.youtube.com/embed/AAB0VL9qORM',
+      originalUrl: 'https://www.youtube.com/watch?v=AAB0VL9qORM',
+      duration: '26:15 mins',
+      creatorName: 'CuriousJr / PW',
+      channelName: 'CuriousJr',
+      themeName: 'Theme 5: Area'
+    },
+    {
+      id: 'vid_c6_5_2_mb',
+      type: 'extra',
+      tabLabel: '✨ Area Word Problems (Magnet Brains)',
+      videoId: 'MFMnfRr4eXY',
+      title: 'Area Real-Life Word Problems & Boundary Paths | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/MFMnfRr4eXY',
+      originalUrl: 'https://www.youtube.com/watch?v=MFMnfRr4eXY',
+      duration: '40:50 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 5: Area'
+    }
+  ],
+
+  'c6_les_5_3': [
+    {
+      id: 'vid_c6_5_3_ln',
+      type: 'primary',
+      tabLabel: '🎥 Area of Triangle & Combined Figures (Learning Notebook)',
+      videoId: 'cUNbLBtCHiU',
+      title: 'Area of Triangle (½ × base × height) & Combined Figures | Learning Notebook',
+      youtubeUrl: 'https://www.youtube.com/embed/cUNbLBtCHiU',
+      originalUrl: 'https://www.youtube.com/watch?v=cUNbLBtCHiU',
+      duration: '35:30 mins',
+      creatorName: 'Learning Notebook',
+      channelName: 'Learning Notebook',
+      themeName: 'Theme 5: Triangle & Combined Figures'
+    },
+    {
+      id: 'vid_c6_5_3_curious',
+      type: 'revision',
+      tabLabel: '🔄 Irregular Shapes & Counter-Examples (CuriousJr / PW)',
+      videoId: 'AAB0VL9qORM',
+      title: 'Perimeter vs Area Counter-Examples & Split Figures | CuriousJr / PW',
+      youtubeUrl: 'https://www.youtube.com/embed/AAB0VL9qORM',
+      originalUrl: 'https://www.youtube.com/watch?v=AAB0VL9qORM',
+      duration: '26:15 mins',
+      creatorName: 'CuriousJr / PW',
+      channelName: 'CuriousJr',
+      themeName: 'Theme 5: Triangle & Combined Figures'
+    },
+    {
+      id: 'vid_c6_5_3_mb',
+      type: 'extra',
+      tabLabel: '✨ Complex Combined Figures Solved (Magnet Brains)',
+      videoId: 'MFMnfRr4eXY',
+      title: 'Combined Figures Perimeter and Area Solved | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/MFMnfRr4eXY',
+      originalUrl: 'https://www.youtube.com/watch?v=MFMnfRr4eXY',
+      duration: '40:50 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 5: Triangle & Combined Figures'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 6 - THEME 6: DATA HANDLING
+  // =========================================================================
+  'c6_les_6_1': [
+    {
+      id: 'vid_c6_6_1_mb',
+      type: 'primary',
+      tabLabel: '🎓 Data Organisation & Tally Charts (Magnet Brains)',
+      videoId: 'VkErq6vBQeM',
+      title: 'Data Handling & Presentation / Bar Graphs Series | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/VkErq6vBQeM',
+      originalUrl: 'https://www.youtube.com/watch?v=VkErq6vBQeM',
+      duration: '38:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 6: Data Handling'
+    },
+    {
+      id: 'vid_c6_6_1_bodhaguru',
+      type: 'revision',
+      tabLabel: '🎥 Data Collection & Visualisation (Bodhaguru)',
+      videoId: 't7YEGpBNBDc',
+      title: 'What is a Bar Chart / Data Handling (Animated) | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/t7YEGpBNBDc',
+      originalUrl: 'https://www.youtube.com/watch?v=t7YEGpBNBDc',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 6: Data Handling'
+    },
+    {
+      id: 'vid_c6_6_1_ka',
+      type: 'extra',
+      tabLabel: '✨ Frequency Tables & Statistics (Khan Academy)',
+      videoId: 'uhxtUt_-GyM',
+      title: 'Statistics Intro: Mean, Median and Ways to Represent Data | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/uhxtUt_-GyM',
+      originalUrl: 'https://www.youtube.com/watch?v=uhxtUt_-GyM',
+      duration: '16:50 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Data Handling'
+    }
+  ],
+
+  'c6_les_6_2': [
+    {
+      id: 'vid_c6_6_2_mb',
+      type: 'primary',
+      tabLabel: '🎓 Pictographs & Scale Factors (Magnet Brains)',
+      videoId: 'VkErq6vBQeM',
+      title: 'Reading & Drawing Pictographs with Scale | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/VkErq6vBQeM',
+      originalUrl: 'https://www.youtube.com/watch?v=VkErq6vBQeM',
+      duration: '38:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 6: Pictographs'
+    },
+    {
+      id: 'vid_c6_6_2_bodhaguru',
+      type: 'revision',
+      tabLabel: '🎥 Pictographs Visual Lesson (Bodhaguru)',
+      videoId: 't7YEGpBNBDc',
+      title: 'Pictographs & Frequency Representation | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/t7YEGpBNBDc',
+      originalUrl: 'https://www.youtube.com/watch?v=t7YEGpBNBDc',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 6: Pictographs'
+    },
+    {
+      id: 'vid_c6_6_2_ka',
+      type: 'extra',
+      tabLabel: '✨ Interpreting Pictographs (Khan Academy)',
+      videoId: 'uhxtUt_-GyM',
+      title: 'Interpreting Pictographs & Scale Factors | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/uhxtUt_-GyM',
+      originalUrl: 'https://www.youtube.com/watch?v=uhxtUt_-GyM',
+      duration: '16:50 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Pictographs'
+    }
+  ],
+
+  'c6_les_6_3': [
+    {
+      id: 'vid_c6_6_3_mb',
+      type: 'primary',
+      tabLabel: '🎓 Bar Graphs Drawing & Scale (Magnet Brains)',
+      videoId: 'VkErq6vBQeM',
+      title: 'Constructing Bar Graphs with Chosen Scale | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/VkErq6vBQeM',
+      originalUrl: 'https://www.youtube.com/watch?v=VkErq6vBQeM',
+      duration: '38:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 6: Bar Graphs'
+    },
+    {
+      id: 'vid_c6_6_3_bodhaguru',
+      type: 'revision',
+      tabLabel: '🎥 Bar Charts & Interpretation (Bodhaguru)',
+      videoId: 't7YEGpBNBDc',
+      title: 'Reading and Interpreting Bar Charts | Bodhaguru',
+      youtubeUrl: 'https://www.youtube.com/embed/t7YEGpBNBDc',
+      originalUrl: 'https://www.youtube.com/watch?v=t7YEGpBNBDc',
+      duration: '14:20 mins',
+      creatorName: 'Bodhaguru',
+      channelName: 'Bodhaguru Learning',
+      themeName: 'Theme 6: Bar Graphs'
+    },
+    {
+      id: 'vid_c6_6_3_ka',
+      type: 'extra',
+      tabLabel: '✨ Mean & Median for Small Data Sets (Khan Academy)',
+      videoId: 'uhxtUt_-GyM',
+      title: 'Mean and Median of Small Data Sets (<=10 observations) | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/uhxtUt_-GyM',
+      originalUrl: 'https://www.youtube.com/watch?v=uhxtUt_-GyM',
+      duration: '16:50 mins',
+      creatorName: 'Khan Academy',
+      channelName: 'Khan Academy',
+      themeName: 'Theme 6: Mean & Median'
+    }
+  ],
+
   // CLASS 7 - CHAPTER 1: NUMBER SYSTEM
   // =========================================================================
   'c7_les_1_1': [
@@ -4806,6 +7282,1083 @@ export const lessonVideoRegistry = {
   ],
 
   // =========================================================================
+  
+  // =========================================================================
+  
+  // =========================================================================
+  // CLASS 9 - THEME 1: PURE ARITHMETIC
+  // =========================================================================
+  'c9_les_1_1': [
+    {
+      id: 'vid_c9_1_1_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Rational & Irrational Numbers One Shot (Sir Tarun Rupani)',
+      videoId: 'LLMzL0EbKhg',
+      title: 'Rational and Irrational Numbers ICSE Class 9 | One Shot (~278K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/LLMzL0EbKhg',
+      originalUrl: 'https://www.youtube.com/watch?v=LLMzL0EbKhg',
+      duration: '48:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 1: Pure Arithmetic'
+    },
+    {
+      id: 'vid_c9_1_1_pw',
+      type: 'revision',
+      tabLabel: '🔄 Rational & Irrational One Shot (ICSE Wallah)',
+      videoId: '3JMsJM0ryUQ',
+      title: 'RATIONAL AND IRRATIONAL NUMBERS in One Shot (~230K views) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/3JMsJM0ryUQ',
+      originalUrl: 'https://www.youtube.com/watch?v=3JMsJM0ryUQ',
+      duration: '52:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 1: Pure Arithmetic'
+    },
+    {
+      id: 'vid_c9_1_1_surds',
+      type: 'extra',
+      tabLabel: '✨ Surds & Proofs of Irrationality (Foundation IIT)',
+      videoId: 'LLMzL0EbKhg',
+      title: 'Proofs of √2, √3, √5 Irrationality & Rationalisation of Surds | Foundation IIT',
+      youtubeUrl: 'https://www.youtube.com/embed/LLMzL0EbKhg',
+      originalUrl: 'https://www.youtube.com/watch?v=LLMzL0EbKhg',
+      duration: '35:40 mins',
+      creatorName: 'Foundation IIT',
+      channelName: 'Foundation IIT',
+      themeName: 'Theme 1: Pure Arithmetic'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 2: COMMERCIAL MATHEMATICS (COMPOUND INTEREST)
+  // =========================================================================
+  'c9_les_2_1': [
+    {
+      id: 'vid_c9_2_1_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Compound Interest Masterclass (Sir Tarun Rupani)',
+      videoId: 'OtHP93rq5v8',
+      title: 'Compound Interest | ICSE Class 9 | Commercial Mathematics (~115K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/OtHP93rq5v8',
+      originalUrl: 'https://www.youtube.com/watch?v=OtHP93rq5v8',
+      duration: '42:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Compound Interest'
+    },
+    {
+      id: 'vid_c9_2_1_pw',
+      type: 'revision',
+      tabLabel: '🔄 Compound Interest One Shot (ICSE Wallah)',
+      videoId: 'm03jx96asro',
+      title: 'COMPOUND INTEREST in One Shot (~151K views) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/m03jx96asro',
+      originalUrl: 'https://www.youtube.com/watch?v=m03jx96asro',
+      duration: '45:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 2: Compound Interest'
+    },
+    {
+      id: 'vid_c9_2_1_growth',
+      type: 'extra',
+      tabLabel: '✨ Growth & Depreciation in 60 Mins (ICSE Wallah)',
+      videoId: 'Typ34uJPbeo',
+      title: 'COMPOUND INTEREST Full Chapter in 60 Mins (Growth/Depreciation) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/Typ34uJPbeo',
+      originalUrl: 'https://www.youtube.com/watch?v=Typ34uJPbeo',
+      duration: '58:00 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 2: Compound Interest'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 3: ALGEBRA
+  // =========================================================================
+  'c9_les_3_1': [
+    {
+      id: 'vid_c9_3_1_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Expansions ICSE Class 9 (Sir Tarun Rupani)',
+      videoId: 's3a1U4nx6t8',
+      title: 'Expansions ICSE Class 9 (~171K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/s3a1U4nx6t8',
+      originalUrl: 'https://www.youtube.com/watch?v=s3a1U4nx6t8',
+      duration: '38:45 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 3: Expansions'
+    },
+    {
+      id: 'vid_c9_3_1_pw',
+      type: 'revision',
+      tabLabel: '🔄 Expansions Identities in One Shot (ICSE Wallah)',
+      videoId: 's3a1U4nx6t8',
+      title: 'Expansions Identities (a ± b)², (a ± b)³, (a + b + c)² | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/s3a1U4nx6t8',
+      originalUrl: 'https://www.youtube.com/watch?v=s3a1U4nx6t8',
+      duration: '40:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 3: Expansions'
+    },
+    {
+      id: 'vid_c9_3_1_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Special Products & Applications (Unacademy ICSE)',
+      videoId: 's3a1U4nx6t8',
+      title: 'Special Algebraic Products & High-Scoring Questions | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/s3a1U4nx6t8',
+      originalUrl: 'https://www.youtube.com/watch?v=s3a1U4nx6t8',
+      duration: '32:30 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 3: Expansions'
+    }
+  ],
+
+  'c9_les_3_2': [
+    {
+      id: 'vid_c9_3_2_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Factorisation Full Chapter (Sir Tarun Rupani)',
+      videoId: 'wqnbZr7PWcY',
+      title: 'Factorisation ICSE Class 9 (~147K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/wqnbZr7PWcY',
+      originalUrl: 'https://www.youtube.com/watch?v=wqnbZr7PWcY',
+      duration: '44:20 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 3: Factorisation'
+    },
+    {
+      id: 'vid_c9_3_2_pw',
+      type: 'revision',
+      tabLabel: '🔄 Trinomials & Difference of Squares (ICSE Wallah)',
+      videoId: 'wqnbZr7PWcY',
+      title: 'Factorisation of Trinomials (ax² + bx + c) & Grouping | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/wqnbZr7PWcY',
+      originalUrl: 'https://www.youtube.com/watch?v=wqnbZr7PWcY',
+      duration: '41:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 3: Factorisation'
+    },
+    {
+      id: 'vid_c9_3_2_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Factorisation Shortcuts (Unacademy ICSE)',
+      videoId: 'wqnbZr7PWcY',
+      title: 'Splitting Middle Term & Difference of Two Squares | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/wqnbZr7PWcY',
+      originalUrl: 'https://www.youtube.com/watch?v=wqnbZr7PWcY',
+      duration: '35:00 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 3: Factorisation'
+    }
+  ],
+
+  'c9_les_3_3': [
+    {
+      id: 'vid_c9_3_3_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Simultaneous Linear Equations (Sir Tarun Rupani)',
+      videoId: 'Co9ZA_K_8-k',
+      title: 'Simultaneous Linear Equations ICSE Class 9 (~157K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/Co9ZA_K_8-k',
+      originalUrl: 'https://www.youtube.com/watch?v=Co9ZA_K_8-k',
+      duration: '46:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 3: Simultaneous Equations'
+    },
+    {
+      id: 'vid_c9_3_3_pw',
+      type: 'revision',
+      tabLabel: '🔄 Elimination & Substitution Methods (ICSE Wallah)',
+      videoId: 'Co9ZA_K_8-k',
+      title: 'Simultaneous Equations Elimination, Substitution & Cross-Multiplication | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/Co9ZA_K_8-k',
+      originalUrl: 'https://www.youtube.com/watch?v=Co9ZA_K_8-k',
+      duration: '43:50 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 3: Simultaneous Equations'
+    },
+    {
+      id: 'vid_c9_3_3_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Word Problems on Simultaneous Equations (Unacademy ICSE)',
+      videoId: 'Co9ZA_K_8-k',
+      title: 'Simultaneous Equations Word Problems Solved | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/Co9ZA_K_8-k',
+      originalUrl: 'https://www.youtube.com/watch?v=Co9ZA_K_8-k',
+      duration: '37:15 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 3: Simultaneous Equations'
+    }
+  ],
+
+  'c9_les_3_4': [
+    {
+      id: 'vid_c9_3_4_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Indices / Exponents ICSE Class 9 (Sir Tarun Rupani)',
+      videoId: '8U3OxzmzDv8',
+      title: 'Indices ICSE Class 9 (~115K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/8U3OxzmzDv8',
+      originalUrl: 'https://www.youtube.com/watch?v=8U3OxzmzDv8',
+      duration: '35:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 3: Indices'
+    },
+    {
+      id: 'vid_c9_3_4_pw',
+      type: 'revision',
+      tabLabel: '🔄 Laws of Indices in One Shot (ICSE Wallah)',
+      videoId: '8U3OxzmzDv8',
+      title: 'Laws of Indices & Fractional Powers | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/8U3OxzmzDv8',
+      originalUrl: 'https://www.youtube.com/watch?v=8U3OxzmzDv8',
+      duration: '39:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 3: Indices'
+    },
+    {
+      id: 'vid_c9_3_4_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Indices Exam Questions (Unacademy ICSE)',
+      videoId: '8U3OxzmzDv8',
+      title: 'Indices & Power Equations Solved Stepwise | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/8U3OxzmzDv8',
+      originalUrl: 'https://www.youtube.com/watch?v=8U3OxzmzDv8',
+      duration: '30:20 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 3: Indices'
+    }
+  ],
+
+  'c9_les_3_5': [
+    {
+      id: 'vid_c9_3_5_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Logarithms Full Chapter (Sir Tarun Rupani)',
+      videoId: 'i7s5CV_qp5A',
+      title: 'Logarithms ICSE Class 9 (~159K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/i7s5CV_qp5A',
+      originalUrl: 'https://www.youtube.com/watch?v=i7s5CV_qp5A',
+      duration: '50:40 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 3: Logarithms'
+    },
+    {
+      id: 'vid_c9_3_5_pw',
+      type: 'revision',
+      tabLabel: '🔄 Laws of Logarithms in One Shot (ICSE Wallah)',
+      videoId: 'i7s5CV_qp5A',
+      title: 'Logarithms Laws, Change of Base & Properties | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/i7s5CV_qp5A',
+      originalUrl: 'https://www.youtube.com/watch?v=i7s5CV_qp5A',
+      duration: '46:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 3: Logarithms'
+    },
+    {
+      id: 'vid_c9_3_5_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Logarithms Proofs & Examples (Unacademy ICSE)',
+      videoId: 'i7s5CV_qp5A',
+      title: 'Logarithms Essential Theorems & Exam Problems | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/i7s5CV_qp5A',
+      originalUrl: 'https://www.youtube.com/watch?v=i7s5CV_qp5A',
+      duration: '38:15 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 3: Logarithms'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 4: GEOMETRY
+  // =========================================================================
+  'c9_les_4_1': [
+    {
+      id: 'vid_c9_4_1_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Triangles Congruency & Inequalities (Sir Tarun Rupani)',
+      videoId: '02hFGqXE7c0',
+      title: 'Triangles ICSE Class 9 (~147K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/02hFGqXE7c0',
+      originalUrl: 'https://www.youtube.com/watch?v=02hFGqXE7c0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Triangles'
+    },
+    {
+      id: 'vid_c9_4_1_pw',
+      type: 'revision',
+      tabLabel: '🔄 Triangles + Pythagoras in One Shot (ICSE Wallah)',
+      videoId: 'euHhbLLr3fw',
+      title: 'TRAINGLES + PYTHAGORAS THEOREM in One Shot (~100K+ views) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/euHhbLLr3fw',
+      originalUrl: 'https://www.youtube.com/watch?v=euHhbLLr3fw',
+      duration: '54:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Triangles'
+    },
+    {
+      id: 'vid_c9_4_1_proofs',
+      type: 'extra',
+      tabLabel: '✨ Congruency Proofs (SSS, SAS, AAS, RHS)',
+      videoId: '02hFGqXE7c0',
+      title: 'Triangle Congruency Proofs & Side-Angle Inequalities | ICSE Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/02hFGqXE7c0',
+      originalUrl: 'https://www.youtube.com/watch?v=02hFGqXE7c0',
+      duration: '38:00 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Triangles'
+    }
+  ],
+
+  'c9_les_4_2': [
+    {
+      id: 'vid_c9_4_2_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Mid-Point & Equal Intercept Theorems (Sir Tarun Rupani)',
+      videoId: 'UcB3gnS-sPk',
+      title: 'Mid Point and Intercept Theorems | ICSE Class 9 | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/UcB3gnS-sPk',
+      originalUrl: 'https://www.youtube.com/watch?v=UcB3gnS-sPk',
+      duration: '36:20 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Mid-Point Theorem'
+    },
+    {
+      id: 'vid_c9_4_2_pw',
+      type: 'revision',
+      tabLabel: '🔄 Mid-Point Theorem Formal Proof (ICSE Wallah)',
+      videoId: 'UcB3gnS-sPk',
+      title: 'Mid-Point Theorem and its Converse Formal Proofs | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/UcB3gnS-sPk',
+      originalUrl: 'https://www.youtube.com/watch?v=UcB3gnS-sPk',
+      duration: '42:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Mid-Point Theorem'
+    },
+    {
+      id: 'vid_c9_4_2_intercept',
+      type: 'extra',
+      tabLabel: '✨ Equal Intercept Theorem Applications',
+      videoId: 'UcB3gnS-sPk',
+      title: 'Equal Intercept Theorem & Rider Proofs Solved | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/UcB3gnS-sPk',
+      originalUrl: 'https://www.youtube.com/watch?v=UcB3gnS-sPk',
+      duration: '31:45 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Mid-Point Theorem'
+    }
+  ],
+
+  'c9_les_4_3': [
+    {
+      id: 'vid_c9_4_3_pw',
+      type: 'primary',
+      tabLabel: '🎥 Pythagoras Theorem in One Shot (ICSE Wallah)',
+      videoId: 'euHhbLLr3fw',
+      title: 'Pythagoras Theorem Proof & Geometric Applications | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/euHhbLLr3fw',
+      originalUrl: 'https://www.youtube.com/watch?v=euHhbLLr3fw',
+      duration: '54:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Pythagoras Theorem'
+    },
+    {
+      id: 'vid_c9_4_3_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Pythagoras Theorem Applications (Sir Tarun Rupani)',
+      videoId: '02hFGqXE7c0',
+      title: 'Pythagoras Theorem & Converse Proofs | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/02hFGqXE7c0',
+      originalUrl: 'https://www.youtube.com/watch?v=02hFGqXE7c0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Pythagoras Theorem'
+    },
+    {
+      id: 'vid_c9_4_3_riders',
+      type: 'extra',
+      tabLabel: '✨ Pythagoras Theorem Geometric Riders',
+      videoId: 'euHhbLLr3fw',
+      title: 'Advanced Pythagoras Problems in Quadrilaterals & Triangles | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/euHhbLLr3fw',
+      originalUrl: 'https://www.youtube.com/watch?v=euHhbLLr3fw',
+      duration: '35:20 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Pythagoras Theorem'
+    }
+  ],
+
+  'c9_les_4_4': [
+    {
+      id: 'vid_c9_4_4_pw',
+      type: 'primary',
+      tabLabel: '🎥 Rectilinear Figures in One Shot (ICSE Wallah)',
+      videoId: 'euHhbLLr3fw',
+      title: 'RECTILINEAR FIGURES in One Shot | Class 9 ICSE | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/euHhbLLr3fw',
+      originalUrl: 'https://www.youtube.com/watch?v=euHhbLLr3fw',
+      duration: '54:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Rectilinear Figures'
+    },
+    {
+      id: 'vid_c9_4_4_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Parallelogram Theorems (Sir Tarun Rupani)',
+      videoId: '02hFGqXE7c0',
+      title: 'Parallelograms, Rhombus, Rectangle, Square Theorems | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/02hFGqXE7c0',
+      originalUrl: 'https://www.youtube.com/watch?v=02hFGqXE7c0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Rectilinear Figures'
+    },
+    {
+      id: 'vid_c9_4_4_constructions',
+      type: 'extra',
+      tabLabel: '✨ Constructions & Area Theorems',
+      videoId: 'euHhbLLr3fw',
+      title: 'Constructions of Quadrilaterals with Ruler & Compasses | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/euHhbLLr3fw',
+      originalUrl: 'https://www.youtube.com/watch?v=euHhbLLr3fw',
+      duration: '37:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Rectilinear Figures'
+    }
+  ],
+
+  'c9_les_4_5': [
+    {
+      id: 'vid_c9_4_5_pw',
+      type: 'primary',
+      tabLabel: '🎥 CIRCLES in One Shot (ICSE Wallah)',
+      videoId: '0y5sRih2WiQ',
+      title: 'CIRCLES in One Shot (Chord & Arc Properties) | Class 9 ICSE | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/0y5sRih2WiQ',
+      originalUrl: 'https://www.youtube.com/watch?v=0y5sRih2WiQ',
+      duration: '49:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Circles'
+    },
+    {
+      id: 'vid_c9_4_5_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Circle Chords & Properties (Sir Tarun Rupani)',
+      videoId: '0y5sRih2WiQ',
+      title: 'Circle Chords, Perpendicular from Centre & Arc Theorems | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/0y5sRih2WiQ',
+      originalUrl: 'https://www.youtube.com/watch?v=0y5sRih2WiQ',
+      duration: '45:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 4: Circles'
+    },
+    {
+      id: 'vid_c9_4_5_theorems',
+      type: 'extra',
+      tabLabel: '✨ Circle Theorem Proofs & Constructions',
+      videoId: '0y5sRih2WiQ',
+      title: 'Equal Chords Equidistant from Centre Proofs | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/0y5sRih2WiQ',
+      originalUrl: 'https://www.youtube.com/watch?v=0y5sRih2WiQ',
+      duration: '36:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 4: Circles'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 5: STATISTICS
+  // =========================================================================
+  'c9_les_5_1': [
+    {
+      id: 'vid_c9_5_1_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Statistics Introduction & Tabulation (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Mean Median and Frequency Polygon | ICSE Class 9 (~44K+ views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '41:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Statistics'
+    },
+    {
+      id: 'vid_c9_5_1_pw',
+      type: 'revision',
+      tabLabel: '🔄 Statistics in One Shot (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Statistics in One Shot | Class 9 ICSE | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '47:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 5: Statistics'
+    },
+    {
+      id: 'vid_c9_5_1_tab',
+      type: 'extra',
+      tabLabel: '✨ Frequency Distributions & Class Intervals',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Continuous vs Discrete Frequency Distributions & Tally Marks | ICSE Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '34:00 mins',
+      creatorName: 'ICSE Maths Academy',
+      channelName: 'ICSE Maths',
+      themeName: 'Theme 5: Statistics'
+    }
+  ],
+
+  'c9_les_5_2': [
+    {
+      id: 'vid_c9_5_2_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Histograms & Frequency Polygons (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Drawing Histograms and Frequency Polygons | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '41:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Histograms'
+    },
+    {
+      id: 'vid_c9_5_2_pw',
+      type: 'revision',
+      tabLabel: '🔄 Graphical Representation of Data (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Graphical Statistics: Histograms & Polygons | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '47:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 5: Histograms'
+    },
+    {
+      id: 'vid_c9_5_2_poly',
+      type: 'extra',
+      tabLabel: '✨ Frequency Polygon without Histogram',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Drawing Frequency Polygons Using Class Marks | ICSE Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '34:00 mins',
+      creatorName: 'ICSE Maths Academy',
+      channelName: 'ICSE Maths',
+      themeName: 'Theme 5: Histograms'
+    }
+  ],
+
+  'c9_les_5_3': [
+    {
+      id: 'vid_c9_5_3_tarun',
+      type: 'primary',
+      tabLabel: '🎓 Mean and Median Calculation (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Mean and Median of Raw and Ungrouped Data | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '41:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Central Tendency'
+    },
+    {
+      id: 'vid_c9_5_3_pw',
+      type: 'revision',
+      tabLabel: '🔄 Measures of Central Tendency (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Mean and Median of Tabulated Data | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '47:15 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 5: Central Tendency'
+    },
+    {
+      id: 'vid_c9_5_3_mean',
+      type: 'extra',
+      tabLabel: '✨ Direct & Shortcut Mean Methods',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Direct Method for Finding Mean (Σfx / Σf) | ICSE Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '34:00 mins',
+      creatorName: 'ICSE Maths Academy',
+      channelName: 'ICSE Maths',
+      themeName: 'Theme 5: Central Tendency'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 6: MENSURATION
+  // =========================================================================
+  'c9_les_6_1': [
+    {
+      id: 'vid_c9_6_1_pw',
+      type: 'primary',
+      tabLabel: '🎥 MENSURATION in One Shot (ICSE Wallah)',
+      videoId: 'lw6IhiHk66I',
+      title: 'MENSURATION in One Shot (~119K views) | Class 9 ICSE | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '55:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: Mensuration'
+    },
+    {
+      id: 'vid_c9_6_1_tarun',
+      type: 'revision',
+      tabLabel: "🎓 Area of Plane Figures & Heron's Formula (Sir Tarun Rupani)",
+      videoId: 'lw6IhiHk66I',
+      title: "Area of Plane Figures | Mensuration ICSE Class 9 | Sir Tarun Rupani",
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '43:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 6: Mensuration'
+    },
+    {
+      id: 'vid_c9_6_1_heron',
+      type: 'extra',
+      tabLabel: "✨ Heron's Formula & Triangle Solved Problems",
+      videoId: 'lw6IhiHk66I',
+      title: "Heron's Formula Area = √[s(s-a)(s-b)(s-c)] Stepwise | ICSE Wallah",
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '38:25 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: Mensuration'
+    }
+  ],
+
+  'c9_les_6_2': [
+    {
+      id: 'vid_c9_6_2_pw',
+      type: 'primary',
+      tabLabel: '🎥 Area of Circle, Ring & Sector (ICSE Wallah)',
+      videoId: 'lw6IhiHk66I',
+      title: 'Circle, Semi-Circle, Quadrant & Ring Areas | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '55:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: Circle Area'
+    },
+    {
+      id: 'vid_c9_6_2_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Circular Paths & Tracks (Sir Tarun Rupani)',
+      videoId: 'lw6IhiHk66I',
+      title: 'Area of Circular Tracks & Boundaries (πR² - πr²) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '43:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 6: Circle Area'
+    },
+    {
+      id: 'vid_c9_6_2_semicircle',
+      type: 'extra',
+      tabLabel: '✨ Semi-Circle & Perimeter Solved Problems',
+      videoId: 'lw6IhiHk66I',
+      title: 'Perimeter of Semi-Circle (πr + 2r) and Combined Shapes | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '38:25 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: Circle Area'
+    }
+  ],
+
+  'c9_les_6_3': [
+    {
+      id: 'vid_c9_6_3_pw',
+      type: 'primary',
+      tabLabel: '🎥 Surface Area & Volume of Cube/Cuboid (ICSE Wallah)',
+      videoId: 'lw6IhiHk66I',
+      title: 'Surface Area and Volume of Cube and Cuboid (3D Mensuration) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '55:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: 3D Solids'
+    },
+    {
+      id: 'vid_c9_6_3_tarun',
+      type: 'revision',
+      tabLabel: '🎓 TSA, LSA, Diagonals & Cost Problems (Sir Tarun Rupani)',
+      videoId: 'lw6IhiHk66I',
+      title: 'Cube & Cuboid Diagonal, LSA, TSA and Cost of Painting | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '43:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 6: 3D Solids'
+    },
+    {
+      id: 'vid_c9_6_3_internal',
+      type: 'extra',
+      tabLabel: '✨ Internal & External Dimensions Solved',
+      videoId: 'lw6IhiHk66I',
+      title: 'Hollow Boxes, Internal-External Volumes & Capacity | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/lw6IhiHk66I',
+      originalUrl: 'https://www.youtube.com/watch?v=lw6IhiHk66I',
+      duration: '38:25 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 6: 3D Solids'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 7: TRIGONOMETRY
+  // =========================================================================
+  'c9_les_7_1': [
+    {
+      id: 'vid_c9_7_1_pw',
+      type: 'primary',
+      tabLabel: '🎥 TRIGONOMETRY in One Shot (~310K views) (ICSE Wallah)',
+      videoId: 'W5kdLDws-Kg',
+      title: 'TRIGONOMETRY in One Shot (~310K views) | Class 9 Maths | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '59:20 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Trigonometry'
+    },
+    {
+      id: 'vid_c9_7_1_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Trigonometrical Ratios (~177K views) (Sir Tarun Rupani)',
+      videoId: 'Utx7gtXvMS0',
+      title: 'Trigonometrical Ratios | ICSE Class 9 (~177K views) | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/Utx7gtXvMS0',
+      originalUrl: 'https://www.youtube.com/watch?v=Utx7gtXvMS0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 7: Trigonometry'
+    },
+    {
+      id: 'vid_c9_7_1_ratios',
+      type: 'extra',
+      tabLabel: '✨ Right Triangle Trig Ratios (sin, cos, tan)',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Defining sin, cos, tan, cosec, sec, cot with Perpendicular, Base, Hypotenuse | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '42:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Trigonometry'
+    }
+  ],
+
+  'c9_les_7_2': [
+    {
+      id: 'vid_c9_7_2_pw',
+      type: 'primary',
+      tabLabel: '🎥 Standard Angles 0°-90° (ICSE Wallah)',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Trigonometric Ratios of Standard Angles (0°, 30°, 45°, 60°, 90°) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '59:20 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Standard Angles'
+    },
+    {
+      id: 'vid_c9_7_2_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Trig Table Tricks & Memorization (Sir Tarun Rupani)',
+      videoId: 'Utx7gtXvMS0',
+      title: 'Trigonometry Table Tricks & Exact Value Derivations | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/Utx7gtXvMS0',
+      originalUrl: 'https://www.youtube.com/watch?v=Utx7gtXvMS0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 7: Standard Angles'
+    },
+    {
+      id: 'vid_c9_7_2_problems',
+      type: 'extra',
+      tabLabel: '✨ Evaluating Trig Expressions Solved',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Evaluating Expressions with Standard Angles Stepwise | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '42:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Standard Angles'
+    }
+  ],
+
+  'c9_les_7_3': [
+    {
+      id: 'vid_c9_7_3_pw',
+      type: 'primary',
+      tabLabel: '🎥 Right Triangle 2D Problems (ICSE Wallah)',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Simple 2D Right Triangle Trigonometry Problems | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '59:20 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: 2D Problems'
+    },
+    {
+      id: 'vid_c9_7_3_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Angles of Elevation & Depression Basics (Sir Tarun Rupani)',
+      videoId: 'Utx7gtXvMS0',
+      title: 'Right Triangle Applications & Elevation Basics | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/Utx7gtXvMS0',
+      originalUrl: 'https://www.youtube.com/watch?v=Utx7gtXvMS0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 7: 2D Problems'
+    },
+    {
+      id: 'vid_c9_7_3_applications',
+      type: 'extra',
+      tabLabel: '✨ Heights & Distance Foundations',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Geometric Right-Angled Triangle Word Problems | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '42:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: 2D Problems'
+    }
+  ],
+
+  'c9_les_7_4': [
+    {
+      id: 'vid_c9_7_4_pw',
+      type: 'primary',
+      tabLabel: '🎥 Complementary Angles in One Shot (ICSE Wallah)',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Complementary Angles: sin(90°-θ) = cos θ & Related Identities | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '59:20 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Complementary Angles'
+    },
+    {
+      id: 'vid_c9_7_4_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Complementary Angles Proofs (Sir Tarun Rupani)',
+      videoId: 'Utx7gtXvMS0',
+      title: 'Complementary Angles Identities & Solved Examples | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/Utx7gtXvMS0',
+      originalUrl: 'https://www.youtube.com/watch?v=Utx7gtXvMS0',
+      duration: '48:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 7: Complementary Angles'
+    },
+    {
+      id: 'vid_c9_7_4_identities',
+      type: 'extra',
+      tabLabel: '✨ Complementary Ratios Simplification',
+      videoId: 'W5kdLDws-Kg',
+      title: 'Simplifying Trig Expressions without Table using Complementary Angles | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/W5kdLDws-Kg',
+      originalUrl: 'https://www.youtube.com/watch?v=W5kdLDws-Kg',
+      duration: '42:10 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 7: Complementary Angles'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 9 - THEME 8: COORDINATE GEOMETRY
+  // =========================================================================
+  'c9_les_8_1': [
+    {
+      id: 'vid_c9_8_1_pw',
+      type: 'primary',
+      tabLabel: '🎥 COORDINATE GEOMETRY in One Shot (~109K views) (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'COORDINATE GEOMETRY in One Shot (~109K views) | Class 9 ICSE | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '51:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 8: Coordinate Geometry'
+    },
+    {
+      id: 'vid_c9_8_1_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Cartesian Plane & Plotting Points (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Cartesian System, Axes, Quadrants & Plotting Coordinates | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '40:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 8: Coordinate Geometry'
+    },
+    {
+      id: 'vid_c9_8_1_unacademy',
+      type: 'extra',
+      tabLabel: '✨ Coordinate Plane Foundation (Unacademy ICSE)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Coordinate Axes, Abscissa, Ordinate & Signs in Quadrants | Unacademy ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '32:40 mins',
+      creatorName: 'Shubhanshu Sir',
+      channelName: 'Unacademy ICSE',
+      themeName: 'Theme 8: Coordinate Geometry'
+    }
+  ],
+
+  'c9_les_8_2': [
+    {
+      id: 'vid_c9_8_2_pw',
+      type: 'primary',
+      tabLabel: '🎥 Graphical Solution of Linear Equations (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Graph of Linear Equations in Two Variables (ax + by = c) | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '51:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 8: Graphing Equations'
+    },
+    {
+      id: 'vid_c9_8_2_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Graphing Simultaneous Equations (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Solving Simultaneous Linear Equations Graphically | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '40:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 8: Graphing Equations'
+    },
+    {
+      id: 'vid_c9_8_2_intercepts',
+      type: 'extra',
+      tabLabel: '✨ Slope & Intercepts on Graph',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Finding X and Y Intercepts and Point of Intersection | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '32:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 8: Graphing Equations'
+    }
+  ],
+
+  'c9_les_8_3': [
+    {
+      id: 'vid_c9_8_3_pw',
+      type: 'primary',
+      tabLabel: '🎥 Distance Formula in One Shot (ICSE Wallah)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Distance Formula d = √[(x₂ - x₁)² + (y₂ - y₁)²] | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '51:30 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 8: Distance Formula'
+    },
+    {
+      id: 'vid_c9_8_3_tarun',
+      type: 'revision',
+      tabLabel: '🎓 Distance Formula Applications (Sir Tarun Rupani)',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Distance Formula Proof and Collinearity of 3 Points | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '40:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 8: Distance Formula'
+    },
+    {
+      id: 'vid_c9_8_3_geometry',
+      type: 'extra',
+      tabLabel: '✨ Verifying Triangles & Quadrilaterals by Distance',
+      videoId: 'FWIAmZn1zSM',
+      title: 'Testing Isosceles, Equilateral Triangles & Parallelograms via Distance | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/FWIAmZn1zSM',
+      originalUrl: 'https://www.youtube.com/watch?v=FWIAmZn1zSM',
+      duration: '32:40 mins',
+      creatorName: 'Physics Wallah',
+      channelName: 'ICSE Wallah',
+      themeName: 'Theme 8: Distance Formula'
+    }
+  ],
+
   // CLASS 10 - CHAPTER 1: COMMERCIAL MATHEMATICS
   // =========================================================================
   'c10_les_1_1': [

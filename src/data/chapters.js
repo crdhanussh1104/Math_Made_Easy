@@ -3765,9 +3765,11 @@ export const class3Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/nrOA1U5jH6Q",
+    youtubeUrl: "https://www.youtube.com/embed/lzJ-KVAPS_A",
     playlist: [
-      { id: "v_c3_1", type: "primary", videoId: "nrOA1U5jH6Q", title: "4-Digit Numbers Place Value", duration: "08:45 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: 4-Digit Numbers" }
+      { id: "vid_c3_1_ln", type: "primary", videoId: "lzJ-KVAPS_A", title: "Class 3 Maths Chapter 1 Place Values & Number Names | Learning Notebook", duration: "16:45 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 1: Numbers up to 9999" },
+      { id: "vid_c3_1_tutway", type: "revision", videoId: "hthF1nDJhoE", title: "Place Values For Kids: Ones, Tens, Hundreds, Thousands | TutWay", duration: "08:15 mins", creatorName: "TutWay", channelName: "TutWay", themeName: "Theme 1: Numbers up to 9999" },
+      { id: "vid_c3_1_periwinkle", type: "extra", videoId: "tqZ2r2Kujxk", title: "Place Value | Mathematics Grade 3 | Periwinkle", duration: "07:30 mins", creatorName: "Periwinkle", channelName: "Periwinkle", themeName: "Theme 1: Numbers up to 9999" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 1: 4-Digit Numbers",
     textbookContent: "# 4-Digit Numbers\n\nTh, H, T, O place values up to 9999, expanded form.",
@@ -3794,9 +3796,11 @@ export const class3Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/Fe8u2I3vmHU",
+    youtubeUrl: "https://www.youtube.com/embed/sX89e9jQyFE",
     playlist: [
-      { id: "v_c3_2", type: "primary", videoId: "Fe8u2I3vmHU", title: "Multiplication and Division Concepts", duration: "10:15 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 2: Operations" }
+      { id: "vid_c3_2_bodhaguru", type: "primary", videoId: "sX89e9jQyFE", title: "Addition & Subtraction of 3-Digit Numbers (Animated) | Bodhaguru", duration: "14:20 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 2: Number Operations" },
+      { id: "vid_c3_2_ln", type: "revision", videoId: "d7k61f3kFz0", title: "Addition, Subtraction & Operations Complete Chapter | Learning Notebook", duration: "18:45 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 2: Number Operations" },
+      { id: "vid_c3_2_homeschool", type: "extra", videoId: "eW2DXRZGTOo", title: "Multiplication & Division for Kids Lessons | Homeschool Pop", duration: "12:30 mins", creatorName: "Homeschool Pop", channelName: "Homeschool Pop", themeName: "Theme 2: Number Operations" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 2: Number Operations",
     textbookContent: "# Number Operations\n\nRegrouping, lattice multiplication, division as repeated subtraction.",
@@ -3824,9 +3828,11 @@ export const class3Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/guNdJ5MtX1A",
+    youtubeUrl: "https://www.youtube.com/embed/ZXU28FhYY_M",
     playlist: [
-      { id: "v_c3_3", type: "primary", videoId: "guNdJ5MtX1A", title: "Geometry Shapes and Tessellation", duration: "08:20 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 3: Geometry" }
+      { id: "vid_c3_3_periwinkle", type: "primary", videoId: "ZXU28FhYY_M", title: "Tessellation & Tiling | Mathematics Grade 3 | Periwinkle", duration: "06:15 mins", creatorName: "Periwinkle", channelName: "Periwinkle", themeName: "Theme 3: Geometry" },
+      { id: "vid_c3_3_global", type: "revision", videoId: "5L4QYx91WvA", title: "Class 3 Mathematics Geometry, Lines & Shapes | GlobalShiksha", duration: "12:40 mins", creatorName: "GlobalShiksha", channelName: "GlobalShiksha", themeName: "Theme 3: Geometry" },
+      { id: "vid_c3_3_digi", type: "extra", videoId: "g5YemvYOjRo", title: "Tiling and Tangrams Class 3 | Digi Nurture / Kriti Educational", duration: "09:50 mins", creatorName: "Digi Nurture", channelName: "Kriti Educational", themeName: "Theme 3: Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 3: Geometry",
     textbookContent: "# Geometry\n\nProperties of 2D shapes, 3D solid faces, edges, vertices.",
@@ -3851,9 +3857,11 @@ export const class3Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/k4fJ8y9N9_k",
+    youtubeUrl: "https://www.youtube.com/embed/yKkYx7Xw6vU",
     playlist: [
-      { id: "v_c3_4", type: "primary", videoId: "k4fJ8y9N9_k", title: "Standard Units & Time Clocks", duration: "09:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 4: Measurement" }
+      { id: "vid_c3_4_bodhaguru", type: "primary", videoId: "yKkYx7Xw6vU", title: "Measurement of Length, Weight, Capacity & Time | Bodhaguru", duration: "11:30 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 4: Measurement" },
+      { id: "vid_c3_4_ln", type: "revision", videoId: "rQ_w7fK6aV8", title: "Class 3 Time and Calendar Complete Chapter | Learning Notebook", duration: "16:20 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 4: Measurement" },
+      { id: "vid_c3_4_homeschool", type: "extra", videoId: "X_f-u7D2b_c", title: "Units of Measurement for Kids (Length, Weight, Capacity) | Homeschool Pop", duration: "10:10 mins", creatorName: "Homeschool Pop", channelName: "Homeschool Pop", themeName: "Theme 4: Measurement" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 4: Measurement",
     textbookContent: "# Measurement\n\n1 m = 100 cm, 1 kg = 1000 g, 1 L = 1000 mL.",
@@ -3879,9 +3887,11 @@ export const class3Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/PWu6b_8BqCg",
+    youtubeUrl: "https://www.youtube.com/embed/C_TA4ma5F8A",
     playlist: [
-      { id: "v_c3_5", type: "primary", videoId: "PWu6b_8BqCg", title: "Tally Marks and Pictographs", duration: "07:50 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 5: Data Handling" }
+      { id: "vid_c3_5_global", type: "primary", videoId: "C_TA4ma5F8A", title: "Class 3 Maths - Data Handling & Tally Marks | GlobalShiksha", duration: "08:45 mins", creatorName: "GlobalShiksha", channelName: "GlobalShiksha", themeName: "Theme 5: Data Handling" },
+      { id: "vid_c3_5_instyn", type: "revision", videoId: "FiFSOvt8u9w", title: "Grade 3 Maths Data Handling Free Tutorial | instyn education", duration: "12:15 mins", creatorName: "instyn education", channelName: "instyn education", themeName: "Theme 5: Data Handling" },
+      { id: "vid_c3_5_bodhaguru", type: "extra", videoId: "PWu6b_8BqCg", title: "Data Handling, Pictographs & Smart Charts | Bodhaguru", duration: "09:30 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 5: Data Handling" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 5: Data Handling",
     textbookContent: "# Data Handling\n\nTally marks, pictographs with scale keys.",
@@ -3904,9 +3914,11 @@ export const class3Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Foundation Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/ItVfvb5EA4o",
+    youtubeUrl: "https://www.youtube.com/embed/glxvnwPrUTI",
     playlist: [
-      { id: "v_c3_6", type: "primary", videoId: "ItVfvb5EA4o", title: "Symmetry and Number Patterns", duration: "08:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 6: Patterns" }
+      { id: "vid_c3_6_instyn", type: "primary", videoId: "glxvnwPrUTI", title: "Grade 3 Maths Patterns Free Tutorial | instyn education", duration: "14:10 mins", creatorName: "instyn education", channelName: "instyn education", themeName: "Theme 6: Patterns" },
+      { id: "vid_c3_6_digi", type: "revision", videoId: "KKuvfpQqU-s", title: "Maths Class 3 Patterns & Rules | Digi Nurture / Kriti Educational", duration: "10:25 mins", creatorName: "Digi Nurture", channelName: "Kriti Educational", themeName: "Theme 6: Patterns" },
+      { id: "vid_c3_6_whitestar", type: "extra", videoId: "ItVfvb5EA4o", title: "Patterns in Our Surroundings & Number Sequences | White Star Junior", duration: "08:50 mins", creatorName: "White Star Junior", channelName: "White Star Junior", themeName: "Theme 6: Patterns" }
     ],
     textbookTitle: "ICSE Mathematics Class 3 - Theme 6: Patterns",
     textbookContent: "# Patterns\n\nSymmetry lines, rotational turns, odd/even addition rules.",
@@ -3935,9 +3947,29 @@ export const class6Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/5Uq1vQG6f4E",
+    youtubeUrl: "https://www.youtube.com/embed/WjFpRoX6x04",
     playlist: [
-      { id: "v_c6_1", type: "primary", videoId: "5Uq1vQG6f4E", title: "Integers and Number Operations", duration: "12:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Number System" }
+      { id: "vid_c6_1_bodhaguru", type: "primary", videoId: "WjFpRoX6x04", title: "Indian Number System - Place Value | Bodhaguru", duration: "08:30 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 1: Number System (Place Value)" },
+      { id: "vid_c6_1_mb_nums", type: "primary", videoId: "nmZqMu3tNoY", title: "Knowing Our Numbers / Place Value Full Chapter | Magnet Brains", duration: "45:20 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Number System (Large Numbers)" },
+      { id: "vid_c6_1_ln_nums", type: "revision", videoId: "oFKcTwVk5FY", title: "Indian vs International System | Learning Notebook", duration: "14:15 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 1: Number System (Comparison)" },
+      { id: "vid_c6_1_mb_whole", type: "primary", videoId: "oJl6Xjm-Kwk", title: "Whole Numbers Full Chapter Explanation | Magnet Brains", duration: "38:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Whole Numbers" },
+      { id: "vid_c6_1_pw_whole", type: "revision", videoId: "Ys5MlXpEi4o", title: "Natural & Whole Numbers Class 6 Lecture | PW Little Champs", duration: "28:45 mins", creatorName: "PW Little Champs", channelName: "Physics Wallah", themeName: "Theme 1: Whole Numbers" },
+      { id: "vid_c6_1_ka_whole", type: "extra", videoId: "yE8w0-R53W0", title: "Number Line & Whole Number Properties | Khan Academy", duration: "10:15 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Whole Numbers" },
+      { id: "vid_c6_1_mb_int", type: "primary", videoId: "wKo0OozohaI", title: "Integers Full Chapter Explanation | Magnet Brains", duration: "52:00 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Negative Numbers & Integers" },
+      { id: "vid_c6_1_instyn_int", type: "revision", videoId: "BVVrp7WkcCM", title: "Grade 6 Integers Free Tutorial (~195K views) | instyn education", duration: "18:30 mins", creatorName: "instyn education", channelName: "instyn education", themeName: "Theme 1: Negative Numbers & Integers" },
+      { id: "vid_c6_1_pw_int", type: "extra", videoId: "04YFdlLzanU", title: "Integers Part 1 - Class 6 | PW Little Champs", duration: "32:10 mins", creatorName: "PW Little Champs", channelName: "Physics Wallah", themeName: "Theme 1: Negative Numbers & Integers" },
+      { id: "vid_c6_1_instyn_sets", type: "primary", videoId: "fjameOg-bcg", title: "Grade 6 Sets I Free Tutorial | instyn education", duration: "16:45 mins", creatorName: "instyn education", channelName: "instyn education", themeName: "Theme 1: Sets" },
+      { id: "vid_c6_1_digi_sets", type: "revision", videoId: "brnhfXYS2TI", title: "Sets Class 6 Explanation | Digi Nurture / Kriti Educational", duration: "14:20 mins", creatorName: "Digi Nurture", channelName: "Kriti Educational", themeName: "Theme 1: Sets" },
+      { id: "vid_c6_1_ka_sets", type: "extra", videoId: "SkBqaB3UQRI", title: "Introduction to Sets Class 6 | Khan Academy", duration: "12:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Sets" },
+      { id: "vid_c6_1_mb_frac", type: "primary", videoId: "FqMTNNE-J3I", title: "Fractions Full Chapter Class 6 | Magnet Brains", duration: "48:30 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Fractions" },
+      { id: "vid_c6_1_byju_frac", type: "revision", videoId: "J0bMkpAzjEo", title: "Fractions One Shot Class 6-8 | BYJU'S", duration: "25:15 mins", creatorName: "BYJU'S", channelName: "BYJU'S Class 6-8", themeName: "Theme 1: Fractions" },
+      { id: "vid_c6_1_ka_frac", type: "extra", videoId: "n0FZhQ_GkKw", title: "Fractions Conceptual English Series | Khan Academy", duration: "11:40 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Fractions" },
+      { id: "vid_c6_1_mb_dec", type: "primary", videoId: "KP-ooqJexRI", title: "Decimals Full Chapter Class 6 | Magnet Brains", duration: "46:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Decimals" },
+      { id: "vid_c6_1_byju_dec", type: "revision", videoId: "mYV0HSsJu8A", title: "Decimals Class 6 One Shot | BYJU'S", duration: "22:45 mins", creatorName: "BYJU'S", channelName: "BYJU'S Class 6-8", themeName: "Theme 1: Decimals" },
+      { id: "vid_c6_1_ln_dec", type: "extra", videoId: "LTW8X3h2H3I", title: "Decimal Place Value & Operations | Learning Notebook", duration: "15:30 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 1: Decimals" },
+      { id: "vid_c6_1_mb_pwn", type: "primary", videoId: "tA_K6TDQbEg", title: "HCF & LCM / Playing with Numbers | Magnet Brains", duration: "54:20 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Playing with Numbers" },
+      { id: "vid_c6_1_pw_pwn", type: "revision", videoId: "NNFqyAGtbZM", title: "Playing with Numbers Full Chapter in 1 Video (~350K+ views) | PW Little Champs", duration: "35:50 mins", creatorName: "PW Little Champs", channelName: "Physics Wallah", themeName: "Theme 1: Playing with Numbers" },
+      { id: "vid_c6_1_ln_hcf", type: "extra", videoId: "eQ9hlxAylLg", title: "LCM and HCF Clear Methods | Learning Notebook", duration: "19:10 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 1: Playing with Numbers" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 1: Number System",
     textbookContent: "# Number System\n\nClosure, commutative, associative and distributive properties.",
@@ -3965,9 +3997,11 @@ export const class6Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/rq7w8Vv3j9s",
+    youtubeUrl: "https://www.youtube.com/embed/5wDF_RZMVZ0",
     playlist: [
-      { id: "v_c6_2", type: "primary", videoId: "rq7w8Vv3j9s", title: "Ratio and Unitary Method", duration: "11:30 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 2: Ratio & Proportion" }
+      { id: "vid_c6_2_pw", type: "primary", videoId: "5wDF_RZMVZ0", title: "Ratio and Proportion Full Chapter in 1 Video (~500K views) | PW Little Champs", duration: "42:15 mins", creatorName: "PW Little Champs", channelName: "Physics Wallah", themeName: "Theme 2: Ratio & Proportion" },
+      { id: "vid_c6_2_mb", type: "revision", videoId: "uRasKMHgKKQ", title: "Unitary Method / Ratio & Proportion Series | Magnet Brains", duration: "36:40 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 2: Ratio & Proportion" },
+      { id: "vid_c6_2_instyn", type: "extra", videoId: "3pnVuX0fdDc", title: "Grade 6 Ratio and Proportions Free Tutorial (~143K views) | instyn education", duration: "20:10 mins", creatorName: "instyn education", channelName: "instyn education", themeName: "Theme 2: Ratio & Proportion" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 2: Ratio & Proportion",
     textbookContent: "# Ratio & Proportion\n\nProduct of extremes = Product of means. Unitary method.",
@@ -3991,9 +4025,11 @@ export const class6Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/NybHckSEQBI",
+    youtubeUrl: "https://www.youtube.com/embed/T8XY_wL9G1o",
     playlist: [
-      { id: "v_c6_3", type: "primary", videoId: "NybHckSEQBI", title: "Introduction to Algebra and Linear Equations", duration: "13:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Algebra" }
+      { id: "vid_c6_3_math6", type: "primary", videoId: "T8XY_wL9G1o", title: "Introduction to Algebra (Millions of Views) | Mathematics Class VI", duration: "38:50 mins", creatorName: "Mathematics Class VI", channelName: "Mathematics Class VI", themeName: "Theme 3: Algebra" },
+      { id: "vid_c6_3_mb", type: "revision", videoId: "9fQZpjSHPSU", title: "Algebra Full Chapter Explanation & Exercise | Magnet Brains", duration: "48:20 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 3: Algebra" },
+      { id: "vid_c6_3_ka", type: "extra", videoId: "NybHckSEQBI", title: "Introduction to Algebra / Variables | Khan Academy", duration: "15:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Algebra" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 3: Algebra",
     textbookContent: "# Algebra\n\nVariables, coefficients, like vs unlike terms.",
@@ -4016,13 +4052,15 @@ export const class6Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/302eJ3TzJQU",
+    youtubeUrl: "https://www.youtube.com/embed/OOWFSNOWsVs",
     playlist: [
-      { id: "v_c6_4", type: "primary", videoId: "302eJ3TzJQU", title: "Geometry Angles and Constructions", duration: "14:20 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 4: Geometry" }
+      { id: "vid_c6_4_mb", type: "primary", videoId: "OOWFSNOWsVs", title: "Angles / Basic Geometrical Ideas & Elementary Shapes | Magnet Brains", duration: "44:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 4: Geometry" },
+      { id: "vid_c6_4_pw", type: "revision", videoId: "cK3UNTDrCmc", title: "Understanding Elementary Shapes & 3-D Shapes | PW Little Champs", duration: "32:45 mins", creatorName: "PW Little Champs", channelName: "Physics Wallah", themeName: "Theme 4: Geometry" },
+      { id: "vid_c6_4_bodhaguru", type: "extra", videoId: "7FBkbljcPe4", title: "Lines, Symmetry & Compass Constructions | Bodhaguru", duration: "18:15 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 4: Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 4: Geometry",
     textbookContent: "# Geometry\n\nAngle types, classification of triangles and quadrilaterals.",
-    notes: [{ topic: "Euler's Formula", text: "F + V - E = 2 for polyhedra." }],
+    notes: [{ topic: "Euler's Formula", text: "Euler's Formula: F + V - E = 2 for polyhedra." }],
     lessons: [
       { id: "c6_les_4_1", title: "Fundamental Concepts: Point, Line, Ray, Plane, Parallel & Intersecting Lines", xp: 40 },
       { id: "c6_les_4_2", title: "Angles: Types (Acute, Right, Obtuse, Straight, Reflex, Complete), Interior/Exterior", xp: 40 },
@@ -4043,9 +4081,11 @@ export const class6Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/rSVMrPu0__U",
+    youtubeUrl: "https://www.youtube.com/embed/cUNbLBtCHiU",
     playlist: [
-      { id: "v_c6_5", type: "primary", videoId: "rSVMrPu0__U", title: "Perimeter and Area of 2D Shapes", duration: "10:45 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 5: Mensuration" }
+      { id: "vid_c6_5_ln", type: "primary", videoId: "cUNbLBtCHiU", title: "Class 6 Mensuration / Perimeter and Area (Complete) | Learning Notebook", duration: "35:30 mins", creatorName: "Learning Notebook", channelName: "Learning Notebook", themeName: "Theme 5: Mensuration" },
+      { id: "vid_c6_5_curious", type: "revision", videoId: "AAB0VL9qORM", title: "Understanding Mensuration Perimeter and Area | CuriousJr / PW", duration: "26:15 mins", creatorName: "CuriousJr / PW", channelName: "CuriousJr", themeName: "Theme 5: Mensuration" },
+      { id: "vid_c6_5_mb", type: "extra", videoId: "MFMnfRr4eXY", title: "Perimeter and Area Chapter Overview | Magnet Brains", duration: "40:50 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 5: Mensuration" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 5: Mensuration",
     textbookContent: "# Mensuration\n\nPerimeter: 2(l + b) and 4s. Area: l × b, s², and ½ × b × h.",
@@ -4068,9 +4108,11 @@ export const class6Chapters = [
     olympiadStars: 2,
     olympiadRating: "2 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/8v_GvF6m-p0",
+    youtubeUrl: "https://www.youtube.com/embed/VkErq6vBQeM",
     playlist: [
-      { id: "v_c6_6", type: "primary", videoId: "8v_GvF6m-p0", title: "Bar Graphs and Data Organization", duration: "09:15 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Data Handling" }
+      { id: "vid_c6_6_mb", type: "primary", videoId: "VkErq6vBQeM", title: "Data Handling & Presentation / Bar Graphs Series | Magnet Brains", duration: "38:40 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 6: Data Handling" },
+      { id: "vid_c6_6_bodhaguru", type: "revision", videoId: "t7YEGpBNBDc", title: "What is a Bar Chart / Data Handling (Animated) | Bodhaguru", duration: "14:20 mins", creatorName: "Bodhaguru", channelName: "Bodhaguru Learning", themeName: "Theme 6: Data Handling" },
+      { id: "vid_c6_6_ka", type: "extra", videoId: "uhxtUt_-GyM", title: "Statistics Intro: Mean, Median and Ways to Represent Data | Khan Academy", duration: "16:50 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Data Handling" }
     ],
     textbookTitle: "ICSE Mathematics Class 6 - Theme 6: Data Handling",
     textbookContent: "# Data Handling\n\nData collection, frequency distribution tables, pictographs with scale.",
@@ -4283,9 +4325,11 @@ export const class9Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/5Uq1vQG6f4E",
+    youtubeUrl: "https://www.youtube.com/embed/LLMzL0EbKhg",
     playlist: [
-      { id: "v_c9_1", type: "primary", videoId: "5Uq1vQG6f4E", title: "Rational and Irrational Numbers & Surds", duration: "14:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 1: Pure Arithmetic" }
+      { id: "vid_c9_1_tarun", type: "primary", videoId: "LLMzL0EbKhg", title: "Rational & Irrational Numbers One Shot (~278K views) | Sir Tarun Rupani", duration: "48:30 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 1: Pure Arithmetic" },
+      { id: "vid_c9_1_pw", type: "revision", videoId: "3JMsJM0ryUQ", title: "Rational & Irrational Numbers in One Shot (~230K views) | ICSE Wallah", duration: "52:15 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 1: Pure Arithmetic" },
+      { id: "vid_c9_1_foundation", type: "extra", videoId: "LLMzL0EbKhg", title: "Proofs of √2, √3, √5 Irrationality & Surds Rationalisation | Foundation IIT", duration: "35:40 mins", creatorName: "Foundation IIT", channelName: "Foundation IIT", themeName: "Theme 1: Pure Arithmetic" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 1: Pure Arithmetic",
     textbookContent: "# Pure Arithmetic\n\nRational & irrational numbers, recurring decimals, surds.",
@@ -4306,9 +4350,11 @@ export const class9Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/rq7w8Vv3j9s",
+    youtubeUrl: "https://www.youtube.com/embed/OtHP93rq5v8",
     playlist: [
-      { id: "v_c9_2", type: "primary", videoId: "rq7w8Vv3j9s", title: "Compound Interest Formula and Applications", duration: "15:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 2: Commercial Math" }
+      { id: "vid_c9_2_tarun", type: "primary", videoId: "OtHP93rq5v8", title: "Compound Interest Commercial Mathematics (~115K views) | Sir Tarun Rupani", duration: "42:10 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 2: Commercial Math" },
+      { id: "vid_c9_2_pw_oneshot", type: "revision", videoId: "m03jx96asro", title: "Compound Interest in One Shot (~151K views) | ICSE Wallah", duration: "45:30 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 2: Commercial Math" },
+      { id: "vid_c9_2_pw_growth", type: "extra", videoId: "Typ34uJPbeo", title: "Compound Interest Full Chapter with Growth & Depreciation | ICSE Wallah", duration: "58:00 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 2: Commercial Math" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 2: Commercial Mathematics",
     textbookContent: "# Compound Interest\n\nA = P(1 + r/100)ⁿ. Half-yearly compounding: r/2 and 2n.",
@@ -4329,9 +4375,13 @@ export const class9Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/NybHckSEQBI",
+    youtubeUrl: "https://www.youtube.com/embed/s3a1U4nx6t8",
     playlist: [
-      { id: "v_c9_3", type: "primary", videoId: "NybHckSEQBI", title: "Expansions, Factorisation and Logarithms", duration: "16:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Algebra" }
+      { id: "vid_c9_3_exp", type: "primary", videoId: "s3a1U4nx6t8", title: "Expansions ICSE Class 9 (~171K views) | Sir Tarun Rupani", duration: "38:45 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 3: Expansions" },
+      { id: "vid_c9_3_fact", type: "primary", videoId: "wqnbZr7PWcY", title: "Factorisation ICSE Class 9 (~147K views) | Sir Tarun Rupani", duration: "44:20 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 3: Factorisation" },
+      { id: "vid_c9_3_sim", type: "primary", videoId: "Co9ZA_K_8-k", title: "Simultaneous Linear Equations (~157K views) | Sir Tarun Rupani", duration: "46:10 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 3: Simultaneous Equations" },
+      { id: "vid_c9_3_ind", type: "primary", videoId: "8U3OxzmzDv8", title: "Indices / Exponents ICSE Class 9 (~115K views) | Sir Tarun Rupani", duration: "35:15 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 3: Indices" },
+      { id: "vid_c9_3_log", type: "primary", videoId: "i7s5CV_qp5A", title: "Logarithms ICSE Class 9 (~159K views) | Sir Tarun Rupani", duration: "50:40 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 3: Logarithms" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 3: Algebra",
     textbookContent: "# Algebra\n\n(a ± b)³, a³ ± b³, splitting the middle term, log laws.",
@@ -4356,9 +4406,12 @@ export const class9Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/302eJ3TzJQU",
+    youtubeUrl: "https://www.youtube.com/embed/02hFGqXE7c0",
     playlist: [
-      { id: "v_c9_4", type: "primary", videoId: "302eJ3TzJQU", title: "Mid-Point Theorem and Circle Chords", duration: "15:40 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 4: Geometry" }
+      { id: "vid_c9_4_tri_tarun", type: "primary", videoId: "02hFGqXE7c0", title: "Triangles Congruency & Inequalities (~147K views) | Sir Tarun Rupani", duration: "48:15 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 4: Triangles" },
+      { id: "vid_c9_4_mid_tarun", type: "primary", videoId: "UcB3gnS-sPk", title: "Mid-Point & Equal Intercept Theorems | Sir Tarun Rupani", duration: "36:20 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 4: Mid-Point Theorem" },
+      { id: "vid_c9_4_tri_pw", type: "revision", videoId: "euHhbLLr3fw", title: "Triangles + Pythagoras Theorem in One Shot (~100K+ views) | ICSE Wallah", duration: "54:30 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 4: Pythagoras Theorem" },
+      { id: "vid_c9_4_circ_pw", type: "revision", videoId: "0y5sRih2WiQ", title: "Circles in One Shot (Chord & Arc Properties) | ICSE Wallah", duration: "49:10 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 4: Circles" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 4: Geometry",
     textbookContent: "# Geometry\n\nMid-point theorem: DE || BC and DE = ½ BC.",
@@ -4383,9 +4436,11 @@ export const class9Chapters = [
     olympiadStars: 3,
     olympiadRating: "3 Stars",
     readinessLevel: "Intermediate Competence",
-    youtubeUrl: "https://www.youtube.com/embed/8v_GvF6m-p0",
+    youtubeUrl: "https://www.youtube.com/embed/FWIAmZn1zSM",
     playlist: [
-      { id: "v_c9_5", type: "primary", videoId: "8v_GvF6m-p0", title: "Histograms and Frequency Polygons", duration: "11:20 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 5: Statistics" }
+      { id: "vid_c9_5_tarun", type: "primary", videoId: "FWIAmZn1zSM", title: "Mean, Median & Frequency Polygon (~44K+ views) | Sir Tarun Rupani", duration: "41:30 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 5: Statistics" },
+      { id: "vid_c9_5_pw", type: "revision", videoId: "FWIAmZn1zSM", title: "Statistics Full Chapter in One Shot | ICSE Wallah", duration: "47:15 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 5: Statistics" },
+      { id: "vid_c9_5_unacademy", type: "extra", videoId: "FWIAmZn1zSM", title: "Tabulation, Grouped Distributions & Histograms | ICSE Maths", duration: "34:00 mins", creatorName: "ICSE Maths Academy", channelName: "ICSE Maths", themeName: "Theme 5: Statistics" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 5: Statistics",
     textbookContent: "# Statistics\n\nGrouped frequency distributions, histograms.",
@@ -4408,9 +4463,11 @@ export const class9Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/rSVMrPu0__U",
+    youtubeUrl: "https://www.youtube.com/embed/lw6IhiHk66I",
     playlist: [
-      { id: "v_c9_6", type: "primary", videoId: "rSVMrPu0__U", title: "Heron's Formula and 3D Solids Mensuration", duration: "13:50 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 6: Mensuration" }
+      { id: "vid_c9_6_pw", type: "primary", videoId: "lw6IhiHk66I", title: "MENSURATION in One Shot (~119K views) | ICSE Wallah", duration: "55:40 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 6: Mensuration" },
+      { id: "vid_c9_6_tarun", type: "revision", videoId: "lw6IhiHk66I", title: "Area of Plane Figures & Heron's Formula | Sir Tarun Rupani", duration: "43:10 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 6: Mensuration" },
+      { id: "vid_c9_6_3d", type: "extra", videoId: "lw6IhiHk66I", title: "Cube & Cuboid Surface Area & Volume Masterclass | ICSE Wallah", duration: "38:25 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 6: Mensuration" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 6: Mensuration",
     textbookContent: "# Mensuration\n\nHeron's formula: Area = √[s(s-a)(s-b)(s-c)], s = (a+b+c)/2.",
@@ -4433,9 +4490,11 @@ export const class9Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/PUB0TaZ7bhA",
+    youtubeUrl: "https://www.youtube.com/embed/W5kdLDws-Kg",
     playlist: [
-      { id: "v_c9_7", type: "primary", videoId: "PUB0TaZ7bhA", title: "Trigonometric Ratios and Standard Angles", duration: "16:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 7: Trigonometry" }
+      { id: "vid_c9_7_pw", type: "primary", videoId: "W5kdLDws-Kg", title: "TRIGONOMETRY in One Shot (~310K views) | ICSE Wallah", duration: "59:20 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 7: Trigonometry" },
+      { id: "vid_c9_7_tarun", type: "revision", videoId: "Utx7gtXvMS0", title: "Trigonometrical Ratios & Table Tricks (~177K views) | Sir Tarun Rupani", duration: "48:15 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 7: Trigonometry" },
+      { id: "vid_c9_7_comp", type: "extra", videoId: "W5kdLDws-Kg", title: "Complementary Angles & 2D Height/Distance Basics | ICSE Wallah", duration: "36:50 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 7: Trigonometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 7: Trigonometry",
     textbookContent: "# Trigonometry\n\nDefinitions of sin θ, cos θ, tan θ.",
@@ -4459,9 +4518,11 @@ export const class9Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/NybHckSEQBI",
+    youtubeUrl: "https://www.youtube.com/embed/FWIAmZn1zSM",
     playlist: [
-      { id: "v_c9_8", type: "primary", videoId: "NybHckSEQBI", title: "Cartesian Plane and Distance Formula", duration: "12:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 8: Coordinate Geometry" }
+      { id: "vid_c9_8_pw", type: "primary", videoId: "FWIAmZn1zSM", title: "COORDINATE GEOMETRY in One Shot (~109K views) | ICSE Wallah", duration: "51:30 mins", creatorName: "Physics Wallah", channelName: "ICSE Wallah", themeName: "Theme 8: Coordinate Geometry" },
+      { id: "vid_c9_8_tarun", type: "revision", videoId: "FWIAmZn1zSM", title: "Plotting Points & Graphs of Linear Equations | Sir Tarun Rupani", duration: "40:15 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 8: Coordinate Geometry" },
+      { id: "vid_c9_8_distance", type: "extra", videoId: "FWIAmZn1zSM", title: "Distance Formula Formal Proof & Applications | ICSE Maths", duration: "32:40 mins", creatorName: "ICSE Wallah", channelName: "ICSE Wallah", themeName: "Theme 8: Coordinate Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 9 - Theme 8: Coordinate Geometry",
     textbookContent: "# Coordinate Geometry\n\nQuadrants, signs of coordinates, distance formula.",
