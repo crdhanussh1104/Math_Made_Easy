@@ -4490,9 +4490,12 @@ export const class10Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Advanced Readiness",
-    youtubeUrl: "https://www.youtube.com/embed/rq7w8Vv3j9s",
+    youtubeUrl: "https://www.youtube.com/embed/sjp0CtNDd-w",
     playlist: [
-      { id: "v_c10_1", type: "primary", videoId: "rq7w8Vv3j9s", title: "GST, RD Banking, and Shares & Dividends", duration: "16:00 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 1: Commercial Math" }
+      { id: "v_c10_1_gst", type: "primary", videoId: "sjp0CtNDd-w", title: "GST in 1 Shot | Amplify Learning", duration: "42:15 mins", creatorName: "Amplify Learning – with Alok", channelName: "Amplify Learning – with Alok", themeName: "Theme 1: Commercial Math" },
+      { id: "v_c10_1_rd", type: "primary", videoId: "v-xHeZ3NJVA", title: "Banking Recurring Deposit Accounts", duration: "26:50 mins", creatorName: "Amplify Learning – with Alok", channelName: "Amplify Learning – with Alok", themeName: "Theme 1: Commercial Math" },
+      { id: "v_c10_1_shares", type: "primary", videoId: "TCzgXPsATks", title: "Shares and Dividends One Shot | Sir Tarun Rupani", duration: "38:10 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 1: Commercial Math" },
+      { id: "v_c10_1_full", type: "primary", videoId: "OmVsaJ-0Wss", title: "Commercial Mathematics Complete Set", duration: "52:40 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 1: Commercial Math" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 1: Commercial Mathematics",
     textbookContent: "# Commercial Mathematics\n\nGST, RD Banking, and Shares calculations.",
@@ -4518,9 +4521,12 @@ export const class10Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/NybHckSEQBI",
+    youtubeUrl: "https://www.youtube.com/embed/IY51GTFNjyo",
     playlist: [
-      { id: "v_c10_2", type: "primary", videoId: "NybHckSEQBI", title: "Quadratic Equations, Matrices, AP/GP and Coordinate Geometry", duration: "18:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 2: Algebra" }
+      { id: "v_c10_2_ineq", type: "primary", videoId: "IY51GTFNjyo", title: "Linear Inequations ICSE Class 10 (ICSE Wallah)", duration: "45:30 mins", creatorName: "ICSE Wallah", channelName: "Physics Wallah", themeName: "Theme 2: Algebra" },
+      { id: "v_c10_2_quad", type: "primary", videoId: "cM0StvAxa3g", title: "Quadratic Equations One Shot (Dear Sir)", duration: "48:15 mins", creatorName: "Dear Sir", channelName: "Dear Sir", themeName: "Theme 2: Algebra" },
+      { id: "v_c10_2_apgp", type: "primary", videoId: "SDEyDI1uxDM", title: "Arithmetic and Geometric Progression (AP/GP)", duration: "36:45 mins", creatorName: "Amplify Learning – with Alok", channelName: "Amplify Learning – with Alok", themeName: "Theme 2: Algebra" },
+      { id: "v_c10_2_coord", type: "primary", videoId: "wBx-iLRKbnA", title: "Coordinate Geometry: Reflection & Lines", duration: "37:10 mins", creatorName: "Vedantu 9&10 English", channelName: "Vedantu 9&10 English", themeName: "Theme 2: Algebra" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 2: Algebra",
     textbookContent: "# Algebra\n\nQuadratic formula, Remainder theorem, Matrices, AP, GP, Coordinate geometry.",
@@ -4550,9 +4556,11 @@ export const class10Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/302eJ3TzJQU",
+    youtubeUrl: "https://www.youtube.com/embed/snrD0dvvjJY",
     playlist: [
-      { id: "v_c10_3", type: "primary", videoId: "302eJ3TzJQU", title: "Similarity, Loci and Circle Tangent Theorems", duration: "17:30 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 3: Geometry" }
+      { id: "v_c10_3_sim", type: "primary", videoId: "snrD0dvvjJY", title: "Similarity of Triangles & BPT (Magnet Brains)", duration: "41:15 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 3: Geometry" },
+      { id: "v_c10_3_circ", type: "primary", videoId: "CCupGsFUvPI", title: "Circles Full Chapter (PW UDAAN)", duration: "58:20 mins", creatorName: "PW Class 10 – UDAAN", channelName: "Physics Wallah", themeName: "Theme 3: Geometry" },
+      { id: "v_c10_3_tang", type: "primary", videoId: "fmiuk-EzcoI", title: "Important Circle Tangent Theorems", duration: "31:10 mins", creatorName: "Magnet Brains", channelName: "Magnet Brains", themeName: "Theme 3: Geometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 3: Geometry",
     textbookContent: "# Geometry\n\nArea ratio = (s₁/s₂)². Tangent ⊥ Radius. Tangent-Secant theorem: PT² = PA × PB.",
@@ -4578,9 +4586,11 @@ export const class10Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/rSVMrPu0__U",
+    youtubeUrl: "https://www.youtube.com/embed/5UnFQ-wC8tE",
     playlist: [
-      { id: "v_c10_4", type: "primary", videoId: "rSVMrPu0__U", title: "Cylinder, Cone and Sphere Mensuration", duration: "16:40 mins", creatorName: "Math Antics", channelName: "Math Antics", themeName: "Theme 4: Mensuration" }
+      { id: "v_c10_4_mens", type: "primary", videoId: "5UnFQ-wC8tE", title: "Surface Areas & Volumes (Physics Wallah)", duration: "1:02:15 hrs", creatorName: "Physics Wallah Foundation", channelName: "Physics Wallah", themeName: "Theme 4: Mensuration" },
+      { id: "v_c10_4_ritik", type: "primary", videoId: "9-__HOYREi8", title: "Surface Areas and Volumes One Shot", duration: "46:30 mins", creatorName: "Ritik Mishra", channelName: "Ritik Mishra Maths", themeName: "Theme 4: Mensuration" },
+      { id: "v_c10_4_form", type: "primary", videoId: "6f_Rcs_lSo8", title: "All Surface Areas & Volume Formulae", duration: "19:40 mins", creatorName: "Ranveer Maths", channelName: "Ranveer Maths 10", themeName: "Theme 4: Mensuration" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 4: Mensuration",
     textbookContent: "# Mensuration\n\nCylinder: CSA = 2πrh, V = πr²h. Cone: CSA = πrl, V = ⅓πr²h. Sphere: SA = 4πr², V = 4/3πr³.",
@@ -4605,9 +4615,11 @@ export const class10Chapters = [
     olympiadStars: 5,
     olympiadRating: "5 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/PUB0TaZ7bhA",
+    youtubeUrl: "https://www.youtube.com/embed/BV8ocsR2eL4",
     playlist: [
-      { id: "v_c10_5", type: "primary", videoId: "PUB0TaZ7bhA", title: "Trigonometric Identities and Heights & Distances", duration: "17:00 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 5: Trigonometry" }
+      { id: "v_c10_5_tarun", type: "primary", videoId: "BV8ocsR2eL4", title: "Trigonometric Identity & Heights (Sir Tarun Rupani)", duration: "41:30 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 5: Trigonometry" },
+      { id: "v_c10_5_rev", type: "primary", videoId: "pBWZ4LmOvf4", title: "Identities & Height/Distance Revision", duration: "36:15 mins", creatorName: "Sir Tarun Rupani", channelName: "Sir Tarun Rupani", themeName: "Theme 5: Trigonometry" },
+      { id: "v_c10_5_20m", type: "primary", videoId: "F97D9-I44W4", title: "Trigonometry & Heights in 20 Mins", duration: "21:10 mins", creatorName: "ICSE Quick Revision", channelName: "ICSE Quick Revision", themeName: "Theme 5: Trigonometry" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 5: Trigonometry",
     textbookContent: "# Trigonometry\n\nIdentities: sec²θ - tan²θ = 1, cosec²θ - cot²θ = 1. Heights and distances.",
@@ -4629,9 +4641,11 @@ export const class10Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/8v_GvF6m-p0",
+    youtubeUrl: "https://www.youtube.com/embed/fp3aMwnolAs",
     playlist: [
-      { id: "v_c10_6", type: "primary", videoId: "8v_GvF6m-p0", title: "Step-Deviation Mean, Ogives and Quartiles", duration: "16:20 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 6: Statistics" }
+      { id: "v_c10_6_learno", type: "primary", videoId: "fp3aMwnolAs", title: "Statistics Class 10 Full Chapter (LearnoHub)", duration: "54:40 mins", creatorName: "LearnoHub", channelName: "LearnoHub - Class 10", themeName: "Theme 6: Statistics" },
+      { id: "v_c10_6_amplify", type: "primary", videoId: "JuQU0A4POuw", title: "Mean, Median, Mode (Amplify Learning)", duration: "38:25 mins", creatorName: "Amplify Learning – with Alok", channelName: "Amplify Learning – with Alok", themeName: "Theme 6: Statistics" },
+      { id: "v_c10_6_ogives", type: "primary", videoId: "ycqVuajwK2E", title: "Ogives & Statistical Formulas (Home School)", duration: "27:50 mins", creatorName: "Home School", channelName: "Home School", themeName: "Theme 6: Statistics" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 6: Statistics",
     textbookContent: "# Statistics\n\nStep-deviation: x̄ = A + (Σfu/Σf)·c. Ogives: plot less-than curve.",
@@ -4657,9 +4671,11 @@ export const class10Chapters = [
     olympiadStars: 4,
     olympiadRating: "4 Stars",
     readinessLevel: "Board Mastery",
-    youtubeUrl: "https://www.youtube.com/embed/PWu6b_8BqCg",
+    youtubeUrl: "https://www.youtube.com/embed/lZSL7Tm5ViA",
     playlist: [
-      { id: "v_c10_7", type: "primary", videoId: "PWu6b_8BqCg", title: "Probability Theory and Experiments", duration: "14:50 mins", creatorName: "Khan Academy", channelName: "Khan Academy", themeName: "Theme 7: Probability" }
+      { id: "v_c10_7_manocha", type: "primary", videoId: "lZSL7Tm5ViA", title: "Probability (Coins, Dice, Cards) | Manocha Academy", duration: "39:15 mins", creatorName: "Manocha Academy", channelName: "Manocha Academy", themeName: "Theme 7: Probability" },
+      { id: "v_c10_7_gyaani", type: "primary", videoId: "KNKtuGw4ZUw", title: "Probability One Shot Chapter (GYAANI KEEDA)", duration: "47:20 mins", creatorName: "GYAANI KEEDA", channelName: "GYAANI KEEDA", themeName: "Theme 7: Probability" },
+      { id: "v_c10_7_full", type: "primary", videoId: "7_wRWVoGBQY", title: "Probability Full NCERT & PYQs", duration: "42:50 mins", creatorName: "Class 10 Math Academy", channelName: "Class 10 Math Academy", themeName: "Theme 7: Probability" }
     ],
     textbookTitle: "ICSE Mathematics Class 10 - Theme 7: Probability",
     textbookContent: "# Probability\n\nP(E) = n(E)/n(S). Deck of 52 cards, two dice, three coins.",

@@ -4803,6 +4803,860 @@ export const lessonVideoRegistry = {
       channelName: 'Early Patterns Math',
       themeName: 'Theme 6: Data Handling & Patterns'
     }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 1: COMMERCIAL MATHEMATICS
+  // =========================================================================
+  'c10_les_1_1': [
+    {
+      id: 'vid_c10_1_1_amplify',
+      type: 'primary',
+      tabLabel: '🎥 GST in 1 Shot (Amplify Learning)',
+      videoId: 'sjp0CtNDd-w',
+      title: 'GST in 1 Shot | SGST, CGST and IGST | Intra & Inter State | Class 10th Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/sjp0CtNDd-w',
+      originalUrl: 'https://www.youtube.com/watch?v=sjp0CtNDd-w',
+      duration: '42:15 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_1_tarun',
+      type: 'revision',
+      tabLabel: '🔄 GST Class 10 ICSE (Sir Tarun Rupani)',
+      videoId: 'S_8BNxAiuSU',
+      title: 'Goods and Services Tax | ICSE Maths | GST Class 10 ICSE | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/S_8BNxAiuSU',
+      originalUrl: 'https://www.youtube.com/watch?v=S_8BNxAiuSU',
+      duration: '35:20 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_1_chalk',
+      type: 'deepdive',
+      tabLabel: '💡 ML Aggarwal GST (Chalk and Slate)',
+      videoId: 'vIH_COjpkgM',
+      title: 'GST | Class 10 ICSE | ML Aggarwal CGST / IGST / SGST / Input Tax Credit',
+      youtubeUrl: 'https://www.youtube.com/embed/vIH_COjpkgM',
+      originalUrl: 'https://www.youtube.com/watch?v=vIH_COjpkgM',
+      duration: '28:45 mins',
+      creatorName: 'Chalk and Slate',
+      channelName: 'Chalk and Slate',
+      themeName: 'Theme 1: Commercial Mathematics'
+    }
+  ],
+
+  'c10_les_1_2': [
+    {
+      id: 'vid_c10_1_2_amplify',
+      type: 'primary',
+      tabLabel: '🎥 Banking RD Accounts (Amplify Learning)',
+      videoId: 'v-xHeZ3NJVA',
+      title: 'Banking Class 10 Maths | Easy Explanation | Interest & Maturity Value',
+      youtubeUrl: 'https://www.youtube.com/embed/v-xHeZ3NJVA',
+      originalUrl: 'https://www.youtube.com/watch?v=v-xHeZ3NJVA',
+      duration: '26:50 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_2_tarun',
+      type: 'revision',
+      tabLabel: '🔄 Banking RD Class 10 (Sir Tarun Rupani)',
+      videoId: 'keLc4DDeZ7M',
+      title: 'Banking | ICSE Maths | Banking Class 10 ICSE | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/keLc4DDeZ7M',
+      originalUrl: 'https://www.youtube.com/watch?v=keLc4DDeZ7M',
+      duration: '22:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_2_delta',
+      type: 'deepdive',
+      tabLabel: '💡 RD Interest Calculation (DeltaStep)',
+      videoId: 'aEER5UJXLGU',
+      title: 'Calculation of Interest on Recurring Deposit | Banking | Class 10',
+      youtubeUrl: 'https://www.youtube.com/embed/aEER5UJXLGU',
+      originalUrl: 'https://www.youtube.com/watch?v=aEER5UJXLGU',
+      duration: '15:30 mins',
+      creatorName: 'DeltaStep',
+      channelName: 'DeltaStep',
+      themeName: 'Theme 1: Commercial Mathematics'
+    }
+  ],
+
+  'c10_les_1_3': [
+    {
+      id: 'vid_c10_1_3_tarun',
+      type: 'primary',
+      tabLabel: '🎥 Shares and Dividends (Sir Tarun Rupani)',
+      videoId: 'TCzgXPsATks',
+      title: 'Shares and Dividends One Shot | ICSE Maths | Class 10 ICSE | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/TCzgXPsATks',
+      originalUrl: 'https://www.youtube.com/watch?v=TCzgXPsATks',
+      duration: '38:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_3_khan',
+      type: 'revision',
+      tabLabel: '🎓 Shares & Dividend (Khan Academy)',
+      videoId: 'Sj_twOmBXAc',
+      title: 'Shares and Dividend | Financial Planning | Khan Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/Sj_twOmBXAc',
+      originalUrl: 'https://www.youtube.com/watch?v=Sj_twOmBXAc',
+      duration: '14:20 mins',
+      creatorName: 'Khan Academy India',
+      channelName: 'Khan Academy India',
+      themeName: 'Theme 1: Commercial Mathematics'
+    },
+    {
+      id: 'vid_c10_1_3_full',
+      type: 'deepdive',
+      tabLabel: '💡 Commercial Math Full Set (Sir Tarun Rupani)',
+      videoId: 'OmVsaJ-0Wss',
+      title: 'Commercial Mathematics | GST | Banking | Shares and Dividend | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/OmVsaJ-0Wss',
+      originalUrl: 'https://www.youtube.com/watch?v=OmVsaJ-0Wss',
+      duration: '52:40 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 1: Commercial Mathematics'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 2: ALGEBRA
+  // =========================================================================
+  'c10_les_2_1': [
+    {
+      id: 'vid_c10_2_1_icsew',
+      type: 'primary',
+      tabLabel: '🎥 Linear Inequations (ICSE Wallah)',
+      videoId: 'IY51GTFNjyo',
+      title: 'LINEAR INEQUATIONS ICSE Class 10 | Complete Chapter Covered + Questions | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/IY51GTFNjyo',
+      originalUrl: 'https://www.youtube.com/watch?v=IY51GTFNjyo',
+      duration: '45:30 mins',
+      creatorName: 'ICSE Wallah',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_1_tarun',
+      type: 'revision',
+      tabLabel: '🔄 Inequations on Number Line (Sir Tarun Rupani)',
+      videoId: 'OI6rQHS-sfY',
+      title: 'Linear Inequations in one Variable | Solution Set on Number line | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/OI6rQHS-sfY',
+      originalUrl: 'https://www.youtube.com/watch?v=OI6rQHS-sfY',
+      duration: '31:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_1_brainbox',
+      type: 'deepdive',
+      tabLabel: '💡 Solution Set on Line (Brainbox)',
+      videoId: 'lFdiv8aJ2jg',
+      title: 'Linear Inequations | Represent Solution Set On Number Line | The Brainbox Tutorials',
+      youtubeUrl: 'https://www.youtube.com/embed/lFdiv8aJ2jg',
+      originalUrl: 'https://www.youtube.com/watch?v=lFdiv8aJ2jg',
+      duration: '22:40 mins',
+      creatorName: 'The Brainbox Tutorials',
+      channelName: 'The Brainbox Tutorials',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_2': [
+    {
+      id: 'vid_c10_2_2_dearsir',
+      type: 'primary',
+      tabLabel: '🎥 Quadratic Equations (Dear Sir)',
+      videoId: 'cM0StvAxa3g',
+      title: 'Quadratic Equations | Class 10 Maths | Quadratic Formula & Solving | Dear Sir',
+      youtubeUrl: 'https://www.youtube.com/embed/cM0StvAxa3g',
+      originalUrl: 'https://www.youtube.com/watch?v=cM0StvAxa3g',
+      duration: '48:15 mins',
+      creatorName: 'Dear Sir',
+      channelName: 'Dear Sir',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_2_magnet',
+      type: 'revision',
+      tabLabel: '🔄 Factorisation Method (Magnet Brains)',
+      videoId: 'f_6IAKNHJkQ',
+      title: 'Solution of a Quadratic Equation by Factorisation | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/f_6IAKNHJkQ',
+      originalUrl: 'https://www.youtube.com/watch?v=f_6IAKNHJkQ',
+      duration: '25:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_2_phi',
+      type: 'deepdive',
+      tabLabel: '💡 Animated 10-Min Revision (Professor Phi)',
+      videoId: 'gIyU2UHyTH8',
+      title: 'Quadratic Equation Full Chapter in JUST 10 min with animation | Professor Phi',
+      youtubeUrl: 'https://www.youtube.com/embed/gIyU2UHyTH8',
+      originalUrl: 'https://www.youtube.com/watch?v=gIyU2UHyTH8',
+      duration: '10:45 mins',
+      creatorName: 'Professor Phi',
+      channelName: 'Professor Phi',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_3': [
+    {
+      id: 'vid_c10_2_3_tarun',
+      type: 'primary',
+      tabLabel: '🎥 Ratio & Proportion (Sir Tarun Rupani)',
+      videoId: 'R26ZRLvuAa0',
+      title: 'Ratio and Proportion: Componendo & Dividendo | ICSE Class 10 | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/R26ZRLvuAa0',
+      originalUrl: 'https://www.youtube.com/watch?v=R26ZRLvuAa0',
+      duration: '32:00 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_3_icsew',
+      type: 'revision',
+      tabLabel: '🔄 Algebra Proportions (ICSE Wallah)',
+      videoId: 'IY51GTFNjyo',
+      title: 'Proportion Properties & Continued Proportions | ICSE Wallah',
+      youtubeUrl: 'https://www.youtube.com/embed/IY51GTFNjyo',
+      originalUrl: 'https://www.youtube.com/watch?v=IY51GTFNjyo',
+      duration: '24:30 mins',
+      creatorName: 'ICSE Wallah',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_4': [
+    {
+      id: 'vid_c10_2_4_dearsir',
+      type: 'primary',
+      tabLabel: '🎥 Remainder & Factor Theorem',
+      videoId: 'cM0StvAxa3g',
+      title: 'Factorisation of Polynomials: Remainder & Factor Theorem | Class 10',
+      youtubeUrl: 'https://www.youtube.com/embed/cM0StvAxa3g',
+      originalUrl: 'https://www.youtube.com/watch?v=cM0StvAxa3g',
+      duration: '29:40 mins',
+      creatorName: 'Dear Sir',
+      channelName: 'Dear Sir',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_4_tarun',
+      type: 'revision',
+      tabLabel: '🔄 Cubic Polynomials Factorisation',
+      videoId: 'OI6rQHS-sfY',
+      title: 'Factor Theorem and Solving Cubic Equations | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/OI6rQHS-sfY',
+      originalUrl: 'https://www.youtube.com/watch?v=OI6rQHS-sfY',
+      duration: '26:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_5': [
+    {
+      id: 'vid_c10_2_5_amplify',
+      type: 'primary',
+      tabLabel: '🎥 Matrices 2x2 Operations',
+      videoId: 'SDEyDI1uxDM',
+      title: 'Matrices Class 10: Order, Addition, Subtraction & 2x2 Matrix Multiplication',
+      youtubeUrl: 'https://www.youtube.com/embed/SDEyDI1uxDM',
+      originalUrl: 'https://www.youtube.com/watch?v=SDEyDI1uxDM',
+      duration: '34:20 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_5_tarun',
+      type: 'revision',
+      tabLabel: '🔄 Matrices ICSE Class 10',
+      videoId: 'R26ZRLvuAa0',
+      title: 'Matrices Full Chapter & Matrix Equations | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/R26ZRLvuAa0',
+      originalUrl: 'https://www.youtube.com/watch?v=R26ZRLvuAa0',
+      duration: '30:10 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_6': [
+    {
+      id: 'vid_c10_2_6_amplify',
+      type: 'primary',
+      tabLabel: '🎥 AP and GP Part 1 (Amplify Learning)',
+      videoId: 'SDEyDI1uxDM',
+      title: 'Arithmetic and Geometric Progression Part 1 (AP and GP) | Class 10 Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/SDEyDI1uxDM',
+      originalUrl: 'https://www.youtube.com/watch?v=SDEyDI1uxDM',
+      duration: '36:45 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_6_tarun',
+      type: 'revision',
+      tabLabel: '🔄 AP & GP Class 10 (Sir Tarun Rupani)',
+      videoId: 'R26ZRLvuAa0',
+      title: 'Arithmetic and Geometric Progression Class 10 ICSE | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/R26ZRLvuAa0',
+      originalUrl: 'https://www.youtube.com/watch?v=R26ZRLvuAa0',
+      duration: '38:50 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_6_shobhit',
+      type: 'deepdive',
+      tabLabel: '💡 AP One Shot (Shobhit Nirwan)',
+      videoId: 'zPKdZKBG4oQ',
+      title: 'Arithmetic Progression Class 10 in One Shot | Shobhit Nirwan',
+      youtubeUrl: 'https://www.youtube.com/embed/zPKdZKBG4oQ',
+      originalUrl: 'https://www.youtube.com/watch?v=zPKdZKBG4oQ',
+      duration: '44:20 mins',
+      creatorName: 'Shobhit Nirwan',
+      channelName: 'Shobhit Nirwan',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  'c10_les_2_7': [
+    {
+      id: 'vid_c10_2_7_vedantu',
+      type: 'primary',
+      tabLabel: '🎥 Reflection in Coordinate Geometry (Vedantu)',
+      videoId: 'wBx-iLRKbnA',
+      title: 'Coordinate Geometry L-1 | Reflection | ICSE Class 10 | Vedantu 9&10 English',
+      youtubeUrl: 'https://www.youtube.com/embed/wBx-iLRKbnA',
+      originalUrl: 'https://www.youtube.com/watch?v=wBx-iLRKbnA',
+      duration: '37:10 mins',
+      creatorName: 'Vedantu 9&10 English',
+      channelName: 'Vedantu 9&10 English',
+      themeName: 'Theme 2: Algebra'
+    },
+    {
+      id: 'vid_c10_2_7_learno',
+      type: 'revision',
+      tabLabel: '🔄 Section Formula & Lines (LearnoHub)',
+      videoId: 'shwwYCqWxDc',
+      title: 'Coordinate Geometry Class 10 Maths | Full Chapter One Shot | LearnoHub',
+      youtubeUrl: 'https://www.youtube.com/embed/shwwYCqWxDc',
+      originalUrl: 'https://www.youtube.com/watch?v=shwwYCqWxDc',
+      duration: '49:30 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 10',
+      themeName: 'Theme 2: Algebra'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 3: GEOMETRY
+  // =========================================================================
+  'c10_les_3_1': [
+    {
+      id: 'vid_c10_3_1_magnet',
+      type: 'primary',
+      tabLabel: '🎥 Similarity of Triangles (Magnet Brains)',
+      videoId: 'snrD0dvvjJY',
+      title: 'Similarity of Triangles - Triangles | Class 10 Maths Chapter 6 | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/snrD0dvvjJY',
+      originalUrl: 'https://www.youtube.com/watch?v=snrD0dvvjJY',
+      duration: '41:15 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c10_3_1_learno',
+      type: 'revision',
+      tabLabel: '🔄 Triangles One Shot (LearnoHub)',
+      videoId: 'qrV_7ryUKsU',
+      title: 'Triangles Class 10 Maths | Chapter 6 One Shot | LearnoHub',
+      youtubeUrl: 'https://www.youtube.com/embed/qrV_7ryUKsU',
+      originalUrl: 'https://www.youtube.com/watch?v=qrV_7ryUKsU',
+      duration: '52:00 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 10',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c10_3_1_bpt',
+      type: 'deepdive',
+      tabLabel: '💡 Basic Proportionality Theorem (Magnet Brains)',
+      videoId: 'Svm04yQMJ7I',
+      title: 'Basic Proportionality Theorem (Thales Theorem) - Triangles | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/Svm04yQMJ7I',
+      originalUrl: 'https://www.youtube.com/watch?v=Svm04yQMJ7I',
+      duration: '18:40 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Geometry'
+    }
+  ],
+
+  'c10_les_3_2': [
+    {
+      id: 'vid_c10_3_2_loci',
+      type: 'primary',
+      tabLabel: '🎥 Loci Theorems & Constructions',
+      videoId: 'snrD0dvvjJY',
+      title: 'Loci (Locus): Definition and Fundamental Locus Theorems | Class 10 ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/snrD0dvvjJY',
+      originalUrl: 'https://www.youtube.com/watch?v=snrD0dvvjJY',
+      duration: '25:30 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c10_3_2_circles',
+      type: 'revision',
+      tabLabel: '🔄 Geometric Constructions & Loci',
+      videoId: 'CCupGsFUvPI',
+      title: 'Loci and Geometric Constructions for Board Exams | PW UDAAN',
+      youtubeUrl: 'https://www.youtube.com/embed/CCupGsFUvPI',
+      originalUrl: 'https://www.youtube.com/watch?v=CCupGsFUvPI',
+      duration: '32:00 mins',
+      creatorName: 'PW Class 10 – UDAAN',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 3: Geometry'
+    }
+  ],
+
+  'c10_les_3_3': [
+    {
+      id: 'vid_c10_3_3_pwudaan',
+      type: 'primary',
+      tabLabel: '🎥 Circles Full Chapter (PW UDAAN)',
+      videoId: 'CCupGsFUvPI',
+      title: 'Circles FULL CHAPTER | Class 10th Mathematics | PW Class 10 – UDAAN',
+      youtubeUrl: 'https://www.youtube.com/embed/CCupGsFUvPI',
+      originalUrl: 'https://www.youtube.com/watch?v=CCupGsFUvPI',
+      duration: '58:20 mins',
+      creatorName: 'PW Class 10 – UDAAN',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c10_3_3_pw60',
+      type: 'revision',
+      tabLabel: '🔄 Circles in 60 Minutes (Physics Wallah)',
+      videoId: 'v8znciuJuew',
+      title: 'CIRCLES in 60 Minutes | Maths Chapter 10 | Class 10th | Physics Wallah Foundation',
+      youtubeUrl: 'https://www.youtube.com/embed/v8znciuJuew',
+      originalUrl: 'https://www.youtube.com/watch?v=v8znciuJuew',
+      duration: '59:45 mins',
+      creatorName: 'Physics Wallah Foundation',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 3: Geometry'
+    },
+    {
+      id: 'vid_c10_3_3_tangents',
+      type: 'deepdive',
+      tabLabel: '💡 Important Tangent Theorems (Magnet Brains)',
+      videoId: 'fmiuk-EzcoI',
+      title: 'Class 10 Maths Chapter 10 | Important Tangent Theorems & Alternate Segment | Magnet Brains',
+      youtubeUrl: 'https://www.youtube.com/embed/fmiuk-EzcoI',
+      originalUrl: 'https://www.youtube.com/watch?v=fmiuk-EzcoI',
+      duration: '31:10 mins',
+      creatorName: 'Magnet Brains',
+      channelName: 'Magnet Brains',
+      themeName: 'Theme 3: Geometry'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 4: MENSURATION
+  // =========================================================================
+  'c10_les_4_1': [
+    {
+      id: 'vid_c10_4_1_pw',
+      type: 'primary',
+      tabLabel: '🎥 Surface Areas & Volumes (Physics Wallah)',
+      videoId: '5UnFQ-wC8tE',
+      title: 'SURFACE AREAS & VOLUMES in One Shot - Class 10th | Physics Wallah Foundation',
+      youtubeUrl: 'https://www.youtube.com/embed/5UnFQ-wC8tE',
+      originalUrl: 'https://www.youtube.com/watch?v=5UnFQ-wC8tE',
+      duration: '1:02:15 hrs',
+      creatorName: 'Physics Wallah Foundation',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Mensuration'
+    },
+    {
+      id: 'vid_c10_4_1_ritik',
+      type: 'revision',
+      tabLabel: '🔄 Cylinder & Cone (Ritik Mishra)',
+      videoId: '9-__HOYREi8',
+      title: 'Surface Areas and Volumes One Shot | Class 10 Maths Chapter 12 | Ritik Mishra',
+      youtubeUrl: 'https://www.youtube.com/embed/9-__HOYREi8',
+      originalUrl: 'https://www.youtube.com/watch?v=9-__HOYREi8',
+      duration: '46:30 mins',
+      creatorName: 'Ritik Mishra',
+      channelName: 'Ritik Mishra Maths',
+      themeName: 'Theme 4: Mensuration'
+    },
+    {
+      id: 'vid_c10_4_1_formula',
+      type: 'deepdive',
+      tabLabel: '💡 All Mensuration Formulae (Ranveer Maths)',
+      videoId: '6f_Rcs_lSo8',
+      title: 'Class 10 Maths Chapter 12 Surface Areas and Volumes | All Formulae | Ranveer Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/6f_Rcs_lSo8',
+      originalUrl: 'https://www.youtube.com/watch?v=6f_Rcs_lSo8',
+      duration: '19:40 mins',
+      creatorName: 'Ranveer Maths',
+      channelName: 'Ranveer Maths 10',
+      themeName: 'Theme 4: Mensuration'
+    }
+  ],
+
+  'c10_les_4_2': [
+    {
+      id: 'vid_c10_4_2_pw',
+      type: 'primary',
+      tabLabel: '🎥 Sphere, Hemisphere & Combined Solids',
+      videoId: '5UnFQ-wC8tE',
+      title: 'Sphere, Hemisphere, Melting & Recasting Solids | Physics Wallah Foundation',
+      youtubeUrl: 'https://www.youtube.com/embed/5UnFQ-wC8tE',
+      originalUrl: 'https://www.youtube.com/watch?v=5UnFQ-wC8tE',
+      duration: '1:02:15 hrs',
+      creatorName: 'Physics Wallah Foundation',
+      channelName: 'Physics Wallah',
+      themeName: 'Theme 4: Mensuration'
+    },
+    {
+      id: 'vid_c10_4_2_ritik',
+      type: 'revision',
+      tabLabel: '🔄 Combinations & Hollow Solids (Ritik Mishra)',
+      videoId: '9-__HOYREi8',
+      title: 'Combination of Solids & Frustum Problems | Ritik Mishra',
+      youtubeUrl: 'https://www.youtube.com/embed/9-__HOYREi8',
+      originalUrl: 'https://www.youtube.com/watch?v=9-__HOYREi8',
+      duration: '46:30 mins',
+      creatorName: 'Ritik Mishra',
+      channelName: 'Ritik Mishra Maths',
+      themeName: 'Theme 4: Mensuration'
+    },
+    {
+      id: 'vid_c10_4_2_formula',
+      type: 'deepdive',
+      tabLabel: '💡 Spheres & Combined Solids Formulas',
+      videoId: '6f_Rcs_lSo8',
+      title: 'Surface Area & Volume Quick Formula Guide | Ranveer Maths',
+      youtubeUrl: 'https://www.youtube.com/embed/6f_Rcs_lSo8',
+      originalUrl: 'https://www.youtube.com/watch?v=6f_Rcs_lSo8',
+      duration: '19:40 mins',
+      creatorName: 'Ranveer Maths',
+      channelName: 'Ranveer Maths 10',
+      themeName: 'Theme 4: Mensuration'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 5: TRIGONOMETRY
+  // =========================================================================
+  'c10_les_5_1': [
+    {
+      id: 'vid_c10_5_1_tarun1',
+      type: 'primary',
+      tabLabel: '🎥 Trigonometrical Identities (Sir Tarun Rupani)',
+      videoId: 'BV8ocsR2eL4',
+      title: 'Trigonometrical Identity | Height and Distance | ICSE Class 10 | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/BV8ocsR2eL4',
+      originalUrl: 'https://www.youtube.com/watch?v=BV8ocsR2eL4',
+      duration: '41:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Trigonometry'
+    },
+    {
+      id: 'vid_c10_5_1_tarun2',
+      type: 'revision',
+      tabLabel: '🔄 Identities Proofs & Formulas',
+      videoId: 'pBWZ4LmOvf4',
+      title: 'Trigonometrical Identities | Height and Distance | ICSE Class 10 | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/pBWZ4LmOvf4',
+      originalUrl: 'https://www.youtube.com/watch?v=pBWZ4LmOvf4',
+      duration: '36:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Trigonometry'
+    },
+    {
+      id: 'vid_c10_5_1_20min',
+      type: 'deepdive',
+      tabLabel: '💡 Identities in 20 Mins',
+      videoId: 'F97D9-I44W4',
+      title: 'TRIGONOMETRIC IDENTITIES, HEIGHTS & DISTANCE in 20 Mins | Class 10 ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/F97D9-I44W4',
+      originalUrl: 'https://www.youtube.com/watch?v=F97D9-I44W4',
+      duration: '21:10 mins',
+      creatorName: 'ICSE Quick Revision',
+      channelName: 'ICSE Quick Revision',
+      themeName: 'Theme 5: Trigonometry'
+    }
+  ],
+
+  'c10_les_5_2': [
+    {
+      id: 'vid_c10_5_2_tarun1',
+      type: 'primary',
+      tabLabel: '🎥 Heights & Distances (Sir Tarun Rupani)',
+      videoId: 'BV8ocsR2eL4',
+      title: 'Heights and Distances: Angles of Elevation & Depression | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/BV8ocsR2eL4',
+      originalUrl: 'https://www.youtube.com/watch?v=BV8ocsR2eL4',
+      duration: '41:30 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Trigonometry'
+    },
+    {
+      id: 'vid_c10_5_2_tarun2',
+      type: 'revision',
+      tabLabel: '🔄 Elevation & Depression Practical Problems',
+      videoId: 'pBWZ4LmOvf4',
+      title: 'Heights and Distances Word Problems & Diagrams | Sir Tarun Rupani',
+      youtubeUrl: 'https://www.youtube.com/embed/pBWZ4LmOvf4',
+      originalUrl: 'https://www.youtube.com/watch?v=pBWZ4LmOvf4',
+      duration: '36:15 mins',
+      creatorName: 'Sir Tarun Rupani',
+      channelName: 'Sir Tarun Rupani',
+      themeName: 'Theme 5: Trigonometry'
+    },
+    {
+      id: 'vid_c10_5_2_20min',
+      type: 'deepdive',
+      tabLabel: '💡 Heights & Distances in 20 Mins',
+      videoId: 'F97D9-I44W4',
+      title: 'Trigonometry Applications & Heights & Distance Summary | Class 10 ICSE',
+      youtubeUrl: 'https://www.youtube.com/embed/F97D9-I44W4',
+      originalUrl: 'https://www.youtube.com/watch?v=F97D9-I44W4',
+      duration: '21:10 mins',
+      creatorName: 'ICSE Quick Revision',
+      channelName: 'ICSE Quick Revision',
+      themeName: 'Theme 5: Trigonometry'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 6: STATISTICS
+  // =========================================================================
+  'c10_les_6_1': [
+    {
+      id: 'vid_c10_6_1_learno',
+      type: 'primary',
+      tabLabel: '🎥 Statistics One Shot (LearnoHub)',
+      videoId: 'fp3aMwnolAs',
+      title: 'Statistics Class 10 Maths One Shot | NCERT Chapter 13 | Complete Full Chapter | LearnoHub',
+      youtubeUrl: 'https://www.youtube.com/embed/fp3aMwnolAs',
+      originalUrl: 'https://www.youtube.com/watch?v=fp3aMwnolAs',
+      duration: '54:40 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 10',
+      themeName: 'Theme 6: Statistics'
+    },
+    {
+      id: 'vid_c10_6_1_amplify',
+      type: 'revision',
+      tabLabel: '🔄 Mean Calculation Methods (Amplify Learning)',
+      videoId: 'JuQU0A4POuw',
+      title: 'Statistics Class 10 - Maths | Mean (Direct, Short-Cut & Step-Deviation) | Amplify Learning',
+      youtubeUrl: 'https://www.youtube.com/embed/JuQU0A4POuw',
+      originalUrl: 'https://www.youtube.com/watch?v=JuQU0A4POuw',
+      duration: '38:25 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 6: Statistics'
+    },
+    {
+      id: 'vid_c10_6_1_homeschool',
+      type: 'deepdive',
+      tabLabel: '💡 Statistics Intro & Methods (Home School)',
+      videoId: 'ycqVuajwK2E',
+      title: 'Statistics | Part-1 | Class 10 | Introduction & Formulas | Home School',
+      youtubeUrl: 'https://www.youtube.com/embed/ycqVuajwK2E',
+      originalUrl: 'https://www.youtube.com/watch?v=ycqVuajwK2E',
+      duration: '27:50 mins',
+      creatorName: 'Home School',
+      channelName: 'Home School',
+      themeName: 'Theme 6: Statistics'
+    }
+  ],
+
+  'c10_les_6_2': [
+    {
+      id: 'vid_c10_6_2_learno',
+      type: 'primary',
+      tabLabel: '🎥 Median & Mode Grouped Data (LearnoHub)',
+      videoId: 'fp3aMwnolAs',
+      title: 'Median and Mode for Continuous Grouped Data (Formula & Histogram Method)',
+      youtubeUrl: 'https://www.youtube.com/embed/fp3aMwnolAs',
+      originalUrl: 'https://www.youtube.com/watch?v=fp3aMwnolAs',
+      duration: '54:40 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 10',
+      themeName: 'Theme 6: Statistics'
+    },
+    {
+      id: 'vid_c10_6_2_amplify',
+      type: 'revision',
+      tabLabel: '🔄 Median & Histogram Mode (Amplify Learning)',
+      videoId: 'JuQU0A4POuw',
+      title: 'Median & Mode for Class 10 ICSE | Amplify Learning – with Alok',
+      youtubeUrl: 'https://www.youtube.com/embed/JuQU0A4POuw',
+      originalUrl: 'https://www.youtube.com/watch?v=JuQU0A4POuw',
+      duration: '38:25 mins',
+      creatorName: 'Amplify Learning – with Alok',
+      channelName: 'Amplify Learning – with Alok',
+      themeName: 'Theme 6: Statistics'
+    }
+  ],
+
+  'c10_les_6_3': [
+    {
+      id: 'vid_c10_6_3_learno',
+      type: 'primary',
+      tabLabel: '🎥 Ogives & Quartiles (LearnoHub)',
+      videoId: 'fp3aMwnolAs',
+      title: 'Ogives (Cumulative Frequency Curves): Median, Quartiles, Inter-Quartile Range',
+      youtubeUrl: 'https://www.youtube.com/embed/fp3aMwnolAs',
+      originalUrl: 'https://www.youtube.com/watch?v=fp3aMwnolAs',
+      duration: '54:40 mins',
+      creatorName: 'LearnoHub',
+      channelName: 'LearnoHub - Class 10',
+      themeName: 'Theme 6: Statistics'
+    },
+    {
+      id: 'vid_c10_6_3_homeschool',
+      type: 'revision',
+      tabLabel: '🔄 Cumulative Frequency Curves (Home School)',
+      videoId: 'ycqVuajwK2E',
+      title: 'Drawing Less-than & More-than Ogives and Estimating Quartiles | Home School',
+      youtubeUrl: 'https://www.youtube.com/embed/ycqVuajwK2E',
+      originalUrl: 'https://www.youtube.com/watch?v=ycqVuajwK2E',
+      duration: '27:50 mins',
+      creatorName: 'Home School',
+      channelName: 'Home School',
+      themeName: 'Theme 6: Statistics'
+    }
+  ],
+
+  // =========================================================================
+  // CLASS 10 - CHAPTER 7: PROBABILITY
+  // =========================================================================
+  'c10_les_7_1': [
+    {
+      id: 'vid_c10_7_1_manocha',
+      type: 'primary',
+      tabLabel: '🎥 Probability Full Lesson (Manocha Academy)',
+      videoId: 'lZSL7Tm5ViA',
+      title: 'Probability | Coins, Dice, Cards, Complementary Events | Manocha Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/lZSL7Tm5ViA',
+      originalUrl: 'https://www.youtube.com/watch?v=lZSL7Tm5ViA',
+      duration: '39:15 mins',
+      creatorName: 'Manocha Academy',
+      channelName: 'Manocha Academy',
+      themeName: 'Theme 7: Probability'
+    },
+    {
+      id: 'vid_c10_7_1_gyaani',
+      type: 'revision',
+      tabLabel: '🔄 Probability One Shot (GYAANI KEEDA)',
+      videoId: 'KNKtuGw4ZUw',
+      title: 'Probability Class 10 | One Shot Chapter & PYQs | GYAANI KEEDA',
+      youtubeUrl: 'https://www.youtube.com/embed/KNKtuGw4ZUw',
+      originalUrl: 'https://www.youtube.com/watch?v=KNKtuGw4ZUw',
+      duration: '47:20 mins',
+      creatorName: 'GYAANI KEEDA',
+      channelName: 'GYAANI KEEDA',
+      themeName: 'Theme 7: Probability'
+    },
+    {
+      id: 'vid_c10_7_1_full',
+      type: 'deepdive',
+      tabLabel: '💡 Cards, Dice, Coins Practice',
+      videoId: '7_wRWVoGBQY',
+      title: 'Probability Class 10 | Coins, Dice, Cards, NCERT, PYQs | FULL Chapter',
+      youtubeUrl: 'https://www.youtube.com/embed/7_wRWVoGBQY',
+      originalUrl: 'https://www.youtube.com/watch?v=7_wRWVoGBQY',
+      duration: '42:50 mins',
+      creatorName: 'Class 10 Math Academy',
+      channelName: 'Class 10 Math Academy',
+      themeName: 'Theme 7: Probability'
+    }
+  ],
+
+  'c10_les_7_2': [
+    {
+      id: 'vid_c10_7_2_manocha',
+      type: 'primary',
+      tabLabel: '🎥 Combined Events & Sample Spaces (Manocha Academy)',
+      videoId: 'lZSL7Tm5ViA',
+      title: 'Combined Events, Sample Spaces (Two Dice, Three Coins) & Complementary Events | Manocha Academy',
+      youtubeUrl: 'https://www.youtube.com/embed/lZSL7Tm5ViA',
+      originalUrl: 'https://www.youtube.com/watch?v=lZSL7Tm5ViA',
+      duration: '39:15 mins',
+      creatorName: 'Manocha Academy',
+      channelName: 'Manocha Academy',
+      themeName: 'Theme 7: Probability'
+    },
+    {
+      id: 'vid_c10_7_2_gyaani',
+      type: 'revision',
+      tabLabel: '🔄 2 Dice & 3 Coins Problems (GYAANI KEEDA)',
+      videoId: 'KNKtuGw4ZUw',
+      title: 'Two Dice & Three Coins Simultaneous Outcome Tables | GYAANI KEEDA',
+      youtubeUrl: 'https://www.youtube.com/embed/KNKtuGw4ZUw',
+      originalUrl: 'https://www.youtube.com/watch?v=KNKtuGw4ZUw',
+      duration: '47:20 mins',
+      creatorName: 'GYAANI KEEDA',
+      channelName: 'GYAANI KEEDA',
+      themeName: 'Theme 7: Probability'
+    },
+    {
+      id: 'vid_c10_7_2_full',
+      type: 'deepdive',
+      tabLabel: '💡 Complementary Events P(not E)',
+      videoId: '7_wRWVoGBQY',
+      title: 'Complementary Events and Advanced Probability Questions | Class 10',
+      youtubeUrl: 'https://www.youtube.com/embed/7_wRWVoGBQY',
+      originalUrl: 'https://www.youtube.com/watch?v=7_wRWVoGBQY',
+      duration: '42:50 mins',
+      creatorName: 'Class 10 Math Academy',
+      channelName: 'Class 10 Math Academy',
+      themeName: 'Theme 7: Probability'
+    }
   ]
 };
 
