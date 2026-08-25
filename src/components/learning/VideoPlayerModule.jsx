@@ -83,6 +83,11 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           playerVars: {
             rel: 0,
             modestbranding: 1,
+            iv_load_policy: 3,
+            playsinline: 1,
+            controls: 1,
+            showinfo: 0,
+            autohide: 1,
             enablejsapi: 1,
             origin: window.location.origin
           },
