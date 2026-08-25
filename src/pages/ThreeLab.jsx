@@ -64,6 +64,7 @@ export const ThreeLab = () => {
     changeClass(`class${cNum}`);
     setSelectedTheme('all');
     setActiveActivity(null);
+    setSelectedSubtopicId(null);
   };
 
   const handleStartLab = (activity) => {
@@ -296,6 +297,7 @@ export const ThreeLab = () => {
             </div>
           ) : (
             <HierarchicalSitemapTree
+              selectedClassNum={currentClassNum}
               onSelectSubtopic={(id) => setSelectedSubtopicId(id)}
               activeSubtopicId={selectedSubtopicId}
             />
@@ -315,7 +317,7 @@ export const ThreeLab = () => {
 
       {/* VIEW 5: PRINTABLE WORKSHEETS GENERATOR */}
       {labSection === 'worksheets' && (
-        <WorksheetGenerator initialClassNum={currentClassNum} />
+        <WorksheetGenerator initialClassNum={currentClassNum} selectedClassNum={currentClassNum} />
       )}
 
     </div>
