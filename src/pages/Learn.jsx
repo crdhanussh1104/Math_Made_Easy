@@ -187,10 +187,11 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       <CardRounded style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', padding: '16px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: '1 1 300px' }}>
           <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-            {t('accuracy')}:
+            {t('progress') || 'Progress'}:
           </div>
           <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color || '#4f46e5'} showLabel />
         </div>
+
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.95rem' }}>
           <div style={{ color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -210,7 +211,6 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
           { id: 'olympiad', label: t('tab_olympiad'), icon: Trophy },
           { id: 'textbook', label: t('tab_reader'), icon: BookOpen },
           { id: 'formulas', label: t('tab_cards'), icon: Lightbulb },
-          { id: 'practice', label: t('nav_practice'), icon: Sparkles },
           { id: 'quiz', label: t('nav_quiz'), icon: HelpCircle },
           { id: 'pibot', label: t('home_pibot_ask_btn'), icon: Bot }
         ].map(tab => {
@@ -345,11 +345,9 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
               </div>
             )}
           </CardRounded>
-
-          {/* Integrated Olympiad Insights below Formula Cards and above Quiz */}
-          <OlympiadInsightsNLP chapterId={activeChap.id} />
         </div>
       )}
+
 
       {/* TAB 6: PRACTICE VISUALIZER */}
       {workspaceTab === 'practice' && (
