@@ -338,7 +338,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
                 <p>No formula cards available for this topic yet.</p>
               </div>
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
                 {relevantFormulas.map(form => (
                   <FormulaCard3D key={form.id} formulaData={form} />
                 ))}

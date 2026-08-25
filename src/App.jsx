@@ -13,7 +13,6 @@ import { Profile } from './pages/Profile';
 import { ThreeLab } from './pages/ThreeLab';
 import { ARLab } from './pages/ARLab';
 import { OlympiadHub } from './pages/OlympiadHub';
-import { Home as HomeIcon, BookOpen, HelpCircle, BookMarked, BarChart3, User, Box, Camera, Trophy } from 'lucide-react';
 import './styles/global.css';
 
 function AppContent() {
@@ -29,37 +28,18 @@ function AppContent() {
     }
   }, []);
 
-  const navItems = [
-    { id: 'home', label: 'Home', icon: HomeIcon },
-    { id: 'learn', label: 'Syllabus Map', icon: BookOpen },
-    { id: 'olympiadHub', label: 'Olympiad Hub', icon: Trophy },
-    { id: 'quiz', label: 'Practice Quiz', icon: HelpCircle },
-    { id: 'library', label: 'Digital Library', icon: BookMarked },
-    { id: 'threeLab', label: '3D Math Lab', icon: Box },
-    { id: 'arLab', label: 'AR Explorer', icon: Camera },
-    { id: 'dashboard', label: 'Progress Report', icon: BarChart3 },
-    { id: 'profile', label: 'Avatar & Shop', icon: User }
-  ];
-
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%', backgroundColor: 'var(--bg-main)' }}>
       {/* Offline Toast Notification */}
       <OfflineNotice />
 
-      {/* Top Header */}
+      {/* Top Header & Mobile Bottom Nav */}
       <HeaderStats currentPage={currentPage} onNavigate={setCurrentPage} />
 
-      {/* Main Content Area filling wide screens with rich proportions */}
+      {/* Main Content Area filling wide screens with rich responsive proportions */}
       <main
         key={currentPage}
-        className="page-enter"
-        style={{
-          flex: 1,
-          padding: '28px 32px 100px 32px',
-          maxWidth: '1440px',
-          margin: '0 auto',
-          width: '100%'
-        }}
+        className="app-main-content page-enter"
       >
         {currentPage === 'home' && (
           <Home
@@ -115,4 +95,3 @@ export default function App() {
     </GameProvider>
   );
 }
-
