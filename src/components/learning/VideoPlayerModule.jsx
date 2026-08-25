@@ -349,7 +349,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 Video Watch Milestones (3 Parts):
               </span>
               <span style={{ color: canComplete ? 'var(--primary)' : 'var(--text-muted)' }}>
-                {canComplete ? '✅ Reached Point 2 - Unlocked!' : '🔒 Play video past Point 2 (85%) to unlock'}
+                {canComplete ? '🏆 Reached 85% - Unlocked!' : '🔒 Watch through 🚩 85% to unlock'}
               </span>
             </div>
 
@@ -392,7 +392,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                   userSelect: 'none'
                 }}
               >
-                {cp1 ? '✓' : '1'}
+                {cp1 ? '✓' : '🚩'}
               </div>
 
               {/* Point 2 Indicator (at 85%) */}
@@ -420,7 +420,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                   userSelect: 'none'
                 }}
               >
-                {cp2 ? '✓' : '2'}
+                {cp2 ? '✓' : '🚩'}
               </div>
             </div>
 
@@ -428,12 +428,14 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: '600', padding: '0 4px' }}>
               <span>0% (Intro)</span>
               <span style={{ color: cp1 ? 'var(--primary)' : 'inherit', fontWeight: cp1 ? '800' : '600' }}>
-                Point 1 (33%) {cp1 ? '✓' : ''}
+                🚩 33% {cp1 ? '✓' : ''}
               </span>
               <span style={{ color: cp2 ? 'var(--primary)' : 'inherit', fontWeight: cp2 ? '800' : '600' }}>
-                Point 2 (85%) {cp2 ? '✓' : ''}
+                🚩 85% {cp2 ? '✓' : ''}
               </span>
-              <span>100%</span>
+              <span style={{ color: isCurrentVideoWatched ? 'var(--primary)' : 'inherit', fontWeight: '700' }}>
+                🏆 100%
+              </span>
             </div>
           </div>
 
