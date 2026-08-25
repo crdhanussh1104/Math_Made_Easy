@@ -20,19 +20,21 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const [embedError, setEmbedError] = useState(false);
-  const [videoWatched, setVideoWatched] = useState(gameState.completedLessons.includes(activeLesson.id));
-  const [watchProgress, setWatchProgress] = useState(gameState.completedLessons.includes(activeLesson.id) ? 100 : 0);
+
+  // Track watch completion independently per video option
+  const [watchedVideos, setWatchedVideos] = useState({});
 
   // Reset tab index and error state whenever selected lesson changes
   useEffect(() => {
     setActiveVideoIdx(0);
     setEmbedError(false);
-    const done = gameState.completedLessons.includes(activeLesson.id);
-    setVideoWatched(done);
-    setWatchProgress(done ? 100 : 0);
   }, [activeLesson.id, chapter.id]);
 
   const currentVideo = playlist[activeVideoIdx] || null;
+  const currentVideoKey = currentVideo ? (currentVideo.id || `${activeLesson.id}_vid_${activeVideoIdx}`) : '';
+  const isCurrentVideoWatched = !!watchedVideos[currentVideoKey];
+  const watchProgress = isCurrentVideoWatched ? 100 : 0;
+
   const videoId = currentVideo?.videoId || (currentVideo?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]) || '';
   const embedUrl = videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1` : currentVideo?.youtubeUrl;
   const youtubeWatchUrl = currentVideo?.originalUrl || `https://www.youtube.com/watch?v=${videoId}`;
@@ -45,17 +47,23 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   };
 
   const handleMarkComplete = () => {
-    if (!videoWatched) {
-      setVideoWatched(true);
-      setWatchProgress(100);
-      completeLesson(activeLesson.id, 100);
-      addXP(activeLesson.xp || 50);
-      soundFx.playCorrect();
-      triggerConfetti('levelUp');
+    if (!isCurrentVideoWatched) {
+      setWatchedVideos(prev => ({ ...prev, [currentVideoKey]: true }));
 
-      // Trigger automatic unlocking of next lesson
-      if (onUnlockNextLesson) {
-        onUnlockNextLesson();
+      const isLessonAlreadyDone = gameState.completedLessons.includes(activeLesson.id);
+      if (!isLessonAlreadyDone) {
+        completeLesson(activeLesson.id, 100);
+        addXP(activeLesson.xp || 50);
+        soundFx.playCorrect();
+        triggerConfetti('levelUp');
+
+        // Trigger automatic unlocking of next lesson
+        if (onUnlockNextLesson) {
+          onUnlockNextLesson();
+        }
+      } else {
+        soundFx.playCorrect();
+        triggerConfetti('achievement');
       }
     }
   };
@@ -119,10 +127,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           </div>
 
           {/* Completion Badge */}
-          {videoWatched ? (
-            <BadgeChip label="Completed (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="md" />
+          {isCurrentVideoWatched ? (
+            <BadgeChip label="Video Completed ✓" color="var(--primary)" bg="var(--primary-light)" size="md" />
           ) : (
-            <BadgeChip label={`Watch Progress: ${watchProgress}%`} color="var(--orange)" bg="var(--warning-light)" size="md" />
+            <BadgeChip label="Not Completed (0%)" color="var(--orange)" bg="var(--warning-light)" size="md" />
           )}
         </CardRounded>
       )}
@@ -211,8 +219,8 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
               <ProgressBar progress={watchProgress} color={chapter.color} height={10} showLabel={false} />
             </div>
 
-            {videoWatched ? (
-              <BadgeChip label="Lesson Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
+            {isCurrentVideoWatched ? (
+              <BadgeChip label="Video Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
             ) : (
               <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2}>
                 Mark Lesson Complete & Unlock Next 🚀
