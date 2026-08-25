@@ -145,7 +145,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
             <iframe
               key={embedUrl}
               src={embedUrl}
-              title={currentVideo.title}
+              title={activeLesson.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -192,55 +192,17 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           )}
         </div>
 
-        {/* 3. Detailed Video Metadata Section */}
+        {/* 3. Clean Subtopic Name & Progress Action */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '4px' }}>
           
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
-            <div style={{ flex: 1, minWidth: '240px' }}>
-              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
-                {currentVideo.title}
-              </h3>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <span>Lesson: <strong>{activeLesson.title}</strong></span>
-                <span>•</span>
-                <span>Chapter {chapter.number}: {chapter.title}</span>
-                <span>•</span>
-                <span style={{ color: 'var(--primary)', fontWeight: '700' }}>{currentVideo.themeName}</span>
-              </div>
-            </div>
-
-            {/* Direct Watch on YouTube Quick Link */}
-            <a
-              href={youtubeWatchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
-              title="Open video on YouTube"
-            >
-              <button
-                type="button"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '6px 12px',
-                  borderRadius: 'var(--radius-full)',
-                  border: '1px solid var(--border-light)',
-                  backgroundColor: 'var(--bg-main)',
-                  color: 'var(--text-main)',
-                  fontSize: '0.82rem',
-                  fontWeight: '700',
-                  cursor: 'pointer'
-                }}
-              >
-                <ExternalLink size={14} color="var(--primary)" />
-                <span>Watch on YouTube</span>
-              </button>
-            </a>
+          <div>
+            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
+              {activeLesson.title}
+            </h3>
           </div>
 
           {/* Progress Bar & Mark Complete Button */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px', marginTop: '6px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px', marginTop: '4px' }}>
             <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: '700' }}>
                 <span>Video Watch Completion</span>
@@ -260,24 +222,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
         </div>
 
-      </CardRounded>
-
-      {/* 4. Educational Video Copyright Notice Card */}
-      <CardRounded style={{ backgroundColor: 'var(--bg-main)', border: '1.5px solid var(--border-light)', padding: '16px 20px' }}>
-        <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-          <ShieldAlert size={24} color="var(--purple)" style={{ flexShrink: 0, marginTop: '2px' }} />
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-rounded)', fontSize: '0.98rem', fontWeight: '800', color: 'var(--purple)', marginBottom: '4px' }}>
-              Educational Video Notice
-            </h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-              "This video is embedded directly from YouTube using YouTube's official embed feature.
-              All copyrights, trademarks, and ownership belong to the respective YouTube creator and publisher.
-              Math Made Easy does not host, modify, download, or redistribute this content.
-              This content is displayed solely for educational purposes."
-            </p>
-          </div>
-        </div>
       </CardRounded>
 
     </div>
