@@ -1,4 +1,112 @@
-/* Theme overrides */
+/* ==========================================================================
+   Comprehensive Light & Dark Theme Custom Properties & Global Overrides
+   ========================================================================== */
+
+/* 1. Default Light / Daylight Theme */
+[data-theme="light"],
+[data-theme="daylight"],
+:root:not([data-theme="dark"]):not([data-theme="space"]):not([data-theme="cyber"]) {
+  --primary: #9C725D;
+  --primary-hover: #795548;
+  --primary-shadow: #795548;
+  --primary-light: #E8D5C4;
+
+  --secondary: #1cb0f6;
+  --secondary-hover: #1899d6;
+  --secondary-shadow: #1899d6;
+  --secondary-light: #ddf4ff;
+
+  --bg-main: #FFF8F0;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-solid: #FFFFFF;
+  --glass-border: rgba(156, 114, 93, 0.2);
+  --glass-blur: blur(16px);
+  --text-main: #3D332D;
+  --text-muted: #756A63;
+  --text-light: #a89e98;
+  --border-light: #E8DED5;
+  --border-card: #E8DED5;
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* 2. Deep Modern Dark Theme */
+[data-theme="dark"] {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-shadow: #4f46e5;
+  --primary-light: rgba(99, 102, 241, 0.18);
+
+  --secondary: #38bdf8;
+  --secondary-hover: #0ea5e9;
+  --secondary-shadow: #0284c7;
+  --secondary-light: rgba(56, 189, 248, 0.15);
+
+  --accent-yellow: #fde047;
+  --accent-green: #4ade80;
+  --accent-blue: #60a5fa;
+  --accent-purple: #c084fc;
+  
+  --accent: #f87171;
+  --accent-shadow: #dc2626;
+  --accent-light: rgba(239, 68, 68, 0.15);
+
+  --warning: #facc15;
+  --warning-shadow: #ca8a04;
+  --warning-light: rgba(250, 204, 21, 0.15);
+
+  --purple: #c084fc;
+  --purple-shadow: #9333ea;
+  --purple-light: rgba(192, 132, 252, 0.15);
+
+  --teal: #34d399;
+  --teal-shadow: #059669;
+
+  --orange: #fb923c;
+  --orange-shadow: #ea580c;
+
+  /* Dark Backgrounds & Contrast Text */
+  --bg-main: #0b0f19;
+  --bg-card: rgba(17, 24, 39, 0.92);
+  --bg-card-solid: #111827;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --text-light: #6b7280;
+  --border-light: #1f2937;
+  --border-card: #374151;
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific component dark overrides */
+[data-theme="dark"] header {
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1f2937;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+  border-color: #374151 !important;
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] [style*="background: #ffffff"],
+[data-theme="dark"] [style*="background:#ffffff"],
+[data-theme="dark"] [style*="backgroundColor: '#ffffff'"],
+[data-theme="dark"] [style*="background: rgb(255, 255, 255)"] {
+  background-color: var(--bg-card-solid) !important;
+  color: var(--text-main) !important;
+}
+
+/* 3. Cyber Theme */
 [data-theme="cyber"] {
   --primary: #00f0ff;
   --primary-hover: #00c4d1;
@@ -11,8 +119,11 @@
   --bg-card-solid: #10172a;
   --text-main: #e2e8f0;
   --text-muted: #94a3b8;
+  --border-light: #1e293b;
+  --border-card: #334155;
 }
 
+/* 4. Space Cosmic Theme */
 [data-theme="space"] {
   --primary: #8b5cf6;
   --primary-hover: #7c3aed;
@@ -25,4 +136,6 @@
   --bg-card-solid: #18122b;
   --text-main: #f3e8ff;
   --text-muted: #c084fc;
+  --border-light: #2e1065;
+  --border-card: #581c87;
 }

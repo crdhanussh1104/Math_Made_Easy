@@ -4,6 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem, Trophy } from 'lucide-react';
 import { ClassSelector } from '../ui/ClassSelector';
 import { LanguageSelector } from '../ui/LanguageSelector';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 export const HeaderStats = ({ currentPage, onNavigate }) => {
   const { gameState } = useGame();
@@ -101,8 +102,11 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
           })}
         </nav>
 
-        {/* Real Stats Counters (Streak, XP, Gems) */}
+        {/* Real Stats Counters (Streak, XP, Gems) & Theme Toggle in Right Corner */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
+          {/* Theme Toggle (Dark / Light) */}
+          <ThemeToggle />
+
           <div
             style={{
               display: 'flex',
@@ -159,6 +163,7 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
           </div>
         </div>
       </header>
+
 
       {/* Sleek Mobile Bottom Navigation Bar for SmartPhones */}
       <nav className="mobile-bottom-nav">
