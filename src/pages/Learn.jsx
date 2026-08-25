@@ -210,10 +210,10 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
           { id: 'olympiad', label: t('tab_olympiad'), icon: Trophy },
           { id: 'textbook', label: t('tab_reader'), icon: BookOpen },
           { id: 'formulas', label: t('tab_cards'), icon: Lightbulb },
-          { id: 'practice', label: t('nav_practice'), icon: Sparkles },
           { id: 'quiz', label: t('nav_quiz'), icon: HelpCircle },
           { id: 'pibot', label: t('home_pibot_ask_btn'), icon: Bot }
         ].map(tab => {
+
           const Icon = tab.icon;
           const isActive = workspaceTab === tab.id;
 
@@ -351,26 +351,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
         </div>
       )}
 
-      {/* TAB 6: PRACTICE VISUALIZER */}
-      {workspaceTab === 'practice' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {activeChap.id === 'chap_1' || activeChap.id === 'c4_chap_1' ? (
-            <AbacusVisualizer targetNumber={420513} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_4' || activeChap.id === 'c4_chap_4' ? (
-            <FractionPizza targetNumerator={3} targetDenominator={8} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_5' || activeChap.id === 'c4_chap_5' ? (
-            <ShapeBuilder onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_6' || activeChap.id === 'c4_chap_6' ? (
-            <BalanceScale targetWeightsCount={4} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_7' || activeChap.id === 'c4_chap_7' ? (
-            <ClockInteractive targetHour={3} targetMinute={30} onVerify={handleLessonComplete} />
-          ) : (
-            <GraphBuilder />
-          )}
-        </div>
-      )}
-
-      {/* TAB 7: CHAPTER QUIZ */}
+      {/* TAB 6: CHAPTER QUIZ */}
       {workspaceTab === 'quiz' && (
         <QuizPlayer
           chapterId={activeChap.id}
