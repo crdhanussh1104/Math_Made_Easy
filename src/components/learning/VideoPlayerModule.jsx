@@ -253,7 +253,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                     transition: 'all 0.2s ease'
                   }}
                 >
-                  <span>Video Option {idx + 1}</span>
+                  <span>Option {idx + 1}</span>
                 </button>
               );
             })}
