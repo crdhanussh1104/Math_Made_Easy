@@ -8,7 +8,7 @@ import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
 import {
   Tv, CheckCircle2, ShieldAlert,
-  ExternalLink, AlertTriangle, Film, Lock, Check, Play, Pause
+  ExternalLink, AlertTriangle, Film, Lock, Check, RotateCcw
 } from 'lucide-react';
 
 export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson }) => {
@@ -40,9 +40,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   const cp1 = isCurrentVideoWatched || currentPoints.p1;
   const cp2 = isCurrentVideoWatched || currentPoints.p2;
 
-  // Clickable only after listening past the 2nd point (67% of video)
+  // Clickable only after listening past the 2nd point (85% of video)
   const canComplete = cp2;
-  const watchProgress = isCurrentVideoWatched ? 100 : Math.max(currentPct, cp2 ? 100 : cp1 ? 50 : 0);
+  // Progress line matches YouTube video timeline exactly in real time
+  const watchProgress = isCurrentVideoWatched ? 100 : currentPct;
 
   // Load YouTube Iframe API once
   useEffect(() => {
@@ -54,7 +55,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     }
   }, []);
 
-  // Initialize or update YouTube Player on video change
+  // Reset state on lesson or video change
   useEffect(() => {
     setActiveVideoIdx(0);
     setEmbedError(false);
@@ -67,11 +68,11 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
     let destroyed = false;
 
-    const initPlayer = () => {
+    const bindPlayer = () => {
       if (destroyed || !window.YT || !window.YT.Player) return;
 
-      const playerContainer = document.getElementById('yt-player-iframe');
-      if (!playerContainer) return;
+      const iframeEl = document.getElementById('yt-player-iframe');
+      if (!iframeEl) return;
 
       try {
         if (playerRef.current && typeof playerRef.current.destroy === 'function') {
@@ -79,18 +80,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
         }
 
         playerRef.current = new window.YT.Player('yt-player-iframe', {
-          videoId: videoId,
-          playerVars: {
-            rel: 0,
-            modestbranding: 1,
-            iv_load_policy: 3,
-            playsinline: 1,
-            controls: 1,
-            showinfo: 0,
-            autohide: 1,
-            enablejsapi: 1,
-            origin: window.location.origin
-          },
           events: {
             onStateChange: (event) => {
               if (event.data === window.YT.PlayerState.PLAYING) {
@@ -107,18 +96,21 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           }
         });
       } catch (err) {
-        console.warn('YT Player init error:', err);
+        console.warn('YT Player binding error:', err);
       }
     };
 
-    if (window.YT && window.YT.Player) {
-      initPlayer();
-    } else {
-      window.onYouTubeIframeAPIReady = initPlayer;
-    }
+    const timer = setTimeout(() => {
+      if (window.YT && window.YT.Player) {
+        bindPlayer();
+      } else {
+        window.onYouTubeIframeAPIReady = bindPlayer;
+      }
+    }, 200);
 
     return () => {
       destroyed = true;
+      clearTimeout(timer);
       stopTracking();
       if (playerRef.current && typeof playerRef.current.destroy === 'function') {
         playerRef.current.destroy();
@@ -134,7 +126,8 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
         const dur = playerRef.current.getDuration();
 
         if (dur > 0) {
-          const pct = Math.min(100, Math.round((cur / dur) * 100));
+          const rawPct = (cur / dur) * 100;
+          const pct = Math.min(100, Math.max(0, parseFloat(rawPct.toFixed(1))));
           setCurrentPct(pct);
 
           setVideoPoints(prev => {
@@ -162,7 +155,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           });
         }
       }
-    }, 800);
+    }, 250);
   };
 
   const stopTracking = () => {
@@ -177,6 +170,28 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     setEmbedError(false);
     setCurrentPct(0);
     soundFx.playClick();
+  };
+
+  const handleResetProgress = () => {
+    soundFx.playClick();
+    setCurrentPct(0);
+    setVideoPoints(prev => ({
+      ...prev,
+      [currentVideoKey]: { p1: false, p2: false }
+    }));
+    setWatchedVideos(prev => ({
+      ...prev,
+      [currentVideoKey]: false
+    }));
+
+    if (playerRef.current && typeof playerRef.current.seekTo === 'function') {
+      try {
+        playerRef.current.seekTo(0, true);
+        playerRef.current.pauseVideo();
+      } catch (err) {
+        console.warn('Player seek error:', err);
+      }
+    }
   };
 
   const handleMarkComplete = () => {
@@ -223,6 +238,8 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       </CardRounded>
     );
   }
+
+  const embedSrc = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&controls=1&autohide=1`;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -278,26 +295,35 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       {/* 2. Main Responsive YouTube Player Card */}
       <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
         
-        {/* Player Iframe Wrapper or Fallback Thumbnail Card */}
+        {/* Exact 16:9 Aspect-Ratio Player Frame */}
         <div style={{
           position: 'relative',
-          paddingBottom: '56.25%', // 16:9 aspect ratio
-          height: 0,
-          overflow: 'hidden',
+          width: '100%',
+          aspectRatio: '16 / 9',
           borderRadius: 'var(--radius-md)',
+          overflow: 'hidden',
+          backgroundColor: '#000000',
           boxShadow: 'var(--shadow-md)',
-          border: '2px solid var(--border-light)',
-          backgroundColor: '#000000'
+          border: '2px solid var(--border-light)'
         }}>
           {!embedError ? (
-            <div
+            <iframe
               id="yt-player-iframe"
+              key={embedSrc}
+              src={embedSrc}
+              title={activeLesson.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              onError={() => setEmbedError(true)}
               style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                border: 'none',
+                display: 'block'
               }}
             />
           ) : (
@@ -305,7 +331,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
             <div style={{
               position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
               backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.95)), url(${thumbnailUrl})`,
-              backgroundSize: 'cover', backgroundPosition: 'center',
+              backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
               color: '#ffffff', padding: '24px', textAlign: 'center', gap: '14px'
             }}>
@@ -344,8 +370,9 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
           {/* 2 Automatic Points dividing video into 3 equal parts */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            {/* Visual Progress Bar with 2 Milestone Indicator Nodes */}
-            <div style={{ position: 'relative', height: '10px', backgroundColor: 'var(--border-light)', borderRadius: '99px', margin: '12px 8px 8px 8px' }}>
+
+            {/* Visual Progress Bar with 4 Milestone Pins: 🏁 (0%), 🏇 (33%), 🏇 (85%), 🏝️ (100%) */}
+            <div style={{ position: 'relative', height: '10px', backgroundColor: 'var(--border-light)', borderRadius: '99px', margin: '18px 16px 14px 16px' }}>
               {/* Active Fill Track */}
               <div style={{
                 position: 'absolute',
@@ -355,24 +382,49 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 width: `${watchProgress}%`,
                 backgroundColor: canComplete ? 'var(--primary)' : 'var(--orange)',
                 borderRadius: '99px',
-                transition: 'width 0.4s ease'
+                transition: 'width 0.25s linear'
               }} />
 
-              {/* Point 1 Indicator (at 33.3%) */}
+              {/* Start Pin (0%) */}
               <div
-                title="Checkpoint 1 (33% of video)"
+                title="Start (0%)"
+                style={{
+                  position: 'absolute',
+                  left: '0%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  border: '2px solid var(--border-light)',
+                  backgroundColor: 'var(--bg-main)',
+                  fontSize: '0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 2,
+                  boxShadow: 'var(--shadow-sm)',
+                  userSelect: 'none'
+                }}
+              >
+                🏁
+              </div>
+
+              {/* Point 1 Pin (33.3%) */}
+              <div
+                title="Checkpoint 1 (33%)"
                 style={{
                   position: 'absolute',
                   left: '33.33%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
-                  width: '26px',
-                  height: '26px',
+                  width: '28px',
+                  height: '28px',
                   borderRadius: '50%',
                   border: cp1 ? '2px solid #16a34a' : '2px solid var(--border-light)',
                   backgroundColor: cp1 ? '#22c55e' : 'var(--bg-main)',
-                  color: cp1 ? '#ffffff' : 'var(--text-muted)',
-                  fontSize: '0.72rem',
+                  color: cp1 ? '#ffffff' : 'inherit',
+                  fontSize: '0.85rem',
                   fontWeight: '800',
                   display: 'flex',
                   alignItems: 'center',
@@ -383,24 +435,24 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                   userSelect: 'none'
                 }}
               >
-                {cp1 ? '✓' : '🚩'}
+                {cp1 ? '✓' : '🏇'}
               </div>
 
-              {/* Point 2 Indicator (at 85%) */}
+              {/* Point 2 Pin (85%) */}
               <div
-                title="Checkpoint 2 (85% of video - Unlocks Completion)"
+                title="Checkpoint 2 (85% - Unlocks Completion)"
                 style={{
                   position: 'absolute',
                   left: '85%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
-                  width: '26px',
-                  height: '26px',
+                  width: '28px',
+                  height: '28px',
                   borderRadius: '50%',
                   border: cp2 ? '2px solid #16a34a' : '2px solid var(--border-light)',
                   backgroundColor: cp2 ? '#22c55e' : 'var(--bg-main)',
-                  color: cp2 ? '#ffffff' : 'var(--text-muted)',
-                  fontSize: '0.72rem',
+                  color: cp2 ? '#ffffff' : 'inherit',
+                  fontSize: '0.85rem',
                   fontWeight: '800',
                   display: 'flex',
                   alignItems: 'center',
@@ -411,56 +463,102 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                   userSelect: 'none'
                 }}
               >
-                {cp2 ? '✓' : '🚩'}
+                {cp2 ? '✓' : '🏇'}
               </div>
-            </div>
 
-            {/* Labels below milestones */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: '600', padding: '0 4px' }}>
-              <span>0% (Intro)</span>
-              <span style={{ color: cp1 ? 'var(--primary)' : 'inherit', fontWeight: cp1 ? '800' : '600' }}>
-                🚩 33% {cp1 ? '✓' : ''}
-              </span>
-              <span style={{ color: cp2 ? 'var(--primary)' : 'inherit', fontWeight: cp2 ? '800' : '600' }}>
-                🚩 85% {cp2 ? '✓' : ''}
-              </span>
-              <span style={{ color: isCurrentVideoWatched ? 'var(--primary)' : 'inherit', fontWeight: '700' }}>
-                🏆 100%
-              </span>
+              {/* Finish Pin (100%) */}
+              <div
+                title="Finish (100%)"
+                style={{
+                  position: 'absolute',
+                  left: '100%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  border: isCurrentVideoWatched ? '2px solid #16a34a' : '2px solid var(--border-light)',
+                  backgroundColor: isCurrentVideoWatched ? '#22c55e' : 'var(--bg-main)',
+                  fontSize: '0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 2,
+                  boxShadow: 'var(--shadow-sm)',
+                  userSelect: 'none'
+                }}
+              >
+                🏝️
+              </div>
             </div>
           </div>
 
-          {/* Mark Complete Button (Clickable ONLY when video has played past Point 2) */}
-          <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
-            {isCurrentVideoWatched ? (
-              <BadgeChip label="Lesson Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
-            ) : canComplete ? (
-              <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2}>
-                Mark Lesson Complete & Unlock Next 🚀
-              </Button3D>
-            ) : (
-              <button
-                type="button"
-                disabled
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '12px 20px',
-                  borderRadius: 'var(--radius-md)',
-                  border: '1.5px dashed var(--border-light)',
-                  backgroundColor: 'var(--bg-main)',
-                  color: 'var(--text-muted)',
-                  fontWeight: '700',
-                  fontFamily: 'var(--font-rounded)',
-                  fontSize: '0.95rem',
-                  cursor: 'not-allowed',
-                  opacity: 0.7
-                }}
-              >
-                <Lock size={16} /> Mark Lesson Complete & Unlock Next 🚀
-              </button>
-            )}
+          {/* Action Row: Reset Button (Left) & Mark Complete Button (Right) */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '6px' }}>
+            {/* Left Side: Reset Button */}
+            <button
+              type="button"
+              onClick={handleResetProgress}
+              title="Reset progress for this video"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '10px 18px',
+                borderRadius: 'var(--radius-md)',
+                border: '1.5px solid var(--border-light)',
+                backgroundColor: 'var(--bg-main)',
+                color: 'var(--text-muted)',
+                fontWeight: '700',
+                fontFamily: 'var(--font-rounded)',
+                fontSize: '0.9rem',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--primary)';
+                e.currentTarget.style.color = 'var(--text-main)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-light)';
+                e.currentTarget.style.color = 'var(--text-muted)';
+              }}
+            >
+              <RotateCcw size={16} /> Reset
+            </button>
+
+            {/* Right Side: Mark Complete Button */}
+            <div>
+              {isCurrentVideoWatched ? (
+                <BadgeChip label="Lesson Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
+              ) : canComplete ? (
+                <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2}>
+                  Mark Lesson Complete & Unlock Next 🚀
+                </Button3D>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '12px 20px',
+                    borderRadius: 'var(--radius-md)',
+                    border: '1.5px dashed var(--border-light)',
+                    backgroundColor: 'var(--bg-main)',
+                    color: 'var(--text-muted)',
+                    fontWeight: '700',
+                    fontFamily: 'var(--font-rounded)',
+                    fontSize: '0.95rem',
+                    cursor: 'not-allowed',
+                    opacity: 0.7
+                  }}
+                >
+                  <Lock size={16} /> Mark Lesson Complete & Unlock Next 🚀
+                </button>
+              )}
+            </div>
           </div>
 
         </div>
