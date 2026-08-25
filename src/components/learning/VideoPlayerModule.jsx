@@ -344,15 +344,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
           {/* 2 Automatic Points dividing video into 3 equal parts */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.84rem', fontWeight: '700' }}>
-              <span style={{ color: 'var(--text-main)' }}>
-                Video Watch Milestones (3 Parts):
-              </span>
-              <span style={{ color: canComplete ? 'var(--primary)' : 'var(--text-muted)' }}>
-                {canComplete ? '🏆 Reached 85% - Unlocked!' : '🔒 Watch through 🚩 85% to unlock'}
-              </span>
-            </div>
-
             {/* Visual Progress Bar with 2 Milestone Indicator Nodes */}
             <div style={{ position: 'relative', height: '10px', backgroundColor: 'var(--border-light)', borderRadius: '99px', margin: '12px 8px 8px 8px' }}>
               {/* Active Fill Track */}
