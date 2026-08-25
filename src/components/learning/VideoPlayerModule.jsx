@@ -144,8 +144,8 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
               soundFx.playCorrect();
             }
 
-            // Point 2: reached after 66.7% of video
-            if (pct >= 66 && !existing.p2) {
+            // Point 2: reached after 85% of video
+            if (pct >= 85 && !existing.p2) {
               updated.p1 = true;
               updated.p2 = true;
               changed = true;
@@ -344,7 +344,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 Video Watch Milestones (3 Parts):
               </span>
               <span style={{ color: canComplete ? 'var(--primary)' : 'var(--text-muted)' }}>
-                {canComplete ? '✅ Reached Point 2 - Unlocked!' : '🔒 Play video past Point 2 (67%) to unlock'}
+                {canComplete ? '✅ Reached Point 2 - Unlocked!' : '🔒 Play video past Point 2 (85%) to unlock'}
               </span>
             </div>
 
@@ -390,12 +390,12 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 {cp1 ? '✓' : '1'}
               </div>
 
-              {/* Point 2 Indicator (at 66.7%) */}
+              {/* Point 2 Indicator (at 85%) */}
               <div
-                title="Checkpoint 2 (67% of video - Unlocks Completion)"
+                title="Checkpoint 2 (85% of video - Unlocks Completion)"
                 style={{
                   position: 'absolute',
-                  left: '66.66%',
+                  left: '85%',
                   top: '50%',
                   transform: 'translate(-50%, -50%)',
                   width: '26px',
@@ -426,7 +426,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 Point 1 (33%) {cp1 ? '✓' : ''}
               </span>
               <span style={{ color: cp2 ? 'var(--primary)' : 'inherit', fontWeight: cp2 ? '800' : '600' }}>
-                Point 2 (67%) {cp2 ? '✓' : ''}
+                Point 2 (85%) {cp2 ? '✓' : ''}
               </span>
               <span>100%</span>
             </div>
