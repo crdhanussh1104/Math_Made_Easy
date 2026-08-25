@@ -75,7 +75,7 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
   };
 
   return (
-    <div style={{ padding: '16px 0', maxWidth: '900px', margin: '0 auto' }}>
+    <div style={{ padding: '8px 0', width: '100%', maxWidth: '100%' }}>
       {/* Topic & Theme Selector Bar */}
       <div style={{ background: '#ffffff', borderRadius: '16px', border: '2px solid #e2e8f0', padding: '16px 20px', marginBottom: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '12px' }}>

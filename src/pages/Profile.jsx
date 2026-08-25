@@ -59,22 +59,129 @@ export const Profile = () => {
         </div>
       </CardRounded>
 
-      {/* 2. Language & App Preferences Settings */}
-      <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Globe size={24} color="var(--primary)" />
-          <div>
-            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.3rem', fontWeight: '800', margin: 0 }}>
-              {t('profile_settings_language')} / {t('select_language')}
-            </h3>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: '4px 0 0 0' }}>
-              Switch the language for all lessons, quizzes, 3D math labs, and AI tutor interactions.
-            </p>
+      {/* 2. Language & Theme Preferences Settings */}
+      <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        {/* Theme Switcher Options */}
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+            <Sun size={24} color="var(--orange)" />
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.3rem', fontWeight: '800', margin: 0 }}>
+                {t('profile_dark_theme')} (Theme Mode)
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: '4px 0 0 0' }}>
+                Toggle between comfortable Dark Mode for nighttime study and clean Light Mode.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
+            {/* Light Mode Card */}
+            <div
+              onClick={() => setTheme('light')}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                padding: '16px 20px',
+                borderRadius: '16px',
+                backgroundColor: gameState?.theme !== 'dark' ? 'var(--primary-light)' : 'var(--bg-main)',
+                border: gameState?.theme !== 'dark' ? '2.5px solid var(--primary)' : '1.5px solid var(--border-light)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                boxShadow: gameState?.theme !== 'dark' ? 'var(--shadow-sm)' : 'none'
+              }}
+            >
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '12px',
+                backgroundColor: '#ffffff',
+                color: '#f59e0b',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+              }}>
+                <Sun size={24} fill="#f59e0b" />
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: '800', fontFamily: 'var(--font-rounded)', fontSize: '1rem', color: 'var(--text-main)' }}>
+                  Light Theme ☀️
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  Crisp & Daylight Bright
+                </div>
+              </div>
+              {gameState?.theme !== 'dark' && (
+                <BadgeChip label="Active ✓" color="var(--primary)" bg="var(--bg-card-solid)" size="sm" />
+              )}
+            </div>
+
+            {/* Dark Mode Card */}
+            <div
+              onClick={() => setTheme('dark')}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                padding: '16px 20px',
+                borderRadius: '16px',
+                backgroundColor: gameState?.theme === 'dark' ? 'rgba(129, 140, 248, 0.15)' : 'var(--bg-main)',
+                border: gameState?.theme === 'dark' ? '2.5px solid #818cf8' : '1.5px solid var(--border-light)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                boxShadow: gameState?.theme === 'dark' ? 'var(--shadow-sm)' : 'none'
+              }}
+            >
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '12px',
+                backgroundColor: '#1e293b',
+                color: '#fcd34d',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+              }}>
+                <Moon size={24} fill="#fcd34d" />
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: '800', fontFamily: 'var(--font-rounded)', fontSize: '1rem', color: 'var(--text-main)' }}>
+                  Dark Theme 🌙
+                </div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  Gentle on eyes at night
+                </div>
+              </div>
+              {gameState?.theme === 'dark' && (
+                <BadgeChip label="Active ✓" color="#818cf8" bg="#1e1b4b" size="sm" />
+              )}
+            </div>
           </div>
         </div>
 
-        <LanguageSelector variant="settings-grid" />
+        <hr style={{ border: 'none', borderTop: '1px solid var(--border-light)', margin: '4px 0' }} />
+
+        {/* Language Selection Section */}
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+            <Globe size={22} color="var(--primary)" />
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '800', margin: 0 }}>
+                {t('profile_settings_language')} / {t('select_language')}
+              </h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: '4px 0 0 0' }}>
+                Switch the language for all lessons, quizzes, 3D math labs, and AI tutor interactions.
+              </p>
+            </div>
+          </div>
+
+          <LanguageSelector variant="settings-grid" />
+        </div>
       </CardRounded>
+
 
       {/* 3. Badges & Achievements Gallery */}
       <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
