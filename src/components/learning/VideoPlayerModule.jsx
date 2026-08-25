@@ -9,7 +9,7 @@ import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
 import {
   Tv, PlayCircle, RefreshCw, Sparkles, CheckCircle2, ShieldAlert,
-  ExternalLink, AlertTriangle, Film, Check, Lock, Unlock, ArrowRight
+  ExternalLink, AlertTriangle, Film
 } from 'lucide-react';
 
 export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson }) => {
@@ -18,33 +18,25 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   // Dynamically load videos for the currently selected lesson
   const playlist = getVideosForLesson(activeLesson.id);
 
-  const isAlreadyDone = gameState.completedLessons.includes(activeLesson.id);
-
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const [embedError, setEmbedError] = useState(false);
-  const [videoWatched, setVideoWatched] = useState(isAlreadyDone);
-
-  // 2 Trigger Points dividing the video length into 3 equal segments (Part 1: 0-33%, Part 2: 33-67%, Part 3: 67-100%)
-  const [checkpoint1, setCheckpoint1] = useState(isAlreadyDone);
-  const [checkpoint2, setCheckpoint2] = useState(isAlreadyDone);
+  const [videoWatched, setVideoWatched] = useState(gameState.completedLessons.includes(activeLesson.id));
+  const [watchProgress, setWatchProgress] = useState(gameState.completedLessons.includes(activeLesson.id) ? 100 : 0);
 
   // Reset tab index and error state whenever selected lesson changes
   useEffect(() => {
-    const done = gameState.completedLessons.includes(activeLesson.id);
     setActiveVideoIdx(0);
     setEmbedError(false);
+    const done = gameState.completedLessons.includes(activeLesson.id);
     setVideoWatched(done);
-    setCheckpoint1(done);
-    setCheckpoint2(done);
+    setWatchProgress(done ? 100 : 0);
   }, [activeLesson.id, chapter.id]);
 
   const currentVideo = playlist[activeVideoIdx] || null;
-  const thumbnailUrl = currentVideo ? `https://img.youtube.com/vi/${currentVideo.videoId}/hqdefault.jpg` : '';
-
-  // Calculate watch progress based on 2 checkpoints (0%, 50%, 100%)
-  const checkpointsDoneCount = (checkpoint1 ? 1 : 0) + (checkpoint2 ? 1 : 0);
-  const watchProgress = videoWatched ? 100 : checkpointsDoneCount === 2 ? 100 : checkpointsDoneCount === 1 ? 50 : 0;
-  const canMarkComplete = checkpointsDoneCount === 2;
+  const videoId = currentVideo?.videoId || (currentVideo?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]) || '';
+  const embedUrl = videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1` : currentVideo?.youtubeUrl;
+  const youtubeWatchUrl = currentVideo?.originalUrl || `https://www.youtube.com/watch?v=${videoId}`;
+  const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
 
   const handleSelectVideo = (idx) => {
     setActiveVideoIdx(idx);
@@ -52,26 +44,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     soundFx.playClick();
   };
 
-  const handleTriggerCheckpoint = (cpNum) => {
-    soundFx.playClick();
-    if (cpNum === 1) {
-      setCheckpoint1(true);
-      soundFx.playCorrect();
-    } else if (cpNum === 2) {
-      if (!checkpoint1) {
-        setCheckpoint1(true);
-      }
-      setCheckpoint2(true);
-      soundFx.playCorrect();
-      triggerConfetti('achievement');
-    }
-  };
-
   const handleMarkComplete = () => {
-    if (!canMarkComplete) return;
-
     if (!videoWatched) {
       setVideoWatched(true);
+      setWatchProgress(100);
       completeLesson(activeLesson.id, 100);
       addXP(activeLesson.xp || 50);
       soundFx.playCorrect();
@@ -149,7 +125,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           {videoWatched ? (
             <BadgeChip label="Completed (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="md" />
           ) : (
-            <BadgeChip label={`Checkpoints: ${checkpointsDoneCount}/2 (${watchProgress}%)`} color={canMarkComplete ? "var(--primary)" : "var(--orange)"} bg={canMarkComplete ? "var(--primary-light)" : "var(--warning-light)"} size="md" />
+            <BadgeChip label={`Watch Progress: ${watchProgress}%`} color="var(--orange)" bg="var(--warning-light)" size="md" />
           )}
         </CardRounded>
       )}
@@ -170,10 +146,11 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
         }}>
           {!embedError ? (
             <iframe
-              key={currentVideo.youtubeUrl}
-              src={currentVideo.youtubeUrl}
+              key={embedUrl}
+              src={embedUrl}
               title={currentVideo.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               onError={() => setEmbedError(true)}
               style={{
@@ -186,233 +163,101 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
               }}
             />
           ) : (
-            /* Fallback Thumbnail View when Publisher Disables Embedding */
+            /* Fallback View when Publisher Disables Embedding */
             <div style={{
               position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.95)), url(${thumbnailUrl})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.95)), url(${thumbnailUrl})`,
               backgroundSize: 'cover', backgroundPosition: 'center',
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
               color: '#ffffff', padding: '24px', textAlign: 'center', gap: '14px'
             }}>
-              <AlertTriangle size={48} color="var(--warning)" />
+              <AlertTriangle size={44} color="var(--warning)" />
               <div>
                 <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '800' }}>
-                  This video cannot be embedded by the publisher.
+                  Watch Directly on YouTube
                 </h3>
-                <p style={{ fontSize: '0.9rem', opacity: 0.9, marginTop: '4px' }}>
-                  The channel owner has restricted third-party web embeds for this content.
+                <p style={{ fontSize: '0.88rem', opacity: 0.9, marginTop: '4px', maxWidth: '420px' }}>
+                  The creator allows full playback on YouTube. Click below to open and watch.
                 </p>
               </div>
 
               <a
-                href={currentVideo.originalUrl || `https://www.youtube.com/watch?v=${currentVideo.videoId}`}
+                href={youtubeWatchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: 'none' }}
               >
-                <Button3D variant="warning" size="lg" icon={ExternalLink}>
-                  Watch on YouTube ↗
+                <Button3D variant="warning" size="md" icon={ExternalLink}>
+                  Open Video on YouTube ↗
                 </Button3D>
               </a>
             </div>
           )}
         </div>
 
-        {/* 3. 3-Part Video Timeline & 2 Trigger Points */}
-        <div style={{
-          backgroundColor: 'var(--bg-main)',
-          padding: '16px 18px',
-          borderRadius: 'var(--radius-md)',
-          border: '1.5px solid var(--border-light)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-            <span style={{ fontSize: '0.85rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              🎯 Video Learning Trigger Points (3 Parts):
-            </span>
-            <span style={{ fontSize: '0.78rem', fontWeight: '700', color: canMarkComplete ? 'var(--primary)' : 'var(--text-muted)' }}>
-              {canMarkComplete ? '✅ Both trigger checkpoints reached!' : '🔒 Reach 2 trigger checkpoints to unlock completion'}
-            </span>
-          </div>
-
-          {/* 3-Segment Visual Track */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
-            {/* Part 1 */}
-            <div style={{
-              padding: '10px 12px',
-              borderRadius: '8px',
-              backgroundColor: checkpoint1 ? 'rgba(79, 70, 229, 0.12)' : 'var(--bg-card-solid)',
-              border: checkpoint1 ? '1.5px solid var(--primary)' : '1px solid var(--border-light)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: checkpoint1 ? 'var(--primary)' : 'var(--text-muted)' }}>
-                  Part 1 (0% - 33%)
-                </span>
-                {checkpoint1 && <Check size={14} color="var(--primary)" />}
-              </div>
-              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Concepts & Intro
-              </span>
-            </div>
-
-            {/* Part 2 */}
-            <div style={{
-              padding: '10px 12px',
-              borderRadius: '8px',
-              backgroundColor: checkpoint2 ? 'rgba(79, 70, 229, 0.12)' : 'var(--bg-card-solid)',
-              border: checkpoint2 ? '1.5px solid var(--primary)' : '1px solid var(--border-light)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: checkpoint2 ? 'var(--primary)' : 'var(--text-muted)' }}>
-                  Part 2 (33% - 67%)
-                </span>
-                {checkpoint2 && <Check size={14} color="var(--primary)" />}
-              </div>
-              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Methods & Proofs
-              </span>
-            </div>
-
-            {/* Part 3 */}
-            <div style={{
-              padding: '10px 12px',
-              borderRadius: '8px',
-              backgroundColor: videoWatched ? 'rgba(79, 70, 229, 0.12)' : 'var(--bg-card-solid)',
-              border: videoWatched ? '1.5px solid var(--primary)' : '1px solid var(--border-light)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: videoWatched ? 'var(--primary)' : 'var(--text-muted)' }}>
-                  Part 3 (67% - 100%)
-                </span>
-                {videoWatched && <Check size={14} color="var(--primary)" />}
-              </div>
-              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Summary & Solved Qs
-              </span>
-            </div>
-          </div>
-
-          {/* Trigger Buttons */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '2px' }}>
-            <button
-              onClick={() => handleTriggerCheckpoint(1)}
-              style={{
-                flex: '1 1 140px',
-                padding: '8px 12px',
-                borderRadius: 'var(--radius-sm)',
-                border: 'none',
-                backgroundColor: checkpoint1 ? '#dcfce7' : 'var(--bg-card-solid)',
-                color: checkpoint1 ? '#15803d' : 'var(--text-main)',
-                fontWeight: '700',
-                fontSize: '0.82rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-                border: checkpoint1 ? '1px solid #bbf7d0' : '1px solid var(--border-light)',
-                transition: 'all 0.15s ease'
-              }}
-            >
-              {checkpoint1 ? <CheckCircle2 size={16} color="#15803d" /> : <PlayCircle size={16} />}
-              <span>{checkpoint1 ? 'Trigger 1 Completed (33%)' : 'Check In: Completed Part 1'}</span>
-            </button>
-
-            <button
-              onClick={() => handleTriggerCheckpoint(2)}
-              style={{
-                flex: '1 1 140px',
-                padding: '8px 12px',
-                borderRadius: 'var(--radius-sm)',
-                border: 'none',
-                backgroundColor: checkpoint2 ? '#dcfce7' : 'var(--bg-card-solid)',
-                color: checkpoint2 ? '#15803d' : 'var(--text-main)',
-                fontWeight: '700',
-                fontSize: '0.82rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-                border: checkpoint2 ? '1px solid #bbf7d0' : '1px solid var(--border-light)',
-                transition: 'all 0.15s ease'
-              }}
-            >
-              {checkpoint2 ? <CheckCircle2 size={16} color="#15803d" /> : <PlayCircle size={16} />}
-              <span>{checkpoint2 ? 'Trigger 2 Completed (67%)' : 'Check In: Completed Part 2'}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* 4. Video Title & Progress Action */}
+        {/* 3. Detailed Video Metadata Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '4px' }}>
           
-          <div>
-            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
-              {currentVideo.title}
-            </h3>
-            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-              <span>Lesson: <strong>{activeLesson.title}</strong></span>
-              <span>•</span>
-              <span>Chapter {chapter.number}: {chapter.title}</span>
-              <span>•</span>
-              <span style={{ color: 'var(--primary)', fontWeight: '700' }}>{currentVideo.themeName}</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
+            <div style={{ flex: 1, minWidth: '240px' }}>
+              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
+                {currentVideo.title}
+              </h3>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                <span>Lesson: <strong>{activeLesson.title}</strong></span>
+                <span>•</span>
+                <span>Chapter {chapter.number}: {chapter.title}</span>
+                <span>•</span>
+                <span style={{ color: 'var(--primary)', fontWeight: '700' }}>{currentVideo.themeName}</span>
+              </div>
             </div>
+
+            {/* Direct Watch on YouTube Quick Link */}
+            <a
+              href={youtubeWatchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'none' }}
+              title="Open video on YouTube"
+            >
+              <button
+                type="button"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '6px 12px',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1px solid var(--border-light)',
+                  backgroundColor: 'var(--bg-main)',
+                  color: 'var(--text-main)',
+                  fontSize: '0.82rem',
+                  fontWeight: '700',
+                  cursor: 'pointer'
+                }}
+              >
+                <ExternalLink size={14} color="var(--primary)" />
+                <span>Watch on YouTube</span>
+              </button>
+            </a>
           </div>
 
-          {/* Progress Bar & Mark Complete Button (Unlocked only after 2 trigger points) */}
+          {/* Progress Bar & Mark Complete Button */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px', marginTop: '6px' }}>
             <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', fontWeight: '700' }}>
-                <span>Video Watch Progress (2 Checkpoints)</span>
+                <span>Video Watch Completion</span>
                 <span>{watchProgress}%</span>
               </div>
-              <ProgressBar progress={watchProgress} color={canMarkComplete ? chapter.color : 'var(--orange)'} height={10} showLabel={false} />
+              <ProgressBar progress={watchProgress} color={chapter.color} height={10} showLabel={false} />
             </div>
 
             {videoWatched ? (
               <BadgeChip label="Lesson Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
-            ) : canMarkComplete ? (
+            ) : (
               <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2}>
                 Mark Lesson Complete & Unlock Next 🚀
               </Button3D>
-            ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                <button
-                  disabled
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '12px 20px',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1.5px dashed var(--border-light)',
-                    backgroundColor: 'var(--bg-main)',
-                    color: 'var(--text-muted)',
-                    fontWeight: '700',
-                    fontFamily: 'var(--font-rounded)',
-                    fontSize: '0.95rem',
-                    cursor: 'not-allowed',
-                    opacity: 0.75
-                  }}
-                >
-                  <Lock size={16} /> Mark Lesson Complete & Unlock Next 🚀
-                </button>
-                <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: '600' }}>
-                  Complete Trigger 1 & 2 above to unlock
-                </span>
-              </div>
             )}
           </div>
 
@@ -420,7 +265,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
       </CardRounded>
 
-      {/* 5. Educational Video Copyright Notice Card */}
+      {/* 4. Educational Video Copyright Notice Card */}
       <CardRounded style={{ backgroundColor: 'var(--bg-main)', border: '1.5px solid var(--border-light)', padding: '16px 20px' }}>
         <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
           <ShieldAlert size={24} color="var(--purple)" style={{ flexShrink: 0, marginTop: '2px' }} />
