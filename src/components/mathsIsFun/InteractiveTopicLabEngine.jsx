@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { classInteractiveNotes } from '../../data/classInteractiveNotes';
 import { getQuestionsForTopic } from '../../data/questions';
+import { buildLessonFallback } from './buildLessonFallback';
 import { CardRounded } from '../ui/CardRounded';
 import { Button3D } from '../ui/Button3D';
 import { BadgeChip } from '../ui/BadgeChip';
@@ -10,7 +11,8 @@ import { useGame } from '../../context/GameContext';
 import {
   BookOpen, Sparkles, HelpCircle, CheckCircle2, Award, FileText,
   ChevronRight, PlayCircle, Lightbulb, AlertTriangle, Cpu, CheckSquare,
-  Globe, ShieldCheck, RefreshCw, ListFilter, ArrowRight, Eye, EyeOff
+  Globe, ShieldCheck, RefreshCw, ListFilter, ArrowRight, Eye, EyeOff,
+  Compass, Table, Flame, Bookmark, Check, Layers
 } from 'lucide-react';
 
 // Import All 22 Interactive Lab Manipulatives
@@ -105,48 +107,22 @@ const resolveToolComponent = (topicId = '') => {
   return CountersGroupingLab;
 };
 
-export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onSelectTopic }) => {
+export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onSelectTopic, classNum = 5 }) => {
   const { addXP, addGems } = useGame();
 
-  // Active Navigation Tab: concept, lab, practice, quiz
-  const [activeTab, setActiveTab] = useState('tutorial');
+  // Active Navigation Tab: lesson (default full flowing experience), lab (standalone), practice, quiz
+  const [activeTab, setActiveTab] = useState('lesson');
 
-  // 1. Fetch genuine class-specific interactive note
-  const noteData = useMemo(() => {
-    return classInteractiveNotes[subtopicId] || {
+  // 1. Fetch genuine class-specific interactive note and build the 13-stage progressive lesson
+  const lesson = useMemo(() => {
+    const rawNote = classInteractiveNotes[subtopicId] || {
       id: subtopicId,
       title: subtopicId.replace(/_/g, ' ').toUpperCase(),
       category: 'Mathematics',
-      color: '#4f46e5',
-      learningObjectives: [
-        `Understand core principles and definitions of ${subtopicId.replace(/_/g, ' ')}.`,
-        `Apply standard rules to solve step-by-step ICSE exam problems.`,
-        `Develop visual intuition and spatial reasoning.`
-      ],
-      keyConcepts: [
-        { topic: 'Core Concept', text: `Key mathematical principles and rules governing ${subtopicId.replace(/_/g, ' ')}.` }
-      ],
-      visualConcept: {
-        title: `${subtopicId.replace(/_/g, ' ')} Visual Model`,
-        label: `Interactive representation and mathematical rules.`
-      },
-      workedExample: {
-        problem: `Step-by-step example problem for ${subtopicId.replace(/_/g, ' ')}.`,
-        steps: [
-          'Identify given parameters and constraints.',
-          'Apply the governing formula or rule.',
-          'Calculate and state the final result.'
-        ],
-        answer: 'Verified Result'
-      },
-      tryIt: {
-        question: `Try solving a fundamental problem on ${subtopicId.replace(/_/g, ' ')}.`,
-        answer: 'Correct',
-        hint: 'Use the step-by-step procedure demonstrated above.'
-      },
-      remember: 'Always check units and verify each step carefully.'
+      color: '#4f46e5'
     };
-  }, [subtopicId]);
+    return buildLessonFallback(subtopicId, rawNote, classNum);
+  }, [subtopicId, classNum]);
 
   // 2. Fetch the 10 real class-specific, topic-specific ICSE questions
   const topicQuestions = useMemo(() => {
@@ -155,15 +131,32 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
 
     return Array.from({ length: 10 }, (_, i) => ({
       id: `${subtopicId}_q${i + 1}`,
-      q: `Problem ${i + 1}: Apply the principles of ${noteData.title} to determine the required value.`,
+      q: `Problem ${i + 1}: Apply the principles of ${lesson.title} to determine the required value.`,
       options: ['Option A', 'Option B', 'Option C', 'Option D'],
       a: 'Option A',
       acc: ['Option A'],
       difficulty: i < 3 ? 'easy' : i < 7 ? 'medium' : 'hard',
       h: 'Refer to the governing formula and worked example above.',
-      exp: `Applying the standard rule for ${noteData.title} yields the correct result.`
+      exp: `Applying the standard rule for ${lesson.title} yields the correct result.`
     }));
-  }, [subtopicId, noteData]);
+  }, [subtopicId, lesson]);
+
+  // Mini Try-It Check State (In Lesson)
+  const [miniTryAns, setMiniTryAns] = useState('');
+  const [miniTryChecked, setMiniTryChecked] = useState(null);
+
+  const handleMiniTryCheck = () => {
+    const userVal = miniTryAns.trim().toLowerCase();
+    const correctVal = ((lesson.tryIt && lesson.tryIt.answer) || '').trim().toLowerCase();
+    if (userVal === correctVal || userVal.length > 0 && (correctVal.includes(userVal) || userVal.includes(correctVal))) {
+      soundFx.playCorrect();
+      setMiniTryChecked(true);
+      addXP(10);
+    } else {
+      soundFx.playIncorrect();
+      setMiniTryChecked(false);
+    }
+  };
 
   // Practice Problems State
   const [revealedSolutions, setRevealedSolutions] = useState({});
@@ -240,38 +233,38 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
       
       {/* 1. Header Banner & Subject Path */}
       <div style={{
-        padding: '28px 32px',
-        borderRadius: '16px',
-        background: `linear-gradient(135deg, ${noteData.color || '#4f46e5'} 0%, #1cb0f6 100%)`,
+        padding: '30px 34px',
+        borderRadius: '20px',
+        background: `linear-gradient(135deg, ${lesson.color || '#4f46e5'} 0%, #1cb0f6 100%)`,
         color: '#ffffff',
-        boxShadow: '0 8px 24px rgba(79, 70, 229, 0.25)',
+        boxShadow: '0 10px 28px rgba(79, 70, 229, 0.28)',
         display: 'flex',
         flexDirection: 'column',
-        gap: '8px'
+        gap: '10px'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', opacity: 0.95, fontWeight: '800' }}>
           <span>ICSE Curriculum</span>
           <ChevronRight size={14} />
-          <span>{noteData.category}</span>
+          <span>{lesson.category}</span>
           <ChevronRight size={14} />
-          <span style={{ color: '#00f0ff' }}>{noteData.title}</span>
+          <span style={{ color: '#00f0ff' }}>{lesson.title}</span>
         </div>
 
-        <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '2.2rem', fontWeight: '800', margin: '4px 0' }}>
-          {noteData.title}
+        <h2 style={{ fontFamily: 'var(--font-rounded)', fontSize: '2.3rem', fontWeight: '900', margin: '2px 0' }}>
+          {lesson.title} 📚
         </h2>
-        <p style={{ fontSize: '1rem', opacity: 0.95, maxWidth: '800px', lineHeight: '1.5' }}>
-          {noteData.learningObjectives?.[0] || 'Interactive mathematics learning experience with real-time manipulative simulations.'}
+        <p style={{ fontSize: '1.05rem', opacity: 0.95, maxWidth: '850px', lineHeight: '1.55' }}>
+          {lesson.hookQuestion}
         </p>
       </div>
 
       {/* 2. Main Experience Mode Switcher */}
       <div style={{ display: 'flex', gap: '10px', overflowX: 'auto', paddingBottom: '4px' }}>
         {[
-          { id: 'tutorial', label: '📖 Concept & Intuition', icon: BookOpen },
-          { id: 'lab', label: '🧪 Interactive Math Simulation Lab', icon: Cpu },
+          { id: 'lesson', label: '📖 Full Progressive Lesson', icon: BookOpen },
           { id: 'practice', label: `✏️ Practice Problems (${topicQuestions.length})`, icon: FileText },
-          { id: 'quiz', label: `❓ Multi-Format Quiz (${topicQuestions.length})`, icon: HelpCircle }
+          { id: 'quiz', label: `❓ Multi-Format Quiz (${topicQuestions.length})`, icon: HelpCircle },
+          { id: 'lab', label: '🧪 Standalone Sandbox Lab', icon: Cpu }
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -281,20 +274,20 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
               key={tab.id}
               onClick={() => { setActiveTab(tab.id); soundFx.playClick(); }}
               style={{
-                padding: '12px 20px',
+                padding: '12px 22px',
                 borderRadius: 'var(--radius-full)',
                 border: 'none',
                 backgroundColor: isActive ? '#4f46e5' : 'var(--bg-card-solid)',
                 color: isActive ? '#ffffff' : 'var(--text-muted)',
                 fontWeight: '800',
                 fontFamily: 'var(--font-rounded)',
-                fontSize: '0.92rem',
+                fontSize: '0.94rem',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
                 whiteSpace: 'nowrap',
-                boxShadow: isActive ? '0 4px 12px rgba(79, 70, 229, 0.35)' : 'var(--shadow-sm)',
+                boxShadow: isActive ? '0 4px 14px rgba(79, 70, 229, 0.35)' : 'var(--shadow-sm)',
                 transition: 'all 0.15s ease'
               }}
             >
@@ -305,105 +298,497 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
         })}
       </div>
 
-      {/* VIEW 1: CONCEPT & INTUITION TUTORIAL */}
-      {activeTab === 'tutorial' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* ========================================================================= */}
+      {/* VIEW 1: COMPLETE PROGRESSIVE MATH IS FUN CONCEPT LESSON */}
+      {/* ========================================================================= */}
+      {activeTab === 'lesson' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}>
           
-          {/* Learning Objectives & Key Concepts */}
+          {/* STAGE 1: THE HOOK QUESTION */}
+          <CardRounded style={{
+            background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+            border: '2px solid #7dd3fc',
+            padding: '24px 28px',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '16px'
+          }}>
+            <div style={{ background: '#0284c7', color: '#ffffff', borderRadius: '12px', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <HelpCircle size={26} />
+            </div>
+            <div>
+              <span style={{ fontSize: '0.82rem', fontWeight: '900', color: '#0369a1', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Step 1 — Start With a Simple Question
+              </span>
+              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '900', color: '#0c4a6e', marginTop: '4px', lineHeight: '1.35' }}>
+                "{lesson.hookQuestion}"
+              </h3>
+              <p style={{ fontSize: '0.96rem', color: '#334155', marginTop: '6px', lineHeight: '1.5' }}>
+                Before looking at any formulas, let's explore this step-by-step using concrete numbers and intuitive visual patterns!
+              </p>
+            </div>
+          </CardRounded>
+
+          {/* STAGE 2: BUILD THE IDEA */}
           <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '16px', backgroundColor: 'var(--bg-card-solid)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Sparkles size={20} color={noteData.color || '#4f46e5'} />
-              <h3 style={{ fontSize: '1.2rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
-                Learning Objectives & Core Insights
+              <Layers size={22} color="#4f46e5" />
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                Step 2 — Building the Intuitive Idea
               </h3>
             </div>
+            <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)' }}>
+              Here is how the idea grows from a simple observation into exact mathematics:
+            </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              {(noteData.learningObjectives || []).map((obj, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.95rem', color: 'var(--text-main)' }}>
-                  <CheckCircle2 size={18} color="#22c55e" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span>{obj}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Key Concepts Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px', marginTop: '10px' }}>
-              {(noteData.keyConcepts || []).map((kc, i) => (
-                <div key={i} style={{ background: '#f8fafc', border: '1.5px solid #e2e8f0', borderRadius: '12px', padding: '14px' }}>
-                  <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
-                    {kc.topic}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {(lesson.buildTheIdea || []).map((step, idx) => (
+                <div key={idx} style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '14px',
+                  background: '#f8fafc',
+                  border: '1.5px solid #e2e8f0',
+                  borderRadius: '14px',
+                  padding: '16px'
+                }}>
+                  <div style={{
+                    background: '#4f46e5',
+                    color: '#ffffff',
+                    borderRadius: '50%',
+                    width: '30px',
+                    height: '30px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: '900',
+                    fontSize: '0.9rem',
+                    flexShrink: 0
+                  }}>
+                    {idx + 1}
                   </div>
-                  <div style={{ fontSize: '0.92rem', fontWeight: '700', color: '#1e293b', marginTop: '4px' }}>
-                    {kc.text}
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: '1rem', fontWeight: '800', color: '#1e293b', lineHeight: '1.4' }}>
+                      {step.text}
+                    </div>
+                    {step.note && (
+                      <div style={{ fontSize: '0.84rem', fontWeight: '700', color: '#64748b', marginTop: '3px' }}>
+                        💡 {step.note}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </CardRounded>
 
-          {/* Step-by-Step Worked Example */}
-          {noteData.workedExample && (
+          {/* STAGE 3: NOTICE THE PATTERN (Pattern Discovery Table) */}
+          {lesson.patternTable && (
             <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '16px', backgroundColor: 'var(--bg-card-solid)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Lightbulb size={20} color="#f59e0b" />
-                <h3 style={{ fontSize: '1.2rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
-                  Step-by-Step Worked Example
+                <Table size={22} color="#0891b2" />
+                <h3 style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                  Step 3 — Notice the Pattern
                 </h3>
               </div>
+              <p style={{ fontSize: '0.94rem', color: 'var(--text-muted)' }}>
+                Look closely at how values transform in the table below. What pattern do you observe?
+              </p>
 
-              <div style={{ background: '#fffbeb', border: '1.5px solid #fde68a', borderRadius: '12px', padding: '16px' }}>
-                <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#b45309', textTransform: 'uppercase' }}>
-                  Problem:
+              {/* Table */}
+              <div style={{ overflowX: 'auto', border: '1.5px solid #e2e8f0', borderRadius: '12px' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.92rem' }}>
+                  <thead>
+                    <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #cbd5e1' }}>
+                      {(lesson.patternTable.headers || []).map((h, i) => (
+                        <th key={i} style={{ padding: '12px 16px', fontWeight: '900', color: '#1e293b', textTransform: 'uppercase', fontSize: '0.8rem' }}>
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(lesson.patternTable.rows || []).map((row, rIdx) => (
+                      <tr key={rIdx} style={{ borderBottom: '1px solid #e2e8f0', background: rIdx % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
+                        {row.map((cell, cIdx) => (
+                          <td key={cIdx} style={{ padding: '12px 16px', fontWeight: '700', color: cIdx === 0 ? '#4f46e5' : '#334155' }}>
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Discovery Insight Callout */}
+              {lesson.patternTable.insight && (
+                <div style={{ background: '#ecfeff', border: '2px solid #a5f3fc', borderRadius: '12px', padding: '14px 18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Sparkles size={22} color="#0891b2" style={{ flexShrink: 0 }} />
+                  <div>
+                    <span style={{ fontSize: '0.8rem', fontWeight: '900', color: '#0e7490', textTransform: 'uppercase' }}>
+                      Key Discovery:
+                    </span>
+                    <div style={{ fontSize: '0.94rem', fontWeight: '800', color: '#155e75', marginTop: '2px' }}>
+                      {lesson.patternTable.insight}
+                    </div>
+                  </div>
                 </div>
-                <div style={{ fontSize: '1.05rem', fontWeight: '800', color: '#92400e', marginTop: '4px' }}>
-                  {noteData.workedExample.problem}
+              )}
+            </CardRounded>
+          )}
+
+          {/* STAGE 4: MATHEMATICAL NOTATION & FORMULAS (Explained, Not Just Displayed) */}
+          <CardRounded style={{
+            background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
+            color: '#ffffff',
+            padding: '28px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Compass size={22} color="#00f0ff" />
+              <span style={{ fontSize: '0.85rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '1px', color: '#00f0ff' }}>
+                Step 4 — The Mathematical Rule & Formula
+              </span>
+            </div>
+            
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.15)',
+              border: '2px solid rgba(255, 255, 255, 0.3)',
+              backdropFilter: 'blur(8px)',
+              borderRadius: '14px',
+              padding: '16px 20px',
+              fontSize: '1.3rem',
+              fontWeight: '900',
+              fontFamily: 'monospace',
+              letterSpacing: '0.5px'
+            }}>
+              {lesson.mathNotation?.formula || lesson.remember || 'Canonical Mathematical Formula'}
+            </div>
+
+            <p style={{ fontSize: '1rem', opacity: 0.95, lineHeight: '1.5', marginTop: '2px' }}>
+              {lesson.mathNotation?.explanation || 'This formula allows us to solve and verify any problem in this topic systematically.'}
+            </p>
+          </CardRounded>
+
+          {/* STAGE 5: WORKED EXAMPLE 1 (Level 1 — Foundational) */}
+          {lesson.workedExamples && lesson.workedExamples[0] && (
+            <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '16px', backgroundColor: 'var(--bg-card-solid)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Lightbulb size={22} color="#f59e0b" />
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                    Step 5 — Step-by-Step Worked Example (Level 1)
+                  </h3>
+                </div>
+                <BadgeChip variant="primary">
+                  {lesson.workedExamples[0].badge || 'Foundational'}
+                </BadgeChip>
+              </div>
+
+              <div style={{ background: '#fffbeb', border: '2px solid #fde68a', borderRadius: '14px', padding: '18px' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: '900', color: '#b45309', textTransform: 'uppercase' }}>
+                  Problem Statement:
+                </div>
+                <div style={{ fontSize: '1.1rem', fontWeight: '900', color: '#92400e', marginTop: '4px' }}>
+                  {lesson.workedExamples[0].problem}
                 </div>
 
-                <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  {(noteData.workedExample.steps || []).map((step, idx) => (
-                    <div key={idx} style={{ fontSize: '0.92rem', color: '#78350f', fontWeight: '600' }}>
-                      {step}
+                <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {(lesson.workedExamples[0].steps || []).map((st, sIdx) => (
+                    <div key={sIdx} style={{ fontSize: '0.95rem', color: '#78350f', fontWeight: '700', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                      <CheckCircle2 size={16} color="#d97706" style={{ marginTop: '3px', flexShrink: 0 }} />
+                      <span>{st}</span>
                     </div>
                   ))}
                 </div>
 
-                <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px dashed #fcd34d', fontSize: '1rem', fontWeight: '900', color: '#b45309' }}>
-                  Canonical Answer: {noteData.workedExample.answer}
+                <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '2px dashed #fcd34d', fontSize: '1.05rem', fontWeight: '900', color: '#b45309' }}>
+                  Canonical Answer: {lesson.workedExamples[0].answer}
                 </div>
               </div>
             </CardRounded>
           )}
 
-          {/* Golden Rule / Memory Trick */}
-          {noteData.remember && (
-            <div style={{ background: '#f0fdf4', border: '2px solid #86efac', borderRadius: '14px', padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <ShieldCheck size={24} color="#16a34a" style={{ flexShrink: 0 }} />
+          {/* STAGE 6: EMBEDDED INTERACTIVE LAB MANIPULATIVE (Interactive Moment) */}
+          <CardRounded style={{
+            backgroundColor: 'var(--bg-card-solid)',
+            border: '2.5px solid #4f46e5',
+            padding: '26px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
+            boxShadow: '0 8px 24px rgba(79, 70, 229, 0.12)'
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
               <div>
-                <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#15803d', textTransform: 'uppercase' }}>
-                  Golden Rule to Remember:
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Cpu size={22} color="#4f46e5" />
+                  <span style={{ fontSize: '0.82rem', fontWeight: '900', color: '#4f46e5', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Step 6 — Interactive Exploration & Physical Manipulative
+                  </span>
                 </div>
-                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#166534', marginTop: '2px' }}>
-                  {noteData.remember}
-                </div>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '900', fontFamily: 'var(--font-rounded)', marginTop: '4px' }}>
+                  Manipulate & Observe What Changes in Real-Time!
+                </h3>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#ecfdf5', color: '#047857', padding: '6px 14px', borderRadius: 'var(--radius-full)', fontWeight: '800', fontSize: '0.85rem' }}>
+                <CheckCircle2 size={16} /> Direct Pointer/Touch Dragging Active
               </div>
             </div>
+
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
+              Now that you understand the core theory, experiment with the live interactive tool below. Change values, drag points, and observe how the mathematical outputs update instantly!
+            </p>
+
+            {/* Mount Live Working Tool Component Inside The Lesson Flow */}
+            <div style={{ marginTop: '6px' }}>
+              <SelectedLabComponent config={{ topicId: subtopicId, title: lesson.title }} />
+            </div>
+          </CardRounded>
+
+          {/* STAGE 7: WORKED EXAMPLES 2 & 3 (Medium & Challenging) */}
+          {lesson.workedExamples && lesson.workedExamples.length > 1 && (
+            <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '18px', backgroundColor: 'var(--bg-card-solid)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Flame size={22} color="#ea580c" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                  Step 7 — Deepening Understanding (Applied & Advanced Examples)
+                </h3>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+                {lesson.workedExamples.slice(1).map((ex, idx) => (
+                  <div key={idx} style={{
+                    background: '#f8fafc',
+                    border: '1.5px solid #e2e8f0',
+                    borderRadius: '14px',
+                    padding: '18px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: '0.8rem', fontWeight: '900', color: '#4f46e5', textTransform: 'uppercase' }}>
+                          {ex.level || `Example ${idx + 2}`}
+                        </span>
+                        <span style={{ fontSize: '0.75rem', fontWeight: '800', background: '#e0e7ff', color: '#3730a3', padding: '3px 8px', borderRadius: '6px' }}>
+                          {ex.badge || 'Applied'}
+                        </span>
+                      </div>
+
+                      <div style={{ fontSize: '1rem', fontWeight: '800', color: '#1e293b', marginTop: '8px', lineHeight: '1.4' }}>
+                        {ex.problem}
+                      </div>
+
+                      <div style={{ marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        {(ex.steps || []).map((s, si) => (
+                          <div key={si} style={{ fontSize: '0.88rem', color: '#475569', fontWeight: '600' }}>
+                            {s}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid #cbd5e1', fontSize: '0.95rem', fontWeight: '900', color: '#047857' }}>
+                      Answer: {ex.answer}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardRounded>
           )}
+
+          {/* STAGE 8: WHY DOES THIS WORK? (Conceptual Proof Intuition) */}
+          <CardRounded style={{
+            background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+            border: '2px solid #d8b4fe',
+            padding: '24px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Sparkles size={22} color="#9333ea" />
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: '#6b21a8' }}>
+                Step 8 — Why Does This Work? (The Mathematical Logic)
+              </h3>
+            </div>
+            <p style={{ fontSize: '0.98rem', color: '#4c1d95', lineHeight: '1.6', fontWeight: '600' }}>
+              {lesson.whyDoesThisWork}
+            </p>
+          </CardRounded>
+
+          {/* STAGE 9: COMMON MISCONCEPTIONS & PITFALLS */}
+          {lesson.commonMistake && (
+            <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '14px', backgroundColor: 'var(--bg-card-solid)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <AlertTriangle size={22} color="#ef4444" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                  Step 9 — Common Mistakes to Avoid
+                </h3>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
+                <div style={{ background: '#fef2f2', border: '1.5px solid #fecaca', borderRadius: '12px', padding: '16px' }}>
+                  <div style={{ fontSize: '0.8rem', fontWeight: '900', color: '#b91c1c', textTransform: 'uppercase' }}>
+                    ❌ Common Mistake (Wrong):
+                  </div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#991b1b', marginTop: '4px' }}>
+                    {lesson.commonMistake.wrong}
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: '#7f1d1d', marginTop: '6px', fontWeight: '600' }}>
+                    {lesson.commonMistake.why}
+                  </div>
+                </div>
+
+                <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: '12px', padding: '16px' }}>
+                  <div style={{ fontSize: '0.8rem', fontWeight: '900', color: '#15803d', textTransform: 'uppercase' }}>
+                    ✅ Correct Mathematical Approach (Remember):
+                  </div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#166534', marginTop: '4px' }}>
+                    {lesson.commonMistake.remember}
+                  </div>
+                </div>
+              </div>
+            </CardRounded>
+          )}
+
+          {/* STAGE 10: REAL-LIFE CONNECTIONS */}
+          {lesson.realLifeConnection && (
+            <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '12px', backgroundColor: 'var(--bg-card-solid)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Globe size={22} color="#059669" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                  Step 10 — Real-Life Applications
+                </h3>
+              </div>
+              <div style={{ background: '#ecfdf5', border: '1.5px solid #a7f3d0', borderRadius: '12px', padding: '16px' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '900', color: '#047857', textTransform: 'uppercase' }}>
+                  {lesson.realLifeConnection.context}
+                </div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '700', color: '#065f46', marginTop: '4px', lineHeight: '1.5' }}>
+                  {lesson.realLifeConnection.example}
+                </div>
+              </div>
+            </CardRounded>
+          )}
+
+          {/* STAGE 11: TRY IT YOURSELF MINI-CHALLENGE */}
+          {lesson.tryIt && (
+            <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '14px', backgroundColor: 'var(--bg-card-solid)', border: '2px solid #fbbf24' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Award size={22} color="#d97706" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                  Step 11 — Quick Check: Try It Yourself!
+                </h3>
+              </div>
+
+              <div style={{ fontSize: '1.05rem', fontWeight: '800', color: '#1e293b' }}>
+                {lesson.tryIt.question}
+              </div>
+
+              {lesson.tryIt.hint && (
+                <div style={{ fontSize: '0.85rem', color: '#64748b', fontStyle: 'italic' }}>
+                  💡 Hint: {lesson.tryIt.hint}
+                </div>
+              )}
+
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <input
+                  type="text"
+                  placeholder="Enter your answer..."
+                  value={miniTryAns}
+                  onChange={(e) => setMiniTryAns(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleMiniTryCheck()}
+                  style={{
+                    padding: '10px 14px',
+                    borderRadius: '8px',
+                    border: '1.5px solid #cbd5e1',
+                    fontSize: '0.95rem',
+                    fontWeight: '700',
+                    width: '220px'
+                  }}
+                />
+
+                <Button3D variant="primary" size="sm" onClick={handleMiniTryCheck}>
+                  Check Answer
+                </Button3D>
+
+                {miniTryChecked === true && (
+                  <span style={{ color: '#16a34a', fontWeight: '800', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <CheckCircle2 size={18} /> Brilliant! Exactly right (+10 XP) 🎉
+                  </span>
+                )}
+                {miniTryChecked === false && (
+                  <span style={{ color: '#dc2626', fontWeight: '800', fontSize: '0.9rem' }}>
+                    ❌ Not quite. Check the hint and try again!
+                  </span>
+                )}
+              </div>
+            </CardRounded>
+          )}
+
+          {/* STAGE 12: SUMMARY & QUICK RECAP */}
+          <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '14px', backgroundColor: 'var(--bg-card-solid)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Bookmark size={22} color="#4f46e5" />
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                Step 12 — Summary & Key Takeaways
+              </h3>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {(lesson.recap || []).map((pt, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.95rem', color: 'var(--text-main)' }}>
+                  <CheckCircle2 size={18} color="#4f46e5" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ fontWeight: '600' }}>{pt}</span>
+                </div>
+              ))}
+            </div>
+          </CardRounded>
+
+          {/* NEXT STEPS CALL TO ACTION */}
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '10px' }}>
+            <Button3D
+              variant="primary"
+              size="lg"
+              onClick={() => { setActiveTab('practice'); soundFx.playClick(); }}
+              icon={FileText}
+            >
+              Solve Practice Problems ({topicQuestions.length})
+            </Button3D>
+
+            <Button3D
+              variant="secondary"
+              size="lg"
+              onClick={() => { setActiveTab('quiz'); soundFx.playClick(); }}
+              icon={HelpCircle}
+            >
+              Take Mastery Assessment Quiz ({topicQuestions.length})
+            </Button3D>
+          </div>
 
         </div>
       )}
 
-      {/* VIEW 2: INTERACTIVE MATH SIMULATION LAB */}
+      {/* ========================================================================= */}
+      {/* VIEW 2: STANDALONE FULL-SCREEN SANDBOX LAB */}
+      {/* ========================================================================= */}
       {activeTab === 'lab' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <CardRounded style={{ backgroundColor: 'var(--bg-card-solid)', border: '2px solid var(--primary)', padding: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
               <div>
                 <span style={{ fontSize: '0.8rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
-                  Live Mathematical Manipulative
+                  Full Sandbox Manipulative Tool
                 </span>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', margin: '2px 0' }}>
-                  {noteData.title} Interactive Simulation
+                  {lesson.title} Interactive Sandbox
                 </h3>
               </div>
 
@@ -413,21 +798,25 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
             </div>
 
             {/* Mount Live Working Tool Component */}
-            <SelectedLabComponent config={{ topicId: subtopicId, title: noteData.title }} />
+            <SelectedLabComponent config={{ topicId: subtopicId, title: lesson.title }} />
           </CardRounded>
         </div>
       )}
 
+      {/* ========================================================================= */}
       {/* VIEW 3: PRACTICE PROBLEMS (10 Real ICSE Questions) */}
+      {/* ========================================================================= */}
       {activeTab === 'practice' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
-              Class-Specific Practice Problems ({topicQuestions.length})
-            </h3>
-            <span style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: '700' }}>
-              Solve and test your answers with instant step-by-step feedback.
-            </span>
+            <div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
+                Class-Specific Practice Problems ({topicQuestions.length})
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                Solve step-by-step with real-time answer checking, hints, and complete solution guides.
+              </p>
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -468,7 +857,7 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
                   )}
 
                   {/* Interactive Practice Answer Input */}
-                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginTop: '6px' }}>
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginTop: '6px', flexWrap: 'wrap' }}>
                     <input
                       type="text"
                       placeholder="Enter your answer..."
@@ -481,7 +870,7 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
                         border: '1.5px solid #cbd5e1',
                         fontSize: '0.95rem',
                         fontWeight: '700',
-                        width: '200px'
+                        width: '220px'
                       }}
                     />
 
@@ -522,7 +911,9 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
         </div>
       )}
 
+      {/* ========================================================================= */}
       {/* VIEW 4: MULTI-FORMAT QUIZ */}
+      {/* ========================================================================= */}
       {activeTab === 'quiz' && (
         <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '20px', backgroundColor: 'var(--bg-card-solid)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
@@ -531,7 +922,7 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
                 Question {quizIndex + 1} of {topicQuestions.length}
               </span>
               <h3 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-rounded)' }}>
-                {noteData.title} Mastery Assessment
+                {lesson.title} Mastery Assessment
               </h3>
             </div>
 
@@ -641,3 +1032,4 @@ export const InteractiveTopicLabEngine = ({ subtopicId, visualizerComponent, onS
     </div>
   );
 };
+

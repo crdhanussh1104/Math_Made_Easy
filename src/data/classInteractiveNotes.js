@@ -9,7 +9,7 @@ export const classInteractiveNotes = {
   // =========================================================================
   // CLASS 1 INTERACTIVE NOTES
   // =========================================================================
-  "c1_les_1_1": {
+    "c1_les_1_1": {
     id: "note_c1_les_1_1",
     classId: 1,
     themeId: "c1_theme_1",
@@ -19,35 +19,109 @@ export const classInteractiveNotes = {
     category: "Number System & Arithmetic",
     color: "#58cc02",
     bgLight: "#e5f9d8",
+    hookQuestion: "How do we count our toys or count how many apples we have so we never miss one?",
+    buildTheIdea: [
+      { text: "Point to the first object and say 'ONE' (1 🍎).", note: "Starting the count" },
+      { text: "Point to the next object and say the next number 'TWO' (2 🍎🍎).", note: "Moving forward by one" },
+      { text: "The LAST number you say tells you EXACTLY how many objects there are in total!", note: "The total amount" }
+    ],
+    patternTable: {
+      title: "Notice the Pattern: Growing by One Each Time",
+      headers: ["Number", "Visual Dots", "Object Count", "Next Number"],
+      rows: [
+        ["1 (One)", "●", "🍎", "2 comes next"],
+        ["2 (Two)", "● ●", "🍎 🍎", "3 comes next"],
+        ["3 (Three)", "● ● ●", "🍎 🍎 🍎", "4 comes next"],
+        ["4 (Four)", "● ● ● ●", "🍎 🍎 🍎 🍎", "5 comes next"],
+        ["5 (Five)", "● ● ● ● ●", "🍎 🍎 🍎 🍎 🍎", "6 comes next"]
+      ],
+      insight: "Each time you add ONE more object, you take ONE hop forward on the number line!"
+    },
+    mathNotation: {
+      formula: "1, 2, 3, 4, 5, 6, 7, 8, 9",
+      explanation: "Each symbol stands for an exact group of objects. 5 means exactly 5 things."
+    },
+    workedExamples: [
+      {
+        level: "Level 1 — Easy",
+        badge: "Easy",
+        problem: "Count the stars: ⭐ ⭐ ⭐. How many stars are there?",
+        steps: [
+          "Step 1: Point to the first star: 1",
+          "Step 2: Point to the second star: 2",
+          "Step 3: Point to the third star: 3"
+        ],
+        answer: "3 stars",
+        reasoning: "The last number counted is 3."
+      },
+      {
+        level: "Level 2 — Intermediate",
+        badge: "Medium",
+        problem: "You have 4 red balloons 🎈🎈🎈🎈 and 1 blue balloon 🎈. How many balloons in all?",
+        steps: [
+          "Step 1: Start at 4.",
+          "Step 2: Count 1 more forward: 5."
+        ],
+        answer: "5 balloons",
+        reasoning: "4 and 1 more makes 5."
+      },
+      {
+        level: "Level 3 — Challenge",
+        badge: "Challenging",
+        problem: "Which number is missing in this sequence: 1, 2, __, 4, 5?",
+        steps: [
+          "Step 1: Look at the number after 2.",
+          "Step 2: 2 + 1 = 3.",
+          "Step 3: Check: 3 comes right before 4."
+        ],
+        answer: "3",
+        reasoning: "3 fits between 2 and 4."
+      }
+    ],
+    whyDoesThisWork: "Numbers represent quantity. No matter whether you count left-to-right or right-to-left, the total number of objects in the group never changes!",
+    commonMistake: {
+      wrong: "Skipping an item or counting the same item twice: 1, 2, 3, 5... ❌",
+      why: "Moving fingers faster than your voice can cause double counting.",
+      remember: "Touch each item once and say only one number per item! ✅"
+    },
+    realLifeConnection: {
+      context: "Counting Money, Food & Game Pieces",
+      example: "We count coins to buy snacks and count our steps when playing board games like Ludo!"
+    },
+    tryIt: {
+      question: "Count the pencils: ✏️ ✏️ ✏️ ✏️ ✏️ ✏️. How many are there?",
+      answer: "6",
+      hint: "Count them one by one: 1, 2, 3, 4, 5, ..."
+    },
+    recap: [
+      "Counting always begins at 1 and increases by 1 each step.",
+      "The last number spoken is the total count of the group.",
+      "Touch each object once and count steadily."
+    ],
     learningObjectives: [
-      "Master the foundational concepts of Counting 1 to 9 (Concrete Objects & Visual Dot Patterns).",
-      "Understand and apply governing rules and properties accurately.",
-      "Solve standard Class 1 ICSE exam-style problems with step-by-step reasoning."
+      "Master foundational counting from 1 to 9 using concrete objects.",
+      "Connect visual dot patterns with numeric digits.",
+      "Understand predecessor and successor number concepts."
     ],
     keyConcepts: [
       { topic: "Core Definition", text: "Counting the apples gives 1, 2, 3, 4, 5. So there are 5 apples." },
-      { topic: "Governing Principle", text: "Governing Rule & Core Principles of Counting 1 to 9 (Concrete Objects & Visual Dot Patterns)" }
+      { topic: "One-to-One Correspondence", text: "Each single object receives exactly one unique number word." }
     ],
     visualConcept: {
-      title: "Counting 1 to 9 (Concrete Objects & Visual Dot Patterns) Visual Representation",
-      label: "Governing Rule & Core Principles of Counting 1 to 9 (Concrete Objects & Visual Dot Patterns)",
+      title: "Counting 1 to 9 Visual Representation",
+      label: "Touch and count each dot pattern in order.",
       badges: ["Class 1 ICSE", "Number System & Arithmetic", "Syllabus Standard"]
     },
     workedExample: {
       problem: "How many apples are there if you count: 🍎 🍎 🍎 🍎 🍎?",
       steps: [
-        "Step 1: Write down the given mathematical parameters.",
-        "Step 2: Apply the governing rule: Governing Rule & Core Principles of Counting 1 to 9 (Concrete Objects & Visual Dot Patterns).",
-        "Step 3: Calculate the canonical result: 5."
+        "Step 1: Point to each apple in order: 1, 2, 3, 4, 5.",
+        "Step 2: The last number spoken is 5.",
+        "Step 3: State the final total count: 5 apples."
       ],
       answer: "5"
     },
-    tryIt: {
-      question: "What number comes just AFTER 7?",
-      answer: "8",
-      hint: "Count forward: 6, 7, ..."
-    },
-    remember: "Count each apple one by one."
+    remember: "Touch each object once and count steadily!"
   },
   "c1_les_1_2": {
     id: "note_c1_les_1_2",
