@@ -187,10 +187,11 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       <CardRounded style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', padding: '16px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: '1 1 300px' }}>
           <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-            {t('accuracy')}:
+            {t('progress') || 'Progress'}:
           </div>
           <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color || '#4f46e5'} showLabel />
         </div>
+
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.95rem' }}>
           <div style={{ color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
