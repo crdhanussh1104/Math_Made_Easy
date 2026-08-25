@@ -344,11 +344,9 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
               </div>
             )}
           </CardRounded>
-
-          {/* Integrated Olympiad Insights below Formula Cards and above Quiz */}
-          <OlympiadInsightsNLP chapterId={activeChap.id} />
         </div>
       )}
+
 
       {/* TAB 6: PRACTICE VISUALIZER */}
       {workspaceTab === 'practice' && (
