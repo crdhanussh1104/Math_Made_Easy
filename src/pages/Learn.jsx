@@ -13,13 +13,6 @@ import { OlympiadInsights } from '../components/learning/OlympiadInsights';
 import { OlympiadInsightsNLP } from '../components/learning/OlympiadInsightsNLP';
 import { VideoPlayerModule } from '../components/learning/VideoPlayerModule';
 import { FormulaCard3D } from '../components/library/FormulaCard3D';
-import { AbacusVisualizer } from '../components/visualizers/AbacusVisualizer';
-import { FractionPizza } from '../components/visualizers/FractionPizza';
-import { ClockInteractive } from '../components/visualizers/ClockInteractive';
-import { BalanceScale } from '../components/visualizers/BalanceScale';
-import { ShapeBuilder } from '../components/visualizers/ShapeBuilder';
-import { GraphBuilder } from '../components/visualizers/GraphBuilder';
-import { CubeViewer } from '../components/three/CubeViewer';
 import { RewardModal } from '../components/gamification/RewardModal';
 import { useGame } from '../context/GameContext';
 import { speechFx } from '../utils/speech';
@@ -187,7 +180,6 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
           { id: 'olympiad', label: 'Olympiad Insights', icon: Trophy },
           { id: 'textbook', label: 'Textbook Reader', icon: BookOpen },
           { id: 'formulas', label: 'Formula Cards', icon: Lightbulb },
-          { id: 'practice', label: 'Practice Visualizer', icon: Sparkles },
           { id: 'quiz', label: 'Chapter Quiz', icon: HelpCircle },
           { id: 'pibot', label: 'Ask Pi-Bot AI', icon: Bot }
         ].map(tab => {
@@ -343,26 +335,7 @@ export const Learn = ({ selectedChapterId = 'chap_1', onSelectChapter, onNavigat
         </div>
       )}
 
-      {/* TAB 6: PRACTICE VISUALIZER */}
-      {workspaceTab === 'practice' && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {activeChap.id === 'chap_1' ? (
-            <AbacusVisualizer targetNumber={420513} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_4' ? (
-            <FractionPizza targetNumerator={3} targetDenominator={8} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_5' ? (
-            <ShapeBuilder onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_6' ? (
-            <BalanceScale targetWeightsCount={4} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_7' ? (
-            <ClockInteractive targetHour={3} targetMinute={30} onVerify={handleLessonComplete} />
-          ) : (
-            <GraphBuilder />
-          )}
-        </div>
-      )}
-
-      {/* TAB 7: CHAPTER QUIZ */}
+      {/* TAB 6: CHAPTER QUIZ */}
       {workspaceTab === 'quiz' && (
         <QuizPlayer
           chapterId={activeChap.id}
