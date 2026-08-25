@@ -362,13 +362,54 @@ import('../utils/answerValidator.js').then(({ validateAnswer, normalizeText }) =
     assert(c9Cards.every(card => card.classId === 9), 'Class 9 cards contain ONLY Class 9 items');
     assert(c10Cards.every(card => card.classId === 10), 'Class 10 cards contain ONLY Class 10 items');
 
-    console.log('\n====================================================');
-    console.log(`TEST SUMMARY: ${passedTests} / ${totalTests} TESTS PASSED`);
-    console.log('====================================================');
+    // --- TEST SUITE 11: Math Is Fun Feature Parity & Interactive Lab Suite Audit ---
+    console.log('\n[TEST SUITE 11: Math Is Fun Feature Parity & Interactive Lab Suite Audit]');
 
-    if (passedTests !== totalTests) {
+    Promise.all([
+      import('../data/mathsIsFunSitemap.js'),
+      import('../data/deepInteractiveMathKnowledge.js'),
+      import('../data/mathLabRegistry.js')
+    ]).then(([{ mathsIsFunSitemapData }, { deepInteractiveMathKnowledge }, { mathLabRegistry }]) => {
+      
+      // 1. Sitemap Domains & Subtopics Check
+      assert(mathsIsFunSitemapData.length >= 8, `Sitemap has at least 8 major curriculum domains (found: ${mathsIsFunSitemapData.length})`);
+      let totalSitemapSubtopics = 0;
+      mathsIsFunSitemapData.forEach(dom => {
+        assert(dom.id && dom.title && dom.subtopics, `Domain ${dom.id} is properly formatted`);
+        totalSitemapSubtopics += dom.subtopics.length;
+      });
+      assert(totalSitemapSubtopics >= 25, `Total sitemap subtopics >= 25 (found: ${totalSitemapSubtopics})`);
+
+      // 2. Deep Interactive Knowledge Base Structure Check
+      const knowledgeKeys = Object.keys(deepInteractiveMathKnowledge);
+      assert(knowledgeKeys.length >= 1, `Deep interactive math knowledge entries registered (found: ${knowledgeKeys.length})`);
+      
+      knowledgeKeys.forEach(k => {
+        const item = deepInteractiveMathKnowledge[k];
+        assert(item.title && item.definition, `Topic knowledge ${k} has title and definition`);
+        assert(item.workedExamples && item.workedExamples.length >= 3, `Topic ${k} has at least 3 worked examples`);
+        assert(item.commonMistakes && item.commonMistakes.length >= 1, `Topic ${k} has common misconceptions`);
+      });
+
+      // 3. 3D Lab Registry 27+ Tools Check
+      assert(mathLabRegistry.length >= 25, `3D Lab registry has all required experiments (found: ${mathLabRegistry.length})`);
+      for (let c = 1; c <= 10; c++) {
+        const cLabs = mathLabRegistry.filter(l => l.classNumber === c);
+        assert(cLabs.length >= 2, `Class ${c} has at least 2 dedicated 3D lab activities (found: ${cLabs.length})`);
+      }
+
+      console.log('\n====================================================');
+      console.log(`TEST SUMMARY: ${passedTests} / ${totalTests} TESTS PASSED`);
+      console.log('====================================================');
+
+      if (passedTests !== totalTests) {
+        process.exit(1);
+      }
+    }).catch(err => {
+      console.error('Suite 11 test error:', err);
       process.exit(1);
-    }
+    });
+
   }).catch(err => {
     console.error('Suite 10 test error:', err);
     process.exit(1);
@@ -377,4 +418,5 @@ import('../utils/answerValidator.js').then(({ validateAnswer, normalizeText }) =
   console.error('Validation test error:', err);
   process.exit(1);
 });
+
 

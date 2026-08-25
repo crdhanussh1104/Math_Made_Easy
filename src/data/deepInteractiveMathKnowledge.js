@@ -119,7 +119,8 @@ Measuring tall structures directly with a tape measure is dangerous or physicall
 • Formula: Height = Distance × tan(θ).`,
     workedExamples: [
       { level: 'Easy', problem: 'A kite string is 50 m long and makes a 30° angle with the ground. Find the height of the kite.', solution: 'sin(30°) = Height / 50\n0.5 = Height / 50 → Height = 25 meters.' },
-      { level: 'Medium', problem: 'From a point 100 m away from the base of a tower, the angle of elevation to the top is 45°. Find tower height.', solution: 'Height = Distance × tan(45°)\nHeight = 100 × 1 = 100 meters.' }
+      { level: 'Medium', problem: 'From a point 100 m away from the base of a tower, the angle of elevation to the top is 45°. Find tower height.', solution: 'Height = Distance × tan(45°)\nHeight = 100 × 1 = 100 meters.' },
+      { level: 'Hard', problem: 'An observer atop a 75 m lighthouse observes two ships in line with angles of depression 30° and 45°. Find distance between ships.', solution: 'Distance to Ship 1 (45°): d1 = 75 / tan(45°) = 75 m.\nDistance to Ship 2 (30°): d2 = 75 / tan(30°) = 75√3 ≈ 129.9 m.\nDistance between ships = d2 - d1 = 129.9 - 75 = 54.9 meters.' }
     ],
     realLifeApplications: ['🗼 Telecom Tower Design: Calculating antenna height and guy-wire anchor points.', '✈️ Aviation: Instrument landing system approach glide path angles.'],
     commonMistakes: [{ mistake: 'Confusing Angle of Elevation with Angle of Depression.', reason: 'Angle of Elevation looks UP from horizontal; Angle of Depression looks DOWN from horizontal.' }],
@@ -534,7 +535,8 @@ Life is full of uncertainty. Probability quantifies chance so insurance companie
 Flipping a fair coin has 2 total outcomes (Heads, Tails). P(Heads) = 1/2 = 50%.`,
     workedExamples: [
       { level: 'Easy', problem: 'What is the probability of rolling a 4 on a standard 6-sided die?', solution: 'P(4) = Favorable / Total = 1 / 6.' },
-      { level: 'Medium', problem: 'Find the probability of drawing a Red Card from a 52-card deck.', solution: '26 Red cards out of 52. P = 26 / 52 = 1 / 2 = 50%.' }
+      { level: 'Medium', problem: 'Find the probability of drawing a Red Card from a 52-card deck.', solution: '26 Red cards out of 52. P = 26 / 52 = 1 / 2 = 50%.' },
+      { level: 'Hard', problem: 'Two fair coins are flipped. What is the probability of getting at least one Head?', solution: 'Sample Space S = {HH, HT, TH, TT} (4 outcomes).\nFavorable outcomes: {HH, HT, TH} (3 outcomes).\nP(at least 1 Head) = 3 / 4 = 75%.' }
     ],
     realLifeApplications: ['🌤️ Weather Forecasts: 80% chance of rain prediction.', '🎲 Board Games: Strategy based on dice odds.'],
     commonMistakes: [{ mistake: 'Expecting probability > 1.', reason: 'Probability is strictly between 0 and 1 (0% to 100%).' }],
@@ -563,7 +565,9 @@ Set theory provides the fundamental language for database search queries (AND, O
 • A ∪ B (Union): Combine all elements in A and B.
 • A ∩ B (Intersection): Common elements belonging to both A and B.`,
     workedExamples: [
-      { level: 'Easy', problem: 'If A = {1, 2, 3} and B = {3, 4, 5}, find A ∩ B.', solution: 'Common element is 3. A ∩ B = {3}.' }
+      { level: 'Easy', problem: 'If A = {1, 2, 3} and B = {3, 4, 5}, find A ∩ B.', solution: 'Common element is 3. A ∩ B = {3}.' },
+      { level: 'Medium', problem: 'If A = {a, b, c} and B = {b, c, d, e}, find A ∪ B.', solution: 'Combine all distinct elements: A ∪ B = {a, b, c, d, e}.' },
+      { level: 'Hard', problem: 'In a class of 30 students, 18 play football, 15 play cricket, and 7 play both. How many play neither sport?', solution: 'n(A ∪ B) = n(A) + n(B) - n(A ∩ B) = 18 + 15 - 7 = 26.\nNeither = 30 - 26 = 4 students.' }
     ],
     realLifeApplications: ['🔍 Search Engines: Filtering results using AND/OR keywords.'],
     commonMistakes: [{ mistake: 'Listing duplicate elements in a set.', reason: 'Set elements must be distinct!' }],
@@ -587,7 +591,9 @@ When banks lend money, interest pays for the risk and time value of money. Compo
 • SI grows by a fixed rupee amount each year.
 • CI curve bends upward exponentially as earnings compound.`,
     workedExamples: [
-      { level: 'Easy', problem: 'Calculate SI on ₹5,000 at 10% per year for 2 years.', solution: 'SI = (P × R × T) / 100 = (5000 × 10 × 2) / 100 = ₹1,000.' }
+      { level: 'Easy', problem: 'Calculate SI on ₹5,000 at 10% per year for 2 years.', solution: 'SI = (P × R × T) / 100 = (5000 × 10 × 2) / 100 = ₹1,000.' },
+      { level: 'Medium', problem: 'Find total amount A after 3 years on principal ₹10,000 at 6% simple interest.', solution: 'SI = (10000 × 6 × 3) / 100 = ₹1,800.\nTotal Amount A = P + SI = ₹10,000 + ₹1,800 = ₹11,800.' },
+      { level: 'Hard', problem: 'Find compound interest on ₹8,000 at 10% compounded annually for 2 years.', solution: 'A = P(1 + R/100)^T = 8000(1 + 10/100)² = 8000(1.1)² = 8000(1.21) = ₹9,680.\nCI = A - P = ₹9,680 - ₹8,000 = ₹1,680.' }
     ],
     realLifeApplications: ['🏦 Savings Accounts: Growing wealth via compounding.'],
     commonMistakes: [{ mistake: 'Using SI formula for Compound Interest.', reason: 'CI uses exponent formula A = P(1 + R/100)^T.' }],
@@ -612,7 +618,9 @@ Different countries and industries use different measurement systems. Converting
 • 1 meter = 100 centimeters.
 • 1 kilogram = 1,000 grams.`,
     workedExamples: [
-      { level: 'Easy', problem: 'Convert 5 km into meters.', solution: '5 × 1,000 = 5,000 meters.' }
+      { level: 'Easy', problem: 'Convert 5 km into meters.', solution: '5 × 1,000 = 5,000 meters.' },
+      { level: 'Medium', problem: 'Convert 450 centimeters into meters.', solution: '450 ÷ 100 = 4.5 meters.' },
+      { level: 'Hard', problem: 'A speed of 72 km/h is equivalent to how many meters per second (m/s)?', solution: 'Multiply by (5 / 18):\n72 × (5 / 18) = 4 × 5 = 20 m/s.' }
     ],
     realLifeApplications: ['✈️ International Travel: Converting miles to km and Celsius to Fahrenheit.'],
     commonMistakes: [{ mistake: 'Multiplying instead of dividing when converting small to large units.', reason: 'cm to m requires dividing by 100.' }],

@@ -10,3 +10,4 @@ export const TopicLessonView = ({ subtopicId, visualizerComponent, onLaunchVisua
     />
   );
 };
+
