@@ -8,7 +8,7 @@ import { soundFx } from '../../utils/audioSynth';
 import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
 import {
-  Tv, PlayCircle, RefreshCw, Sparkles, CheckCircle2, ShieldAlert,
+  Tv, CheckCircle2, ShieldAlert,
   ExternalLink, AlertTriangle, Film
 } from 'lucide-react';
 
@@ -91,8 +91,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
 
             {playlist.map((vidItem, idx) => {
               const isSelected = activeVideoIdx === idx;
-              const tabIcon = idx === 0 ? PlayCircle : idx === 1 ? RefreshCw : Sparkles;
-              const IconComp = tabIcon;
 
               return (
                 <button
@@ -110,11 +108,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    justifyContent: 'center',
                     transition: 'all 0.2s ease'
                   }}
                 >
-                  <IconComp size={16} />
                   <span>Video Option {idx + 1}</span>
                 </button>
               );
