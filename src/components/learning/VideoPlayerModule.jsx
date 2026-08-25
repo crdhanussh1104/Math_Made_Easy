@@ -115,7 +115,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                   }}
                 >
                   <IconComp size={16} />
-                  <span>{vidItem.tabLabel}</span>
+                  <span>Video Option {idx + 1}</span>
                 </button>
               );
             })}
