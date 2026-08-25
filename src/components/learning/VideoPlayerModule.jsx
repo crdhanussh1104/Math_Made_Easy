@@ -9,7 +9,7 @@ import { triggerConfetti } from '../../utils/confetti';
 import { useGame } from '../../context/GameContext';
 import {
   Tv, PlayCircle, RefreshCw, Sparkles, CheckCircle2, ShieldAlert,
-  Clock, User, Video, ExternalLink, AlertTriangle, Film
+  ExternalLink, AlertTriangle, Film
 } from 'lucide-react';
 
 export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson }) => {
@@ -77,7 +77,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       
-      {/* 1. Video Playlist Switcher Tabs (Only render tabs that actually have videos) */}
+      {/* 1. Video Playlist Switcher Tabs */}
       {playlist.length > 1 && (
         <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -190,57 +190,19 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           )}
         </div>
 
-        {/* Manual Fallback Toggle Option */}
-        {!embedError && (
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <button
-              onClick={() => setEmbedError(true)}
-              style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '0.78rem', cursor: 'pointer', textDecoration: 'underline' }}
-            >
-              Video not playing? Switch to YouTube Fallback Mode
-            </button>
-          </div>
-        )}
-
-        {/* 3. Detailed Video Metadata Section (Dynamically updated per selected video & lesson) */}
+        {/* 3. Detailed Video Metadata Section */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '6px' }}>
           
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-main)' }}>
-                {currentVideo.title}
-              </h3>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <span>Lesson: <strong>{activeLesson.title}</strong></span>
-                <span>•</span>
-                <span>Chapter {chapter.number}: {chapter.title}</span>
-                <span>•</span>
-                <span style={{ color: 'var(--primary)', fontWeight: '700' }}>{currentVideo.themeName}</span>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', backgroundColor: 'var(--bg-main)', padding: '6px 14px', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-light)' }}>
-              <Clock size={16} color="var(--primary)" />
-              <span style={{ fontWeight: '800', fontFamily: 'var(--font-rounded)', fontSize: '0.85rem' }}>
-                {currentVideo.duration || '08:30 mins'}
-              </span>
-            </div>
-          </div>
-
-          {/* Creator & Channel Info */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', backgroundColor: 'var(--bg-main)', padding: '12px 16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-light)', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <User size={18} color="var(--purple)" />
-              <span style={{ fontSize: '0.88rem', fontWeight: '700' }}>
-                Creator: <strong style={{ color: 'var(--text-main)' }}>{currentVideo.creatorName}</strong>
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Video size={18} color="var(--orange)" />
-              <span style={{ fontSize: '0.88rem', fontWeight: '700' }}>
-                Channel: <strong style={{ color: 'var(--text-main)' }}>{currentVideo.channelName}</strong>
-              </span>
+          <div>
+            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-main)' }}>
+              {currentVideo.title}
+            </h3>
+            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <span>Lesson: <strong>{activeLesson.title}</strong></span>
+              <span>•</span>
+              <span>Chapter {chapter.number}: {chapter.title}</span>
+              <span>•</span>
+              <span style={{ color: 'var(--primary)', fontWeight: '700' }}>{currentVideo.themeName}</span>
             </div>
           </div>
 
