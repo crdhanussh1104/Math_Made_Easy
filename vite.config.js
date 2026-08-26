@@ -4,4 +4,11 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    watch: {
+      // Exclude large PDF assets from file watcher to prevent EBUSY errors
+      ignored: ['**/public/textbooks/**'],
+    },
+  },
 })
+
