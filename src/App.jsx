@@ -15,9 +15,77 @@ import { ARLab } from './pages/ARLab';
 import { OlympiadHub } from './pages/OlympiadHub';
 import './styles/global.css';
 
+const VALID_PAGES = ['home', 'learn', 'olympiadHub', 'quiz', 'library', 'threeLab', 'arLab', 'dashboard', 'profile'];
+
+const getInitialPage = () => {
+  try {
+    const hash = window.location.hash.replace(/^#\/?/, '');
+    if (VALID_PAGES.includes(hash)) return hash;
+    const saved = localStorage.getItem('mme_currentPage');
+    if (VALID_PAGES.includes(saved)) return saved;
+  } catch (e) {
+    console.warn('Unable to read initial page from hash/storage:', e);
+  }
+  return 'home';
+};
+
+const getInitialChapter = () => {
+  try {
+    return localStorage.getItem('mme_selectedChapterId') || 'chap_1';
+  } catch (e) {
+    return 'chap_1';
+  }
+};
+
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [selectedChapterId, setSelectedChapterId] = useState('chap_1');
+  const [currentPage, setCurrentPage] = useState(getInitialPage);
+  const [selectedChapterId, setSelectedChapterIdState] = useState(getInitialChapter);
+
+  const navigateTo = (page) => {
+    if (VALID_PAGES.includes(page)) {
+      setCurrentPage(page);
+      try {
+        window.location.hash = page;
+        localStorage.setItem('mme_currentPage', page);
+      } catch (e) {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const setSelectedChapterId = (chapId) => {
+    setSelectedChapterIdState(chapId);
+    if (chapId) {
+      try {
+        localStorage.setItem('mme_selectedChapterId', chapId);
+      } catch (e) {}
+    }
+  };
+
+  // Sync hash and page state on browser back/forward and page refresh
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      if (VALID_PAGES.includes(hash)) {
+        setCurrentPage(hash);
+        try {
+          localStorage.setItem('mme_currentPage', hash);
+        } catch (e) {}
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Ensure hash reflects current page on load
+    const currentHash = window.location.hash.replace(/^#\/?/, '');
+    if (currentHash !== currentPage && VALID_PAGES.includes(currentPage)) {
+      window.location.hash = currentPage;
+    }
+    try {
+      localStorage.setItem('mme_currentPage', currentPage);
+    } catch (e) {}
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [currentPage]);
 
   // Register PWA Service Worker for offline support
   useEffect(() => {
@@ -34,7 +102,7 @@ function AppContent() {
       <OfflineNotice />
 
       {/* Top Header & Mobile Bottom Nav */}
-      <HeaderStats currentPage={currentPage} onNavigate={setCurrentPage} />
+      <HeaderStats currentPage={currentPage} onNavigate={navigateTo} />
 
       {/* Main Content Area filling wide screens with rich responsive proportions */}
       <main
@@ -43,29 +111,30 @@ function AppContent() {
       >
         {currentPage === 'home' && (
           <Home
-            onNavigate={setCurrentPage}
-            onSelectChapter={(id) => setSelectedChapterId(id)}
+            onNavigate={navigateTo}
+            onSelectChapter={setSelectedChapterId}
           />
         )}
 
         {currentPage === 'learn' && (
           <Learn
-            onNavigate={setCurrentPage}
-            onSelectChapter={(id) => setSelectedChapterId(id)}
+            selectedChapterId={selectedChapterId}
+            onNavigate={navigateTo}
+            onSelectChapter={setSelectedChapterId}
           />
         )}
 
         {currentPage === 'olympiadHub' && (
           <OlympiadHub
-            onNavigate={setCurrentPage}
-            onSelectChapter={(id) => setSelectedChapterId(id)}
+            onNavigate={navigateTo}
+            onSelectChapter={setSelectedChapterId}
           />
         )}
 
         {currentPage === 'quiz' && (
           <Quiz
             selectedChapterId={selectedChapterId}
-            onNavigate={setCurrentPage}
+            onNavigate={navigateTo}
           />
         )}
 
@@ -81,7 +150,7 @@ function AppContent() {
       </main>
 
       {/* Global Floating Pi-Bot Assistant */}
-      <FloatingPiBot onNavigate={setCurrentPage} />
+      <FloatingPiBot onNavigate={navigateTo} />
     </div>
   );
 }

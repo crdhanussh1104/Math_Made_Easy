@@ -169,20 +169,38 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   const classNum = parseInt(selectedClassId.replace(/\D/g, ''), 10) || 4;
   const chapters = getChaptersForClass(selectedClassId);
 
-  const [activeChapId, setActiveChapId] = useState(selectedChapterId || (chapters.length > 0 ? chapters[0].id : null));
+  const [activeChapId, setActiveChapId] = useState(() => {
+    if (selectedChapterId && chapters.some(c => c.id === selectedChapterId)) return selectedChapterId;
+    try {
+      const saved = localStorage.getItem('mme_selectedChapterId');
+      if (saved && chapters.some(c => c.id === saved)) return saved;
+    } catch (e) {}
+    return chapters.length > 0 ? chapters[0].id : null;
+  });
   const [activeLessonIdx, setActiveLessonIdx] = useState(0);
-  const [workspaceTab, setWorkspaceTab] = useState('video');
+  const [workspaceTab, setWorkspaceTabState] = useState(() => {
+    try {
+      return localStorage.getItem('mme_workspaceTab') || 'video';
+    } catch (e) {
+      return 'video';
+    }
+  });
+
+  const setWorkspaceTab = (tabId) => {
+    setWorkspaceTabState(tabId);
+    try {
+      localStorage.setItem('mme_workspaceTab', tabId);
+    } catch (e) {}
+  };
 
   useEffect(() => {
     if (selectedChapterId && chapters.some(c => c.id === selectedChapterId)) {
       setActiveChapId(selectedChapterId);
-    } else if (chapters.length > 0) {
+    } else if (chapters.length > 0 && (!activeChapId || !chapters.some(c => c.id === activeChapId))) {
       setActiveChapId(chapters[0].id);
-    } else {
-      setActiveChapId(null);
     }
-    setActiveLessonIdx(0);
   }, [selectedClassId, selectedChapterId]);
+
 
   // Reward Modal state
   const [showRewardModal, setShowRewardModal] = useState(false);
