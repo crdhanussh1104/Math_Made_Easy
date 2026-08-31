@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CardRounded } from '../ui/CardRounded';
 import { BadgeChip } from '../ui/BadgeChip';
-import { getTextbookPdfUrl } from '../../data/textbookPdfMap';
+import { getTextbookPdfUrl, getLessonPdfUrl } from '../../data/textbookPdfMap';
 import {
   BookOpen, Download, ExternalLink, Maximize2, Minimize2,
   ChevronDown, ChevronUp
@@ -68,6 +68,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {(chapter?.lessons || []).map((lesson, idx) => {
           const isExpanded = expandedLessonId === lesson.id;
+          const lessonPdfUrl = getLessonPdfUrl(classId, lesson.id) || pdfUrl;
           
           return (
             <div
@@ -160,10 +161,10 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                       Viewing textbook chapter for: <strong>{lesson.title}</strong>
                     </span>
 
-                    {pdfUrl && (
+                    {lessonPdfUrl && (
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <a
-                          href={pdfUrl}
+                          href={lessonPdfUrl}
                           download
                           style={{ textDecoration: 'none' }}
                         >
@@ -190,7 +191,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                         </a>
 
                         <a
-                          href={pdfUrl}
+                          href={lessonPdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ textDecoration: 'none' }}
@@ -242,7 +243,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                   </div>
 
                   {/* PDF Iframe or fallback */}
-                  {pdfUrl ? (
+                  {lessonPdfUrl ? (
                     <div style={{
                       position: isFullscreen ? 'fixed' : 'relative',
                       top: isFullscreen ? 0 : 'auto',
@@ -315,7 +316,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                       )}
 
                       <iframe
-                        src={`${pdfUrl}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
+                        src={`${lessonPdfUrl}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
                         title={`Textbook: ${chapter?.title}`}
                         width="100%"
                         height="100%"
