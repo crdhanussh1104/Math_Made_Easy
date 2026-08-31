@@ -246,7 +246,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       
       {/* 1. Video Playlist Switcher Tabs */}
       {playlist.length > 1 && (
-        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', width: '100%', maxWidth: '1220px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-muted)' }}>
               Video Playlist:
@@ -293,19 +293,11 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       )}
 
       {/* 2. Main Responsive YouTube Player Card */}
-      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '1220px', margin: '0 auto' }}>
+
         
         {/* Exact 16:9 Aspect-Ratio Player Frame */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          aspectRatio: '16 / 9',
-          borderRadius: 'var(--radius-md)',
-          overflow: 'hidden',
-          backgroundColor: '#000000',
-          boxShadow: 'var(--shadow-md)',
-          border: '2px solid var(--border-light)'
-        }}>
+        <div className="yt-video-wrapper">
           {!embedError ? (
             <iframe
               id="yt-player-iframe"
@@ -316,15 +308,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               onError={() => setEmbedError(true)}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                display: 'block'
-              }}
             />
           ) : (
             /* Fallback View when Publisher Disables Embedding */
@@ -360,7 +343,9 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
         </div>
 
         {/* 3. Subtopic Name & Auto-tracked 3-Part Milestone Progress */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px', width: '100%' }}>
+
+
           
           <div>
             <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>

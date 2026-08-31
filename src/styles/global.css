@@ -305,10 +305,11 @@ img, svg, video, canvas {
 .yt-video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* Standard 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
+  max-width: 1220px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
+  overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 2px solid var(--border-light);
   background-color: #000000;
@@ -324,3 +325,12 @@ img, svg, video, canvas {
   height: 100% !important;
   border: none !important;
 }
+
+@media (max-width: 640px) {
+  .yt-video-wrapper {
+    border-radius: var(--radius-sm);
+  }
+}
+
+
+
