@@ -306,6 +306,7 @@ img, svg, video, canvas {
   position: relative;
   width: 100%;
   max-width: 1220px;
+  max-height: 68vh;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
@@ -329,8 +330,10 @@ img, svg, video, canvas {
 @media (max-width: 640px) {
   .yt-video-wrapper {
     border-radius: var(--radius-sm);
+    max-height: none;
   }
 }
+
 
 
 
