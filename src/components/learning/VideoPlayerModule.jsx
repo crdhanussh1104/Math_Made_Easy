@@ -246,7 +246,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       
       {/* 1. Video Playlist Switcher Tabs */}
       {playlist.length > 1 && (
-        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', width: '100%', maxWidth: '1220px', margin: '0 auto' }}>
+        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-muted)' }}>
               Video Playlist:
@@ -293,7 +293,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       )}
 
       {/* 2. Main Responsive YouTube Player Card */}
-      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '1220px', margin: '0 auto' }}>
+      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
 
         
         {/* Exact 16:9 Aspect-Ratio Player Frame */}
