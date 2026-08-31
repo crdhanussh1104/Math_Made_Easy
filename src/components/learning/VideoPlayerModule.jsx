@@ -292,264 +292,305 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
         </CardRounded>
       )}
 
-      {/* 2. Main Responsive YouTube Player Card */}
-      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
-
-        
-        {/* Exact 16:9 Aspect-Ratio Player Frame */}
-        <div className="yt-video-wrapper">
-          {!embedError ? (
-            <iframe
-              id="yt-player-iframe"
-              key={embedSrc}
-              src={embedSrc}
-              title={activeLesson.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              onError={() => setEmbedError(true)}
-            />
-          ) : (
-            /* Fallback View when Publisher Disables Embedding */
-            <div style={{
-              position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.95)), url(${thumbnailUrl})`,
-              backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              color: '#ffffff', padding: '24px', textAlign: 'center', gap: '14px'
-            }}>
-              <AlertTriangle size={44} color="var(--warning)" />
-              <div>
-                <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '800' }}>
-                  Watch Directly on YouTube
-                </h3>
-                <p style={{ fontSize: '0.88rem', opacity: 0.9, marginTop: '4px', maxWidth: '420px' }}>
-                  The creator allows full playback on YouTube. Click below to open and watch.
-                </p>
-              </div>
-
-              <a
-                href={youtubeWatchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
-              >
-                <Button3D variant="warning" size="md" icon={ExternalLink}>
-                  Open Video on YouTube ↗
-                </Button3D>
-              </a>
-            </div>
-          )}
-        </div>
-
-        {/* 3. Subtopic Name & Auto-tracked 3-Part Milestone Progress */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px', width: '100%' }}>
-
-
+      {/* 2. Main Responsive YouTube Player & Lesson Info Card */}
+      <CardRounded style={{ padding: '24px', width: '100%' }}>
+        <div className="video-module-grid">
           
-          <div>
-            <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
-              {activeLesson.title}
-            </h3>
-          </div>
-
-          {/* 2 Automatic Points dividing video into 3 equal parts */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-
-            {/* Visual Progress Bar with 4 Milestone Pins: 🏁 (0%), 🏇 (33%), 🏇 (85%), 🏝️ (100%) */}
-            <div style={{ position: 'relative', height: '10px', backgroundColor: 'var(--border-light)', borderRadius: '99px', margin: '18px 16px 14px 16px' }}>
-              {/* Active Fill Track */}
-              <div style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                height: '100%',
-                width: `${watchProgress}%`,
-                backgroundColor: canComplete ? 'var(--primary)' : 'var(--orange)',
-                borderRadius: '99px',
-                transition: 'width 0.25s linear'
-              }} />
-
-              {/* Start Pin (0%) */}
-              <div
-                title="Start (0%)"
-                style={{
-                  position: 'absolute',
-                  left: '0%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '50%',
-                  border: '2px solid var(--border-light)',
-                  backgroundColor: 'var(--bg-main)',
-                  fontSize: '0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  boxShadow: 'var(--shadow-sm)',
-                  userSelect: 'none'
-                }}
-              >
-                🏁
-              </div>
-
-              {/* Point 1 Pin (33.3%) */}
-              <div
-                title="Checkpoint 1 (33%)"
-                style={{
-                  position: 'absolute',
-                  left: '33.33%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '50%',
-                  border: cp1 ? '2px solid #16a34a' : '2px solid var(--border-light)',
-                  backgroundColor: cp1 ? '#22c55e' : 'var(--bg-main)',
-                  color: cp1 ? '#ffffff' : 'inherit',
-                  fontSize: '0.85rem',
-                  fontWeight: '800',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  boxShadow: 'var(--shadow-sm)',
-                  transition: 'all 0.3s ease',
-                  userSelect: 'none'
-                }}
-              >
-                {cp1 ? '✓' : '🏇'}
-              </div>
-
-              {/* Point 2 Pin (85%) */}
-              <div
-                title="Checkpoint 2 (85% - Unlocks Completion)"
-                style={{
-                  position: 'absolute',
-                  left: '85%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '50%',
-                  border: cp2 ? '2px solid #16a34a' : '2px solid var(--border-light)',
-                  backgroundColor: cp2 ? '#22c55e' : 'var(--bg-main)',
-                  color: cp2 ? '#ffffff' : 'inherit',
-                  fontSize: '0.85rem',
-                  fontWeight: '800',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  boxShadow: 'var(--shadow-sm)',
-                  transition: 'all 0.3s ease',
-                  userSelect: 'none'
-                }}
-              >
-                {cp2 ? '✓' : '🏇'}
-              </div>
-
-              {/* Finish Pin (100%) */}
-              <div
-                title="Finish (100%)"
-                style={{
-                  position: 'absolute',
-                  left: '100%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '28px',
-                  height: '28px',
-                  borderRadius: '50%',
-                  border: isCurrentVideoWatched ? '2px solid #16a34a' : '2px solid var(--border-light)',
-                  backgroundColor: isCurrentVideoWatched ? '#22c55e' : 'var(--bg-main)',
-                  fontSize: '0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  boxShadow: 'var(--shadow-sm)',
-                  userSelect: 'none'
-                }}
-              >
-                🏝️
-              </div>
-            </div>
-          </div>
-
-          {/* Action Row: Reset Button (Left) & Mark Complete Button (Right) */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginTop: '6px' }}>
-            {/* Left Side: Reset Button */}
-            <button
-              type="button"
-              onClick={handleResetProgress}
-              title="Reset progress for this video"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '10px 18px',
-                borderRadius: 'var(--radius-md)',
-                border: '1.5px solid var(--border-light)',
-                backgroundColor: 'var(--bg-main)',
-                color: 'var(--text-muted)',
-                fontWeight: '700',
-                fontFamily: 'var(--font-rounded)',
-                fontSize: '0.9rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--primary)';
-                e.currentTarget.style.color = 'var(--text-main)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-light)';
-                e.currentTarget.style.color = 'var(--text-muted)';
-              }}
-            >
-              <RotateCcw size={16} /> Reset
-            </button>
-
-            {/* Right Side: Mark Complete Button */}
-            <div>
-              {isCurrentVideoWatched ? (
-                <BadgeChip label="Lesson Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
-              ) : canComplete ? (
-                <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2}>
-                  Mark Lesson Complete & Unlock Next 🚀
-                </Button3D>
+          {/* LEFT COLUMN: 16:9 Aspect-Ratio Player Frame */}
+          <div className="video-player-column">
+            <div className="yt-video-wrapper">
+              {!embedError ? (
+                <iframe
+                  id="yt-player-iframe"
+                  key={embedSrc}
+                  src={embedSrc}
+                  title={activeLesson.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  onError={() => setEmbedError(true)}
+                />
               ) : (
-                <button
-                  type="button"
-                  disabled
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '12px 20px',
-                    borderRadius: 'var(--radius-md)',
-                    border: '1.5px dashed var(--border-light)',
-                    backgroundColor: 'var(--bg-main)',
-                    color: 'var(--text-muted)',
-                    fontWeight: '700',
-                    fontFamily: 'var(--font-rounded)',
-                    fontSize: '0.95rem',
-                    cursor: 'not-allowed',
-                    opacity: 0.7
-                  }}
-                >
-                  <Lock size={16} /> Mark Lesson Complete & Unlock Next 🚀
-                </button>
+                /* Fallback View when Publisher Disables Embedding */
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.95)), url(${thumbnailUrl})`,
+                  backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                  color: '#ffffff', padding: '24px', textAlign: 'center', gap: '14px'
+                }}>
+                  <AlertTriangle size={44} color="var(--warning)" />
+                  <div>
+                    <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '800' }}>
+                      Watch Directly on YouTube
+                    </h3>
+                    <p style={{ fontSize: '0.88rem', opacity: 0.9, marginTop: '4px', maxWidth: '420px' }}>
+                      The creator allows full playback on YouTube. Click below to open and watch.
+                    </p>
+                  </div>
+
+                  <a
+                    href={youtubeWatchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Button3D variant="warning" size="md" icon={ExternalLink}>
+                      Open Video on YouTube ↗
+                    </Button3D>
+                  </a>
+                </div>
               )}
             </div>
           </div>
 
+          {/* RIGHT COLUMN: Lesson Details, Video Playlist, and Auto-Tracked Milestone Progress */}
+          <div className="video-info-column">
+            
+            {/* Title & Chapter Label */}
+            <div>
+              <span style={{ fontSize: '0.8rem', fontWeight: '800', color: chapter.color || 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                {chapter.title}
+              </span>
+              <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)', marginTop: '4px', lineHeight: '1.3' }}>
+                {activeLesson.title}
+              </h3>
+            </div>
+
+            {/* Video Playlist Options */}
+            {playlist.length > 1 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', backgroundColor: 'var(--bg-main)', padding: '12px 16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-light)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-muted)' }}>
+                    Video Playlist Options:
+                  </span>
+                  {isCurrentVideoWatched ? (
+                    <BadgeChip label="Video Completed ✓" color="var(--primary)" bg="var(--primary-light)" size="sm" />
+                  ) : canComplete ? (
+                    <BadgeChip label="Ready to Complete (100%)" color="var(--primary)" bg="var(--primary-light)" size="sm" />
+                  ) : (
+                    <BadgeChip label={`Progress: ${watchProgress}%`} color="var(--orange)" bg="var(--warning-light)" size="sm" />
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '4px' }}>
+                  {playlist.map((vidItem, idx) => {
+                    const isSelected = activeVideoIdx === idx;
+
+                    return (
+                      <button
+                        key={vidItem.id}
+                        onClick={() => handleSelectVideo(idx)}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: 'var(--radius-full)',
+                          border: isSelected ? `2px solid ${chapter.color}` : '1.5px solid var(--border-light)',
+                          backgroundColor: isSelected ? `${chapter.color}20` : 'var(--bg-card-solid)',
+                          color: isSelected ? chapter.color : 'var(--text-main)',
+                          fontWeight: '800',
+                          fontFamily: 'var(--font-rounded)',
+                          fontSize: '0.85rem',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease'
+                        }}
+                      >
+                        Option {idx + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Milestone Checkpoint Progress */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <span style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-muted)' }}>
+                Milestone Trackers:
+              </span>
+
+              {/* Progress Pins */}
+              <div style={{ position: 'relative', height: '10px', backgroundColor: 'var(--border-light)', borderRadius: '99px', margin: '14px 14px 10px 14px' }}>
+                {/* Active Fill Track */}
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  height: '100%',
+                  width: `${watchProgress}%`,
+                  backgroundColor: canComplete ? 'var(--primary)' : 'var(--orange)',
+                  borderRadius: '99px',
+                  transition: 'width 0.25s linear'
+                }} />
+
+                {/* Start Pin (0%) */}
+                <div
+                  title="Start (0%)"
+                  style={{
+                    position: 'absolute',
+                    left: '0%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '26px',
+                    height: '26px',
+                    borderRadius: '50%',
+                    border: '2px solid var(--border-light)',
+                    backgroundColor: 'var(--bg-main)',
+                    fontSize: '0.8rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
+                >
+                  🏁
+                </div>
+
+                {/* Point 1 Pin (33.3%) */}
+                <div
+                  title="Checkpoint 1 (33%)"
+                  style={{
+                    position: 'absolute',
+                    left: '33.33%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '26px',
+                    height: '26px',
+                    borderRadius: '50%',
+                    border: cp1 ? '2px solid #16a34a' : '2px solid var(--border-light)',
+                    backgroundColor: cp1 ? '#22c55e' : 'var(--bg-main)',
+                    color: cp1 ? '#ffffff' : 'inherit',
+                    fontSize: '0.8rem',
+                    fontWeight: '800',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    boxShadow: 'var(--shadow-sm)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  {cp1 ? '✓' : '🏇'}
+                </div>
+
+                {/* Point 2 Pin (85%) */}
+                <div
+                  title="Checkpoint 2 (85% - Unlocks Completion)"
+                  style={{
+                    position: 'absolute',
+                    left: '85%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '26px',
+                    height: '26px',
+                    borderRadius: '50%',
+                    border: cp2 ? '2px solid #16a34a' : '2px solid var(--border-light)',
+                    backgroundColor: cp2 ? '#22c55e' : 'var(--bg-main)',
+                    color: cp2 ? '#ffffff' : 'inherit',
+                    fontSize: '0.8rem',
+                    fontWeight: '800',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    boxShadow: 'var(--shadow-sm)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  {cp2 ? '✓' : '🏇'}
+                </div>
+
+                {/* Finish Pin (100%) */}
+                <div
+                  title="Finish (100%)"
+                  style={{
+                    position: 'absolute',
+                    left: '100%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '26px',
+                    height: '26px',
+                    borderRadius: '50%',
+                    border: isCurrentVideoWatched ? '2px solid #16a34a' : '2px solid var(--border-light)',
+                    backgroundColor: isCurrentVideoWatched ? '#22c55e' : 'var(--bg-main)',
+                    fontSize: '0.8rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    boxShadow: 'var(--shadow-sm)'
+                  }}
+                >
+                  🏝️
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginTop: 'auto', paddingTop: '8px' }}>
+              <button
+                type="button"
+                onClick={handleResetProgress}
+                title="Reset progress for this video"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 16px',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1.5px solid var(--border-light)',
+                  backgroundColor: 'var(--bg-main)',
+                  color: 'var(--text-muted)',
+                  fontWeight: '700',
+                  fontFamily: 'var(--font-rounded)',
+                  fontSize: '0.85rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <RotateCcw size={16} /> Reset
+              </button>
+
+              <div style={{ flex: 1 }}>
+                {isCurrentVideoWatched ? (
+                  <BadgeChip label="Completed ✓ (+50 XP)" color="var(--primary)" bg="var(--primary-light)" size="lg" />
+                ) : canComplete ? (
+                  <Button3D variant="primary" size="md" onClick={handleMarkComplete} icon={CheckCircle2} style={{ width: '100%' }}>
+                    Complete & Unlock Next 🚀
+                  </Button3D>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    style={{
+                      width: '100%',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px',
+                      padding: '12px 18px',
+                      borderRadius: 'var(--radius-md)',
+                      border: '1.5px dashed var(--border-light)',
+                      backgroundColor: 'var(--bg-main)',
+                      color: 'var(--text-muted)',
+                      fontWeight: '700',
+                      fontFamily: 'var(--font-rounded)',
+                      fontSize: '0.9rem',
+                      cursor: 'not-allowed',
+                      opacity: 0.7
+                    }}
+                  >
+                    <Lock size={16} /> Complete & Unlock Next 🚀
+                  </button>
+                )}
+              </div>
+            </div>
+
+          </div>
+
         </div>
-
       </CardRounded>
-
     </div>
   );
 };
+
