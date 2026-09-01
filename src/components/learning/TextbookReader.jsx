@@ -1,35 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CardRounded } from '../ui/CardRounded';
 import { BadgeChip } from '../ui/BadgeChip';
 import { getTextbookPdfUrl, getLessonPdfUrl } from '../../data/textbookPdfMap';
 import {
-  BookOpen, Download, ExternalLink, Maximize2, Minimize2,
-  ChevronDown, ChevronUp
+  BookOpen, ExternalLink, ChevronDown, ChevronUp, FileText
 } from 'lucide-react';
 
 export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [expandedLessonId, setExpandedLessonId] = useState(activeLesson?.id || chapter?.lessons[0]?.id || null);
-  const [pdfLoaded, setPdfLoaded] = useState(false);
 
   const chapterNum = chapter?.number || 1;
   const pdfUrl = getTextbookPdfUrl(classId, chapterNum);
-
-  const toggleFullscreen = () => {
-    setIsFullscreen(prev => !prev);
-  };
-
-  // Keep expanded lesson in sync with parent activeLesson changes
-  useEffect(() => {
-    if (activeLesson?.id) {
-      setExpandedLessonId(activeLesson.id);
-    }
-  }, [activeLesson?.id]);
-
-  // Reset loaded state whenever the PDF URL changes (chapter switch)
-  useEffect(() => {
-    setPdfLoaded(false);
-  }, [pdfUrl, expandedLessonId]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -55,7 +36,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
               <span style={{ fontSize: '0.78rem', fontWeight: '800', color: chapter?.color || '#4f46e5', textTransform: 'uppercase' }}>
                 Class {classId} • Chapter {chapterNum}
               </span>
-              <BadgeChip label="Official NCERT / CBSE" color="#0284c7" bg="#e0f2fe" size="sm" />
+              <BadgeChip label="ICSE Board Curriculum" color="#0284c7" bg="#e0f2fe" size="sm" />
             </div>
             <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-main)', margin: '4px 0 0 0' }}>
               {chapter?.title}
@@ -64,7 +45,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
         </div>
       </CardRounded>
 
-      {/* 2. Subtopics Accordion List */}
+      {/* 2. Subtopics Accordion & Hyperlink List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {(chapter?.lessons || []).map((lesson, idx) => {
           const isExpanded = expandedLessonId === lesson.id;
@@ -125,6 +106,31 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  {lessonPdfUrl && (
+                    <a
+                      href={lessonPdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '6px 14px',
+                        borderRadius: 'var(--radius-full)',
+                        backgroundColor: `${chapter?.color || '#4f46e5'}15`,
+                        color: chapter?.color || '#4f46e5',
+                        textDecoration: 'none',
+                        fontWeight: '700',
+                        fontSize: '0.85rem',
+                        fontFamily: 'var(--font-rounded)',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <ExternalLink size={14} /> Chapter Hyperlink
+                    </a>
+                  )}
+
                   {lesson.xp && (
                     <span style={{
                       fontSize: '0.8rem',
@@ -145,7 +151,7 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                 </div>
               </div>
 
-              {/* Subtopic Expanded PDF Area */}
+              {/* Subtopic Expanded Area */}
               {isExpanded && (
                 <div style={{
                   borderTop: '1px solid var(--border-light)',
@@ -155,185 +161,59 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
                   gap: '16px',
                   backgroundColor: 'var(--bg-main)'
                 }}>
-                  {/* Actions Toolbar */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-                    <span style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-muted)' }}>
-                      Viewing textbook chapter for: <strong>{lesson.title}</strong>
-                    </span>
+                  <div style={{
+                    padding: '18px 24px',
+                    borderRadius: 'var(--radius-md)',
+                    backgroundColor: 'var(--bg-card-solid)',
+                    border: '1.5px solid var(--border-light)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '14px'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <FileText size={20} color={chapter?.color || '#4f46e5'} />
+                      <span style={{ fontSize: '1rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-main)' }}>
+                        {lesson.title}
+                      </span>
+                    </div>
 
-                    {lessonPdfUrl && (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <a
-                          href={lessonPdfUrl}
-                          download
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <button
-                            type="button"
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '6px',
-                              padding: '8px 14px',
-                              borderRadius: 'var(--radius-full)',
-                              border: '1.5px solid var(--border-light)',
-                              backgroundColor: 'var(--bg-card-solid)',
-                              color: 'var(--text-main)',
-                              fontSize: '0.85rem',
-                              fontWeight: '700',
-                              fontFamily: 'var(--font-rounded)',
-                              cursor: 'pointer',
-                              transition: 'all 0.2s ease'
-                            }}
-                          >
-                            <Download size={15} /> Download PDF
-                          </button>
-                        </a>
+                    <p style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+                      Access the ICSE Board official textbook chapter resource for <strong>{lesson.title}</strong> using the direct chapter hyperlink below:
+                    </p>
 
+                    {lessonPdfUrl ? (
+                      <div style={{ marginTop: '6px' }}>
                         <a
                           href={lessonPdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <button
-                            type="button"
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '6px',
-                              padding: '8px 14px',
-                              borderRadius: 'var(--radius-full)',
-                              border: '1.5px solid var(--border-light)',
-                              backgroundColor: 'var(--bg-card-solid)',
-                              color: 'var(--text-main)',
-                              fontSize: '0.85rem',
-                              fontWeight: '700',
-                              fontFamily: 'var(--font-rounded)',
-                              cursor: 'pointer',
-                              transition: 'all 0.2s ease'
-                            }}
-                          >
-                            <ExternalLink size={15} /> Open in New Tab
-                          </button>
-                        </a>
-
-                        <button
-                          type="button"
-                          onClick={toggleFullscreen}
-                          title={isFullscreen ? "Exit Fullscreen" : "Fullscreen View"}
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '36px',
-                            height: '36px',
+                            gap: '8px',
+                            padding: '12px 22px',
                             borderRadius: 'var(--radius-full)',
-                            border: '1.5px solid var(--border-light)',
-                            backgroundColor: isFullscreen ? (chapter?.color || '#4f46e5') : 'var(--bg-card-solid)',
-                            color: isFullscreen ? '#ffffff' : 'var(--text-main)',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease'
+                            backgroundColor: chapter?.color || '#4f46e5',
+                            color: '#ffffff',
+                            textDecoration: 'none',
+                            fontWeight: '800',
+                            fontSize: '0.95rem',
+                            fontFamily: 'var(--font-rounded)',
+                            boxShadow: `0 4px 12px ${(chapter?.color || '#4f46e5')}30`,
+                            transition: 'transform 0.2s ease, opacity 0.2s ease'
                           }}
                         >
-                          {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
-                        </button>
+                          <BookOpen size={18} />
+                          <span>Open Chapter PDF ({lesson.title})</span>
+                          <ExternalLink size={16} />
+                        </a>
                       </div>
+                    ) : (
+                      <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', italic: 'true' }}>
+                        Hyperlink for this subtopic chapter will be available shortly.
+                      </p>
                     )}
                   </div>
-
-                  {/* PDF Iframe or fallback */}
-                  {lessonPdfUrl ? (
-                    <div style={{
-                      position: isFullscreen ? 'fixed' : 'relative',
-                      top: isFullscreen ? 0 : 'auto',
-                      left: isFullscreen ? 0 : 'auto',
-                      right: isFullscreen ? 0 : 'auto',
-                      bottom: isFullscreen ? 0 : 'auto',
-                      width: isFullscreen ? '100vw' : '100%',
-                      height: isFullscreen ? '100vh' : '650px',
-                      zIndex: isFullscreen ? 9999 : 1,
-                      borderRadius: isFullscreen ? 0 : '12px',
-                      overflow: 'hidden',
-                      boxShadow: isFullscreen ? 'none' : 'var(--shadow-sm)',
-                      border: isFullscreen ? 'none' : '1.5px solid var(--border-light)',
-                      backgroundColor: 'var(--bg-card-solid)',
-                      display: 'flex',
-                      flexDirection: 'column'
-                    }}>
-                      <style>{`@keyframes _tbSpin{to{transform:rotate(360deg)}}`}</style>
-
-                      {/* Loading spinner overlay */}
-                      {!pdfLoaded && (
-                        <div style={{
-                          position: 'absolute', inset: 0,
-                          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                          gap: '14px', background: '#f8fafc', zIndex: 2
-                        }}>
-                          <div style={{
-                            width: '48px', height: '48px', borderRadius: '50%',
-                            border: `4px solid ${chapter?.color || '#4f46e5'}30`,
-                            borderTopColor: chapter?.color || '#4f46e5',
-                            animation: '_tbSpin 0.8s linear infinite'
-                          }} />
-                          <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#64748b' }}>
-                            Loading textbook…
-                          </span>
-                        </div>
-                      )}
-
-                      {isFullscreen && (
-                        <div style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          padding: '10px 20px',
-                          backgroundColor: 'var(--bg-card-solid)',
-                          borderBottom: '1px solid var(--border-light)',
-                          zIndex: 10
-                        }}>
-                          <span style={{ fontWeight: '800', fontFamily: 'var(--font-rounded)', fontSize: '1rem', color: 'var(--text-main)' }}>
-                            Class {classId} • Chapter {chapterNum}: {chapter?.title} - {lesson.title}
-                          </span>
-                          <button
-                            onClick={toggleFullscreen}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '6px',
-                              padding: '6px 14px',
-                              borderRadius: 'var(--radius-full)',
-                              backgroundColor: chapter?.color || '#4f46e5',
-                              color: '#ffffff',
-                              border: 'none',
-                              fontWeight: '700',
-                              cursor: 'pointer'
-                            }}
-                          >
-                            <Minimize2 size={15} /> Exit Fullscreen
-                          </button>
-                        </div>
-                      )}
-
-                      <iframe
-                        src={`${lessonPdfUrl}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
-                        title={`Textbook: ${chapter?.title}`}
-                        width="100%"
-                        height="100%"
-                        style={{
-                          flex: 1,
-                          border: 'none',
-                          backgroundColor: '#525659',
-                          display: 'block'
-                        }}
-                        onLoad={() => setPdfLoaded(true)}
-                      />
-                    </div>
-                  ) : (
-                    <CardRounded style={{ textAlign: 'center', padding: '30px 20px', color: 'var(--text-muted)' }}>
-                      <p>Textbook chapter PDF is currently unavailable for this class.</p>
-                    </CardRounded>
-                  )}
                 </div>
               )}
             </div>
@@ -344,3 +224,4 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
     </div>
   );
 };
+

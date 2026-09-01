@@ -1,7 +1,29 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
+import { CardRounded } from '../components/ui/CardRounded';
+import { ProgressBar } from '../components/ui/ProgressBar';
 import { getChaptersForClass } from '../data/chapters';
 import { getClassFormulaCards, getFormulaCardsForChapter, getFormulaCardsForTopic } from '../data/classFormulaCards';
 import { TextbookReader } from '../components/learning/TextbookReader';
+import { VideoPlayerModule } from '../components/learning/VideoPlayerModule';
+import { InteractiveNotes } from '../components/learning/InteractiveNotes';
+import { OlympiadInsights } from '../components/learning/OlympiadInsights';
+import { OlympiadInsightsNLP } from '../components/learning/OlympiadInsightsNLP';
+import { FormulaCard3D } from '../components/library/FormulaCard3D';
+import { QuizPlayer } from '../components/quiz/QuizPlayer';
+import { ChatWindow } from '../components/chat/ChatWindow';
+import { RewardModal } from '../components/gamification/RewardModal';
+import { AbacusVisualizer } from '../components/visualizers/AbacusVisualizer';
+import { FractionPizza } from '../components/visualizers/FractionPizza';
+import { ShapeBuilder } from '../components/visualizers/ShapeBuilder';
+import { BalanceScale } from '../components/visualizers/BalanceScale';
+import { ClockInteractive } from '../components/visualizers/ClockInteractive';
+import { GraphBuilder } from '../components/visualizers/GraphBuilder';
+import {
+  CheckCircle2, Star, Flame, Tv, FileText, Trophy, BookOpen, Lightbulb, HelpCircle, Bot
+} from 'lucide-react';
+
 
 export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   const { gameState, completeLesson, addXP, toggleBookmark } = useGame();

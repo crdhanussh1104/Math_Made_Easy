@@ -6,7 +6,6 @@ import { FloatingPiBot } from './components/chat/FloatingPiBot';
 import { OfflineNotice } from './components/ui/OfflineNotice';
 import { Home } from './pages/Home';
 import { Learn } from './pages/Learn';
-import { Documentation } from './pages/Documentation';
 import { Quiz } from './pages/Quiz';
 import { Library } from './pages/Library';
 import { Dashboard } from './pages/Dashboard';
@@ -55,8 +54,6 @@ function AppContent() {
             onSelectChapter={(id) => setSelectedChapterId(id)}
           />
         )}
-
-        {currentPage === 'documentation' && <Documentation />}
 
         {currentPage === 'olympiadHub' && (
           <OlympiadHub

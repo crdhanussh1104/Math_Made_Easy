@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGame } from '../../context/GameContext';
 import { useLanguage } from '../../context/LanguageContext';
-import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem, Trophy, FileText } from 'lucide-react';
+import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem, Trophy } from 'lucide-react';
 import { ClassSelector } from '../ui/ClassSelector';
 import { LanguageSelector } from '../ui/LanguageSelector';
 import { ThemeToggle } from '../ui/ThemeToggle';
@@ -13,7 +13,6 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
   const navItems = [
     { id: 'home', label: t('nav_home') || 'Home', icon: Home },
     { id: 'learn', label: t('nav_learn') || 'Syllabus', icon: BookOpen },
-    { id: 'documentation', label: 'Documentation', icon: FileText },
     { id: 'quiz', label: t('nav_practice') || 'Practice', icon: HelpCircle },
     { id: 'threeLab', label: t('nav_lab') || '3D Lab', icon: Box },
     { id: 'profile', label: t('nav_profile') || 'Profile', icon: User }
