@@ -342,6 +342,30 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           )}
         </div>
 
+        {/* Video Disclaimer */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '8px',
+          padding: '10px 14px',
+          borderRadius: 'var(--radius-sm)',
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border-light)',
+          opacity: 0.75
+        }}>
+          <span style={{ fontSize: '0.95rem', flexShrink: 0, marginTop: '1px' }}>ℹ️</span>
+          <p style={{
+            fontSize: '1rem',
+            color: 'var(--text-muted)',
+            lineHeight: '1.5',
+            margin: 0,
+            fontStyle: 'italic'
+          }}>
+            <strong style={{ fontStyle: 'normal', color: 'var(--text-main)', fontWeight: '700' }}>Disclaimer:</strong>{' '}
+            The videos provided on this platform are embedded from their respective YouTube channels and content creators. We do not claim ownership of these videos. All rights and credits belong to the respective channel owners and creators. The videos are shared solely for educational purposes and convenience.
+          </p>
+        </div>
+
         {/* 3. Subtopic Name & Auto-tracked 3-Part Milestone Progress */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px', width: '100%' }}>
           <div>
