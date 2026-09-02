@@ -5,6 +5,7 @@
  */
 
 import { searchICSEKnowledgeBase } from '../data/icseRAGKnowledgeBase';
+import { searchCBSEKnowledgeBase } from '../data/cbseRAGKnowledgeBase';
 
 // Helper to convert number to Roman Numeral up to 39
 function toRoman(num) {
@@ -54,15 +55,18 @@ function getFactors(n) {
 export function solveMathQuestion(query, mode = 'full') {
   const q = query.trim().toLowerCase();
 
-  // 0. RAG Knowledge Base Lookup for ICSE Textbook PDFs & Chapters
-  const ragMatches = searchICSEKnowledgeBase(query);
-  if (ragMatches && ragMatches.length > 0 && (q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('link') || q.includes('download') || q.includes('icse') || q.includes('class') || q.includes('selina') || q.includes('math'))) {
-    const top = ragMatches.slice(0, 5);
-    let resp = `📚 **ICSE Board Mathematics RAG Knowledge Base Search Results:**\n\n`;
+  // 0. RAG Knowledge Base Lookup for CBSE & ICSE Textbook PDFs & Chapters
+  const cbseMatches = searchCBSEKnowledgeBase(query);
+  const icseMatches = searchICSEKnowledgeBase(query);
+  const allMatches = [...cbseMatches, ...icseMatches];
+
+  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('link') || q.includes('download') || q.includes('icse') || q.includes('class') || q.includes('selina') || q.includes('math'))) {
+    const top = allMatches.slice(0, 5);
+    let resp = `📚 **CBSE / NCERT & ICSE Mathematics RAG Knowledge Base Search Results:**\n\n`;
     top.forEach((item, idx) => {
       resp += `**${idx + 1}. ${item.topic}**\n`;
-      resp += `- 📄 **Reference:** ${item.textbook_ref}\n`;
-      resp += `- 🔗 **Download Official Chapter PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n\n`;
+      resp += `- 🏛️ **Board:** ${item.board} • **Reference:** ${item.textbook_ref}\n`;
+      resp += `- 🔗 **Download Textbook PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n\n`;
     });
     return resp;
   }
