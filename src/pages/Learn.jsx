@@ -347,19 +347,20 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
           <div style={{ fontWeight: '700', fontSize: '0.9rem', color: 'var(--text-main)' }}>
             {t('progress') || 'Progress'}:
           </div>
-          <ProgressBar progress={((activeLessonIdx + 1) / activeChap.lessons.length) * 100} color={activeChap.color || '#4f46e5'} showLabel />
+          <ProgressBar progress={((activeLessonIdx + 1) / (activeChap?.lessons?.length || 1)) * 100} color={activeChap?.color || '#4f46e5'} showLabel />
         </div>
 
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontWeight: '700', fontFamily: 'var(--font-rounded)', fontSize: '0.95rem' }}>
           <div style={{ color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Star size={20} fill="var(--secondary)" /> +{activeLesson.xp || 15} XP
+            <Star size={20} fill="var(--secondary)" /> +{activeLesson?.xp || 15} XP
           </div>
           <div style={{ color: 'var(--orange)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Flame size={20} fill="var(--orange)" /> {t('header_streak', { streak: gameState.streak })}
+            <Flame size={20} fill="var(--orange)" /> {t('header_streak', { streak: gameState?.streak || 0 })}
           </div>
         </div>
       </CardRounded>
+
 
       {/* 3. Main Workspace Navigation Tabs */}
       <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
@@ -427,14 +428,14 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       {/* TAB 3: OLYMPIAD INSIGHTS & RECOMMENDATION ENGINE */}
       {workspaceTab === 'olympiad' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <OlympiadInsightsNLP chapterId={activeChap.id} />
-          <OlympiadInsights chapterId={activeChap.id} />
+          <OlympiadInsightsNLP chapterId={activeChap?.id} />
+          <OlympiadInsights chapterId={activeChap?.id} />
         </div>
       )}
 
       {/* TAB 4: NCERT TEXTBOOK PDF READER */}
       {workspaceTab === 'textbook' && (() => {
-        const pdfUrl = getTextbookPdfUrl(selectedClassId, activeChap.number);
+        const pdfUrl = getTextbookPdfUrl(selectedClassId, activeChap?.number || 1);
         return (
           <TextbookReader
             pdfUrl={pdfUrl}
@@ -454,7 +455,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
               <div>
                 <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
-                  {t('class_label', { classNum })} ICSE • {activeChap.title}
+                  {t('class_label', { classNum })} ICSE • {activeChap?.title || ''}
                 </span>
                 <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '700', color: '#1e293b' }}>
                   {t('formula_cards_title')}
@@ -484,15 +485,15 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       {/* TAB 6: PRACTICE VISUALIZER */}
       {workspaceTab === 'practice' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {activeChap.id === 'chap_1' || activeChap.id === 'c4_chap_1' ? (
+          {activeChap?.id === 'chap_1' || activeChap?.id === 'c4_chap_1' ? (
             <AbacusVisualizer targetNumber={420513} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_4' || activeChap.id === 'c4_chap_4' ? (
+          ) : activeChap?.id === 'chap_4' || activeChap?.id === 'c4_chap_4' ? (
             <FractionPizza targetNumerator={3} targetDenominator={8} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_5' || activeChap.id === 'c4_chap_5' ? (
+          ) : activeChap?.id === 'chap_5' || activeChap?.id === 'c4_chap_5' ? (
             <ShapeBuilder onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_6' || activeChap.id === 'c4_chap_6' ? (
+          ) : activeChap?.id === 'chap_6' || activeChap?.id === 'c4_chap_6' ? (
             <BalanceScale targetWeightsCount={4} onVerify={handleLessonComplete} />
-          ) : activeChap.id === 'chap_7' || activeChap.id === 'c4_chap_7' ? (
+          ) : activeChap?.id === 'chap_7' || activeChap?.id === 'c4_chap_7' ? (
             <ClockInteractive targetHour={3} targetMinute={30} onVerify={handleLessonComplete} />
           ) : (
             <GraphBuilder />
@@ -503,14 +504,15 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       {/* TAB 7: CHAPTER QUIZ */}
       {workspaceTab === 'quiz' && (
         <QuizPlayer
-          chapterId={activeChap.id}
-          topicId={activeLesson?.id}
-          themeTitle={activeChap.themeName || activeChap.title}
-          topicTitle={activeLesson?.title || activeChap.title}
+          chapterId={activeChap?.id || ''}
+          topicId={activeLesson?.id || ''}
+          themeTitle={activeChap?.themeName || activeChap?.title || ''}
+          topicTitle={activeLesson?.title || activeChap?.title || ''}
           classNameText={`${t('class_label', { classNum })} ICSE`}
           onComplete={handleLessonComplete}
         />
       )}
+
 
       {/* TAB 8: ASK PI-BOT AI TUTOR */}
       {workspaceTab === 'pibot' && (
