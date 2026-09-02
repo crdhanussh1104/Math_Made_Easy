@@ -1,165 +1,29 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useGame } from '../context/GameContext';
+import { useLanguage } from '../context/LanguageContext';
+import { CardRounded } from '../components/ui/CardRounded';
+import { ProgressBar } from '../components/ui/ProgressBar';
 import { getChaptersForClass } from '../data/chapters';
 import { getClassFormulaCards, getFormulaCardsForChapter, getFormulaCardsForTopic } from '../data/classFormulaCards';
-import { getTextbookPdfUrl } from '../data/textbookPdfMap';
-import { CardRounded } from '../components/ui/CardRounded';
-import { Button3D } from '../components/ui/Button3D';
-import { ProgressBar } from '../components/ui/ProgressBar';
-import { BadgeChip } from '../components/ui/BadgeChip';
-import { MascotWidget } from '../components/ui/MascotWidget';
-import { QuizPlayer } from '../components/quiz/QuizPlayer';
-import { ChatWindow } from '../components/chat/ChatWindow';
+import { TextbookReader } from '../components/learning/TextbookReader';
+import { VideoPlayerModule } from '../components/learning/VideoPlayerModule';
 import { InteractiveNotes } from '../components/learning/InteractiveNotes';
 import { OlympiadInsights } from '../components/learning/OlympiadInsights';
 import { OlympiadInsightsNLP } from '../components/learning/OlympiadInsightsNLP';
-import { VideoPlayerModule } from '../components/learning/VideoPlayerModule';
 import { FormulaCard3D } from '../components/library/FormulaCard3D';
+import { QuizPlayer } from '../components/quiz/QuizPlayer';
+import { ChatWindow } from '../components/chat/ChatWindow';
+import { RewardModal } from '../components/gamification/RewardModal';
 import { AbacusVisualizer } from '../components/visualizers/AbacusVisualizer';
 import { FractionPizza } from '../components/visualizers/FractionPizza';
-import { ClockInteractive } from '../components/visualizers/ClockInteractive';
-import { BalanceScale } from '../components/visualizers/BalanceScale';
 import { ShapeBuilder } from '../components/visualizers/ShapeBuilder';
+import { BalanceScale } from '../components/visualizers/BalanceScale';
+import { ClockInteractive } from '../components/visualizers/ClockInteractive';
 import { GraphBuilder } from '../components/visualizers/GraphBuilder';
-import { CubeViewer } from '../components/three/CubeViewer';
-import { RewardModal } from '../components/gamification/RewardModal';
-import { useGame } from '../context/GameContext';
-import { useLanguage } from '../context/LanguageContext';
-import { speechFx } from '../utils/speech';
-import { soundFx } from '../utils/audioSynth';
 import {
-  Tv, BookOpen, FileText, Lightbulb, HelpCircle, Bot, Sparkles,
-  CheckCircle2, Star, Flame, Bookmark, ArrowRight, Volume2, Trophy,
-  ChevronDown, ChevronUp, ZoomIn, ZoomOut, Eye, AlertTriangle, Check, X, Clock
+  CheckCircle2, Star, Flame, Tv, FileText, Trophy, BookOpen, Lightbulb, HelpCircle, Bot
 } from 'lucide-react';
 
-/** TextbookReader – self-contained PDF viewer with loading spinner */
-const TextbookReader = ({ pdfUrl, activeChap, activeLesson, classNum, t }) => {
-  const [pdfLoaded, setPdfLoaded] = useState(false);
-
-  // Reset loaded state whenever the PDF URL changes (chapter switch)
-  useEffect(() => { setPdfLoaded(false); }, [pdfUrl]);
-
-  return (
-    <>
-      {/* Keyframe for spinner – injected once, tiny cost */}
-      <style>{`@keyframes _tbSpin{to{transform:rotate(360deg)}}`}</style>
-
-      <CardRounded style={{ display: 'flex', flexDirection: 'column', gap: '0', padding: '0', overflow: 'hidden' }}>
-
-        {/* ── Header bar ── */}
-        <div style={{
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          flexWrap: 'wrap', gap: '12px', padding: '16px 20px',
-          background: `linear-gradient(90deg, ${activeChap.color || '#4f46e5'}18 0%, transparent 100%)`,
-          borderBottom: '1px solid var(--border-color, #e2e8f0)'
-        }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span style={{
-              fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase',
-              letterSpacing: '0.8px', color: activeChap.color || '#4f46e5',
-              display: 'flex', alignItems: 'center', gap: '6px'
-            }}>
-              <BookOpen size={14} />
-              NCERT Mathematics • {t('class_label', { classNum })} • Chapter {activeChap.number || ''}
-            </span>
-            <span style={{ fontSize: '1rem', fontWeight: '700', color: '#1e293b' }}>
-              {activeChap.title}
-            </span>
-            {activeLesson && (
-              <span style={{ fontSize: '0.82rem', color: '#64748b', fontWeight: '600' }}>
-                📌 {activeLesson.title}
-              </span>
-            )}
-          </div>
-
-          {pdfUrl && (
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <a
-                href={pdfUrl}
-                download
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '6px',
-                  padding: '8px 14px', borderRadius: 'var(--radius-full)',
-                  background: activeChap.color || '#4f46e5', color: '#fff',
-                  fontWeight: '700', fontSize: '0.82rem', textDecoration: 'none',
-                  boxShadow: `0 3px 8px ${activeChap.color || '#4f46e5'}40`
-                }}
-              >
-                ⬇ Download PDF
-              </a>
-              <a
-                href={pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '6px',
-                  padding: '8px 14px', borderRadius: 'var(--radius-full)',
-                  background: 'var(--bg-card-solid, #f8fafc)',
-                  border: '1.5px solid var(--border-color, #e2e8f0)',
-                  color: '#475569', fontWeight: '700', fontSize: '0.82rem',
-                  textDecoration: 'none'
-                }}
-              >
-                ↗ Open in tab
-              </a>
-            </div>
-          )}
-        </div>
-
-        {/* ── PDF viewer / unavailable fallback ── */}
-        {pdfUrl ? (
-          <div style={{ position: 'relative', width: '100%', height: '75vh' }}>
-
-            {/* Loading spinner overlay */}
-            {!pdfLoaded && (
-              <div style={{
-                position: 'absolute', inset: 0,
-                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                gap: '14px', background: '#f8fafc', zIndex: 2
-              }}>
-                <div style={{
-                  width: '48px', height: '48px', borderRadius: '50%',
-                  border: `4px solid ${activeChap.color || '#4f46e5'}30`,
-                  borderTopColor: activeChap.color || '#4f46e5',
-                  animation: '_tbSpin 0.8s linear infinite'
-                }} />
-                <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#64748b' }}>
-                  Loading textbook…
-                </span>
-              </div>
-            )}
-
-            <iframe
-              key={pdfUrl}
-              src={pdfUrl}
-              title={`NCERT ${t('class_label', { classNum })} Chapter ${activeChap.number} – ${activeChap.title}`}
-              onLoad={() => setPdfLoaded(true)}
-              style={{
-                width: '100%', height: '100%',
-                border: 'none', display: 'block',
-                opacity: pdfLoaded ? 1 : 0,
-                transition: 'opacity 0.3s ease'
-              }}
-            />
-          </div>
-        ) : (
-          <div style={{
-            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-            gap: '12px', padding: '60px 24px', textAlign: 'center', color: '#64748b'
-          }}>
-            <Clock size={40} color="#94a3b8" />
-            <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#334155' }}>
-              Textbook PDF Coming Soon
-            </div>
-            <p style={{ fontSize: '0.9rem', lineHeight: '1.6', margin: 0, maxWidth: '420px' }}>
-              The official NCERT chapter PDF for <strong>{activeChap.title}</strong> ({t('class_label', { classNum })}) will be available shortly.
-            </p>
-          </div>
-        )}
-      </CardRounded>
-    </>
-  );
-};
 
 export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   const { gameState, completeLesson, addXP, toggleBookmark } = useGame();
@@ -434,18 +298,15 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       )}
 
       {/* TAB 4: NCERT TEXTBOOK PDF READER */}
-      {workspaceTab === 'textbook' && (() => {
-        const pdfUrl = getTextbookPdfUrl(selectedClassId, activeChap?.number || 1);
-        return (
-          <TextbookReader
-            pdfUrl={pdfUrl}
-            activeChap={activeChap}
-            activeLesson={activeLesson}
-            classNum={classNum}
-            t={t}
-          />
-        );
-      })()}
+      {workspaceTab === 'textbook' && (
+        <TextbookReader
+          chapter={activeChap}
+          activeLesson={activeLesson}
+          classId={selectedClassId}
+          t={t}
+        />
+      )}
+
 
 
       {/* TAB 5: 3D FLIP FORMULA CARDS */}

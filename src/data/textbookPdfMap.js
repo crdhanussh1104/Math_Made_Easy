@@ -1,4 +1,4 @@
-﻿/**
+/**
  * textbookPdfMap.js
  *
  * Maps class IDs + chapter numbers to the correct NCERT chapter PDF path.
@@ -16,6 +16,38 @@
  *   Class 9  -> iemh1XX  (ch 1-8)
  *   Class 10 -> jemh1XX  (ch 1-14)
  */
+
+import class1Links from '../../isce textbook links/class1.json';
+import class2Links from '../../isce textbook links/class2.json';
+import class3Links from '../../isce textbook links/class3.json';
+import class4Links from '../../isce textbook links/class4.json';
+import class5Links from '../../isce textbook links/class5.json';
+import class6Links from '../../isce textbook links/class6.json';
+import class7Links from '../../isce textbook links/class7.json';
+import class8Links from '../../isce textbook links/class8.json';
+import class9Links from '../../isce textbook links/class9.json';
+import class10Links from '../../isce textbook links/class10.json';
+
+const ALL_LINKS = {
+  class1: class1Links,
+  class2: class2Links,
+  class3: class3Links,
+  class4: class4Links,
+  class5: class5Links,
+  class6: class6Links,
+  class7: class7Links,
+  class8: class8Links,
+  class9: class9Links,
+  class10: class10Links,
+};
+
+export function getLessonPdfUrl(classId, lessonId) {
+  const links = ALL_LINKS[classId];
+  if (links && links[lessonId]) {
+    return links[lessonId];
+  }
+  return null;
+}
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
