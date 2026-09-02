@@ -213,8 +213,18 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
     );
   }
 
-  const activeChap = chapters.find(c => c.id === activeChapId) || chapters[0];
-  const activeLesson = activeChap.lessons[activeLessonIdx] || activeChap.lessons[0];
+  const activeChap = (chapters && chapters.find(c => c.id === activeChapId)) || (chapters && chapters[0]) || null;
+  const activeLesson = (activeChap && activeChap.lessons && (activeChap.lessons[activeLessonIdx] || activeChap.lessons[0])) || null;
+
+  if (!activeChap || !activeLesson) {
+    return (
+      <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
+        <h2>{t('learn_title')} {t('class_label', { classNum })}</h2>
+        <p style={{ marginTop: '8px' }}>Loading lesson details...</p>
+      </div>
+    );
+  }
+
 
   // Strictly Class-Specific & Topic-Specific formulas for current lesson/chapter
   const relevantFormulas = useMemo(() => {

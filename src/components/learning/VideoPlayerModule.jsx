@@ -14,8 +14,12 @@ import {
 export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson }) => {
   const { gameState, completeLesson, addXP } = useGame();
   
+  const lessonId = activeLesson?.id || '';
+  const chapId = chapter?.id || '';
+  const chapColor = chapter?.color || '#58cc02';
+
   // Dynamically load videos for the currently selected lesson
-  const playlist = getVideosForLesson(activeLesson.id);
+  const playlist = lessonId ? getVideosForLesson(lessonId) : [];
 
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const [embedError, setEmbedError] = useState(false);
@@ -30,7 +34,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   const intervalRef = useRef(null);
 
   const currentVideo = playlist[activeVideoIdx] || null;
-  const currentVideoKey = currentVideo ? (currentVideo.id || `${activeLesson.id}_vid_${activeVideoIdx}`) : '';
+  const currentVideoKey = currentVideo ? (currentVideo.id || `${lessonId}_vid_${activeVideoIdx}`) : '';
   const videoId = currentVideo?.videoId || (currentVideo?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]) || '';
   const youtubeWatchUrl = currentVideo?.originalUrl || `https://www.youtube.com/watch?v=${videoId}`;
   const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
@@ -51,7 +55,9 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      if (firstScriptTag && firstScriptTag.parentNode) {
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
     }
   }, []);
 
@@ -61,7 +67,8 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     setEmbedError(false);
     setCurrentPct(0);
     setIsPlaying(false);
-  }, [activeLesson.id, chapter.id]);
+  }, [lessonId, chapId]);
+
 
   useEffect(() => {
     if (!videoId) return;

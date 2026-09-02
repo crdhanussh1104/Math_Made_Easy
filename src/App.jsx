@@ -4,7 +4,9 @@ import { LanguageProvider } from './context/LanguageContext';
 import { HeaderStats } from './components/gamification/HeaderStats';
 import { FloatingPiBot } from './components/chat/FloatingPiBot';
 import { OfflineNotice } from './components/ui/OfflineNotice';
+import { ErrorBoundary } from './components/ui/ErrorBoundary';
 import { Home } from './pages/Home';
+
 import { Learn } from './pages/Learn';
 import { Quiz } from './pages/Quiz';
 import { Library } from './pages/Library';
@@ -105,49 +107,51 @@ function AppContent() {
       <HeaderStats currentPage={currentPage} onNavigate={navigateTo} />
 
       {/* Main Content Area filling wide screens with rich responsive proportions */}
-      <main
-        key={currentPage}
-        className="app-main-content page-enter"
-      >
-        {currentPage === 'home' && (
-          <Home
-            onNavigate={navigateTo}
-            onSelectChapter={setSelectedChapterId}
-          />
-        )}
+      <ErrorBoundary key={currentPage}>
+        <main
+          className="app-main-content page-enter"
+        >
+          {currentPage === 'home' && (
+            <Home
+              onNavigate={navigateTo}
+              onSelectChapter={setSelectedChapterId}
+            />
+          )}
 
-        {currentPage === 'learn' && (
-          <Learn
-            selectedChapterId={selectedChapterId}
-            onNavigate={navigateTo}
-            onSelectChapter={setSelectedChapterId}
-          />
-        )}
+          {currentPage === 'learn' && (
+            <Learn
+              selectedChapterId={selectedChapterId}
+              onNavigate={navigateTo}
+              onSelectChapter={setSelectedChapterId}
+            />
+          )}
 
-        {currentPage === 'olympiadHub' && (
-          <OlympiadHub
-            onNavigate={navigateTo}
-            onSelectChapter={setSelectedChapterId}
-          />
-        )}
+          {currentPage === 'olympiadHub' && (
+            <OlympiadHub
+              onNavigate={navigateTo}
+              onSelectChapter={setSelectedChapterId}
+            />
+          )}
 
-        {currentPage === 'quiz' && (
-          <Quiz
-            selectedChapterId={selectedChapterId}
-            onNavigate={navigateTo}
-          />
-        )}
+          {currentPage === 'quiz' && (
+            <Quiz
+              selectedChapterId={selectedChapterId}
+              onNavigate={navigateTo}
+            />
+          )}
 
-        {currentPage === 'library' && <Library />}
+          {currentPage === 'library' && <Library />}
 
-        {currentPage === 'threeLab' && <ThreeLab />}
+          {currentPage === 'threeLab' && <ThreeLab />}
 
-        {currentPage === 'arLab' && <ARLab />}
+          {currentPage === 'arLab' && <ARLab />}
 
-        {currentPage === 'dashboard' && <Dashboard />}
+          {currentPage === 'dashboard' && <Dashboard />}
 
-        {currentPage === 'profile' && <Profile />}
-      </main>
+          {currentPage === 'profile' && <Profile />}
+        </main>
+      </ErrorBoundary>
+
 
       {/* Global Floating Pi-Bot Assistant */}
       <FloatingPiBot onNavigate={navigateTo} />
