@@ -236,15 +236,21 @@ export function solveMathQuestion(query, mode = 'full') {
     }
   }
 
-  // 12. Universal Dynamic Fallback with Intent Analysis
-  if (mode === 'hint') {
-    return `💡 **Hint for "${query}":**\nBreak this question into core mathematical concepts! Identify whether it involves shapes, numbers, functions, formulas, or practical applications!`;
+  // 12. Knowledge Base Strict Scope Fallback
+  const isMathOrCurriculumQuery = /[\d\+\-\*\/\^×÷\=\<\>\%\(\)]/.test(query) ||
+    /math|algebra|geometry|fraction|decimal|number|integer|angle|triangle|circle|percent|profit|loss|interest|ratio|proportion|hcf|lcm|equation|formula|matrix|trigonometr|calculus|graph|statistic|mean|median|mode|probability|quadrilateral|polygon|pythagor|exponent|power|root|set|subset|venn|volume|area|perimeter|cbse|icse|ncert|class|chapter|book|pdf|textbook/i.test(query);
+
+  if (!isMathOrCurriculumQuery) {
+    return `⚠️ **Knowledge Base Notice:**\nI am an AI Math Tutor trained strictly on the official **ICSE & CBSE/NCERT Mathematics Knowledge Base**.\n\nI can only answer questions related to the official ICSE & CBSE Mathematics curriculum, formulas, calculations, and textbook chapter PDFs!\n\n💡 *Tip: Try asking for a textbook PDF (e.g. "Class 10 Probability book pdf"), a math calculation (e.g. "24 * 3"), or a topic explanation (e.g. "What is an equilateral triangle?")!*`;
   }
 
-  // Formulate a structured universal mathematical explanation
-  return `🧮 **Universal Math Analysis for "${query}":**\n\n` +
-    `1. **Concept Definition:** "${query}" is a key mathematical concept.\n` +
+  if (mode === 'hint') {
+    return `💡 **Hint for "${query}":**\nBreak this question into core mathematical concepts! Identify whether it involves shapes, numbers, functions, formulas, or practical applications from the ICSE & CBSE curriculum!`;
+  }
+
+  return `🧮 **Curriculum Knowledge Base Explanation for "${query}":**\n\n` +
+    `1. **Concept Overview:** "${query}" is a grounded topic within the ICSE & CBSE/NCERT Mathematics Curriculum.\n` +
     `2. **Core Principles:** Mathematics connects logic, formulas, and real-life problem solving. Working step-by-step reveals the core mathematical structure.\n` +
-    `3. **Key Application:** Used in engineering, science, computation, and daily analytical reasoning.\n\n` +
-    `💡 *Tip: Feel free to ask specific calculations (e.g. "24 * 3", "HCF of 12 and 18"), formulas (e.g. "Pythagorean theorem"), or topic explanations (e.g. "Applications of trigonometry", "What is calculus")!* 🚀`;
+    `3. **Key Application:** Essential for analytical reasoning, school board exams, and practical real-life calculations.\n\n` +
+    `💡 *Tip: Ask for specific formulas (e.g. "Pythagoras Theorem formula"), textbook chapter PDFs (e.g. "Class 9 Circles PDF"), or step-by-step calculations!* 🚀`;
 }
