@@ -4,6 +4,8 @@
  * (In-syllabus ICSE Class 4 as well as Universal Math: Trigonometry, Calculus, Algebra, Statistics, Geometry, etc.)
  */
 
+import { searchICSEKnowledgeBase } from '../data/icseRAGKnowledgeBase';
+
 // Helper to convert number to Roman Numeral up to 39
 function toRoman(num) {
   if (num < 1 || num > 39) return null;
@@ -51,6 +53,19 @@ function getFactors(n) {
 
 export function solveMathQuestion(query, mode = 'full') {
   const q = query.trim().toLowerCase();
+
+  // 0. RAG Knowledge Base Lookup for ICSE Textbook PDFs & Chapters
+  const ragMatches = searchICSEKnowledgeBase(query);
+  if (ragMatches && ragMatches.length > 0 && (q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('link') || q.includes('download') || q.includes('icse') || q.includes('class') || q.includes('selina') || q.includes('math'))) {
+    const top = ragMatches.slice(0, 5);
+    let resp = `📚 **ICSE Board Mathematics RAG Knowledge Base Search Results:**\n\n`;
+    top.forEach((item, idx) => {
+      resp += `**${idx + 1}. ${item.topic}**\n`;
+      resp += `- 📄 **Reference:** ${item.textbook_ref}\n`;
+      resp += `- 🔗 **Download Official Chapter PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n\n`;
+    });
+    return resp;
+  }
 
   // 1. Direct Arithmetic Calculations (e.g., "24 * 3", "450 + 280", "100 / 4", "25 - 18", "3 ^ 4")
   const exprMatch = query.match(/(\d+(?:\.\d+)?)\s*([\+\-\*\/\^×÷])\s*(\d+(?:\.\d+)?)/);
