@@ -107,8 +107,8 @@ export const ThreeLab = () => {
       </CardRounded>
 
       {/* Class Selector Bar: Classes 1 to 10 */}
-      <div style={{ background: '#ffffff', padding: '16px 20px', borderRadius: '16px', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' }}>
-        <div style={{ fontSize: '0.85rem', fontWeight: '800', color: '#475569', textTransform: 'uppercase', marginBottom: '10px' }}>
+      <div style={{ background: 'var(--bg-card-solid)', padding: '16px 20px', borderRadius: '16px', border: '1.5px solid var(--border-light)', boxShadow: 'var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.02))' }}>
+        <div style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px' }}>
           {t('select_class') || 'Select Grade / Class:'}:
         </div>
         <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
@@ -121,16 +121,15 @@ export const ThreeLab = () => {
                 style={{
                   padding: '10px 18px',
                   borderRadius: '12px',
-                  border: 'none',
-                  background: isActive ? 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)' : '#f8fafc',
-                  color: isActive ? '#ffffff' : '#334155',
+                  border: isActive ? 'none' : '1px solid var(--border-light)',
+                  background: isActive ? 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)' : 'var(--bg-main)',
+                  color: isActive ? '#ffffff' : 'var(--text-main)',
                   fontWeight: '800',
                   fontFamily: 'var(--font-rounded)',
                   fontSize: '0.95rem',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   boxShadow: isActive ? '0 4px 14px rgba(79, 70, 229, 0.4)' : 'none',
-                  border: isActive ? 'none' : '1px solid #e2e8f0',
                   transition: 'all 0.15s ease'
                 }}
               >
@@ -145,7 +144,7 @@ export const ThreeLab = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Search Input */}
         <div style={{ position: 'relative', width: '100%', maxWidth: '400px' }}>
-          <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+          <Search size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
           <input
             type="text"
             placeholder={t('search_placeholder')}
@@ -155,11 +154,12 @@ export const ThreeLab = () => {
               width: '100%',
               padding: '12px 14px 12px 42px',
               borderRadius: '12px',
-              border: '1.5px solid #cbd5e1',
+              border: '1.5px solid var(--border-light)',
               fontSize: '0.95rem',
               fontWeight: '600',
               outline: 'none',
-              background: '#ffffff'
+              background: 'var(--bg-card-solid)',
+              color: 'var(--text-main)'
             }}
           />
         </div>
@@ -173,9 +173,9 @@ export const ThreeLab = () => {
               style={{
                 padding: '8px 14px',
                 borderRadius: 'var(--radius-full)',
-                border: 'none',
-                background: selectedTheme === th ? '#4f46e5' : '#f1f5f9',
-                color: selectedTheme === th ? '#ffffff' : '#475569',
+                border: selectedTheme === th ? 'none' : '1px solid var(--border-light)',
+                background: selectedTheme === th ? 'var(--primary, #4f46e5)' : 'var(--bg-card-solid)',
+                color: selectedTheme === th ? '#ffffff' : 'var(--text-muted)',
                 fontWeight: '700',
                 fontSize: '0.85rem',
                 cursor: 'pointer',

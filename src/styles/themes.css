@@ -189,3 +189,28 @@
 [data-theme="cyber"] .daily-math-wonder .wonder-author {
   color: #94a3b8 !important;
 }
+
+/* 6. 3D Lab and Activity Cards Theme Rules */
+.lab-activity-card {
+  background-color: var(--bg-card-solid);
+}
+
+[data-theme="dark"] .lab-activity-card h3,
+[data-theme="space"] .lab-activity-card h3,
+[data-theme="cyber"] .lab-activity-card h3 {
+  color: #f3f4f6 !important;
+}
+
+[data-theme="dark"] .lab-activity-card p,
+[data-theme="space"] .lab-activity-card p,
+[data-theme="cyber"] .lab-activity-card p {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .lab-activity-card .interaction-box,
+[data-theme="space"] .lab-activity-card .interaction-box,
+[data-theme="cyber"] .lab-activity-card .interaction-box {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}

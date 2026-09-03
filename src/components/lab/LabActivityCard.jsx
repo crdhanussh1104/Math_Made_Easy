@@ -12,15 +12,16 @@ export const LabActivityCard = ({ activity, onStart, isCompleted = false }) => {
 
   return (
     <CardRounded
+      className="lab-activity-card"
       style={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100%',
         padding: '24px',
-        border: isCompleted ? '2px solid #86efac' : '2px solid #e2e8f0',
-        background: isCompleted ? 'linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)' : '#ffffff',
-        boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+        border: isCompleted ? '2px solid #86efac' : '1.5px solid var(--border-light, #e2e8f0)',
+        background: isCompleted ? 'var(--bg-card-solid)' : 'var(--bg-card-solid)',
+        boxShadow: 'var(--shadow-sm, 0 4px 16px rgba(0,0,0,0.04))',
         transition: 'all 0.2s ease'
       }}
     >
@@ -29,8 +30,8 @@ export const LabActivityCard = ({ activity, onStart, isCompleted = false }) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span style={{
-              background: '#e0e7ff',
-              color: '#4338ca',
+              background: 'var(--primary-light, rgba(79, 70, 229, 0.15))',
+              color: 'var(--primary, #4f46e5)',
               fontSize: '0.75rem',
               fontWeight: '800',
               padding: '3px 8px',
@@ -40,7 +41,7 @@ export const LabActivityCard = ({ activity, onStart, isCompleted = false }) => {
               {classDisplay}
             </span>
             <span style={{
-              background: `${difficultyColor}18`,
+              background: `${difficultyColor}25`,
               color: difficultyColor,
               fontSize: '0.75rem',
               fontWeight: '800',
@@ -51,30 +52,41 @@ export const LabActivityCard = ({ activity, onStart, isCompleted = false }) => {
             </span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#64748b', fontSize: '0.8rem', fontWeight: '700' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontSize: '0.8rem', fontWeight: '700' }}>
             <Clock size={14} /> {activity.estimatedTime} min
           </div>
         </div>
 
         {/* Theme Tag */}
-        <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#0284c7', marginBottom: '4px' }}>
+        <div style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--secondary, #0284c7)', marginBottom: '6px' }}>
           {activity.theme}
         </div>
 
         {/* Title */}
-        <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#1e293b', lineHeight: '1.35', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-main)', lineHeight: '1.35', marginBottom: '8px' }}>
           {activity.title}
         </h3>
 
         {/* Learning Objective */}
-        <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.5', marginBottom: '16px' }}>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5', marginBottom: '16px' }}>
           {activity.objective}
         </p>
       </div>
 
       <div>
         {/* Interaction Type Pill */}
-        <div style={{ fontSize: '0.78rem', color: '#64748b', background: '#f8fafc', padding: '6px 10px', borderRadius: '8px', marginBottom: '16px', border: '1px solid #edf2f7' }}>
+        <div
+          className="interaction-box"
+          style={{
+            fontSize: '0.78rem',
+            color: 'var(--text-main)',
+            background: 'var(--primary-light, rgba(99, 102, 241, 0.08))',
+            padding: '8px 12px',
+            borderRadius: '8px',
+            marginBottom: '16px',
+            border: '1px solid var(--border-light, #edf2f7)'
+          }}
+        >
           🧪 <strong>Interaction:</strong> {activity.interactionType}
         </div>
 
