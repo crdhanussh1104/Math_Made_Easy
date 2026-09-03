@@ -141,16 +141,38 @@ export const GameProvider = ({ children }) => {
     soundFx.playClick();
   };
 
+  const deductHeart = (amount = 1) => {
+    setGameState(prev => ({
+      ...prev,
+      hearts: Math.max(0, (prev.hearts !== undefined ? prev.hearts : 5) - amount)
+    }));
+    soundFx.playIncorrect();
+  };
+
+  const setGems = (valOrFn) => {
+    setGameState(prev => ({
+      ...prev,
+      gems: typeof valOrFn === 'function' ? valOrFn(prev.gems) : valOrFn
+    }));
+  };
+
+  const equipAvatarItem = (category, itemId) => {
+    equipItem(category, itemId);
+  };
+
   return (
     <GameContext.Provider value={{
       gameState,
       addXP,
       addGems,
+      setGems,
+      deductHeart,
       claimMission,
       markVisited3DLab,
       markAskedPiBot,
       buyInventoryItem,
       equipItem,
+      equipAvatarItem,
       toggleBookmark,
       completeLesson,
       toggleSound,
@@ -164,3 +186,4 @@ export const GameProvider = ({ children }) => {
 };
 
 export const useGame = () => useContext(GameContext);
+

@@ -18,8 +18,29 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   const chapId = chapter?.id || '';
   const chapColor = chapter?.color || '#58cc02';
 
+  // Known list of video IDs that restrict embedding
+  const KNOWN_UNPLAYABLE_IDS = new Set(['nmZqMu3tNoY']);
+
+  const [unplayableVideoIds, setUnplayableVideoIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('mme_unplayable_videos');
+      const parsed = saved ? JSON.parse(saved) : [];
+      return new Set([...KNOWN_UNPLAYABLE_IDS, ...parsed]);
+    } catch {
+      return new Set(KNOWN_UNPLAYABLE_IDS);
+    }
+  });
+
   // Dynamically load videos for the currently selected lesson
-  const playlist = lessonId ? getVideosForLesson(lessonId) : [];
+  const rawPlaylist = lessonId ? getVideosForLesson(lessonId) : [];
+
+  // Keep ONLY videos that are able to play inside the website
+  const filteredPlaylist = rawPlaylist.filter(v => {
+    const vId = v?.videoId || (v?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]);
+    return vId && !unplayableVideoIds.has(vId) && !unplayableVideoIds.has(v?.id);
+  });
+
+  const playlist = filteredPlaylist.length > 0 ? filteredPlaylist : rawPlaylist;
 
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const [embedError, setEmbedError] = useState(false);
@@ -33,8 +54,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   const playerRef = useRef(null);
   const intervalRef = useRef(null);
 
-  const currentVideo = playlist[activeVideoIdx] || null;
-  const currentVideoKey = currentVideo ? (currentVideo.id || `${lessonId}_vid_${activeVideoIdx}`) : '';
+  // Ensure safe index bounds
+  const safeIdx = Math.min(activeVideoIdx, Math.max(0, playlist.length - 1));
+  const currentVideo = playlist[safeIdx] || null;
+  const currentVideoKey = currentVideo ? (currentVideo.id || `${lessonId}_vid_${safeIdx}`) : '';
   const videoId = currentVideo?.videoId || (currentVideo?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]) || '';
   const youtubeWatchUrl = currentVideo?.originalUrl || `https://www.youtube.com/watch?v=${videoId}`;
   const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
@@ -69,7 +92,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     setIsPlaying(false);
   }, [lessonId, chapId]);
 
-
   useEffect(() => {
     if (!videoId) return;
 
@@ -97,8 +119,25 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 stopTracking();
               }
             },
-            onError: () => {
-              setEmbedError(true);
+            onError: (event) => {
+              const errCode = event?.data;
+              console.warn(`YouTube video cannot be played (id: ${videoId}, code: ${errCode}). Filtering out.`);
+              // If there are multiple video options, remove the broken one immediately
+              if (rawPlaylist.length > 1) {
+                setUnplayableVideoIds(prev => {
+                  const next = new Set(prev);
+                  if (videoId) next.add(videoId);
+                  if (currentVideoKey) next.add(currentVideoKey);
+                  try {
+                    localStorage.setItem('mme_unplayable_videos', JSON.stringify(Array.from(next)));
+                  } catch {}
+                  return next;
+                });
+                setActiveVideoIdx(0);
+                setEmbedError(false);
+              } else {
+                setEmbedError(true);
+              }
             }
           }
         });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { GameProvider } from './context/GameContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { HeaderStats } from './components/gamification/HeaderStats';
@@ -9,13 +9,15 @@ import { Home } from './pages/Home';
 
 import { Learn } from './pages/Learn';
 import { Quiz } from './pages/Quiz';
-import { Library } from './pages/Library';
 import { Dashboard } from './pages/Dashboard';
 import { Profile } from './pages/Profile';
-import { ThreeLab } from './pages/ThreeLab';
-import { ARLab } from './pages/ARLab';
-import { OlympiadHub } from './pages/OlympiadHub';
 import './styles/global.css';
+
+// Lazy-loaded routes for code splitting and Web Vitals optimization
+const ThreeLab = lazy(() => import('./pages/ThreeLab').then(m => ({ default: m.ThreeLab })));
+const ARLab = lazy(() => import('./pages/ARLab').then(m => ({ default: m.ARLab })));
+const OlympiadHub = lazy(() => import('./pages/OlympiadHub').then(m => ({ default: m.OlympiadHub })));
+const Library = lazy(() => import('./pages/Library').then(m => ({ default: m.Library })));
 
 const VALID_PAGES = ['home', 'learn', 'olympiadHub', 'quiz', 'library', 'threeLab', 'arLab', 'dashboard', 'profile'];
 
@@ -91,7 +93,7 @@ function AppContent() {
 
   // Register PWA Service Worker for offline support
   useEffect(() => {
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    if ('serviceWorker' in navigator && import.meta.env.PROD) {
       navigator.serviceWorker.register('/sw.js').catch(err => {
         console.log('SW registration standby:', err);
       });
@@ -108,50 +110,49 @@ function AppContent() {
 
       {/* Main Content Area filling wide screens with rich responsive proportions */}
       <ErrorBoundary key={currentPage}>
-        <main
-          className="app-main-content page-enter"
-        >
-          {currentPage === 'home' && (
-            <Home
-              onNavigate={navigateTo}
-              onSelectChapter={setSelectedChapterId}
-            />
-          )}
+        <main className="app-main-content page-enter">
+          <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center', fontWeight: '800', color: 'var(--primary)' }}>Loading interactive module...</div>}>
+            {currentPage === 'home' && (
+              <Home
+                onNavigate={navigateTo}
+                onSelectChapter={setSelectedChapterId}
+              />
+            )}
 
-          {currentPage === 'learn' && (
-            <Learn
-              selectedChapterId={selectedChapterId}
-              onNavigate={navigateTo}
-              onSelectChapter={setSelectedChapterId}
-            />
-          )}
+            {currentPage === 'learn' && (
+              <Learn
+                selectedChapterId={selectedChapterId}
+                onNavigate={navigateTo}
+                onSelectChapter={setSelectedChapterId}
+              />
+            )}
 
-          {currentPage === 'olympiadHub' && (
-            <OlympiadHub
-              onNavigate={navigateTo}
-              onSelectChapter={setSelectedChapterId}
-            />
-          )}
+            {currentPage === 'olympiadHub' && (
+              <OlympiadHub
+                onNavigate={navigateTo}
+                onSelectChapter={setSelectedChapterId}
+              />
+            )}
 
-          {currentPage === 'quiz' && (
-            <Quiz
-              selectedChapterId={selectedChapterId}
-              onNavigate={navigateTo}
-            />
-          )}
+            {currentPage === 'quiz' && (
+              <Quiz
+                selectedChapterId={selectedChapterId}
+                onNavigate={navigateTo}
+              />
+            )}
 
-          {currentPage === 'library' && <Library />}
+            {currentPage === 'library' && <Library />}
 
-          {currentPage === 'threeLab' && <ThreeLab />}
+            {currentPage === 'threeLab' && <ThreeLab />}
 
-          {currentPage === 'arLab' && <ARLab />}
+            {currentPage === 'arLab' && <ARLab />}
 
-          {currentPage === 'dashboard' && <Dashboard />}
+            {currentPage === 'dashboard' && <Dashboard />}
 
-          {currentPage === 'profile' && <Profile />}
+            {currentPage === 'profile' && <Profile />}
+          </Suspense>
         </main>
       </ErrorBoundary>
-
 
       {/* Global Floating Pi-Bot Assistant */}
       <FloatingPiBot onNavigate={navigateTo} />
@@ -168,3 +169,4 @@ export default function App() {
     </GameProvider>
   );
 }
+

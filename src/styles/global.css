@@ -12,6 +12,20 @@
   font-family: var(--font-sans);
 }
 
+/* WCAG 2.4.7 Keyboard Focus Visibility Indicators */
+:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;

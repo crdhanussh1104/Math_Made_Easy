@@ -109,7 +109,7 @@ export const ThreeLab = () => {
       {/* Class Selector Bar: Classes 1 to 10 */}
       <div style={{ background: '#ffffff', padding: '16px 20px', borderRadius: '16px', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.02)' }}>
         <div style={{ fontSize: '0.85rem', fontWeight: '800', color: '#475569', textTransform: 'uppercase', marginBottom: '10px' }}>
-          {t('select_language')}:
+          {t('select_class') || 'Select Grade / Class:'}:
         </div>
         <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(cNum => {

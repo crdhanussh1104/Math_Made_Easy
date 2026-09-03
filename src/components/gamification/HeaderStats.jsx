@@ -79,6 +79,7 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
+                aria-label={`Navigate to ${item.label}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',

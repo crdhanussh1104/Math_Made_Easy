@@ -21,8 +21,9 @@ import { BalanceScale } from '../components/visualizers/BalanceScale';
 import { ClockInteractive } from '../components/visualizers/ClockInteractive';
 import { GraphBuilder } from '../components/visualizers/GraphBuilder';
 import {
-  CheckCircle2, Star, Flame, Tv, FileText, Trophy, BookOpen, Lightbulb, HelpCircle, Bot
+  CheckCircle2, Star, Flame, Tv, FileText, Trophy, BookOpen, Lightbulb, HelpCircle, Bot, Compass
 } from 'lucide-react';
+
 
 
 export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
@@ -69,6 +70,17 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
   // Reward Modal state
   const [showRewardModal, setShowRewardModal] = useState(false);
 
+  const activeChap = (chapters && chapters.find(c => c.id === activeChapId)) || (chapters && chapters[0]) || null;
+  const activeLesson = (activeChap && activeChap.lessons && (activeChap.lessons[activeLessonIdx] || activeChap.lessons[0])) || null;
+
+  // Strictly Class-Specific & Topic-Specific formulas for current lesson/chapter
+  const relevantFormulas = useMemo(() => {
+    if (!activeLesson?.id || !activeChap?.id) return [];
+    const topicCards = getFormulaCardsForTopic(activeLesson.id);
+    if (topicCards.length > 0) return topicCards;
+    return getFormulaCardsForChapter(activeChap.id, classNum);
+  }, [activeLesson?.id, activeChap?.id, classNum]);
+
   if (!chapters || chapters.length === 0) {
     return (
       <div style={{ textAlign: 'center', padding: '60px 20px', color: 'var(--text-muted)' }}>
@@ -76,9 +88,6 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       </div>
     );
   }
-
-  const activeChap = (chapters && chapters.find(c => c.id === activeChapId)) || (chapters && chapters[0]) || null;
-  const activeLesson = (activeChap && activeChap.lessons && (activeChap.lessons[activeLessonIdx] || activeChap.lessons[0])) || null;
 
   if (!activeChap || !activeLesson) {
     return (
@@ -88,15 +97,6 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
       </div>
     );
   }
-
-
-  // Strictly Class-Specific & Topic-Specific formulas for current lesson/chapter
-  const relevantFormulas = useMemo(() => {
-    if (!activeLesson?.id) return [];
-    const topicCards = getFormulaCardsForTopic(activeLesson.id);
-    if (topicCards.length > 0) return topicCards;
-    return getFormulaCardsForChapter(activeChap.id, classNum);
-  }, [activeLesson?.id, activeChap.id, classNum]);
 
   const handleLessonComplete = () => {
     completeLesson(activeLesson.id, 100);
@@ -231,6 +231,7 @@ export const Learn = ({ selectedChapterId, onSelectChapter, onNavigate }) => {
         {[
           { id: 'video', label: t('tab_videos'), icon: Tv },
           { id: 'notes', label: t('tab_notes'), icon: FileText },
+          { id: 'practice', label: t('tab_practice') || 'Practice Visualizer', icon: Compass },
           { id: 'olympiad', label: t('tab_olympiad'), icon: Trophy },
           { id: 'textbook', label: t('tab_reader'), icon: BookOpen },
           { id: 'formulas', label: t('tab_cards'), icon: Lightbulb },

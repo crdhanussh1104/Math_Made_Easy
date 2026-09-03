@@ -3,34 +3,20 @@ import { Bot, Send, Sparkles, Volume2, HelpCircle } from 'lucide-react';
 import { CardRounded } from '../ui/CardRounded';
 import { Button3D } from '../ui/Button3D';
 import { speechFx } from '../../utils/speech';
+import { solveMathQuestion } from '../../services/aiMathSolver';
 
 export const ChatWindow = () => {
   const [messages, setMessages] = useState([
-    { sender: 'pibot', text: "Hello! I'm Pi-Bot, your AI Math Tutor for ICSE Class 4! Ask me anything about Large Numbers, Fractions, Angles, or Multiplication!" }
+    { sender: 'pibot', text: "Hello! I'm Pi-Bot, your AI Math Tutor for Mathematics (Classes 1-10)! Ask me any math question, word problem, textbook PDF download, or calculation!" }
   ]);
   const [input, setInput] = useState('');
 
   const samplePrompts = [
     "Explain Place Value simply",
-    "How to multiply 3-digit numbers?",
-    "What is an Obtuse Angle?",
-    "Give me a real-life fraction example"
+    "How to solve 24 * 3?",
+    "What are applications of trigonometry?",
+    "HCF of 12 and 18"
   ];
-
-  const getAIResponse = (query) => {
-    const q = query.toLowerCase();
-    if (q.includes('place value') || q.includes('lakh')) {
-      return "In the Indian System, place values are: Ones, Tens, Hundreds, Thousands, Ten-Thousands, Lakhs, and Ten-Lakhs! We put commas after Thousands and Lakhs, like 4,25,000!";
-    } else if (q.includes('fraction') || q.includes('pizza')) {
-      return "Fractions represent parts of a whole! The Top number (Numerator) is how many slices you eat. The Bottom number (Denominator) is total slices in the pizza!";
-    } else if (q.includes('angle') || q.includes('obtuse') || q.includes('acute')) {
-      return "Angles measure turns! An Acute angle is sharp and smaller than 90°. A Right angle is exactly 90° (like an L shape). An Obtuse angle is wide, between 90° and 180°!";
-    } else if (q.includes('multiply') || q.includes('digit')) {
-      return "To multiply by 2-digit numbers: First multiply by the ones digit, then multiply by the tens digit (add a zero at the end!), and add both results together!";
-    } else {
-      return `That's a great Class 4 Math question about "${query}"! Remember: break big problems into smaller steps. Practice makes math easy!`;
-    }
-  };
 
   const handleSend = (userText) => {
     const textToSend = userText || input;
@@ -41,10 +27,10 @@ export const ChatWindow = () => {
     setInput('');
 
     setTimeout(() => {
-      const aiReply = getAIResponse(textToSend);
+      const aiReply = solveMathQuestion(textToSend);
       setMessages(prev => [...prev, { sender: 'pibot', text: aiReply }]);
-      speechFx.speak(aiReply);
-    }, 600);
+      speechFx.speak(aiReply.replace(/[*_#`[\]()]/g, ''));
+    }, 400);
   };
 
   return (

@@ -37,31 +37,35 @@ export const loadGameState = () => {
     const yesterday = yesterdayDate.toISOString().split('T')[0];
 
     if (!saved) {
-      const state = {
+      return {
         ...initialGameState,
         streak: 1,
         lastLoginDate: today
       };
-      saveGameState(state);
-      return state;
     }
 
     const state = JSON.parse(saved);
     const lastDate = state.lastLoginDate;
 
-    // Real Daily Streak Calculation Logic
+    let updatedStreak = state.streak || 1;
+    let updatedLastDate = lastDate;
+
     if (lastDate === today) {
-      state.streak = Math.max(1, state.streak || 1);
+      updatedStreak = Math.max(1, state.streak || 1);
     } else if (lastDate === yesterday) {
-      state.streak = (state.streak || 0) + 1;
-      state.lastLoginDate = today;
+      updatedStreak = (state.streak || 0) + 1;
+      updatedLastDate = today;
     } else {
-      state.streak = 1;
-      state.lastLoginDate = today;
+      updatedStreak = 1;
+      updatedLastDate = today;
     }
 
-    saveGameState(state);
-    return state;
+    return {
+      ...initialGameState,
+      ...state,
+      streak: updatedStreak,
+      lastLoginDate: updatedLastDate
+    };
   } catch (err) {
     console.error('Failed to load state from localStorage', err);
     return {
