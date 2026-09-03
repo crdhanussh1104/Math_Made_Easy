@@ -77,20 +77,20 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
   return (
     <div style={{ padding: '8px 0', width: '100%', maxWidth: '100%' }}>
       {/* Topic & Theme Selector Bar */}
-      <div style={{ background: '#ffffff', borderRadius: '16px', border: '2px solid #e2e8f0', padding: '16px 20px', marginBottom: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
+      <div style={{ background: 'var(--bg-card-solid)', borderRadius: '16px', border: '2px solid var(--border-light)', padding: '16px 20px', marginBottom: '20px', boxShadow: 'var(--shadow-sm)' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ background: '#4f46e5', color: '#ffffff', fontWeight: '800', fontSize: '0.8rem', padding: '4px 12px', borderRadius: '8px' }}>
+            <span style={{ background: 'var(--primary, #4f46e5)', color: '#ffffff', fontWeight: '800', fontSize: '0.8rem', padding: '4px 12px', borderRadius: '8px' }}>
               {classDisplayName}
             </span>
-            <span style={{ fontWeight: '800', color: '#1e293b', fontSize: '1.05rem' }}>
+            <span style={{ fontWeight: '800', color: 'var(--text-main)', fontSize: '1.05rem' }}>
               {t('quiz_title')}
             </span>
           </div>
 
           {/* Theme Dropdown */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: '700', color: '#64748b' }}>{t('tab_syllabus')}:</label>
+            <label style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-muted)' }}>{t('tab_syllabus')}:</label>
             <select
               value={activeChapterId || ''}
               onChange={(e) => {
@@ -103,11 +103,11 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
               style={{
                 padding: '8px 12px',
                 borderRadius: '8px',
-                border: '1.5px solid #cbd5e1',
+                border: '1.5px solid var(--border-light)',
                 fontWeight: '700',
                 fontSize: '0.9rem',
-                color: '#1e293b',
-                background: '#f8fafc',
+                color: 'var(--text-main)',
+                background: 'var(--bg-main)',
                 cursor: 'pointer'
               }}
             >
@@ -122,7 +122,7 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
 
         {/* Topic Pills */}
         <div>
-          <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#64748b', textTransform: 'uppercase', marginBottom: '8px' }}>
+          <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>
             {t('nav_practice')} ({t('chapter_lessons', { count: lessons.length })}):
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -135,9 +135,9 @@ export const Quiz = ({ selectedChapterId, onNavigate }) => {
                   style={{
                     padding: '8px 14px',
                     borderRadius: '10px',
-                    border: isSelected ? '2px solid #4f46e5' : '1.5px solid #e2e8f0',
-                    background: isSelected ? '#ede9fe' : '#ffffff',
-                    color: isSelected ? '#4338ca' : '#334155',
+                    border: isSelected ? '2px solid var(--primary, #4f46e5)' : '1.5px solid var(--border-light)',
+                    background: isSelected ? 'var(--primary-light, #ede9fe)' : 'var(--bg-main)',
+                    color: isSelected ? 'var(--primary, #4338ca)' : 'var(--text-main)',
                     fontWeight: isSelected ? '800' : '600',
                     fontSize: '0.85rem',
                     cursor: 'pointer',
