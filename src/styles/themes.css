@@ -139,3 +139,53 @@
   --border-light: #2e1065;
   --border-card: #581c87;
 }
+
+/* 5. Daily Math Wonder Theme Rules */
+.daily-math-wonder {
+  background-color: #FFFBEA;
+  border: 1px solid #F9D978;
+}
+
+.daily-math-wonder .wonder-title {
+  color: #B45309;
+}
+
+.daily-math-wonder .wonder-quote {
+  color: #1E293B;
+}
+
+.daily-math-wonder .wonder-author {
+  color: #475569;
+}
+
+[data-theme="dark"] .daily-math-wonder,
+[data-theme="space"] .daily-math-wonder,
+[data-theme="cyber"] .daily-math-wonder {
+  background-color: #1e293b !important;
+  border: 1.5px solid rgba(251, 191, 36, 0.4) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(251, 191, 36, 0.12) !important;
+}
+
+[data-theme="dark"] .daily-math-wonder .wonder-icon,
+[data-theme="space"] .daily-math-wonder .wonder-icon,
+[data-theme="cyber"] .daily-math-wonder .wonder-icon {
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .daily-math-wonder .wonder-title,
+[data-theme="space"] .daily-math-wonder .wonder-title,
+[data-theme="cyber"] .daily-math-wonder .wonder-title {
+  color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .daily-math-wonder .wonder-quote,
+[data-theme="space"] .daily-math-wonder .wonder-quote,
+[data-theme="cyber"] .daily-math-wonder .wonder-quote {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .daily-math-wonder .wonder-author,
+[data-theme="space"] .daily-math-wonder .wonder-author,
+[data-theme="cyber"] .daily-math-wonder .wonder-author {
+  color: #94a3b8 !important;
+}
