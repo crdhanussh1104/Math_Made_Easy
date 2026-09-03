@@ -1,25 +1,243 @@
 {
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "title": "Number System",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch01_ICSE_Class_7_Maths_Chapter_01_Number_System_503396.pdf"
+    },
+    {
+      "chapterNumber": 2,
+      "title": "Power and Roots",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch02_ICSE_Class_7_Maths_Chapter_02_Power_and_Roots_503397.pdf"
+    },
+    {
+      "chapterNumber": 3,
+      "title": "HCF & LCM",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch03_ICSE_Class_7_Maths_Chapter_03_HCF_LCM_503398.pdf"
+    },
+    {
+      "chapterNumber": 4,
+      "title": "Fraction",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch04_ICSE_Class_7_Maths_Chapter_04_Fraction_503399.pdf"
+    },
+    {
+      "chapterNumber": 5,
+      "title": "Decimal Fractions",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch05_ICSE_Class_7_Maths_Chapter_05_Decimal_Fractions_503400.pdf"
+    },
+    {
+      "chapterNumber": 6,
+      "title": "Unitary Method",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch06_ICSE_Class_7_Maths_Chapter_06_Unitary_Method_503401.pdf"
+    },
+    {
+      "chapterNumber": 7,
+      "title": "Speed, Distance, Time",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch07_ICSE_Class_7_Maths_Chapter_07_Speed_Distance_Time_503402.pdf"
+    },
+    {
+      "chapterNumber": 8,
+      "title": "Ratio & Proportion",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch08_ICSE_Class_7_Maths_Chapter_08_Ratio_Proportion_503403.pdf"
+    },
+    {
+      "chapterNumber": 9,
+      "title": "Percent & Percentage",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch09_ICSE_Class_7_Maths_Chapter_09_Percent_Percentage_503404.pdf"
+    },
+    {
+      "chapterNumber": 10,
+      "title": "Profit, Loss & Discount",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch10_ICSE_Class_7_Maths_Chapter_10_Profit_Loss_Discount_503405.pdf"
+    },
+    {
+      "chapterNumber": 11,
+      "title": "Simple Interest",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch11_ICSE_Class_7_Maths_Chapter_11_Simple_Interest_503406.pdf"
+    },
+    {
+      "chapterNumber": 12,
+      "title": "Averages",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch12_ICSE_Class_7_Maths_Chapter_12_Averages_503407.pdf"
+    },
+    {
+      "chapterNumber": 13,
+      "title": "Fundamental Concepts",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch13_ICSE_Class_7_Maths_Chapter_13_Fundamental_Concepts_503408.pdf"
+    },
+    {
+      "chapterNumber": 14,
+      "title": "Products",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch14_ICSE_Class_7_Maths_Chapter_14_Products_503409.pdf"
+    },
+    {
+      "chapterNumber": 15,
+      "title": "Simplifications",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch15_ICSE_Class_7_Maths_Chapter_15_Simplifications_503410.pdf"
+    },
+    {
+      "chapterNumber": 16,
+      "title": "Equations and Inequations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch16_ICSE_Class_7_Maths_Chapter_16_Equations_and_Inequations_503411.pdf"
+    },
+    {
+      "chapterNumber": 17,
+      "title": "Formula & Change of Subject of a Formula",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch17_ICSE_Class_7_Maths_Chapter_17_Formula_Change_of_Subject_of_a_Formula_503412.pdf"
+    },
+    {
+      "chapterNumber": 18,
+      "title": "Problems Based on Simple Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch18_ICSE_Class_7_Maths_Chapter_18_Problems_Based_on_Simple_Equations_503413.pdf"
+    },
+    {
+      "chapterNumber": 19,
+      "title": "Factorisation",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch19_ICSE_Class_7_Maths_Chapter_19_Fractorisation_503414.pdf"
+    },
+    {
+      "chapterNumber": 20,
+      "title": "Graphs: Plotting of Points & Co-Ordinates",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch20_ICSE_Class_7_Maths_Chapter_20_Graphs_Plotting_of_points_Co_Ordinates_503415.pdf"
+    },
+    {
+      "chapterNumber": 21,
+      "title": "Relations and Mapping",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch21_ICSE_Class_7_Maths_Chapter_21_Relations_and_Mapping_503416.pdf"
+    },
+    {
+      "chapterNumber": 22,
+      "title": "Indices",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch22_ICSE_Class_7_Maths_Chapter_22_Indices_503417.pdf"
+    },
+    {
+      "chapterNumber": 23,
+      "title": "Lines and Angles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch23_ICSE_Class_7_Maths_Chapter_23_Lines_and_Angles_503418.pdf"
+    },
+    {
+      "chapterNumber": 24,
+      "title": "Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch24_ICSE_Class_7_Maths_Chapter_24_Triangles_503419.pdf"
+    },
+    {
+      "chapterNumber": 25,
+      "title": "Symmetry",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch25_ICSE_Class_7_Maths_Chapter_25_Symmetry_503420.pdf"
+    },
+    {
+      "chapterNumber": 26,
+      "title": "Congruency & Congruent Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch26_ICSE_Class_7_Maths_Chapter_26_Congruency_Congruent_Triangles_503421.pdf"
+    },
+    {
+      "chapterNumber": 27,
+      "title": "Polygons",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch27_ICSE_Class_7_Maths_Chapter_27_Polygons_503422.pdf"
+    },
+    {
+      "chapterNumber": 28,
+      "title": "Construction of Quadrilaterals",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch28_ICSE_Class_7_Maths_Chapter_28_Construction_of_Quadrilaterals_503423.pdf"
+    },
+    {
+      "chapterNumber": 29,
+      "title": "Introduction of Theorem",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch29_ICSE_Class_7_Maths_Chapter_29_Introduction_of_Theorem_503424.pdf"
+    },
+    {
+      "chapterNumber": 30,
+      "title": "Circles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch30_ICSE_Class_7_Maths_Chapter_30_Circles_503425.pdf"
+    },
+    {
+      "chapterNumber": 31,
+      "title": "Perimeter and Area",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch31_ICSE_Class_7_Maths_Chapter_31_Perimeter_and_Area_503426.pdf"
+    },
+    {
+      "chapterNumber": 32,
+      "title": "Volume and Surface Area",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch32_ICSE_Class_7_Maths_Chapter_32_Volume_and_Surface_Area_503427.pdf"
+    },
+    {
+      "chapterNumber": 33,
+      "title": "Collection and Tabulation of Data",
+      "category": "Data & Statistics",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch33_ICSE_Class_7_Maths_Chapter_33_Collection_and_Tabulation_of_Data_503428.pdf"
+    },
+    {
+      "chapterNumber": 34,
+      "title": "Set Concepts",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch34_ICSE_Class_7_Maths_Chapter_34_Set_Concepts_503429.pdf"
+    },
+    {
+      "chapterNumber": 35,
+      "title": "Subsets & Universal Set",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch35_ICSE_Class_7_Maths_Chapter_35_Subsets_Universal_Set_503430.pdf"
+    },
+    {
+      "chapterNumber": 36,
+      "title": "Venn Diagram",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch36_ICSE_Class_7_Maths_Chapter_36_Venn_Diagram_503431.pdf"
+    }
+  ],
   "c7_les_1_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch01_ICSE_Class_7_Maths_Chapter_01_Number_System_503396.pdf",
-  "c7_les_1_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch02_ICSE_Class_7_Maths_Chapter_02_Power_and_Roots_503397.pdf",
-  "c7_les_1_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch03_ICSE_Class_7_Maths_Chapter_03_HCF_LCM_503398.pdf",
-  "c7_les_1_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch04_ICSE_Class_7_Maths_Chapter_04_Fraction_503399.pdf",
-  "c7_les_1_5": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch05_ICSE_Class_7_Maths_Chapter_05_Decimal_Fractions_503400.pdf",
-  "c7_les_2_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch06_ICSE_Class_7_Maths_Chapter_06_Unitary_Method_503401.pdf",
-  "c7_les_2_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch07_ICSE_Class_7_Maths_Chapter_07_Speed_Distance_Time_503402.pdf",
-  "c7_les_2_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch08_ICSE_Class_7_Maths_Chapter_08_Ratio_Proportion_503403.pdf",
-  "c7_les_2_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch09_ICSE_Class_7_Maths_Chapter_09_Percent_Percentage_503404.pdf",
-  "c7_les_3_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch10_ICSE_Class_7_Maths_Chapter_10_Profit_Loss_Discount_503405.pdf",
-  "c7_les_3_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch11_ICSE_Class_7_Maths_Chapter_11_Simple_Interest_503406.pdf",
-  "c7_les_3_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch12_ICSE_Class_7_Maths_Chapter_12_Averages_503407.pdf",
-  "c7_les_4_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch13_ICSE_Class_7_Maths_Chapter_13_Fundamental_Concepts_503408.pdf",
-  "c7_les_4_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch14_ICSE_Class_7_Maths_Chapter_14_Products_503409.pdf",
-  "c7_les_4_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch15_ICSE_Class_7_Maths_Chapter_15_Simplifications_503410.pdf",
-  "c7_les_4_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch16_ICSE_Class_7_Maths_Chapter_16_Equations_and_Inequations_503411.pdf",
-  "c7_les_4_5": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch17_ICSE_Class_7_Maths_Chapter_17_Formula_Change_of_Subject_of_a_Formula_503412.pdf",
-  "c7_les_5_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch18_ICSE_Class_7_Maths_Chapter_18_Problems_Based_on_Simple_Equations_503413.pdf",
-  "c7_les_5_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch19_ICSE_Class_7_Maths_Chapter_19_Fractorisation_503414.pdf",
-  "c7_les_5_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch20_ICSE_Class_7_Maths_Chapter_20_Graphs_Plotting_of_points_Co_Ordinates_503415.pdf",
-  "c7_les_6_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch21_ICSE_Class_7_Maths_Chapter_21_Relations_and_Mapping_503416.pdf",
-  "c7_les_6_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch22_ICSE_Class_7_Maths_Chapter_22_Indices_503417.pdf",
-  "c7_les_6_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch23_ICSE_Class_7_Maths_Chapter_23_Lines_and_Angles_503418.pdf"
+  "c7_les_1_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch01_ICSE_Class_7_Maths_Chapter_01_Number_System_503396.pdf",
+  "c7_les_1_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch01_ICSE_Class_7_Maths_Chapter_01_Number_System_503396.pdf",
+  "c7_les_1_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch05_ICSE_Class_7_Maths_Chapter_05_Decimal_Fractions_503400.pdf",
+  "c7_les_1_5": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch02_ICSE_Class_7_Maths_Chapter_02_Power_and_Roots_503397.pdf",
+  "c7_les_2_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch08_ICSE_Class_7_Maths_Chapter_08_Ratio_Proportion_503403.pdf",
+  "c7_les_2_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch06_ICSE_Class_7_Maths_Chapter_06_Unitary_Method_503401.pdf",
+  "c7_les_2_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch09_ICSE_Class_7_Maths_Chapter_09_Percent_Percentage_503404.pdf",
+  "c7_les_2_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch10_ICSE_Class_7_Maths_Chapter_10_Profit_Loss_Discount_503405.pdf",
+  "c7_les_3_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch13_ICSE_Class_7_Maths_Chapter_13_Fundamental_Concepts_503408.pdf",
+  "c7_les_3_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch14_ICSE_Class_7_Maths_Chapter_14_Products_503409.pdf",
+  "c7_les_3_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch16_ICSE_Class_7_Maths_Chapter_16_Equations_and_Inequations_503411.pdf",
+  "c7_les_4_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch23_ICSE_Class_7_Maths_Chapter_23_Lines_and_Angles_503418.pdf",
+  "c7_les_4_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch24_ICSE_Class_7_Maths_Chapter_24_Triangles_503419.pdf",
+  "c7_les_4_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch26_ICSE_Class_7_Maths_Chapter_26_Congruency_Congruent_Triangles_503421.pdf",
+  "c7_les_4_4": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch27_ICSE_Class_7_Maths_Chapter_27_Polygons_503422.pdf",
+  "c7_les_4_5": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch28_ICSE_Class_7_Maths_Chapter_28_Construction_of_Quadrilaterals_503423.pdf",
+  "c7_les_5_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch31_ICSE_Class_7_Maths_Chapter_31_Perimeter_and_Area_503426.pdf",
+  "c7_les_5_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch31_ICSE_Class_7_Maths_Chapter_31_Perimeter_and_Area_503426.pdf",
+  "c7_les_5_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch32_ICSE_Class_7_Maths_Chapter_32_Volume_and_Surface_Area_503427.pdf",
+  "c7_les_6_1": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch33_ICSE_Class_7_Maths_Chapter_33_Collection_and_Tabulation_of_Data_503428.pdf",
+  "c7_les_6_2": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch20_ICSE_Class_7_Maths_Chapter_20_Graphs_Plotting_of_points_Co_Ordinates_503415.pdf",
+  "c7_les_6_3": "https://www.icseboard.org/books/Class_7/Mathematics/Books/ICSE_Class_7_Mathematics_Books_Ch33_ICSE_Class_7_Maths_Chapter_33_Collection_and_Tabulation_of_Data_503428.pdf"
 }

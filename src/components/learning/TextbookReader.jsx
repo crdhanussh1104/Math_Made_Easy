@@ -58,13 +58,13 @@ export const TextbookReader = ({ chapter, activeLesson, classId, t }) => {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.8rem', fontWeight: '800', color: '#4f46e5', textTransform: 'uppercase' }}>
-                  Class 6 • ICSE Board Curriculum
+                  Class {classId?.replace('class', '') || '7'} • ICSE Board Curriculum
                 </span>
-                <BadgeChip label="30 Chapters Available" color="#0284c7" bg="#e0f2fe" size="sm" />
+                <BadgeChip label={`${classChapters.length} Chapters Available`} color="#0284c7" bg="#e0f2fe" size="sm" />
                 <BadgeChip label="Official PDF Links" color="#16a34a" bg="#dcfce7" size="sm" />
               </div>
               <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-main)', margin: '4px 0 0 0' }}>
-                ICSE Class 6 Mathematics Textbook
+                ICSE Class {classId?.replace('class', '') || '7'} Mathematics Textbook
               </h3>
             </div>
           </div>
