@@ -1,28 +1,210 @@
 {
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "title": "Number System",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch01_ICSE_Class_6_Maths_Chapter_01_Number_System_503327.pdf"
+    },
+    {
+      "chapterNumber": 2,
+      "title": "Integers",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch02_ICSE_Class_6_Maths_Chapter_02_Integers_503328.pdf"
+    },
+    {
+      "chapterNumber": 3,
+      "title": "Number Line",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch03_ICSE_Class_6_Maths_Chapter_03_Number_Line_503329.pdf"
+    },
+    {
+      "chapterNumber": 4,
+      "title": "Factors And Multiples",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch04_ICSE_Class_6_Maths_Chapter_04_Factors_and_Multiples_503330.pdf"
+    },
+    {
+      "chapterNumber": 5,
+      "title": "Fractions",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch05_ICSE_Class_6_Maths_Chapter_05_Fractions_503331.pdf"
+    },
+    {
+      "chapterNumber": 6,
+      "title": "Decimal Fractions",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch06_ICSE_Class_6_Maths_Chapter_06_Decimal_Fractions_503332.pdf"
+    },
+    {
+      "chapterNumber": 7,
+      "title": "Powers And Roots",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch07_ICSE_Class_6_Maths_Chapter_07_Powers_and_Roots_503333.pdf"
+    },
+    {
+      "chapterNumber": 8,
+      "title": "Ratio",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch08_ICSE_Class_6_Maths_Chapter_08_Ratio_503334.pdf"
+    },
+    {
+      "chapterNumber": 9,
+      "title": "Percentage",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch09_ICSE_Class_6_Maths_Chapter_09_Percentage_503335.pdf"
+    },
+    {
+      "chapterNumber": 10,
+      "title": "Profit And Loss",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch10_ICSE_Class_6_Maths_Chapter_10_Profit_and_Loss_503336.pdf"
+    },
+    {
+      "chapterNumber": 11,
+      "title": "Interest",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch11_ICSE_Class_6_Maths_Chapter_11_Interest_503337.pdf"
+    },
+    {
+      "chapterNumber": 12,
+      "title": "Fundamental Concepts",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch12_ICSE_Class_6_Maths_Chapter_12_Fundamental_Concepts_503338.pdf"
+    },
+    {
+      "chapterNumber": 13,
+      "title": "Fundamental Operations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch13_ICSE_Class_6_Maths_Chapter_13_Fundamental_Operations_503339.pdf"
+    },
+    {
+      "chapterNumber": 14,
+      "title": "Substitution",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch14_ICSE_Class_6_Maths_Chapter_14_Substitution_503340.pdf"
+    },
+    {
+      "chapterNumber": 15,
+      "title": "Simple Linear Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch15_ICSE_Class_6_Maths_Chapter_15_Simple_Linear_Equations_503341.pdf"
+    },
+    {
+      "chapterNumber": 16,
+      "title": "Fundamental Concepts (Geometry)",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch16_ICSE_Class_6_Maths_Chapter_16_Fundamental_Concepts_503342.pdf"
+    },
+    {
+      "chapterNumber": 17,
+      "title": "Angles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch17_ICSE_Class_6_Maths_Chapter_17_Angles_503343.pdf"
+    },
+    {
+      "chapterNumber": 18,
+      "title": "Properties Of Angles And Lines",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch18_ICSE_Class_6_Maths_Chapter_18_Properties_of_Angles_and_Lines_503344.pdf"
+    },
+    {
+      "chapterNumber": 19,
+      "title": "Construction Of Angles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch19_ICSE_Class_6_Maths_Chapter_19_Construction_of_Angles_503345.pdf"
+    },
+    {
+      "chapterNumber": 20,
+      "title": "Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch20_ICSE_Class_6_Maths_Chapter_20_Triangles_503346.pdf"
+    },
+    {
+      "chapterNumber": 21,
+      "title": "The Circle Reference Content",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch21_ICSE_Class_6_Maths_Chapter_21_The_Circle_Reference_Content_503347.pdf"
+    },
+    {
+      "chapterNumber": 22,
+      "title": "Linear Symmetry",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch22_ICSE_Class_6_Maths_Chapter_22_Linear_Symmetry_503348.pdf"
+    },
+    {
+      "chapterNumber": 23,
+      "title": "Perimeter And Area Of Plane Figures",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch23_ICSE_Class_6_Maths_Chapter_23_Perimeter_and_Area_of_Plane_Figures_503349.pdf"
+    },
+    {
+      "chapterNumber": 24,
+      "title": "Solids",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch24_ICSE_Class_6_Maths_Chapter_24_Solids_503350.pdf"
+    },
+    {
+      "chapterNumber": 25,
+      "title": "Introduction And Graphs",
+      "category": "Data & Graphs",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch25_ICSE_Class_6_Maths_Chapter_25_Introduction_and_Graphs_503351.pdf"
+    },
+    {
+      "chapterNumber": 26,
+      "title": "Idea Of A Set",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch26_ICSE_Class_6_Maths_Chapter_26_Idea_of_a_Set_503352.pdf"
+    },
+    {
+      "chapterNumber": 27,
+      "title": "Types Of Sets",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch27_ICSE_Class_6_Maths_Chapter_27_Types_of_Sets_503353.pdf"
+    },
+    {
+      "chapterNumber": 28,
+      "title": "Operations On Sets",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch28_ICSE_Class_6_Maths_Chapter_28_Operations_on_Sets_503354.pdf"
+    },
+    {
+      "chapterNumber": 29,
+      "title": "Cardinal Property Of A Set",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch29_ICSE_Class_6_Maths_Chapter_29_Cardinal_Property_of_a_Set_503355.pdf"
+    },
+    {
+      "chapterNumber": 30,
+      "title": "Venn Diagrams",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch30_ICSE_Class_6_Maths_Chapter_30_Venn_Diagrams_503356.pdf"
+    }
+  ],
   "c6_les_1_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch01_ICSE_Class_6_Maths_Chapter_01_Number_System_503327.pdf",
   "c6_les_1_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch02_ICSE_Class_6_Maths_Chapter_02_Integers_503328.pdf",
   "c6_les_1_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch03_ICSE_Class_6_Maths_Chapter_03_Number_Line_503329.pdf",
-  "c6_les_1_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch04_ICSE_Class_6_Maths_Chapter_04_Factors_and_Multiples_503330.pdf",
-  "c6_les_1_5": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch05_ICSE_Class_6_Maths_Chapter_05_Fractions_503331.pdf",
-  "c6_les_1_6": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch06_ICSE_Class_6_Maths_Chapter_06_Decimal_Fractions_503332.pdf",
-  "c6_les_1_7": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch07_ICSE_Class_6_Maths_Chapter_07_Powers_and_Roots_503333.pdf",
-  "c6_les_1_8": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch08_ICSE_Class_6_Maths_Chapter_08_Ratio_503334.pdf",
-  "c6_les_2_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch09_ICSE_Class_6_Maths_Chapter_09_Percentage_503335.pdf",
-  "c6_les_2_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch10_ICSE_Class_6_Maths_Chapter_10_Profit_and_Loss_503336.pdf",
-  "c6_les_2_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch11_ICSE_Class_6_Maths_Chapter_11_Interest_503337.pdf",
-  "c6_les_2_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch12_ICSE_Class_6_Maths_Chapter_12_Fundamental_Concepts_503338.pdf",
-  "c6_les_3_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch13_ICSE_Class_6_Maths_Chapter_13_Fundamental_Operations_503339.pdf",
-  "c6_les_3_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch14_ICSE_Class_6_Maths_Chapter_14_Substitution_503340.pdf",
+  "c6_les_1_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch02_ICSE_Class_6_Maths_Chapter_02_Integers_503328.pdf",
+  "c6_les_1_5": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch26_ICSE_Class_6_Maths_Chapter_26_Idea_of_a_Set_503352.pdf",
+  "c6_les_1_6": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch05_ICSE_Class_6_Maths_Chapter_05_Fractions_503331.pdf",
+  "c6_les_1_7": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch06_ICSE_Class_6_Maths_Chapter_06_Decimal_Fractions_503332.pdf",
+  "c6_les_1_8": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch04_ICSE_Class_6_Maths_Chapter_04_Factors_and_Multiples_503330.pdf",
+  "c6_les_2_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch08_ICSE_Class_6_Maths_Chapter_08_Ratio_503334.pdf",
+  "c6_les_2_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch08_ICSE_Class_6_Maths_Chapter_08_Ratio_503334.pdf",
+  "c6_les_2_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch08_ICSE_Class_6_Maths_Chapter_08_Ratio_503334.pdf",
+  "c6_les_2_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch09_ICSE_Class_6_Maths_Chapter_09_Percentage_503335.pdf",
+  "c6_les_3_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch12_ICSE_Class_6_Maths_Chapter_12_Fundamental_Concepts_503338.pdf",
+  "c6_les_3_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch13_ICSE_Class_6_Maths_Chapter_13_Fundamental_Operations_503339.pdf",
   "c6_les_3_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch15_ICSE_Class_6_Maths_Chapter_15_Simple_Linear_Equations_503341.pdf",
   "c6_les_4_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch16_ICSE_Class_6_Maths_Chapter_16_Fundamental_Concepts_503342.pdf",
   "c6_les_4_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch17_ICSE_Class_6_Maths_Chapter_17_Angles_503343.pdf",
-  "c6_les_4_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch18_ICSE_Class_6_Maths_Chapter_18_Properties_of_Angles_and_Lines_503344.pdf",
-  "c6_les_4_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch19_ICSE_Class_6_Maths_Chapter_19_Construction_of_Angles_503345.pdf",
-  "c6_les_4_5": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch20_ICSE_Class_6_Maths_Chapter_20_Triangles_503346.pdf",
-  "c6_les_5_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch21_ICSE_Class_6_Maths_Chapter_21_The_Circle_Reference_Content_503347.pdf",
-  "c6_les_5_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch22_ICSE_Class_6_Maths_Chapter_22_Linear_Symmetry_503348.pdf",
+  "c6_les_4_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch20_ICSE_Class_6_Maths_Chapter_20_Triangles_503346.pdf",
+  "c6_les_4_4": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch22_ICSE_Class_6_Maths_Chapter_22_Linear_Symmetry_503348.pdf",
+  "c6_les_4_5": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch24_ICSE_Class_6_Maths_Chapter_24_Solids_503350.pdf",
+  "c6_les_5_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch23_ICSE_Class_6_Maths_Chapter_23_Perimeter_and_Area_of_Plane_Figures_503349.pdf",
+  "c6_les_5_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch23_ICSE_Class_6_Maths_Chapter_23_Perimeter_and_Area_of_Plane_Figures_503349.pdf",
   "c6_les_5_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch23_ICSE_Class_6_Maths_Chapter_23_Perimeter_and_Area_of_Plane_Figures_503349.pdf",
-  "c6_les_6_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch24_ICSE_Class_6_Maths_Chapter_24_Solids_503350.pdf",
+  "c6_les_6_1": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch25_ICSE_Class_6_Maths_Chapter_25_Introduction_and_Graphs_503351.pdf",
   "c6_les_6_2": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch25_ICSE_Class_6_Maths_Chapter_25_Introduction_and_Graphs_503351.pdf",
-  "c6_les_6_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch26_ICSE_Class_6_Maths_Chapter_26_Idea_of_a_Set_503352.pdf"
+  "c6_les_6_3": "https://www.icseboard.org/books/Class_6/Mathematics/Books/ICSE_Class_6_Mathematics_Books_Ch25_ICSE_Class_6_Maths_Chapter_25_Introduction_and_Graphs_503351.pdf"
 }
