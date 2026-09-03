@@ -1,21 +1,263 @@
 {
-  "c8_les_1_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch01_ICSE_Class_8_Maths_Sets_Chapter_01_Sets_503493.pdf",
-  "c8_les_1_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch04_ICSE_Class_8_Maths_Numbers_Chapter_04_Decimals_503551.pdf",
-  "c8_les_1_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch06_ICSE_Class_8_Maths_Number_Systems_Chapter_06_HCF_LCM_503534.pdf",
-  "c8_les_1_4": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch12_ICSE_Class_8_Maths_Chapter_12_Exponents_503622.pdf",
-  "c8_les_2_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch08_ICSE_Class_8_Maths_Chapter_08_Profit_and_Loss_503618.pdf",
-  "c8_les_2_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch09_ICSE_Class_8_Maths_Chapter_09_Percent_and_Percentage_503582.pdf",
-  "c8_les_2_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch02_ICSE_Class_8_Maths_Algebra_Chapter_02_Formulae_503559.pdf",
-  "c8_les_3_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch14_ICSE_Class_8_Maths_Chapter_14_Factorisations_503624.pdf",
-  "c8_les_3_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch15_ICSE_Class_8_Maths_Chapter_15_Simplification_of_Algebraic_Fractions_503625.pdf",
-  "c8_les_3_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch16_ICSE_Class_8_Maths_Algebra_Chapter_16_Special_Products_and_Expansions_503502.pdf",
-  "c8_les_4_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch18_ICSE_Class_8_Maths_Chapter_18_Quadratic_Equations_503628.pdf",
-  "c8_les_4_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch19_ICSE_Class_8_Maths_Algebra_Chapter_19_Simple_Linear_Equations_503505.pdf",
-  "c8_les_4_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch20_ICSE_Class_8_Maths_Algebra_Chapter_20_Inequations_503506.pdf",
-  "c8_les_5_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch21_ICSE_Class_8_Maths_Algebra_Chapter_21_Simultaneous_Linear_Equations_503507.pdf",
-  "c8_les_5_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch10_ICSE_Class_8_Maths_Algebra_Chapter_10_Graphs_503567.pdf",
-  "c8_les_5_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch03_ICSE_Class_8_Maths_Geometry_Chapter_03_Polygons_503540.pdf",
-  "c8_les_6_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch05_ICSE_Class_8_Maths_Geometry_Chapter_05_Constructions_503542.pdf",
-  "c8_les_6_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch07_ICSE_Class_8_Maths_Geometry_Chapter_07_Circle_503544.pdf",
-  "c8_les_6_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch22_ICSE_Class_8_Maths_Chapter_22_Triangles_503632.pdf"
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "title": "Sets",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch01_ICSE_Class_8_Maths_Sets_Chapter_01_Sets_503493.pdf"
+    },
+    {
+      "chapterNumber": 2,
+      "title": "Formulae",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch02_ICSE_Class_8_Maths_Algebra_Chapter_02_Formulae_503559.pdf"
+    },
+    {
+      "chapterNumber": 3,
+      "title": "Polygons",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch03_ICSE_Class_8_Maths_Geometry_Chapter_03_Polygons_503540.pdf"
+    },
+    {
+      "chapterNumber": 4,
+      "title": "Decimals",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch04_ICSE_Class_8_Maths_Numbers_Chapter_04_Decimals_503551.pdf"
+    },
+    {
+      "chapterNumber": 5,
+      "title": "Constructions",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch05_ICSE_Class_8_Maths_Geometry_Chapter_05_Constructions_503542.pdf"
+    },
+    {
+      "chapterNumber": 6,
+      "title": "HCF & LCM",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch06_ICSE_Class_8_Maths_Number_Systems_Chapter_06_HCF_LCM_503534.pdf"
+    },
+    {
+      "chapterNumber": 7,
+      "title": "Circle",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch07_ICSE_Class_8_Maths_Geometry_Chapter_07_Circle_503544.pdf"
+    },
+    {
+      "chapterNumber": 8,
+      "title": "Profit And Loss",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch08_ICSE_Class_8_Maths_Chapter_08_Profit_and_Loss_503618.pdf"
+    },
+    {
+      "chapterNumber": 9,
+      "title": "Percent And Percentage",
+      "category": "Arithmetic & Commercial",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch09_ICSE_Class_8_Maths_Chapter_09_Percent_and_Percentage_503582.pdf"
+    },
+    {
+      "chapterNumber": 10,
+      "title": "Graphs",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch10_ICSE_Class_8_Maths_Algebra_Chapter_10_Graphs_503567.pdf"
+    },
+    {
+      "chapterNumber": 11,
+      "title": "Formulae",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch11_ICSE_Class_8_Maths_Chapter_11_Formulae_503621.pdf"
+    },
+    {
+      "chapterNumber": 12,
+      "title": "Exponents",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch12_ICSE_Class_8_Maths_Chapter_12_Exponents_503622.pdf"
+    },
+    {
+      "chapterNumber": 13,
+      "title": "Exponents (Advanced)",
+      "category": "Number System",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch13_ICSE_Class_8_Maths_Chapter_13_Exponents_503585.pdf"
+    },
+    {
+      "chapterNumber": 14,
+      "title": "Factorisations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch14_ICSE_Class_8_Maths_Chapter_14_Factorisations_503624.pdf"
+    },
+    {
+      "chapterNumber": 15,
+      "title": "Simplification Of Algebraic Fractions",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch15_ICSE_Class_8_Maths_Chapter_15_Simplification_of_Algebraic_Fractions_503625.pdf"
+    },
+    {
+      "chapterNumber": 16,
+      "title": "Special Products And Expansions",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch16_ICSE_Class_8_Maths_Algebra_Chapter_16_Special_Products_and_Expansions_503502.pdf"
+    },
+    {
+      "chapterNumber": 17,
+      "title": "Formulae (Applications)",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch17_ICSE_Class_8_Maths_Chapter_17_Formulae_503588.pdf"
+    },
+    {
+      "chapterNumber": 18,
+      "title": "Quadratic Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch18_ICSE_Class_8_Maths_Chapter_18_Quadratic_Equations_503628.pdf"
+    },
+    {
+      "chapterNumber": 19,
+      "title": "Simple Linear Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch19_ICSE_Class_8_Maths_Algebra_Chapter_19_Simple_Linear_Equations_503505.pdf"
+    },
+    {
+      "chapterNumber": 20,
+      "title": "Inequations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch20_ICSE_Class_8_Maths_Algebra_Chapter_20_Inequations_503506.pdf"
+    },
+    {
+      "chapterNumber": 21,
+      "title": "Simultaneous Linear Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch21_ICSE_Class_8_Maths_Algebra_Chapter_21_Simultaneous_Linear_Equations_503507.pdf"
+    },
+    {
+      "chapterNumber": 22,
+      "title": "Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch22_ICSE_Class_8_Maths_Chapter_22_Triangles_503632.pdf"
+    },
+    {
+      "chapterNumber": 23,
+      "title": "Fundamental Concepts",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch23_ICSE_Class_8_Maths_Chapter_23_Fundamental_Concepts_503594.pdf"
+    },
+    {
+      "chapterNumber": 24,
+      "title": "Graphs (Cartesian)",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch24_ICSE_Class_8_Maths_Algebra_Chapter_24_Graphs_503510.pdf"
+    },
+    {
+      "chapterNumber": 25,
+      "title": "Theorems On Area",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch25_ICSE_Class_8_Maths_Chapter_25_Theorems_on_Area_503635.pdf"
+    },
+    {
+      "chapterNumber": 26,
+      "title": "Circle",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch26_ICSE_Class_8_Maths_Chapter_26_Circle_503636.pdf"
+    },
+    {
+      "chapterNumber": 27,
+      "title": "Construction Of Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch27_ICSE_Class_8_Maths_Geometry_Chapter_27_Construction_of_Triangles_503521.pdf"
+    },
+    {
+      "chapterNumber": 28,
+      "title": "Quadrilaterals",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch28_ICSE_Class_8_Maths_Geometry_Chapter_28_Quadrilaterals_503522.pdf"
+    },
+    {
+      "chapterNumber": 29,
+      "title": "Area Propositions",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch29_ICSE_Class_8_Maths_Chapter_29_Area_Propositions_503599.pdf"
+    },
+    {
+      "chapterNumber": 30,
+      "title": "Circles (Properties)",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch30_ICSE_Class_8_Maths_Chapter_30_Circles_503600.pdf"
+    },
+    {
+      "chapterNumber": 31,
+      "title": "Symmetry Reflection And Rotation",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch31_ICSE_Class_8_Maths_Chapter_31_Symmetry_Reflection_and_Rotation_503601.pdf"
+    },
+    {
+      "chapterNumber": 32,
+      "title": "Area And Perimeter Of Plane Figures",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch32_ICSE_Class_8_Maths_Mensuration_Chapter_32_Area_and_Perimeter_of_Plane_Figures_503528.pdf"
+    },
+    {
+      "chapterNumber": 33,
+      "title": "Volume And Surface Area Of Cuboids",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch33_ICSE_Class_8_Maths_Mensuration_Chapter_33_Volume_and_Surface_Area_of_Cuboids_503529.pdf"
+    },
+    {
+      "chapterNumber": 34,
+      "title": "Tabulation Of Data",
+      "category": "Statistics",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch34_ICSE_Class_8_Maths_Statistics_Chapter_34_Tabulation_of_Data_503498.pdf"
+    },
+    {
+      "chapterNumber": 35,
+      "title": "Diagrammatic Representation Of Data",
+      "category": "Statistics",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch35_ICSE_Class_8_Maths_Statistics_Chapter_35_Diagrammatic_Representation_of_Data_503499.pdf"
+    },
+    {
+      "chapterNumber": 36,
+      "title": "Arithmetic Mean Mode And Median",
+      "category": "Statistics",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch36_ICSE_Class_8_Maths_Chapter_36_Arithmetic_Mean_Mode_and_Median_503606.pdf"
+    },
+    {
+      "chapterNumber": 37,
+      "title": "Sets (Advanced)",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch37_ICSE_Class_8_Maths_Chapter_37_Sets_503607.pdf"
+    },
+    {
+      "chapterNumber": 38,
+      "title": "Venn Diagrams",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch38_ICSE_Class_8_Maths_Chapter_38_Venn_Diagrams_503608.pdf"
+    },
+    {
+      "chapterNumber": 39,
+      "title": "Ordered Pair Cartesian Product",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch39_ICSE_Class_8_Maths_Chapter_39_Ordered_Pair_Cartesian_Product_503609.pdf"
+    },
+    {
+      "chapterNumber": 40,
+      "title": "Relations And Mappings",
+      "category": "Set Theory",
+      "url": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch40_ICSE_Class_8_Maths_Chapter_40_Relations_and_Mappings_503610.pdf"
+    }
+  ],
+  "c8_les_1_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch06_ICSE_Class_8_Maths_Number_Systems_Chapter_06_HCF_LCM_503534.pdf",
+  "c8_les_1_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch12_ICSE_Class_8_Maths_Chapter_12_Exponents_503622.pdf",
+  "c8_les_1_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch04_ICSE_Class_8_Maths_Numbers_Chapter_04_Decimals_503551.pdf",
+  "c8_les_1_4": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch01_ICSE_Class_8_Maths_Sets_Chapter_01_Sets_503493.pdf",
+  "c8_les_2_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch09_ICSE_Class_8_Maths_Chapter_09_Percent_and_Percentage_503582.pdf",
+  "c8_les_2_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch08_ICSE_Class_8_Maths_Chapter_08_Profit_and_Loss_503618.pdf",
+  "c8_les_2_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch08_ICSE_Class_8_Maths_Chapter_08_Profit_and_Loss_503618.pdf",
+  "c8_les_3_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch16_ICSE_Class_8_Maths_Algebra_Chapter_16_Special_Products_and_Expansions_503502.pdf",
+  "c8_les_3_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch14_ICSE_Class_8_Maths_Chapter_14_Factorisations_503624.pdf",
+  "c8_les_3_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch19_ICSE_Class_8_Maths_Algebra_Chapter_19_Simple_Linear_Equations_503505.pdf",
+  "c8_les_4_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch22_ICSE_Class_8_Maths_Chapter_22_Triangles_503632.pdf",
+  "c8_les_4_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch28_ICSE_Class_8_Maths_Geometry_Chapter_28_Quadrilaterals_503522.pdf",
+  "c8_les_4_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch07_ICSE_Class_8_Maths_Geometry_Chapter_07_Circle_503544.pdf",
+  "c8_les_5_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch32_ICSE_Class_8_Maths_Mensuration_Chapter_32_Area_and_Perimeter_of_Plane_Figures_503528.pdf",
+  "c8_les_5_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch33_ICSE_Class_8_Maths_Mensuration_Chapter_33_Volume_and_Surface_Area_of_Cuboids_503529.pdf",
+  "c8_les_5_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch33_ICSE_Class_8_Maths_Mensuration_Chapter_33_Volume_and_Surface_Area_of_Cuboids_503529.pdf",
+  "c8_les_6_1": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch34_ICSE_Class_8_Maths_Statistics_Chapter_34_Tabulation_of_Data_503498.pdf",
+  "c8_les_6_2": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch35_ICSE_Class_8_Maths_Statistics_Chapter_35_Diagrammatic_Representation_of_Data_503499.pdf",
+  "c8_les_6_3": "https://www.icseboard.org/books/Class_8/Mathematics/Books/ICSE_Class_8_Mathematics_Books_Ch36_ICSE_Class_8_Maths_Chapter_36_Arithmetic_Mean_Mode_and_Median_503606.pdf"
 }
