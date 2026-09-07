@@ -116,10 +116,7 @@ export const Login = ({ onNavigate }) => {
         width: '100%',
         maxWidth: '1240px',
         maxHeight: '94vh',
-        background: '#ffffff',
         borderRadius: '24px',
-        boxShadow: '0 20px 60px rgba(0,0,0,0.09), 0 4px 16px rgba(0,0,0,0.04)',
-        border: '1.5px solid #e2e8f0',
         overflow: 'hidden',
         position: 'relative',
         display: 'flex',
@@ -147,16 +144,14 @@ export const Login = ({ onNavigate }) => {
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-            <div style={{
+            <div className="login-illus-box" style={{
               width: '100%',
               maxWidth: '520px',
               borderRadius: '20px',
               overflow: 'hidden',
-              background: '#ffffff',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 8px 30px rgba(124, 58, 237, 0.08)'
+              justifyContent: 'center'
             }}>
               <img
                 src="/images/boy-illustration-large.png"
@@ -176,7 +171,6 @@ export const Login = ({ onNavigate }) => {
           <div className="login-divider-line" style={{
             width: '3.5px',
             alignSelf: 'stretch',
-            backgroundColor: '#1e3a8a',
             borderRadius: '2px',
             margin: '0 4px',
             minHeight: '280px'
@@ -192,12 +186,11 @@ export const Login = ({ onNavigate }) => {
             padding: '8px 0'
           }}>
             
-            {/* Big Navy Title */}
-            <div style={{
+            {/* Big Title */}
+            <div className="login-title-main" style={{
               fontFamily: 'var(--font-sans)',
               fontWeight: '900',
               fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)',
-              color: '#0f172a',
               lineHeight: '1.02',
               letterSpacing: '-1.5px',
               marginBottom: 'clamp(14px, 2.5vh, 24px)'
@@ -209,28 +202,25 @@ export const Login = ({ onNavigate }) => {
 
             {/* Shakuntala Devi Quote */}
             <div style={{ marginBottom: 'clamp(18px, 3.2vh, 32px)' }}>
-              <p style={{
+              <p className="login-quote-text" style={{
                 fontSize: 'clamp(0.95rem, 1.6vw, 1.22rem)',
                 fontWeight: '700',
-                color: '#4a044e',
                 margin: '0 0 4px 0',
                 lineHeight: '1.35'
               }}>
                 Everything around you is mathematics.
               </p>
-              <p style={{
+              <p className="login-quote-text" style={{
                 fontSize: 'clamp(0.95rem, 1.6vw, 1.22rem)',
                 fontWeight: '700',
-                color: '#4a044e',
                 margin: '0 0 6px 0',
                 lineHeight: '1.35'
               }}>
                 Everything around you is numbers
               </p>
-              <div style={{
+              <div className="login-quote-author" style={{
                 fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
                 fontWeight: '800',
-                color: '#db2777',
                 textAlign: 'right',
                 paddingRight: '12px'
               }}>
@@ -265,7 +255,7 @@ export const Login = ({ onNavigate }) => {
                   type="button"
                   disabled={isLoading}
                   onClick={handleGoogleSignInClick}
-                  className="hover-lift"
+                  className="login-google-btn hover-lift"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -273,13 +263,9 @@ export const Login = ({ onNavigate }) => {
                     gap: '14px',
                     padding: 'clamp(12px, 2vh, 16px) clamp(20px, 2.5vw, 28px)',
                     borderRadius: '14px',
-                    border: '2px solid #cbd5e1',
-                    background: '#ffffff',
-                    color: '#1e293b',
                     fontWeight: '800',
                     fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
                     cursor: isLoading ? 'wait' : 'pointer',
-                    boxShadow: '0 6px 20px rgba(0,0,0,0.08)',
                     transition: 'all 0.2s ease',
                     opacity: isLoading ? 0.7 : 1
                   }}
@@ -301,8 +287,8 @@ export const Login = ({ onNavigate }) => {
                 /* Logged In As State */
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   
-                  {/* Green Active Session Card */}
-                  <div style={{
+                  {/* Active Session Card */}
+                  <div className="login-session-card" style={{
                     padding: '12px 18px',
                     borderRadius: '14px',
                     background: '#f0fdf4',
@@ -313,13 +299,13 @@ export const Login = ({ onNavigate }) => {
                     boxShadow: '0 4px 12px rgba(34, 197, 94, 0.08)'
                   }}>
                     <div>
-                      <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#16a34a', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      <div className="login-session-title" style={{ fontSize: '0.75rem', fontWeight: '800', color: '#16a34a', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                         LOGGED IN AS
                       </div>
-                      <div style={{ fontSize: '1.08rem', fontWeight: '800', color: '#14532d', marginTop: '2px' }}>
+                      <div className="login-session-name" style={{ fontSize: '1.08rem', fontWeight: '800', color: '#14532d', marginTop: '2px' }}>
                         {currentProfile.name}
                       </div>
-                      <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#15803d', marginTop: '2px' }}>
+                      <div className="login-session-sub" style={{ fontSize: '0.85rem', fontWeight: '700', color: '#15803d', marginTop: '2px' }}>
                         Class {gameState.selectedClass?.replace(/\D/g, '') || '6'} ICSE • {currentProfile.email}
                       </div>
                     </div>
@@ -399,8 +385,8 @@ export const Login = ({ onNavigate }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(15, 23, 42, 0.65)',
-          backdropFilter: 'blur(6px)',
+          backgroundColor: 'rgba(15, 23, 42, 0.75)',
+          backdropFilter: 'blur(8px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -408,28 +394,23 @@ export const Login = ({ onNavigate }) => {
           padding: '16px'
         }}>
           
-          <div style={{
-            background: '#ffffff',
+          <div className="login-modal-box" style={{
             borderRadius: '24px',
             width: '100%',
             maxWidth: '520px',
             maxHeight: '90vh',
             overflowY: 'auto',
-            boxShadow: '0 24px 60px rgba(0,0,0,0.3)',
-            border: '1px solid #e2e8f0',
             animation: 'fadeIn 0.2s ease-out'
           }}>
             
             {/* Modal Header */}
-            <div style={{
+            <div className="login-modal-header" style={{
               padding: '20px 24px 14px 24px',
-              borderBottom: '1px solid #f1f5f9',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               position: 'sticky',
               top: 0,
-              background: '#ffffff',
               zIndex: 10
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -441,7 +422,7 @@ export const Login = ({ onNavigate }) => {
                   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                 </svg>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#1e293b', margin: 0 }}>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: 0 }}>
                     Google Verified Account
                   </h3>
                   <div style={{ fontSize: '0.78rem', color: '#16a34a', fontWeight: '700' }}>
@@ -469,7 +450,7 @@ export const Login = ({ onNavigate }) => {
             <form onSubmit={handleConfirmLogin} style={{ padding: '18px 24px' }}>
               
               {/* Google Verified Account Banner */}
-              <div style={{
+              <div className="login-session-card" style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
@@ -502,10 +483,10 @@ export const Login = ({ onNavigate }) => {
                   </div>
                 )}
                 <div>
-                  <div style={{ fontWeight: '800', color: '#14532d', fontSize: '0.98rem' }}>
+                  <div className="login-session-name" style={{ fontWeight: '800', color: '#14532d', fontSize: '0.98rem' }}>
                     {googleUser.name}
                   </div>
-                  <div style={{ fontSize: '0.82rem', color: '#15803d', fontWeight: '600' }}>
+                  <div className="login-session-sub" style={{ fontSize: '0.82rem', color: '#15803d', fontWeight: '600' }}>
                     {googleUser.email}
                   </div>
                 </div>
@@ -513,7 +494,7 @@ export const Login = ({ onNavigate }) => {
 
               {/* Student Name */}
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: '800', color: '#1e293b', marginBottom: '6px' }}>
+                <label className="login-modal-label" style={{ display: 'block', fontSize: '0.82rem', fontWeight: '800', marginBottom: '6px' }}>
                   STUDENT NAME:
                 </label>
                 <input
@@ -522,11 +503,11 @@ export const Login = ({ onNavigate }) => {
                   placeholder="Enter full name"
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
+                  className="login-modal-input"
                   style={{
                     width: '100%',
                     padding: '10px 14px',
                     borderRadius: '10px',
-                    border: '1.5px solid #cbd5e1',
                     fontSize: '0.95rem',
                     fontWeight: '600',
                     outline: 'none',
@@ -538,10 +519,10 @@ export const Login = ({ onNavigate }) => {
               {/* Class to Visit Picker */}
               <div style={{ marginBottom: '22px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <label style={{ fontSize: '0.82rem', fontWeight: '800', color: '#1e293b' }}>
+                  <label className="login-modal-label" style={{ fontSize: '0.82rem', fontWeight: '800' }}>
                     WHICH CLASS DO YOU WANT TO VISIT TODAY?
                   </label>
-                  <span style={{ fontSize: '0.8rem', fontWeight: '800', color: '#4f46e5' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--primary, #4f46e5)' }}>
                     Class {selectedClassId.replace(/\D/g, '')} ICSE
                   </span>
                 </div>
@@ -561,12 +542,10 @@ export const Login = ({ onNavigate }) => {
                           setSelectedClassId(c.id);
                           soundFx.playClick();
                         }}
+                        className={isSel ? 'login-class-pill-selected' : 'login-class-pill-unselected'}
                         style={{
                           padding: '8px 4px',
                           borderRadius: '10px',
-                          border: isSel ? '2px solid #4f46e5' : '1.5px solid #e2e8f0',
-                          background: isSel ? '#ede9fe' : '#ffffff',
-                          color: isSel ? '#4338ca' : '#334155',
                           fontWeight: isSel ? '900' : '700',
                           fontSize: '0.88rem',
                           cursor: 'pointer',
@@ -574,7 +553,7 @@ export const Login = ({ onNavigate }) => {
                           flexDirection: 'column',
                           alignItems: 'center',
                           gap: '2px',
-                          transition: 'all 0.1s ease'
+                          transition: 'all 0.15s ease'
                         }}
                       >
                         <span>{c.num}</span>
