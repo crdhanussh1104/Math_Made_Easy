@@ -6,9 +6,24 @@ import { ClassSelector } from '../ui/ClassSelector';
 import { LanguageSelector } from '../ui/LanguageSelector';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
+import { logOutGoogle } from '../../services/firebaseAuth';
+
 export const HeaderStats = ({ currentPage, onNavigate }) => {
-  const { gameState } = useGame();
+  const { gameState, logoutStudent } = useGame();
   const { t } = useLanguage();
+
+  const handleLogout = async () => {
+    try {
+      await logOutGoogle();
+    } catch (e) {
+      console.warn('Firebase logout warning:', e);
+    }
+    logoutStudent();
+    if (onNavigate) {
+      onNavigate('login');
+    }
+    window.location.hash = '#login';
+  };
 
   const navItems = [
     { id: 'home', label: t('nav_home') || 'Home', icon: Home },
@@ -187,10 +202,7 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
             </button>
 
             <button
-              onClick={() => {
-                logoutStudent();
-                if (onNavigate) onNavigate('login');
-              }}
+              onClick={handleLogout}
               title="Log out of Math Made Easy"
               style={{
                 display: 'flex',
