@@ -160,6 +160,32 @@ export const GameProvider = ({ children }) => {
     equipItem(category, itemId);
   };
 
+  const loginStudent = ({ name, email, selectedClass }) => {
+    setGameState(prev => ({
+      ...prev,
+      selectedClass: selectedClass || prev.selectedClass || 'class4',
+      studentProfile: {
+        isLoggedIn: true,
+        name: (name || '').trim(),
+        email: (email || '').trim()
+      }
+    }));
+    soundFx.playLevelUp();
+    triggerConfetti('levelUp');
+  };
+
+  const logoutStudent = () => {
+    setGameState(prev => ({
+      ...prev,
+      studentProfile: {
+        isLoggedIn: false,
+        name: '',
+        email: ''
+      }
+    }));
+    soundFx.playClick();
+  };
+
   return (
     <GameContext.Provider value={{
       gameState,
@@ -178,7 +204,9 @@ export const GameProvider = ({ children }) => {
       toggleSound,
       toggleVoice,
       setTheme,
-      changeClass
+      changeClass,
+      loginStudent,
+      logoutStudent
     }}>
       {children}
     </GameContext.Provider>

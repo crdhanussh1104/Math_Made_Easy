@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { useGame } from './context/GameContext';
 import { GameProvider } from './context/GameContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { HeaderStats } from './components/gamification/HeaderStats';
@@ -11,6 +12,7 @@ import { Learn } from './pages/Learn';
 import { Quiz } from './pages/Quiz';
 import { Dashboard } from './pages/Dashboard';
 import { Profile } from './pages/Profile';
+import { Login } from './pages/Login';
 import './styles/global.css';
 
 // Lazy-loaded routes for code splitting and Web Vitals optimization
@@ -19,7 +21,7 @@ const ARLab = lazy(() => import('./pages/ARLab').then(m => ({ default: m.ARLab }
 const OlympiadHub = lazy(() => import('./pages/OlympiadHub').then(m => ({ default: m.OlympiadHub })));
 const Library = lazy(() => import('./pages/Library').then(m => ({ default: m.Library })));
 
-const VALID_PAGES = ['home', 'learn', 'olympiadHub', 'quiz', 'library', 'threeLab', 'arLab', 'dashboard', 'profile'];
+const VALID_PAGES = ['home', 'login', 'learn', 'olympiadHub', 'quiz', 'library', 'threeLab', 'arLab', 'dashboard', 'profile'];
 
 const getInitialPage = () => {
   try {
@@ -42,8 +44,14 @@ const getInitialChapter = () => {
 };
 
 function AppContent() {
+  const { gameState } = useGame();
+  const isLoggedIn = Boolean(gameState.studentProfile?.isLoggedIn && gameState.studentProfile?.name);
+
   const [currentPage, setCurrentPage] = useState(getInitialPage);
   const [selectedChapterId, setSelectedChapterIdState] = useState(getInitialChapter);
+
+  // When not logged in OR when explicitly on 'login' page, hide all navbar / headers
+  const isLoginPage = !isLoggedIn || currentPage === 'login';
 
   const navigateTo = (page) => {
     if (VALID_PAGES.includes(page)) {
@@ -105,57 +113,65 @@ function AppContent() {
       {/* Offline Toast Notification */}
       <OfflineNotice />
 
-      {/* Top Header & Mobile Bottom Nav */}
-      <HeaderStats currentPage={currentPage} onNavigate={navigateTo} />
+      {/* Top Header & Mobile Bottom Nav ONLY when logged in and not on login page */}
+      {!isLoginPage && (
+        <HeaderStats currentPage={currentPage} onNavigate={navigateTo} />
+      )}
 
-      {/* Main Content Area filling wide screens with rich responsive proportions */}
+      {/* Main Content Area */}
       <ErrorBoundary key={currentPage}>
-        <main className="app-main-content page-enter">
+        <main className={!isLoginPage ? "app-main-content page-enter" : "page-enter"} style={isLoginPage ? { padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' } : {}}>
           <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center', fontWeight: '800', color: 'var(--primary)' }}>Loading interactive module...</div>}>
-            {currentPage === 'home' && (
-              <Home
-                onNavigate={navigateTo}
-                onSelectChapter={setSelectedChapterId}
-              />
+            {isLoginPage ? (
+              <Login onNavigate={navigateTo} />
+            ) : (
+              <>
+                {currentPage === 'home' && (
+                  <Home
+                    onNavigate={navigateTo}
+                    onSelectChapter={setSelectedChapterId}
+                  />
+                )}
+
+                {currentPage === 'learn' && (
+                  <Learn
+                    selectedChapterId={selectedChapterId}
+                    onNavigate={navigateTo}
+                    onSelectChapter={setSelectedChapterId}
+                  />
+                )}
+
+                {currentPage === 'olympiadHub' && (
+                  <OlympiadHub
+                    onNavigate={navigateTo}
+                    onSelectChapter={setSelectedChapterId}
+                  />
+                )}
+
+                {currentPage === 'quiz' && (
+                  <Quiz
+                    selectedChapterId={selectedChapterId}
+                    onNavigate={navigateTo}
+                  />
+                )}
+
+                {currentPage === 'library' && <Library />}
+
+                {currentPage === 'threeLab' && <ThreeLab />}
+
+                {currentPage === 'arLab' && <ARLab />}
+
+                {currentPage === 'dashboard' && <Dashboard />}
+
+                {currentPage === 'profile' && <Profile />}
+              </>
             )}
-
-            {currentPage === 'learn' && (
-              <Learn
-                selectedChapterId={selectedChapterId}
-                onNavigate={navigateTo}
-                onSelectChapter={setSelectedChapterId}
-              />
-            )}
-
-            {currentPage === 'olympiadHub' && (
-              <OlympiadHub
-                onNavigate={navigateTo}
-                onSelectChapter={setSelectedChapterId}
-              />
-            )}
-
-            {currentPage === 'quiz' && (
-              <Quiz
-                selectedChapterId={selectedChapterId}
-                onNavigate={navigateTo}
-              />
-            )}
-
-            {currentPage === 'library' && <Library />}
-
-            {currentPage === 'threeLab' && <ThreeLab />}
-
-            {currentPage === 'arLab' && <ARLab />}
-
-            {currentPage === 'dashboard' && <Dashboard />}
-
-            {currentPage === 'profile' && <Profile />}
           </Suspense>
         </main>
       </ErrorBoundary>
 
-      {/* Global Floating Pi-Bot Assistant */}
-      <FloatingPiBot onNavigate={navigateTo} />
+      {/* Global Floating Pi-Bot Assistant ONLY when logged in and inside the app */}
+      {!isLoginPage && <FloatingPiBot onNavigate={navigateTo} />}
     </div>
   );
 }

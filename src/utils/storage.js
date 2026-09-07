@@ -24,7 +24,12 @@ export const initialGameState = {
   askedPiBot: false,
   soundMuted: false,
   voiceEnabled: true,
-  theme: 'daylight'
+  theme: 'daylight',
+  studentProfile: {
+    isLoggedIn: false,
+    name: '',
+    email: ''
+  }
 };
 
 export const loadGameState = () => {

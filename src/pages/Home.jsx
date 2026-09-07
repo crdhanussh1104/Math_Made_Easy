@@ -67,10 +67,10 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       }}>
         <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
           <h1 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', fontWeight: '800', color: 'var(--text-main)', marginBottom: '10px', lineHeight: '1.25' }}>
-            👋 {t('home_hero_title')}
+            👋 {gameState.studentProfile?.isLoggedIn && gameState.studentProfile.name ? `Welcome back, ${gameState.studentProfile.name}!` : t('home_hero_title')}
           </h1>
           <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)', color: 'var(--text-muted)', marginBottom: '20px', maxWidth: '800px', lineHeight: '1.6' }}>
-            {t('home_hero_desc')}
+            {gameState.studentProfile?.isLoggedIn ? `Ready to conquer Class ${classNum} Mathematics today? Continue your chapters and practice below.` : t('home_hero_desc')}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px', color: 'var(--text-main)', fontWeight: '700', fontSize: '1rem' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🔥 {t('header_streak', { streak: gameState.streak })}</span>
