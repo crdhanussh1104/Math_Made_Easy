@@ -55,18 +55,20 @@ function getFactors(n) {
 export function solveMathQuestion(query, mode = 'full') {
   const q = query.trim().toLowerCase();
 
-  // 0. RAG Knowledge Base Lookup for CBSE & ICSE Textbook PDFs & Chapters
+  // 0. Grounded RAG Knowledge Base Lookup for CBSE & ICSE Curriculum
   const cbseMatches = searchCBSEKnowledgeBase(query);
   const icseMatches = searchICSEKnowledgeBase(query);
   const allMatches = [...cbseMatches, ...icseMatches];
 
-  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter link') || q.includes('download pdf') || q.includes('icse') || q.includes('selina'))) {
+  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('download') || q.includes('icse') || q.includes('selina') || q.includes('class') || q.includes('math'))) {
     const top = allMatches.slice(0, 5);
-    let resp = `📚 **CBSE / NCERT & ICSE Mathematics RAG Knowledge Base Search Results:**\n\n`;
+    let resp = `📚 **Grounded ICSE & CBSE/NCERT Mathematics Knowledge Base Answer:**\n\n`;
     top.forEach((item, idx) => {
-      resp += `**${idx + 1}. ${item.topic}**\n`;
-      resp += `- 🏛️ **Board:** ${item.board} • **Reference:** ${item.textbook_ref}\n`;
-      resp += `- 🔗 **Download Textbook PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n\n`;
+      resp += `### ${idx + 1}. ${item.topic}\n`;
+      resp += `• **Board & Reference:** ${item.board} • ${item.textbook_ref}\n`;
+      if (item.pedagogical_notes) resp += `• **Curriculum Notes:** ${item.pedagogical_notes}\n`;
+      if (item.pdf_link) resp += `• 🔗 **Download Official Chapter PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n`;
+      resp += `\n`;
     });
     return resp;
   }
@@ -97,7 +99,35 @@ export function solveMathQuestion(query, mode = 'full') {
     return `🔢 **Step-by-Step ${opName} Solution:**\n\n1. **Problem:** ${num1} ${op} ${num2}\n2. **Calculation:** ${num1} ${op} ${num2} = **${result}**\n\n✅ **Final Answer:** **${result}**`;
   }
 
-  // 2. Trigonometry & Advanced Universal Topics (Fixes user query: "applications of trigonometry")
+  // 2. Triangle Geometry & Concept (Handles typos: "traingle", "triangle")
+  if (q.includes('triangle') || q.includes('traingle')) {
+    return `📐 **Concept Definition: Triangle (ICSE & CBSE Geometry)**\n\n` +
+      `A **Triangle** is a 3-sided closed 2D polygon formed by connecting three non-collinear line segments. It is the fundamental building block of Euclidean geometry!\n\n` +
+      `### 1. 🔑 Core Properties:\n` +
+      `• **Sides & Vertices:** 3 sides, 3 interior angles, and 3 vertices.\n` +
+      `• **Angle Sum Property:** The sum of all three interior angles is **always $180^\\circ$** ($\\angle A + \\angle B + \\angle C = 180^\\circ$).\n` +
+      `• **Exterior Angle Property:** An exterior angle of a triangle equals the sum of its two opposite interior angles.\n` +
+      `• **Triangle Inequality Theorem:** The sum of lengths of any two sides must be strictly greater than the length of the third side ($a + b > c$).\n\n` +
+      `### 2. 📊 Classification of Triangles:\n` +
+      `**By Side Lengths:**\n` +
+      `- **Equilateral Triangle:** All 3 sides equal, all angles equal to $60^\\circ$.\n` +
+      `- **Isosceles Triangle:** 2 sides equal, opposite angles equal.\n` +
+      `- **Scalene Triangle:** All 3 sides and angles have different measures.\n\n` +
+      `**By Interior Angles:**\n` +
+      `- **Acute-Angled Triangle:** All 3 angles are $< 90^\\circ$.\n` +
+      `- **Right-Angled Triangle:** One angle is exactly $90^\\circ$ (obeys Pythagoras Theorem: $a^2 + b^2 = c^2$).\n` +
+      `- **Obtuse-Angled Triangle:** One angle is $> 90^\\circ$.\n\n` +
+      `### 3. 📐 Key Governing Formulas:\n` +
+      `• **Perimeter ($P$):** $P = a + b + c$\n` +
+      `• **Area ($A$):** $A = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height}$\n` +
+      `• **Heron's Formula:** $A = \\sqrt{s(s-a)(s-b)(s-c)}$ where semi-perimeter $s = \\frac{a+b+c}{2}$\n` +
+      `• **Equilateral Area:** $A = \\frac{\\sqrt{3}}{4}a^2$\n\n` +
+      `📚 **Textbook PDF Reference:**\n` +
+      `- ICSE Class 6 Ch 20, Class 7 Ch 24, Class 8 Ch 22, Class 9 Ch 9\n` +
+      `- CBSE Class 7 Ch 6 (gegp106.pdf), Class 9 Ch 7 (iemh107.pdf), Class 10 Ch 6 (jemh106.pdf)`;
+  }
+
+  // 3. Trigonometry & Advanced Universal Topics (Fixes user query: "applications of trigonometry")
   if (q.includes('trigonometry') || q.includes('trignometry') || q.includes('sin') || q.includes('cos') || q.includes('tan')) {
     if (q.includes('application') || q.includes('use') || q.includes('where')) {
       return `📐 **Real-World Applications of Trigonometry:**\n\n` +
@@ -239,7 +269,7 @@ export function solveMathQuestion(query, mode = 'full') {
 
   // 12. Knowledge Base Strict Scope Fallback
   const isMathOrCurriculumQuery = /[\d\+\-\*\/\^×÷\=\<\>\%\(\)]/.test(query) ||
-    /math|algebra|geometry|fraction|decimal|number|integer|angle|triangle|circle|percent|profit|loss|interest|ratio|proportion|hcf|lcm|equation|formula|matrix|trigonometr|calculus|graph|statistic|mean|median|mode|probability|quadrilateral|polygon|pythagor|exponent|power|root|set|subset|venn|volume|area|perimeter|cbse|icse|ncert|class|chapter|book|pdf|textbook/i.test(query);
+    /math|algebra|geometry|fraction|decimal|number|integer|angle|triangle|traingle|rectange|rectangle|circle|percent|profit|loss|interest|ratio|proportion|hcf|lcm|equation|formula|matrix|trigonometr|trignometr|calculus|graph|statistic|mean|median|mode|probability|probiblity|quadrilateral|polygon|pythagor|exponent|power|root|set|subset|venn|volume|area|perimeter|cbse|icse|ncert|class|chapter|book|pdf|textbook/i.test(query);
 
   if (!isMathOrCurriculumQuery) {
     return `⚠️ **Knowledge Base Notice:**\nI am an AI Math Tutor trained strictly on the official **ICSE & CBSE/NCERT Mathematics Knowledge Base**.\n\nI can only answer questions related to the official ICSE & CBSE Mathematics curriculum, formulas, calculations, and textbook chapter PDFs!\n\n💡 *Tip: Try asking for a textbook PDF (e.g. "Class 10 Probability book pdf"), a math calculation (e.g. "24 * 3"), or a topic explanation (e.g. "What is an equilateral triangle?")!*`;

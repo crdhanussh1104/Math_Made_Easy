@@ -133,7 +133,7 @@ button, input, select, textarea {
   }
 }
 
-/* Mobile Responsive Visibility Classes */
+/* Mobile/Tablet Responsive Visibility Classes */
 .hide-on-mobile {
   display: flex !important;
 }
@@ -150,6 +150,49 @@ button, input, select, textarea {
   .hide-on-desktop {
     display: flex !important;
   }
+}
+
+@media (max-width: 1100px) {
+  .hide-on-tight-screen {
+    display: none !important;
+  }
+}
+
+.desktop-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* High Browser Zoom Adaptability (175% - 250% Zoom / 640px - 960px width):
+   Collapse top nav labels to icon-only buttons so all 5 nav links stay visible in top bar */
+@media (max-width: 960px) {
+  .desktop-header-nav .nav-btn-label {
+    display: none !important;
+  }
+  .desktop-header-nav button {
+    padding: 6px 8px !important;
+  }
+}
+
+/* Extreme Browser Zoom Adaptability (> 250% Zoom / <= 640px width):
+   Top nav hides from header, bottom nav bar takes over for ultra-accessible mobile touch navigation */
+@media (max-width: 640px) {
+  .desktop-header-nav {
+    display: none !important;
+  }
+}
+
+.desktop-header-nav button {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.desktop-header-nav span {
+  white-space: nowrap !important;
+  display: inline-block !important;
 }
 
 /* Horizontal Scrolling Bar with Hidden Scrollbar */
@@ -227,22 +270,24 @@ button, input, select, textarea {
   }
 }
 
-/* Sleek Mobile Bottom Navigation Bar */
+/* Sleek Mobile Bottom Navigation Bar with Aspect Ratio Adaptability */
 .mobile-bottom-nav {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 350;
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-light);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
-  padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)) 8px;
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px)) 4px;
   justify-content: space-around;
   align-items: center;
+  box-sizing: border-box;
 }
 
 [data-theme="dark"] .mobile-bottom-nav {
@@ -261,17 +306,19 @@ button, input, select, textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  padding: 6px 10px;
+  gap: 2px;
+  padding: 6px 3px;
   border-radius: 12px;
   border: none;
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
-  flex: 1;
-  max-width: 80px;
+  flex: 1 1 0%;
+  min-width: 0;
+  max-width: 90px;
   transition: all 0.15s ease;
   font-family: var(--font-sans);
+  box-sizing: border-box;
 }
 
 .mobile-nav-btn.active {
@@ -281,9 +328,34 @@ button, input, select, textarea {
 }
 
 .mobile-nav-btn span {
-  font-size: 0.68rem;
+  font-size: clamp(0.58rem, 2.2vw, 0.72rem);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Dynamic Aspect Ratio Adaptations for Mobile Landscape Mode (16:9, 18:9, 21:9) */
+@media (orientation: landscape) and (max-height: 520px) {
+  .mobile-bottom-nav {
+    padding: 3px 8px calc(3px + env(safe-area-inset-bottom, 0px)) 8px;
+  }
+  .mobile-nav-btn {
+    flex-direction: row;
+    gap: 5px;
+    padding: 4px 6px;
+    max-width: 120px;
+  }
+  .mobile-nav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  .mobile-nav-btn span {
+    font-size: 0.7rem;
+  }
 }
 
 /* Accessibility Focus Ring */
