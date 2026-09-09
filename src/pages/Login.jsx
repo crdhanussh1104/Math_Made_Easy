@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
 import { LanguageSelector } from '../components/ui/LanguageSelector';
+import { GoogleTranslate } from '../components/ui/GoogleTranslate';
 import { ThemeToggle } from '../components/ui/ThemeToggle';
 import { soundFx } from '../utils/audioSynth';
 import { signInWithGoogle, logOutGoogle } from '../services/firebaseAuth';
@@ -137,6 +138,7 @@ export const Login = ({ onNavigate }) => {
           alignItems: 'center',
           gap: '8px'
         }}>
+          <GoogleTranslate />
           <LanguageSelector variant="login" />
           <ThemeToggle />
         </div>

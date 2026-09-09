@@ -387,3 +387,82 @@ img, svg, video, canvas {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   Google Translate Official Widget Styling & Clean Custom Look
+   ========================================================================== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+#google_translate_element {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  padding: 6px 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
+}
+
+.goog-te-gadget-simple:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15) !important;
+}
+
+.goog-te-gadget-simple img {
+  vertical-align: middle !important;
+  margin-right: 4px !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span {
+  color: #1e293b !important;
+  border-left: none !important;
+}
+
+/* Dark theme overrides for Google Translate gadget */
+[data-theme="dark"] .goog-te-gadget-simple,
+[data-theme="space"] .goog-te-gadget-simple,
+[data-theme="cyber"] .goog-te-gadget-simple {
+  background-color: #1e293b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value span,
+[data-theme="space"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="space"] .goog-te-gadget-simple .goog-te-menu-value span,
+[data-theme="cyber"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="cyber"] .goog-te-gadget-simple .goog-te-menu-value span {
+  color: #f8fafc !important;
+}
+
+.goog-te-gadget-icon {
+  background-image: url('https://translate.google.com/favicon.ico') !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
+}
