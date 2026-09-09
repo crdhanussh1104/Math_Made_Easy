@@ -10,6 +10,7 @@ import {
 export const Home = ({ onNavigate, onSelectChapter }) => {
   const { gameState } = useGame();
   const { t } = useLanguage();
+  const isDark = gameState?.theme === 'dark' || gameState?.theme === 'space' || gameState?.theme === 'cyber';
   
   const selectedClassId = gameState.selectedClass || 'class4';
   const classNum = selectedClassId.replace('class', '');
@@ -66,10 +67,10 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       }}>
         <div style={{ flex: '1 1 500px', minWidth: '280px' }}>
           <h1 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', fontWeight: '800', color: 'var(--text-main)', marginBottom: '10px', lineHeight: '1.25' }}>
-            👋 {t('home_hero_title')}
+            👋 {gameState.studentProfile?.isLoggedIn && gameState.studentProfile.name ? `Welcome back, ${gameState.studentProfile.name}!` : t('home_hero_title')}
           </h1>
           <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)', color: 'var(--text-muted)', marginBottom: '20px', maxWidth: '800px', lineHeight: '1.6' }}>
-            {t('home_hero_desc')}
+            {gameState.studentProfile?.isLoggedIn ? `Ready to conquer Class ${classNum} Mathematics today? Continue your chapters and practice below.` : t('home_hero_desc')}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px', color: 'var(--text-main)', fontWeight: '700', fontSize: '1rem' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>🔥 {t('header_streak', { streak: gameState.streak })}</span>
@@ -221,26 +222,31 @@ export const Home = ({ onNavigate, onSelectChapter }) => {
       </div>
 
       {/* 5. Daily Math Spark */}
-      <div style={{
-        ...cardStyle,
-        backgroundColor: '#FFFBEA', // Soft yellow/cream
-        border: '1px solid #F9D978',
-        display: 'flex',
-        gap: '18px',
-        alignItems: 'flex-start',
-        padding: '24px 28px'
-      }}>
-        <div style={{ color: '#E0A800', marginTop: '4px', flexShrink: 0 }}>
+      <div
+        className="daily-math-wonder"
+        style={{
+          ...cardStyle,
+          backgroundColor: isDark ? 'rgba(30, 41, 59, 0.9)' : '#FFFBEA',
+          border: isDark ? '1.5px solid rgba(251, 191, 36, 0.4)' : '1px solid #F9D978',
+          boxShadow: isDark ? '0 6px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(251, 191, 36, 0.12)' : 'var(--shadow-sm)',
+          display: 'flex',
+          gap: '18px',
+          alignItems: 'flex-start',
+          padding: '24px 28px',
+          transition: 'all 0.3s ease'
+        }}
+      >
+        <div className="wonder-icon" style={{ color: isDark ? '#fbbf24' : '#E0A800', marginTop: '4px', flexShrink: 0 }}>
           <Lightbulb size={28} />
         </div>
         <div>
-          <h4 style={{ fontSize: '0.85rem', fontWeight: '800', color: '#D49A00', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>
+          <h4 className="wonder-title" style={{ fontSize: '0.85rem', fontWeight: '800', color: isDark ? '#fbbf24' : '#B45309', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>
             {t('home_fact_title')}
           </h4>
-          <p style={{ fontSize: '1.1rem', fontWeight: '600', color: 'var(--text-main)', fontStyle: 'italic', marginBottom: '8px', lineHeight: '1.45' }}>
+          <p className="wonder-quote" style={{ fontSize: '1.1rem', fontWeight: '600', color: isDark ? '#f8fafc' : '#1E293B', fontStyle: 'italic', marginBottom: '8px', lineHeight: '1.45' }}>
             "{dailyQuote.text}"
           </p>
-          <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: '600' }}>
+          <span className="wonder-author" style={{ fontSize: '0.9rem', color: isDark ? '#94a3b8' : '#475569', fontWeight: '600' }}>
             — {dailyQuote.author}
           </span>
         </div>

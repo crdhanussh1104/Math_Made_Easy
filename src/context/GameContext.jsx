@@ -141,22 +141,72 @@ export const GameProvider = ({ children }) => {
     soundFx.playClick();
   };
 
+  const deductHeart = (amount = 1) => {
+    setGameState(prev => ({
+      ...prev,
+      hearts: Math.max(0, (prev.hearts !== undefined ? prev.hearts : 5) - amount)
+    }));
+    soundFx.playIncorrect();
+  };
+
+  const setGems = (valOrFn) => {
+    setGameState(prev => ({
+      ...prev,
+      gems: typeof valOrFn === 'function' ? valOrFn(prev.gems) : valOrFn
+    }));
+  };
+
+  const equipAvatarItem = (category, itemId) => {
+    equipItem(category, itemId);
+  };
+
+  const loginStudent = ({ name, email, selectedClass }) => {
+    setGameState(prev => ({
+      ...prev,
+      selectedClass: selectedClass || prev.selectedClass || 'class4',
+      studentProfile: {
+        isLoggedIn: true,
+        name: (name || '').trim(),
+        email: (email || '').trim()
+      }
+    }));
+    soundFx.playLevelUp();
+    triggerConfetti('levelUp');
+  };
+
+  const logoutStudent = () => {
+    setGameState(prev => ({
+      ...prev,
+      studentProfile: {
+        isLoggedIn: false,
+        name: '',
+        email: ''
+      }
+    }));
+    soundFx.playClick();
+  };
+
   return (
     <GameContext.Provider value={{
       gameState,
       addXP,
       addGems,
+      setGems,
+      deductHeart,
       claimMission,
       markVisited3DLab,
       markAskedPiBot,
       buyInventoryItem,
       equipItem,
+      equipAvatarItem,
       toggleBookmark,
       completeLesson,
       toggleSound,
       toggleVoice,
       setTheme,
-      changeClass
+      changeClass,
+      loginStudent,
+      logoutStudent
     }}>
       {children}
     </GameContext.Provider>
@@ -164,3 +214,4 @@ export const GameProvider = ({ children }) => {
 };
 
 export const useGame = () => useContext(GameContext);
+

@@ -60,7 +60,7 @@ export function solveMathQuestion(query, mode = 'full') {
   const icseMatches = searchICSEKnowledgeBase(query);
   const allMatches = [...cbseMatches, ...icseMatches];
 
-  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('link') || q.includes('download') || q.includes('icse') || q.includes('class') || q.includes('selina') || q.includes('math'))) {
+  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter link') || q.includes('download pdf') || q.includes('icse') || q.includes('selina'))) {
     const top = allMatches.slice(0, 5);
     let resp = `📚 **CBSE / NCERT & ICSE Mathematics RAG Knowledge Base Search Results:**\n\n`;
     top.forEach((item, idx) => {
@@ -225,13 +225,14 @@ export function solveMathQuestion(query, mode = 'full') {
   if (metricMatch) {
     const val = parseFloat(metricMatch[1]);
     const unit = metricMatch[2];
-    if (unit.startsWith('m')) {
+    const normUnit = unit.toLowerCase();
+    if (normUnit === 'm' || normUnit === 'meter' || normUnit === 'meters') {
       return `📏 **Metric Conversion:**\n\n- **${val} meters** = **${val * 100} cm**\n📌 **Rule:** 1 meter = 100 centimeters (Multiply by 100).`;
-    } else if (unit.startsWith('km')) {
+    } else if (normUnit === 'km' || normUnit === 'kilometer' || normUnit === 'kilometers') {
       return `🚗 **Metric Conversion:**\n\n- **${val} kilometers** = **${val * 1000} meters**\n📌 **Rule:** 1 kilometer = 1,000 meters (Multiply by 1,000).`;
-    } else if (unit.startsWith('kg')) {
+    } else if (normUnit === 'kg' || normUnit === 'kilogram' || normUnit === 'kilograms') {
       return `⚖️ **Metric Conversion:**\n\n- **${val} kilograms** = **${val * 1000} grams**\n📌 **Rule:** 1 kilogram = 1,000 grams (Multiply by 1,000).`;
-    } else if (unit.startsWith('l')) {
+    } else if (normUnit === 'l' || normUnit === 'liter' || normUnit === 'liters') {
       return `🥛 **Metric Conversion:**\n\n- **${val} liters** = **${val * 1000} milliliters (mL)**\n📌 **Rule:** 1 liter = 1,000 mL (Multiply by 1,000).`;
     }
   }

@@ -51,7 +51,7 @@ export const Button3D = ({
         };
       case 'outline':
         return {
-          bg: '#ffffff',
+          bg: 'var(--bg-card-solid)',
           color: 'var(--text-main)',
           shadow: '0 4px 0 var(--border-light)',
           border: '2px solid var(--border-light)'

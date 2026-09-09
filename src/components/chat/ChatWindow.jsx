@@ -15,7 +15,7 @@ export const ChatWindow = () => {
     "Explain Place Value simply",
     "How to multiply 3-digit numbers?",
     "Class 10 Probability textbook pdf",
-    "Pythagoras Theorem formula"
+    "What are applications of trigonometry?"
   ];
 
   const handleSend = (userText) => {
@@ -30,7 +30,7 @@ export const ChatWindow = () => {
       const aiReply = solveMathQuestion(textToSend);
       setMessages(prev => [...prev, { sender: 'pibot', text: aiReply }]);
       speechFx.speak(aiReply.replace(/[*_#`[\]()]/g, ''));
-    }, 600);
+    }, 400);
   };
 
   return (

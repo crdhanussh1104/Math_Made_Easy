@@ -3,7 +3,7 @@ import { mathsIsFunSitemapData } from '../../data/mathsIsFunSitemap';
 import { CardRounded } from '../ui/CardRounded';
 import { BadgeChip } from '../ui/BadgeChip';
 import { soundFx } from '../../utils/audioSynth';
-import { Search, ChevronDown, ChevronRight, CheckCircle2, ShieldCheck, BookOpen, Layers } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, CheckCircle2, ShieldCheck, BookOpen } from 'lucide-react';
 
 export const HierarchicalSitemapTree = ({ onSelectSubtopic, activeSubtopicId }) => {
   const [searchQuery, setSearchQuery] = useState('');

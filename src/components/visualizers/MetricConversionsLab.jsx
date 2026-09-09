@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { CardRounded } from '../ui/CardRounded';
-import { Button3D } from '../ui/Button3D';
 import { soundFx } from '../../utils/audioSynth';
-import { RefreshCw, BookOpen, Scale, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 
 export const MetricConversionsLab = () => {
   const [category, setCategory] = useState('length'); // length, mass, volume

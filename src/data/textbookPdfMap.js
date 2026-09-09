@@ -49,6 +49,14 @@ export function getLessonPdfUrl(classId, lessonId) {
   return null;
 }
 
+export function getClassTextbookChapters(classId) {
+  const links = ALL_LINKS[classId];
+  if (links && Array.isArray(links.chapters)) {
+    return links.chapters;
+  }
+  return null;
+}
+
 function pad(n) { return String(n).padStart(2, '0'); }
 
 const CLASS_CONFIG = {

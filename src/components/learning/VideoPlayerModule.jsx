@@ -14,8 +14,33 @@ import {
 export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson }) => {
   const { gameState, completeLesson, addXP } = useGame();
   
+  const lessonId = activeLesson?.id || '';
+  const chapId = chapter?.id || '';
+  const chapColor = chapter?.color || '#58cc02';
+
+  // Known list of video IDs that restrict embedding
+  const KNOWN_UNPLAYABLE_IDS = new Set(['nmZqMu3tNoY']);
+
+  const [unplayableVideoIds, setUnplayableVideoIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('mme_unplayable_videos');
+      const parsed = saved ? JSON.parse(saved) : [];
+      return new Set([...KNOWN_UNPLAYABLE_IDS, ...parsed]);
+    } catch {
+      return new Set(KNOWN_UNPLAYABLE_IDS);
+    }
+  });
+
   // Dynamically load videos for the currently selected lesson
-  const playlist = getVideosForLesson(activeLesson.id);
+  const rawPlaylist = lessonId ? getVideosForLesson(lessonId) : [];
+
+  // Keep ONLY videos that are able to play inside the website
+  const filteredPlaylist = rawPlaylist.filter(v => {
+    const vId = v?.videoId || (v?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]);
+    return vId && !unplayableVideoIds.has(vId) && !unplayableVideoIds.has(v?.id);
+  });
+
+  const playlist = filteredPlaylist.length > 0 ? filteredPlaylist : rawPlaylist;
 
   const [activeVideoIdx, setActiveVideoIdx] = useState(0);
   const [embedError, setEmbedError] = useState(false);
@@ -29,8 +54,10 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
   const playerRef = useRef(null);
   const intervalRef = useRef(null);
 
-  const currentVideo = playlist[activeVideoIdx] || null;
-  const currentVideoKey = currentVideo ? (currentVideo.id || `${activeLesson.id}_vid_${activeVideoIdx}`) : '';
+  // Ensure safe index bounds
+  const safeIdx = Math.min(activeVideoIdx, Math.max(0, playlist.length - 1));
+  const currentVideo = playlist[safeIdx] || null;
+  const currentVideoKey = currentVideo ? (currentVideo.id || `${lessonId}_vid_${safeIdx}`) : '';
   const videoId = currentVideo?.videoId || (currentVideo?.youtubeUrl?.match(/embed\/([^?&]+)/)?.[1]) || '';
   const youtubeWatchUrl = currentVideo?.originalUrl || `https://www.youtube.com/watch?v=${videoId}`;
   const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
@@ -51,7 +78,9 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      if (firstScriptTag && firstScriptTag.parentNode) {
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
     }
   }, []);
 
@@ -61,7 +90,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
     setEmbedError(false);
     setCurrentPct(0);
     setIsPlaying(false);
-  }, [activeLesson.id, chapter.id]);
+  }, [lessonId, chapId]);
 
   useEffect(() => {
     if (!videoId) return;
@@ -90,8 +119,25 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
                 stopTracking();
               }
             },
-            onError: () => {
-              setEmbedError(true);
+            onError: (event) => {
+              const errCode = event?.data;
+              console.warn(`YouTube video cannot be played (id: ${videoId}, code: ${errCode}). Filtering out.`);
+              // If there are multiple video options, remove the broken one immediately
+              if (rawPlaylist.length > 1) {
+                setUnplayableVideoIds(prev => {
+                  const next = new Set(prev);
+                  if (videoId) next.add(videoId);
+                  if (currentVideoKey) next.add(currentVideoKey);
+                  try {
+                    localStorage.setItem('mme_unplayable_videos', JSON.stringify(Array.from(next)));
+                  } catch {}
+                  return next;
+                });
+                setActiveVideoIdx(0);
+                setEmbedError(false);
+              } else {
+                setEmbedError(true);
+              }
             }
           }
         });
@@ -246,7 +292,7 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       
       {/* 1. Video Playlist Switcher Tabs */}
       {playlist.length > 1 && (
-        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+        <CardRounded style={{ padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.85rem', fontWeight: '800', fontFamily: 'var(--font-rounded)', color: 'var(--text-muted)' }}>
               Video Playlist:
@@ -293,19 +339,11 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
       )}
 
       {/* 2. Main Responsive YouTube Player Card */}
-      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <CardRounded style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+
         
         {/* Exact 16:9 Aspect-Ratio Player Frame */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          aspectRatio: '16 / 9',
-          borderRadius: 'var(--radius-md)',
-          overflow: 'hidden',
-          backgroundColor: '#000000',
-          boxShadow: 'var(--shadow-md)',
-          border: '2px solid var(--border-light)'
-        }}>
+        <div className="yt-video-wrapper">
           {!embedError ? (
             <iframe
               id="yt-player-iframe"
@@ -316,15 +354,6 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               onError={() => setEmbedError(true)}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                display: 'block'
-              }}
             />
           ) : (
             /* Fallback View when Publisher Disables Embedding */
@@ -359,10 +388,34 @@ export const VideoPlayerModule = ({ chapter, activeLesson, onUnlockNextLesson })
           )}
         </div>
 
+        {/* Video Disclaimer */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '8px',
+          padding: '10px 14px',
+          borderRadius: 'var(--radius-sm)',
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border-light)',
+          opacity: 0.75
+        }}>
+          <span style={{ fontSize: '0.95rem', flexShrink: 0, marginTop: '1px' }}>ℹ️</span>
+          <p style={{
+            fontSize: '1rem',
+            color: 'var(--text-muted)',
+            lineHeight: '1.5',
+            margin: 0,
+            fontStyle: 'italic'
+          }}>
+            <strong style={{ fontStyle: 'normal', color: 'var(--text-main)', fontWeight: '700' }}>Disclaimer:</strong>{' '}
+            The videos provided on this platform are embedded from their respective YouTube channels and content creators. We do not claim ownership of these videos. All rights and credits belong to the respective channel owners and creators. The videos are shared solely for educational purposes and convenience.
+          </p>
+        </div>
+
         {/* 3. Subtopic Name & Auto-tracked 3-Part Milestone Progress */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px' }}>
-          
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '4px', width: '100%' }}>
           <div>
+
             <h3 style={{ fontFamily: 'var(--font-rounded)', fontSize: '1.35rem', fontWeight: '800', color: 'var(--text-main)' }}>
               {activeLesson.title}
             </h3>

@@ -1,16 +1,186 @@
 {
+  "chapters": [
+    {
+      "chapterNumber": 1,
+      "title": "Rational And Irrational Numbers",
+      "category": "Pure Arithmetic",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch01_ICSE_Class_9_Maths_Chapter_01_Rational_and_Irrational_Numbers_503724.pdf"
+    },
+    {
+      "chapterNumber": 2,
+      "title": "Compound Interest Without Using Formula",
+      "category": "Commercial Mathematics",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch02_ICSE_Class_9_Maths_Chapter_02_Compound_Interest_Without_Using_Formula_503725.pdf"
+    },
+    {
+      "chapterNumber": 3,
+      "title": "Compound Interest Using Formula",
+      "category": "Commercial Mathematics",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch03_ICSE_Class_9_Maths_Chapter_03_Compound_Interest_Using_Formula_503726.pdf"
+    },
+    {
+      "chapterNumber": 4,
+      "title": "Expansions",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch04_ICSE_Class_9_Maths_Chapter_04_Expansions_503727.pdf"
+    },
+    {
+      "chapterNumber": 5,
+      "title": "Factorisation",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch05_ICSE_Class_9_Maths_Chapter_05_Factorisation_503728.pdf"
+    },
+    {
+      "chapterNumber": 6,
+      "title": "Framing Of Formula",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch06_ICSE_Class_9_Maths_Chapter_06_Framing_of_Formula_503757.pdf"
+    },
+    {
+      "chapterNumber": 7,
+      "title": "Linear Equations",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch07_ICSE_Class_9_Maths_Chapter_07_Linear_Equations_503758.pdf"
+    },
+    {
+      "chapterNumber": 8,
+      "title": "Indices",
+      "category": "Algebra",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch08_ICSE_Class_9_Maths_Chapter_08_Indices_503759.pdf"
+    },
+    {
+      "chapterNumber": 9,
+      "title": "Triangles",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch09_ICSE_Class_9_Maths_Chapter_09_Triangles_503732.pdf"
+    },
+    {
+      "chapterNumber": 10,
+      "title": "Triangles (Congruency & Proofs)",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch10_ICSE_Class_9_Maths_Chapter_10_Triangles_503761.pdf"
+    },
+    {
+      "chapterNumber": 11,
+      "title": "Inequalities",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch11_ICSE_Class_9_Maths_Chapter_11_Inequalities_503734.pdf"
+    },
+    {
+      "chapterNumber": 12,
+      "title": "Mid Point And Its Converse Including Intercept Theorem",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch12_ICSE_Class_9_Maths_Chapter_12_Mid_Point_and_Its_Converse_Including_Intercept_The_503735.pdf"
+    },
+    {
+      "chapterNumber": 13,
+      "title": "Pythagoras Theorem",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch13_ICSE_Class_9_Maths_Chapter_13_Pythagoras_Theorem_503736.pdf"
+    },
+    {
+      "chapterNumber": 14,
+      "title": "Polygons",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch14_ICSE_Class_9_Maths_Chapter_14_Polygons_503765.pdf"
+    },
+    {
+      "chapterNumber": 15,
+      "title": "Quadrilaterals",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch15_ICSE_Class_9_Maths_Chapter_15_Quadrilaterals_503766.pdf"
+    },
+    {
+      "chapterNumber": 16,
+      "title": "Area",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch16_ICSE_Class_9_Maths_Chapter_16_Area_503767.pdf"
+    },
+    {
+      "chapterNumber": 17,
+      "title": "Circle",
+      "category": "Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch17_ICSE_Class_9_Maths_Chapter_17_Circle_503740.pdf"
+    },
+    {
+      "chapterNumber": 18,
+      "title": "Statistics",
+      "category": "Statistics",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch18_ICSE_Class_9_Maths_Chapter_18_Statistics_503741.pdf"
+    },
+    {
+      "chapterNumber": 19,
+      "title": "Mean And Median Of Ungrouped Data",
+      "category": "Statistics",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch19_ICSE_Class_9_Maths_Chapter_19_Mean_and_Median_of_Ungrouped_Data_503770.pdf"
+    },
+    {
+      "chapterNumber": 20,
+      "title": "Area And Perimeter Of Plane Figures",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch20_ICSE_Class_9_Maths_Chapter_20_Area_and_Perimeter_of_Plane_Figures_503743.pdf"
+    },
+    {
+      "chapterNumber": 21,
+      "title": "Volume And Surface Area Of Solids",
+      "category": "Mensuration",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch21_ICSE_Class_9_Maths_Chapter_21_Volume_and_Surface_Area_of_Solids_503772.pdf"
+    },
+    {
+      "chapterNumber": 22,
+      "title": "Trigonometrical Ratios",
+      "category": "Trigonometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch22_ICSE_Class_9_Maths_Chapter_22_Trigonometrical_Ratios_503745.pdf"
+    },
+    {
+      "chapterNumber": 23,
+      "title": "Trigonometrical Ratios Of Standard Angles",
+      "category": "Trigonometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch23_ICSE_Class_9_Maths_Chapter_23_Trigonometrical_Ratios_of_Standard_Angles_503746.pdf"
+    },
+    {
+      "chapterNumber": 24,
+      "title": "Solution Of Right Triangles",
+      "category": "Trigonometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch24_ICSE_Class_9_Maths_Chapter_24_Solution_of_Right_Triangles_503747.pdf"
+    },
+    {
+      "chapterNumber": 25,
+      "title": "Complementary Angles",
+      "category": "Trigonometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch25_ICSE_Class_9_Maths_Chapter_25_Complementary_Angles_503748.pdf"
+    },
+    {
+      "chapterNumber": 26,
+      "title": "Co Ordinate Geometry",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch26_ICSE_Class_9_Maths_Chapter_26_Co_ordinate_Geometry_503749.pdf"
+    },
+    {
+      "chapterNumber": 27,
+      "title": "Graphical Solution",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch27_ICSE_Class_9_Maths_Chapter_27_Graphical_Solution_503750.pdf"
+    },
+    {
+      "chapterNumber": 28,
+      "title": "Distance Formula",
+      "category": "Coordinate Geometry",
+      "url": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch28_ICSE_Class_9_Maths_Chapter_28_Distance_Formula_503751.pdf"
+    }
+  ],
   "c9_les_1_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch01_ICSE_Class_9_Maths_Chapter_01_Rational_and_Irrational_Numbers_503724.pdf",
   "c9_les_2_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch02_ICSE_Class_9_Maths_Chapter_02_Compound_Interest_Without_Using_Formula_503725.pdf",
-  "c9_les_3_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch03_ICSE_Class_9_Maths_Chapter_03_Compound_Interest_Using_Formula_503726.pdf",
-  "c9_les_3_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch04_ICSE_Class_9_Maths_Chapter_04_Expansions_503727.pdf",
-  "c9_les_3_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch05_ICSE_Class_9_Maths_Chapter_05_Factorisation_503728.pdf",
-  "c9_les_4_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch06_ICSE_Class_9_Maths_Chapter_06_Framing_of_Formula_503757.pdf",
-  "c9_les_4_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch07_ICSE_Class_9_Maths_Chapter_07_Linear_Equations_503758.pdf",
-  "c9_les_4_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch08_ICSE_Class_9_Maths_Chapter_08_Indices_503759.pdf",
-  "c9_les_5_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch09_ICSE_Class_9_Maths_Chapter_09_Triangles_503732.pdf",
-  "c9_les_5_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch11_ICSE_Class_9_Maths_Chapter_11_Inequalities_503734.pdf",
-  "c9_les_5_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch12_ICSE_Class_9_Maths_Chapter_12_Mid_Point_and_Its_Converse_Including_Intercept_The_503735.pdf",
-  "c9_les_6_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch13_ICSE_Class_9_Maths_Chapter_13_Pythagoras_Theorem_503736.pdf",
-  "c9_les_6_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch14_ICSE_Class_9_Maths_Chapter_14_Polygons_503765.pdf",
-  "c9_les_6_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch15_ICSE_Class_9_Maths_Chapter_15_Quadrilaterals_503766.pdf"
+  "c9_les_3_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch04_ICSE_Class_9_Maths_Chapter_04_Expansions_503727.pdf",
+  "c9_les_3_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch05_ICSE_Class_9_Maths_Chapter_05_Factorisation_503728.pdf",
+  "c9_les_3_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch07_ICSE_Class_9_Maths_Chapter_07_Linear_Equations_503758.pdf",
+  "c9_les_4_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch09_ICSE_Class_9_Maths_Chapter_09_Triangles_503732.pdf",
+  "c9_les_4_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch15_ICSE_Class_9_Maths_Chapter_15_Quadrilaterals_503766.pdf",
+  "c9_les_4_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch17_ICSE_Class_9_Maths_Chapter_17_Circle_503740.pdf",
+  "c9_les_5_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch20_ICSE_Class_9_Maths_Chapter_20_Area_and_Perimeter_of_Plane_Figures_503743.pdf",
+  "c9_les_5_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch21_ICSE_Class_9_Maths_Chapter_21_Volume_and_Surface_Area_of_Solids_503772.pdf",
+  "c9_les_5_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch21_ICSE_Class_9_Maths_Chapter_21_Volume_and_Surface_Area_of_Solids_503772.pdf",
+  "c9_les_6_1": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch18_ICSE_Class_9_Maths_Chapter_18_Statistics_503741.pdf",
+  "c9_les_6_2": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch19_ICSE_Class_9_Maths_Chapter_19_Mean_and_Median_of_Ungrouped_Data_503770.pdf",
+  "c9_les_6_3": "https://www.icseboard.org/books/Class_9/Mathematics/Books/ICSE_Class_9_Mathematics_Books_Ch18_ICSE_Class_9_Maths_Chapter_18_Statistics_503741.pdf"
 }

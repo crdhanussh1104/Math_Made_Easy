@@ -12,6 +12,20 @@
   font-family: var(--font-sans);
 }
 
+/* WCAG 2.4.7 Keyboard Focus Visibility Indicators */
+:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
@@ -304,11 +318,12 @@ img, svg, video, canvas {
 /* 16:9 Responsive YouTube Video Container */
 .yt-video-wrapper {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Standard 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
+  overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 2px solid var(--border-light);
   background-color: #000000;
@@ -323,4 +338,131 @@ img, svg, video, canvas {
   width: 100% !important;
   height: 100% !important;
   border: none !important;
+}
+
+@media (max-width: 768px) {
+  .yt-video-wrapper {
+    width: 100%;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Responsive Login Card matching Device Aspect Ratio */
+.login-screen-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justifyContent: center;
+  padding: clamp(10px, 2vw, 32px);
+  box-sizing: border-box;
+}
+
+.login-card-landscape {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+  border: 1.5px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 821px) {
+  .login-card-landscape {
+    aspect-ratio: 16 / 9;
+    max-height: 92vh;
+  }
+}
+
+@media (max-width: 820px) {
+  .login-card-landscape {
+    max-height: none;
+  }
+  .login-divider-line {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Google Translate Official Widget Styling & Clean Custom Look
+   ========================================================================== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+#google_translate_element {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  padding: 6px 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
+}
+
+.goog-te-gadget-simple:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15) !important;
+}
+
+.goog-te-gadget-simple img {
+  vertical-align: middle !important;
+  margin-right: 4px !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span {
+  color: #1e293b !important;
+  border-left: none !important;
+}
+
+/* Dark theme overrides for Google Translate gadget */
+[data-theme="dark"] .goog-te-gadget-simple,
+[data-theme="space"] .goog-te-gadget-simple,
+[data-theme="cyber"] .goog-te-gadget-simple {
+  background-color: #1e293b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value span,
+[data-theme="space"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="space"] .goog-te-gadget-simple .goog-te-menu-value span,
+[data-theme="cyber"] .goog-te-gadget-simple .goog-te-menu-value,
+[data-theme="cyber"] .goog-te-gadget-simple .goog-te-menu-value span {
+  color: #f8fafc !important;
+}
+
+.goog-te-gadget-icon {
+  background-image: url('https://translate.google.com/favicon.ico') !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
 }

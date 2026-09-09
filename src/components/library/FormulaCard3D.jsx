@@ -3,7 +3,7 @@ import { BadgeChip } from '../ui/BadgeChip';
 import { Button3D } from '../ui/Button3D';
 import { soundFx } from '../../utils/audioSynth';
 import { speechFx } from '../../utils/speech';
-import { RotateCw, Volume2, Lightbulb, Sparkles, CheckCircle2, Eye, BookOpen } from 'lucide-react';
+import { RotateCw, Volume2, Eye } from 'lucide-react';
 
 export const FormulaCard3D = ({ formulaData }) => {
   const [isFlipped, setIsFlipped] = useState(false);

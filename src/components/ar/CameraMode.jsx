@@ -147,11 +147,16 @@ export const CameraMode = () => {
     soundFx.playClick();
   };
 
+  const [completedActivities, setCompletedActivities] = useState([]);
+
   const handleCompleteActivity = () => {
     soundFx.playCorrect();
     triggerConfetti('levelUp');
-    addXP(50);
-    addGems(20);
+    if (!completedActivities.includes(activeActivity)) {
+      addXP(50);
+      addGems(20);
+      setCompletedActivities(prev => [...prev, activeActivity]);
+    }
     setShowRewardModal(true);
   };
 
@@ -335,7 +340,7 @@ export const CameraMode = () => {
                 border: '2px solid #ec4899', textAlign: 'center', fontWeight: '800',
                 pointerEvents: 'none'
               }}>
-                <div style={{ fontSize: '0.8rem', color: '#ec4899' }}>AR Real Photo Distance:</div>
+                <div style={{ fontSize: '0.8rem', color: '#ec4899' }}>Simulated AR Pixel Distance:</div>
                 <div style={{ fontSize: '1.2rem', fontFamily: 'var(--font-rounded)' }}>
                   Length = {calculatedDistanceCm} cm | Estimated Area = {calculatedDistanceCm * 6} cm²
                 </div>

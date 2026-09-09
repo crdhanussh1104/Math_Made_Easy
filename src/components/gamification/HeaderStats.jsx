@@ -1,14 +1,29 @@
 import React from 'react';
 import { useGame } from '../../context/GameContext';
 import { useLanguage } from '../../context/LanguageContext';
-import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem, Trophy } from 'lucide-react';
+import { Home, BookOpen, HelpCircle, Box, User, Flame, Star, Gem, Trophy, LogOut } from 'lucide-react';
 import { ClassSelector } from '../ui/ClassSelector';
 import { LanguageSelector } from '../ui/LanguageSelector';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
+import { logOutGoogle } from '../../services/firebaseAuth';
+
 export const HeaderStats = ({ currentPage, onNavigate }) => {
-  const { gameState } = useGame();
+  const { gameState, logoutStudent } = useGame();
   const { t } = useLanguage();
+
+  const handleLogout = async () => {
+    try {
+      await logOutGoogle();
+    } catch (e) {
+      console.warn('Firebase logout warning:', e);
+    }
+    logoutStudent();
+    if (onNavigate) {
+      onNavigate('login');
+    }
+    window.location.hash = '#login';
+  };
 
   const navItems = [
     { id: 'home', label: t('nav_home') || 'Home', icon: Home },
@@ -79,6 +94,7 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
+                aria-label={`Navigate to ${item.label}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -160,6 +176,51 @@ export const HeaderStats = ({ currentPage, onNavigate }) => {
           >
             <Gem size={15} fill="#ce82ff" color="#ce82ff" />
             <span>{gameState.gems}</span>
+          </div>
+
+          {/* Student Profile & Logout Button (Image 1) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <button
+              onClick={() => onNavigate && onNavigate('login')}
+              title={`Logged in as ${gameState.studentProfile?.name || 'Student'}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '5px 10px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255,255,255,0.35)',
+                backgroundColor: 'rgba(255,255,255,0.2)',
+                color: '#ffffff',
+                fontWeight: '700',
+                fontSize: '0.82rem',
+                cursor: 'pointer'
+              }}
+            >
+              <User size={14} />
+              <span className="hide-on-mobile">{(gameState.studentProfile?.name || 'Student').split(' ')[0]}</span>
+            </button>
+
+            <button
+              onClick={handleLogout}
+              title="Log out of Math Made Easy"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                padding: '5px 10px',
+                borderRadius: '8px',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                backgroundColor: 'rgba(239, 68, 68, 0.35)',
+                color: '#ffffff',
+                fontWeight: '800',
+                fontSize: '0.82rem',
+                cursor: 'pointer'
+              }}
+            >
+              <LogOut size={14} />
+              <span>Logout</span>
+            </button>
           </div>
         </div>
       </header>
