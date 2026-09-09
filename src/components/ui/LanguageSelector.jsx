@@ -64,30 +64,34 @@ export const LanguageSelector = ({ variant = 'header' }) => {
     );
   }
 
+  const isLoginVariant = variant === 'login';
+
   return (
     <div ref={dropdownRef} style={{ position: 'relative', zIndex: 1000 }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         title="Change Language / भाषा बदलें"
         aria-label="Change Language"
+        className={isLoginVariant ? "login-lang-btn" : ""}
         style={{
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
-          background: 'rgba(255, 255, 255, 0.15)',
-          border: '1px solid rgba(255, 255, 255, 0.25)',
-          padding: '6px 12px',
-          borderRadius: 'var(--radius-sm, 8px)',
+          background: isLoginVariant ? 'var(--bg-card-solid, #ffffff)' : 'rgba(255, 255, 255, 0.15)',
+          border: isLoginVariant ? '1.5px solid var(--border-light, #cbd5e1)' : '1px solid rgba(255, 255, 255, 0.25)',
+          padding: isLoginVariant ? '7px 14px' : '6px 12px',
+          borderRadius: isLoginVariant ? '12px' : 'var(--radius-sm, 8px)',
           cursor: 'pointer',
-          color: '#ffffff',
+          color: isLoginVariant ? 'var(--text-main, #1e293b)' : '#ffffff',
           fontFamily: 'inherit',
-          fontWeight: '500',
-          fontSize: '0.88rem',
-          transition: 'all 0.2s',
+          fontWeight: '700',
+          fontSize: isLoginVariant ? '0.86rem' : '0.88rem',
+          transition: 'all 0.2s ease',
+          boxShadow: isLoginVariant ? '0 2px 8px rgba(0,0,0,0.06)' : 'none',
           backdropFilter: 'blur(8px)'
         }}
       >
-        <Globe size={16} />
+        <Globe size={16} color={isLoginVariant ? 'var(--primary, #4f46e5)' : '#ffffff'} />
         <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <span>{currentLanguageMeta.flag}</span>
           <span>{currentLanguageMeta.nativeName}</span>
@@ -96,30 +100,34 @@ export const LanguageSelector = ({ variant = 'header' }) => {
       </button>
 
       {isOpen && (
-        <div style={{
-          position: 'absolute',
-          top: '100%',
-          right: 0,
-          marginTop: '6px',
-          background: 'var(--bg-card-solid, #ffffff)',
-          border: '1px solid var(--border-light, #e2e8f0)',
-          borderRadius: 'var(--radius-md, 10px)',
-          boxShadow: 'var(--shadow-lg, 0 10px 25px -5px rgba(0,0,0,0.15))',
-          minWidth: '190px',
-          maxHeight: '340px',
-          overflowY: 'auto',
-          padding: '4px'
-        }}>
+        <div 
+          className={isLoginVariant ? "login-lang-dropdown" : ""}
+          style={{
+            position: 'absolute',
+            top: '100%',
+            right: 0,
+            marginTop: '6px',
+            background: 'var(--bg-card-solid, #ffffff)',
+            border: '1px solid var(--border-light, #e2e8f0)',
+            borderRadius: '12px',
+            boxShadow: 'var(--shadow-lg, 0 10px 25px -5px rgba(0,0,0,0.15))',
+            minWidth: '210px',
+            maxHeight: '340px',
+            overflowY: 'auto',
+            padding: '6px',
+            zIndex: 1001
+          }}
+        >
           <div style={{
-            padding: '6px 12px 4px 12px',
+            padding: '6px 12px 6px 12px',
             fontSize: '0.75rem',
-            fontWeight: '700',
+            fontWeight: '800',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
             color: 'var(--text-muted, #94a3b8)',
             borderBottom: '1px solid var(--border-light, #f1f5f9)'
           }}>
-            Select Language
+            Select Language / भाषा
           </div>
           {languages.map((lang) => {
             const isSelected = language === lang.code;
@@ -136,23 +144,26 @@ export const LanguageSelector = ({ variant = 'header' }) => {
                   justifyContent: 'space-between',
                   width: '100%',
                   textAlign: 'left',
-                  padding: '8px 12px',
-                  borderRadius: '6px',
+                  padding: '9px 12px',
+                  borderRadius: '8px',
                   background: isSelected ? 'var(--primary-light, #eef2ff)' : 'transparent',
                   border: 'none',
                   cursor: 'pointer',
                   color: isSelected ? 'var(--primary, #4f46e5)' : 'var(--text-main, #1e293b)',
                   fontFamily: 'inherit',
                   fontSize: '0.88rem',
-                  fontWeight: isSelected ? '600' : '400',
-                  transition: 'background 0.15s'
+                  fontWeight: isSelected ? '800' : '500',
+                  transition: 'background 0.15s ease'
                 }}
               >
-                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ fontSize: '1rem' }}>{lang.flag}</span>
-                  <span>{lang.nativeName}</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
+                  <span style={{ fontSize: '1.1rem' }}>{lang.flag}</span>
+                  <div>
+                    <div style={{ lineHeight: '1.2' }}>{lang.nativeName}</div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted, #64748b)' }}>{lang.name}</div>
+                  </div>
                 </span>
-                {isSelected && <Check size={14} />}
+                {isSelected && <Check size={16} color="var(--primary, #4f46e5)" />}
               </button>
             );
           })}

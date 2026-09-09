@@ -404,3 +404,27 @@
 [data-theme="cyber"] .login-session-sub {
   color: #86efac !important;
 }
+
+[data-theme="dark"] .login-lang-btn,
+[data-theme="space"] .login-lang-btn,
+[data-theme="cyber"] .login-lang-btn {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .login-lang-btn:hover,
+[data-theme="space"] .login-lang-btn:hover,
+[data-theme="cyber"] .login-lang-btn:hover {
+  border-color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .login-lang-dropdown,
+[data-theme="space"] .login-lang-dropdown,
+[data-theme="cyber"] .login-lang-dropdown {
+  background: #111827 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+  color: #f3f4f6 !important;
+}

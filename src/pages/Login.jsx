@@ -3,6 +3,8 @@ import { useGame } from '../context/GameContext';
 import { useLanguage } from '../context/LanguageContext';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
+import { LanguageSelector } from '../components/ui/LanguageSelector';
+import { ThemeToggle } from '../components/ui/ThemeToggle';
 import { soundFx } from '../utils/audioSynth';
 import { signInWithGoogle, logOutGoogle } from '../services/firebaseAuth';
 import {
@@ -111,6 +113,7 @@ export const Login = ({ onNavigate }) => {
       boxSizing: 'border-box'
     }}>
       
+
       {/* 16:9 Landscape Card Container */}
       <div className="login-card-landscape" style={{
         width: '100%',
@@ -123,6 +126,21 @@ export const Login = ({ onNavigate }) => {
         flexDirection: 'column',
         justifyContent: 'space-between'
       }}>
+        
+        {/* Top-Right Header Controls: Language Selector & Theme Toggle */}
+        <div style={{
+          position: 'absolute',
+          top: 'clamp(12px, 2vh, 20px)',
+          right: 'clamp(14px, 2.5vw, 24px)',
+          zIndex: 60,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <LanguageSelector variant="login" />
+          <ThemeToggle />
+        </div>
+
         
         {/* Main Grid: Left Boy Illustration & Right Content */}
         <div style={{
