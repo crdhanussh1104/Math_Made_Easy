@@ -4,7 +4,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { CardRounded } from '../components/ui/CardRounded';
 import { Button3D } from '../components/ui/Button3D';
 import { LanguageSelector } from '../components/ui/LanguageSelector';
-import { GoogleTranslate } from '../components/ui/GoogleTranslate';
 import { ThemeToggle } from '../components/ui/ThemeToggle';
 import { soundFx } from '../utils/audioSynth';
 import { signInWithGoogle, logOutGoogle } from '../services/firebaseAuth';
@@ -138,7 +137,6 @@ export const Login = ({ onNavigate }) => {
           alignItems: 'center',
           gap: '8px'
         }}>
-          <GoogleTranslate />
           <LanguageSelector variant="login" />
           <ThemeToggle />
         </div>
@@ -333,11 +331,11 @@ export const Login = ({ onNavigate }) => {
                   </div>
 
                   {/* Button Actions: Enter Website, Switch Account, and Logout */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '8px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(130px, 1.8fr) minmax(80px, 1fr) minmax(95px, 1.1fr)', gap: '8px', width: '100%' }}>
                     <Button3D
                       onClick={() => onNavigate && onNavigate('home')}
                       variant="primary"
-                      style={{ padding: '12px', fontSize: '0.95rem', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
+                      style={{ padding: '12px 10px', fontSize: '0.95rem', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', whiteSpace: 'nowrap' }}
                     >
                       <span>Enter Website</span>
                       <ArrowRight size={16} />
@@ -346,7 +344,7 @@ export const Login = ({ onNavigate }) => {
                     <Button3D
                       onClick={handleGoogleSignInClick}
                       variant="outline"
-                      style={{ padding: '12px', fontSize: '0.9rem', fontWeight: '700' }}
+                      style={{ padding: '12px 8px', fontSize: '0.9rem', fontWeight: '700', whiteSpace: 'nowrap' }}
                       title="Switch Google Account"
                     >
                       Switch
@@ -357,7 +355,7 @@ export const Login = ({ onNavigate }) => {
                       onClick={handleLogout}
                       className="hover-lift"
                       style={{
-                        padding: '12px',
+                        padding: '12px 8px',
                         borderRadius: '12px',
                         border: '1.5px solid #fca5a5',
                         background: '#fef2f2',
@@ -368,7 +366,8 @@ export const Login = ({ onNavigate }) => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        gap: '4px'
+                        gap: '4px',
+                        whiteSpace: 'nowrap'
                       }}
                       title="Log Out"
                     >
