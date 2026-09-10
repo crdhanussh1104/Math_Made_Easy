@@ -97,14 +97,19 @@ export const ChatWindow = () => {
         ))}
       </div>
 
-      {/* Input Bar */}
-      <div style={{ display: 'flex', gap: '10px' }}>
+      {/* Input Bar Form */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSend();
+        }}
+        style={{ display: 'flex', gap: '10px' }}
+      >
         <input
           type="text"
           placeholder="Ask Pi-Bot any math question..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           style={{
             flex: 1,
             padding: '12px 16px',
@@ -117,10 +122,10 @@ export const ChatWindow = () => {
             color: 'var(--text-main)'
           }}
         />
-        <Button3D variant="secondary" onClick={() => handleSend()} icon={Send}>
-          Ask
+        <Button3D type="submit" variant="secondary" onClick={() => handleSend()} icon={Send}>
+          Send
         </Button3D>
-      </div>
+      </form>
     </CardRounded>
   );
 };

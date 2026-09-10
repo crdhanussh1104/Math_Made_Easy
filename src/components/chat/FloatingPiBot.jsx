@@ -338,14 +338,19 @@ export const FloatingPiBot = ({ onNavigate }) => {
             ))}
           </div>
 
-          {/* Input Bar */}
-          <div style={{ padding: '8px 10px', display: 'flex', gap: '6px', backgroundColor: 'var(--bg-card-solid)', borderTop: '1px solid var(--border-light)', alignItems: 'center' }}>
+          {/* Input Bar Form */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSend();
+            }}
+            style={{ padding: '8px 10px', display: 'flex', gap: '6px', backgroundColor: 'var(--bg-card-solid)', borderTop: '1px solid var(--border-light)', alignItems: 'center' }}
+          >
             <input
               type="text"
               placeholder={isListening ? "Listening to your voice..." : (t('pibot_placeholder') || "Ask any math problem...")}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               style={{
                 flex: 1,
                 padding: '8px 12px',
@@ -362,6 +367,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
 
             {/* Mic Voice Input Button */}
             <button
+              type="button"
               onClick={handleToggleVoiceInput}
               title="Voice Input"
               aria-label="Voice Input"
@@ -382,8 +388,7 @@ export const FloatingPiBot = ({ onNavigate }) => {
 
             {/* Direct Send / Ask Button */}
             <button
-              onClick={() => handleSend()}
-              disabled={!input.trim()}
+              type="submit"
               title="Send question"
               style={{
                 display: 'inline-flex',
@@ -391,21 +396,21 @@ export const FloatingPiBot = ({ onNavigate }) => {
                 gap: '6px',
                 padding: '8px 14px',
                 borderRadius: 'var(--radius-md)',
-                backgroundColor: input.trim() ? 'var(--secondary)' : 'var(--border-light)',
+                backgroundColor: 'var(--secondary)',
                 color: '#ffffff',
                 border: 'none',
                 fontWeight: '700',
                 fontSize: '0.85rem',
-                cursor: input.trim() ? 'pointer' : 'not-allowed',
+                cursor: 'pointer',
                 fontFamily: 'var(--font-rounded)',
                 flexShrink: 0,
-                transition: 'background-color 0.2s'
+                transition: 'transform 0.1s ease, background-color 0.2s'
               }}
             >
               <Send size={15} />
-              {t('pibot_send') || 'Send'}
+              <span>Send</span>
             </button>
-          </div>
+          </form>
         </div>
       )}
     </>
