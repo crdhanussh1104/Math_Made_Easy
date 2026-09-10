@@ -330,10 +330,10 @@
             const session = await window.ai.languageModel.create();
             aiSummary = await session.prompt(`Context: ${topDoc.text}\nAnswer query: ${query}`);
           } catch(e) {
-            aiSummary = `[Grounded Textbook Answer]: ${topDoc.text}`;
+            aiSummary = topDoc.text;
           }
         } else {
-          aiSummary = `[Grounded Textbook Explanation]: Based on ${topDoc.topic}: "${topDoc.text}"`;
+          aiSummary = topDoc.text;
         }
 
         return { status: "SUCCESS", latency, results, aiSummary };

@@ -46,6 +46,8 @@ export const FloatingPiBot = ({ onNavigate }) => {
     soundFx.playClick();
   };
 
+  const recognitionRef = useRef(null);
+
   const handleSend = (textOverride) => {
     const textToSend = textOverride || input;
     if (!textToSend.trim()) return;
@@ -61,18 +63,60 @@ export const FloatingPiBot = ({ onNavigate }) => {
       // Use full AI Math Solver to answer EVERY question
       const aiReply = solveMathQuestion(textToSend, mode);
       setMessages(prev => [...prev, { sender: 'pibot', text: aiReply }]);
-      speechFx.speak(aiReply.replace(/[*_#]/g, ''));
     }, 400);
   };
 
   const handleToggleVoiceInput = () => {
-    setIsListening(!isListening);
     soundFx.playClick();
-    if (!isListening) {
-      setTimeout(() => {
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Speech recognition is not supported in this browser. Please use Google Chrome or Microsoft Edge.");
+      return;
+    }
+
+    if (isListening) {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+      setIsListening(false);
+      return;
+    }
+
+    try {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        setIsListening(true);
+      };
+
+      recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript;
+        }
+        if (transcript) {
+          setInput(transcript);
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.warn("Speech recognition error:", event.error);
         setIsListening(false);
-        handleSend("Explain the Pythagoras Theorem and formula");
-      }, 2200);
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognitionRef.current = recognition;
+      recognition.start();
+    } catch (e) {
+      console.error("Speech recognition start failed:", e);
+      setIsListening(false);
     }
   };
 

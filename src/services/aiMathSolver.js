@@ -181,8 +181,7 @@ export function solveMathQuestion(query, mode = 'full') {
     lastContextBuffer.push({ query, topic: topMatch.topic, text: topMatch.text });
     if (lastContextBuffer.length > 3) lastContextBuffer.shift();
 
-    let response = `📚 **Grounded Textbook Answer (BM25 RAG System):**\n\n`;
-    response += `### ${topMatch.topic}\n`;
+    let response = `### ${topMatch.topic}\n`;
     response += `> ${topMatch.text}\n\n`;
 
     if (ragResults.length > 1) {

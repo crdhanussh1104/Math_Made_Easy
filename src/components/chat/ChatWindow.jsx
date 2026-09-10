@@ -29,7 +29,6 @@ export const ChatWindow = () => {
     setTimeout(() => {
       const aiReply = solveMathQuestion(textToSend);
       setMessages(prev => [...prev, { sender: 'pibot', text: aiReply }]);
-      speechFx.speak(aiReply.replace(/[*_#`[\]()]/g, ''));
     }, 400);
   };
 
