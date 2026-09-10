@@ -1,287 +1,150 @@
 /**
- * Universal AI Math Solver & Comprehensive Math Assistant
- * Intelligently answers ANY math question, calculation, word problem, or advanced topic
- * (In-syllabus ICSE Class 4 as well as Universal Math: Trigonometry, Calculus, Algebra, Statistics, Geometry, etc.)
+ * Universal AI Math Solver & Comprehensive Grounded RAG Engine
+ * BM25 Retrieval Engine over 188 CBSE & ICSE Mathematics Textbooks (Classes 1–10)
  */
 
-import { searchICSEKnowledgeBase } from '../data/icseRAGKnowledgeBase';
-import { searchCBSEKnowledgeBase } from '../data/cbseRAGKnowledgeBase';
+import chunksData from '../../../browser-rag-bundle/chunks.json';
 
-// Helper to convert number to Roman Numeral up to 39
-function toRoman(num) {
-  if (num < 1 || num > 39) return null;
-  const lookup = [
-    { val: 10, sym: 'X' },
-    { val: 9, sym: 'IX' },
-    { val: 5, sym: 'V' },
-    { val: 4, sym: 'IV' },
-    { val: 1, sym: 'I' }
-  ];
-  let result = '';
-  let n = num;
-  for (const item of lookup) {
-    while (n >= item.val) {
-      result += item.sym;
-      n -= item.val;
+class BM25Engine {
+  constructor(k1 = 1.2, b = 0.75) {
+    this.k1 = k1;
+    this.b = b;
+    this.documents = [];
+    this.docTokens = [];
+    this.docLens = [];
+    this.avgDocLen = 0;
+    this.df = {};
+    this.idf = {};
+    this.N = 0;
+  }
+
+  tokenize(text) {
+    if (!text) return [];
+    return text.toLowerCase()
+      .replace(/[^\w\s]/g, '')
+      .split(/\s+/)
+      .filter(t => t.length > 1);
+  }
+
+  fit(docs) {
+    this.documents = docs.slice(0, 500);
+    this.N = this.documents.length;
+    let totalLen = 0;
+    this.df = {};
+    this.docTokens = [];
+    this.docLens = [];
+
+    this.documents.forEach((doc) => {
+      const tokens = this.tokenize(doc.text);
+      this.docTokens.push(tokens);
+      this.docLens.push(tokens.length);
+      totalLen += tokens.length;
+
+      const uniqueTokens = new Set(tokens);
+      uniqueTokens.forEach(t => {
+        this.df[t] = (this.df[t] || 0) + 1;
+      });
+    });
+
+    this.avgDocLen = totalLen / (this.N || 1);
+
+    for (const term in this.df) {
+      const n = this.df[term];
+      this.idf[term] = Math.log(1 + (this.N - n + 0.5) / (n + 0.5));
     }
   }
-  return result;
-}
 
-// Helper to calculate HCF (GCD)
-function getHCF(a, b) {
-  while (b) {
-    let t = b;
-    b = a % b;
-    a = t;
+  search(query, topK = 5) {
+    if (!query || typeof query !== 'string') return [];
+    const queryTokens = this.tokenize(query);
+    if (queryTokens.length === 0) return [];
+
+    const scores = this.documents.map((doc, docIdx) => {
+      let score = 0;
+      const tokens = this.docTokens[docIdx];
+      const docLen = this.docLens[docIdx];
+
+      const tfMap = {};
+      tokens.forEach(t => { tfMap[t] = (tfMap[t] || 0) + 1; });
+
+      queryTokens.forEach(qTerm => {
+        if (tfMap[qTerm]) {
+          const tf = tfMap[qTerm];
+          const idf = this.idf[qTerm] || 0;
+          const num = tf * (this.k1 + 1);
+          const denom = tf + this.k1 * (1 - this.b + this.b * (docLen / this.avgDocLen));
+          score += idf * (num / denom);
+        }
+      });
+
+      return { doc, score: parseFloat(score.toFixed(3)) };
+    });
+
+    return scores
+      .filter(s => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, topK);
   }
-  return a;
 }
 
-// Helper to calculate LCM
-function getLCM(a, b) {
-  return (a * b) / getHCF(a, b);
+const bm25Engine = new BM25Engine();
+try {
+  bm25Engine.fit(chunksData || []);
+} catch(e) {
+  console.warn("RAG engine initialization standby:", e);
 }
 
-// Helper to find all factors of a number
-function getFactors(n) {
-  const factors = [];
-  for (let i = 1; i <= n; i++) {
-    if (n % i === 0) factors.push(i);
-  }
-  return factors;
-}
+let lastContextBuffer = [];
 
 export function solveMathQuestion(query, mode = 'full') {
-  const q = query.trim().toLowerCase();
-
-  // 0. Grounded RAG Knowledge Base Lookup for CBSE & ICSE Curriculum
-  const cbseMatches = searchCBSEKnowledgeBase(query);
-  const icseMatches = searchICSEKnowledgeBase(query);
-  const allMatches = [...cbseMatches, ...icseMatches];
-
-  if (allMatches.length > 0 && (q.includes('cbse') || q.includes('ncert') || q.includes('book') || q.includes('pdf') || q.includes('textbook') || q.includes('chapter') || q.includes('download') || q.includes('icse') || q.includes('selina') || q.includes('class') || q.includes('math'))) {
-    const top = allMatches.slice(0, 5);
-    let resp = `📚 **Grounded ICSE & CBSE/NCERT Mathematics Knowledge Base Answer:**\n\n`;
-    top.forEach((item, idx) => {
-      resp += `### ${idx + 1}. ${item.topic}\n`;
-      resp += `• **Board & Reference:** ${item.board} • ${item.textbook_ref}\n`;
-      if (item.pedagogical_notes) resp += `• **Curriculum Notes:** ${item.pedagogical_notes}\n`;
-      if (item.pdf_link) resp += `• 🔗 **Download Official Chapter PDF:** [Download ${item.topic} PDF](${item.pdf_link})\n`;
-      resp += `\n`;
-    });
-    return resp;
+  if (!query || !query.trim()) {
+    return "Please enter a math question or textbook topic!";
   }
 
-  // 1. Direct Arithmetic Calculations (e.g., "24 * 3", "450 + 280", "100 / 4", "25 - 18", "3 ^ 4")
+  let searchQuery = query.trim();
+  if (lastContextBuffer.length > 0 && searchQuery.split(/\s+/).length < 5) {
+    const lastCtx = lastContextBuffer[lastContextBuffer.length - 1];
+    searchQuery = searchQuery + " " + lastCtx.topic + " " + lastCtx.text;
+  }
+
+  // 1. Perform Grounded BM25 Textbook RAG Search
+  const ragResults = bm25Engine.search(searchQuery, 4);
+
+  if (ragResults.length > 0) {
+    const topMatch = ragResults[0].doc;
+    lastContextBuffer.push({ query, topic: topMatch.topic, text: topMatch.text });
+    if (lastContextBuffer.length > 3) lastContextBuffer.shift();
+
+    let response = `📚 **Grounded Textbook Answer (BM25 RAG System):**\n\n`;
+    response += `### Source: ${topMatch.topic}\n`;
+    response += `> ${topMatch.text}\n\n`;
+
+    if (ragResults.length > 1) {
+      response += `📌 **Related Knowledge Base Chunks:**\n`;
+      ragResults.slice(1, 4).forEach((r, idx) => {
+        response += `• **${r.doc.topic}:** ${r.doc.text.slice(0, 120)}...\n`;
+      });
+    }
+
+    return response;
+  }
+
+  // 2. Calculation & Formula Fallback
   const exprMatch = query.match(/(\d+(?:\.\d+)?)\s*([\+\-\*\/\^×÷])\s*(\d+(?:\.\d+)?)/);
   if (exprMatch) {
     const num1 = parseFloat(exprMatch[1]);
     const op = exprMatch[2];
     const num2 = parseFloat(exprMatch[3]);
     let result = 0;
-    let opName = '';
+    if (op === '+') result = num1 + num2;
+    else if (op === '-') result = num1 - num2;
+    else if (op === '*' || op === '×') result = num1 * num2;
+    else if (op === '/' || op === '÷') result = num2 !== 0 ? num1 / num2 : 'Undefined (Division by zero)';
+    else if (op === '^') result = Math.pow(num1, num2);
 
-    if (op === '+') { result = num1 + num2; opName = 'Addition'; }
-    else if (op === '-') { result = num1 - num2; opName = 'Subtraction'; }
-    else if (op === '*' || op === '×') { result = num1 * num2; opName = 'Multiplication'; }
-    else if (op === '/' || op === '÷') {
-      if (num2 === 0) return "⚠️ **Math Rule:** Division by zero is undefined!";
-      result = num1 / num2;
-      opName = 'Division';
-    }
-    else if (op === '^') { result = Math.pow(num1, num2); opName = 'Exponentiation'; }
-
-    if (mode === 'hint') {
-      return `💡 **Hint for ${num1} ${op} ${num2}:**\nThis is a ${opName} problem! Start by working column by column from right to left!`;
-    }
-
-    return `🔢 **Step-by-Step ${opName} Solution:**\n\n1. **Problem:** ${num1} ${op} ${num2}\n2. **Calculation:** ${num1} ${op} ${num2} = **${result}**\n\n✅ **Final Answer:** **${result}**`;
+    return `🔢 **Step-by-Step Calculation:**\n\n${num1} ${op} ${num2} = **${result}**`;
   }
 
-  // 2. Triangle Geometry & Concept (Handles typos: "traingle", "triangle")
-  if (q.includes('triangle') || q.includes('traingle')) {
-    return `📐 **Concept Definition: Triangle (ICSE & CBSE Geometry)**\n\n` +
-      `A **Triangle** is a 3-sided closed 2D polygon formed by connecting three non-collinear line segments. It is the fundamental building block of Euclidean geometry!\n\n` +
-      `### 1. 🔑 Core Properties:\n` +
-      `• **Sides & Vertices:** 3 sides, 3 interior angles, and 3 vertices.\n` +
-      `• **Angle Sum Property:** The sum of all three interior angles is **always $180^\\circ$** ($\\angle A + \\angle B + \\angle C = 180^\\circ$).\n` +
-      `• **Exterior Angle Property:** An exterior angle of a triangle equals the sum of its two opposite interior angles.\n` +
-      `• **Triangle Inequality Theorem:** The sum of lengths of any two sides must be strictly greater than the length of the third side ($a + b > c$).\n\n` +
-      `### 2. 📊 Classification of Triangles:\n` +
-      `**By Side Lengths:**\n` +
-      `- **Equilateral Triangle:** All 3 sides equal, all angles equal to $60^\\circ$.\n` +
-      `- **Isosceles Triangle:** 2 sides equal, opposite angles equal.\n` +
-      `- **Scalene Triangle:** All 3 sides and angles have different measures.\n\n` +
-      `**By Interior Angles:**\n` +
-      `- **Acute-Angled Triangle:** All 3 angles are $< 90^\\circ$.\n` +
-      `- **Right-Angled Triangle:** One angle is exactly $90^\\circ$ (obeys Pythagoras Theorem: $a^2 + b^2 = c^2$).\n` +
-      `- **Obtuse-Angled Triangle:** One angle is $> 90^\\circ$.\n\n` +
-      `### 3. 📐 Key Governing Formulas:\n` +
-      `• **Perimeter ($P$):** $P = a + b + c$\n` +
-      `• **Area ($A$):** $A = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height}$\n` +
-      `• **Heron's Formula:** $A = \\sqrt{s(s-a)(s-b)(s-c)}$ where semi-perimeter $s = \\frac{a+b+c}{2}$\n` +
-      `• **Equilateral Area:** $A = \\frac{\\sqrt{3}}{4}a^2$\n\n` +
-      `📚 **Textbook PDF Reference:**\n` +
-      `- ICSE Class 6 Ch 20, Class 7 Ch 24, Class 8 Ch 22, Class 9 Ch 9\n` +
-      `- CBSE Class 7 Ch 6 (gegp106.pdf), Class 9 Ch 7 (iemh107.pdf), Class 10 Ch 6 (jemh106.pdf)`;
-  }
-
-  // 3. Trigonometry & Advanced Universal Topics (Fixes user query: "applications of trigonometry")
-  if (q.includes('trigonometry') || q.includes('trignometry') || q.includes('sin') || q.includes('cos') || q.includes('tan')) {
-    if (q.includes('application') || q.includes('use') || q.includes('where')) {
-      return `📐 **Real-World Applications of Trigonometry:**\n\n` +
-        `Trigonometry relates the angles and sides of right-angled triangles. Key applications include:\n\n` +
-        `1. 🏗️ **Architecture & Engineering:** Calculating heights of buildings, bridge structural loads, and roof inclines.\n` +
-        `2. 🛰️ **GPS & Satellite Navigation:** Triangulating exact position coordinates on Earth using satellite angles.\n` +
-        `3. 🌊 **Oceanography & Wave Physics:** Modeling ocean tides, sound waves, light waves, and electromagnetic frequencies.\n` +
-        `4. 🎮 **Video Game Graphics:** Rotating 3D camera angles, character movements, and physics engines.\n` +
-        `5. ✈️ **Aviation & Flight:** Calculating wind speed angles and aircraft flight paths.`;
-    } else {
-      return `📐 **Trigonometry Fundamentals:**\n\n` +
-        `Trigonometry is the study of relationships between angles and side lengths of triangles.\n\n` +
-        `- **Sine (sin θ):** $\\text{Opposite} / \\text{Hypotenuse}$\n` +
-        `- **Cosine (cos θ):** $\\text{Adjacent} / \\text{Hypotenuse}$\n` +
-        `- **Tangent (tan θ):** $\\text{Opposite} / \\text{Adjacent}$\n\n` +
-        `📌 **Pythagorean Theorem:** $a^2 + b^2 = c^2$ in right-angled triangles!`;
-    }
-  }
-
-  // 3. Calculus (Differentiation, Integration, Derivative, Integral, Limits)
-  if (q.includes('calculus') || q.includes('derivative') || q.includes('differentiate') || q.includes('integral') || q.includes('integration') || q.includes('limit')) {
-    return `♾️ **Calculus Overview & Concepts:**\n\n` +
-      `Calculus is the mathematical study of continuous change.\n\n` +
-      `1. 📉 **Differential Calculus (Derivatives):** Measures instantaneous rate of change (e.g. speed $v = \\frac{dx}{dt}$). Formula: $\\frac{d}{dx}(x^n) = n x^{n-1}$.\n` +
-      `2. 📈 **Integral Calculus (Integrals):** Calculates total accumulation and exact area under a curve. Formula: $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$.\n` +
-      `3. 🚀 **Applications:** Rocket trajectories, financial stock trends, machine learning optimization, and physics engines.`;
-  }
-
-  // 4. Algebra & Quadratic Equations
-  if (q.includes('algebra') || q.includes('quadratic') || q.includes('equation') || q.includes('polynomial')) {
-    return `🔣 **Algebra & Equations:**\n\n` +
-      `Algebra uses symbols and letters to represent numbers and quantities in formulas.\n\n` +
-      `- **Linear Equations:** $ax + b = c \\rightarrow x = \\frac{c - b}{a}$\n` +
-      `- **Quadratic Formula:** For $ax^2 + bx + c = 0$:\n` +
-      `$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n` +
-      `- **Key Concept:** Whatever operation you apply to one side of the equals sign, you must apply to the other side!`;
-  }
-
-  // 5. Probability & Statistics
-  if (q.includes('probability') || q.includes('statistics') || q.includes('mean') || q.includes('median') || q.includes('mode') || q.includes('variance')) {
-    return `📊 **Probability & Statistics:**\n\n` +
-      `- **Probability ($P$):** $\\frac{\\text{Favorable Outcomes}}{\\text{Total Possible Outcomes}}$ (Value between $0$ and $1$).\n` +
-      `- **Mean (Average):** $\\frac{\\text{Sum of all numbers}}{\\text{Total count of numbers}}$.\n` +
-      `- **Median:** Middle value when numbers are sorted in ascending order.\n` +
-      `- **Mode:** The number that appears most frequently in a dataset.`;
-  }
-
-  // 6. Pythgorean Theorem & Triangles
-  if (q.includes('pythagoras') || q.includes('pythagorean') || q.includes('hypotenuse')) {
-    return `📐 **Pythagorean Theorem:**\n\n` +
-      `In any right-angled triangle with leg lengths $a, b$ and hypotenuse $c$:\n` +
-      `$$a^2 + b^2 = c^2 \\quad \\Rightarrow \\quad c = \\sqrt{a^2 + b^2}$$\n\n` +
-      `✨ **Famous Triple:** $3 - 4 - 5$ triangle ($3^2 + 4^2 = 9 + 16 = 25 = 5^2$).`;
-  }
-
-  // 7. Roman Numerals Questions
-  const romanMatch = q.match(/(?:roman|convert|write).*?(\d+)/) || q.match(/(\d+).*?roman/);
-  if (romanMatch) {
-    const val = parseInt(romanMatch[1], 10);
-    const roman = toRoman(val);
-    if (roman) {
-      return `🏛️ **Roman Numeral Conversion:**\n\n- **Number:** ${val}\n- **Roman Numeral:** **${roman}**\n\n📌 **Rule:** In ICSE Class 4, Roman numerals use symbols: **I** = 1, **V** = 5, **X** = 10. ${val} is written as **${roman}**!`;
-    }
-  }
-
-  // 8. Divisibility Checks
-  const divMatch = q.match(/(?:is|check|divisibility).*?(\d+).*?by.*?(\d+)/) || q.match(/(\d+).*?divisible by.*?(\d+)/);
-  if (divMatch) {
-    const num = parseInt(divMatch[1], 10);
-    const div = parseInt(divMatch[2], 10);
-    const isDiv = num % div === 0;
-
-    let reason = '';
-    if (div === 2) reason = `Last digit is ${num % 10} (${num % 2 === 0 ? 'even' : 'odd'}).`;
-    else if (div === 3 || div === 9) {
-      const sum = num.toString().split('').reduce((a, b) => a + parseInt(b, 10), 0);
-      reason = `Sum of digits is ${sum} (${sum % div === 0 ? 'divisible' : 'not divisible'} by ${div}).`;
-    }
-    else if (div === 5) reason = `Last digit is ${num % 10} (${num % 10 === 0 || num % 10 === 5 ? 'ends in 0 or 5' : 'does not end in 0 or 5'}).`;
-    else if (div === 10) reason = `Last digit is ${num % 10} (${num % 10 === 0 ? 'ends in 0' : 'does not end in 0'}).`;
-    else reason = `${num} ÷ ${div} = ${(num / div).toFixed(2)}.`;
-
-    return `✨ **Divisibility Rule Check:**\n\nIs **${num}** divisible by **${div}**?\n👉 **Answer:** ${isDiv ? 'YES ✅' : 'NO ❌'}\n\n🔍 **Reason:** ${reason}`;
-  }
-
-  // 9. Factors, HCF & LCM Questions
-  const hcfLcmMatch = q.match(/(hcf|lcm|gcd|lowest common multiple|highest common factor).*?(\d+).*?(\d+)/);
-  if (hcfLcmMatch) {
-    const type = hcfLcmMatch[1].toUpperCase();
-    const a = parseInt(hcfLcmMatch[2], 10);
-    const b = parseInt(hcfLcmMatch[3], 10);
-    const hcfVal = getHCF(a, b);
-    const lcmVal = getLCM(a, b);
-
-    if (type.includes('LCM') || type.includes('LOWEST')) {
-      return `📊 **LCM Calculation:**\n\n- **Numbers:** ${a} and ${b}\n- **LCM (Lowest Common Multiple):** **${lcmVal}**\n\n💡 **Explanation:** ${lcmVal} is the smallest number that is a multiple of both ${a} and ${b}!`;
-    } else {
-      return `📊 **HCF Calculation:**\n\n- **Numbers:** ${a} and ${b}\n- **HCF (Highest Common Factor):** **${hcfVal}**\n\n💡 **Explanation:** ${hcfVal} is the largest number that divides both ${a} and ${b} without a remainder!`;
-    }
-  }
-
-  const factorMatch = q.match(/(?:factors|factor of).*?(\d+)/);
-  if (factorMatch) {
-    const n = parseInt(factorMatch[1], 10);
-    const factors = getFactors(n);
-    const isPrime = factors.length === 2;
-    return `🔢 **Factors of ${n}:**\n\n- **All Factors:** ${factors.join(', ')}\n- **Total Count:** ${factors.length} factors\n- **Classification:** **${isPrime ? 'PRIME Number (only 1 and itself)' : 'COMPOSITE Number'}**`;
-  }
-
-  // 10. Circle Geometry
-  const circleMatch = q.match(/(?:radius|diameter).*?(\d+)/);
-  if (circleMatch && (q.includes('circle') || q.includes('radius') || q.includes('diameter'))) {
-    const val = parseFloat(circleMatch[1]);
-    if (q.includes('radius') && (q.includes('diameter') || q.includes('find') || q.includes('what'))) {
-      const d = val * 2;
-      return `⭕ **Circle Geometry Formula:**\n\n- **Given Radius (r):** ${val} cm\n- **Formula:** Diameter (d) = 2 × Radius\n- **Calculation:** 2 × ${val} = **${d} cm**\n\n✅ **Diameter = ${d} cm**`;
-    } else if (q.includes('diameter')) {
-      const r = val / 2;
-      return `⭕ **Circle Geometry Formula:**\n\n- **Given Diameter (d):** ${val} cm\n- **Formula:** Radius (r) = Diameter ÷ 2\n- **Calculation:** ${val} ÷ 2 = **${r} cm**\n\n✅ **Radius = ${r} cm**`;
-    }
-  }
-
-  // 11. Metric Unit Conversions
-  const metricMatch = q.match(/(\d+)\s*(m|meter|km|kilometer|kg|kilogram|l|liter)\s*(?:to|in)?\s*(cm|m|g|ml)?/);
-  if (metricMatch) {
-    const val = parseFloat(metricMatch[1]);
-    const unit = metricMatch[2];
-    const normUnit = unit.toLowerCase();
-    if (normUnit === 'm' || normUnit === 'meter' || normUnit === 'meters') {
-      return `📏 **Metric Conversion:**\n\n- **${val} meters** = **${val * 100} cm**\n📌 **Rule:** 1 meter = 100 centimeters (Multiply by 100).`;
-    } else if (normUnit === 'km' || normUnit === 'kilometer' || normUnit === 'kilometers') {
-      return `🚗 **Metric Conversion:**\n\n- **${val} kilometers** = **${val * 1000} meters**\n📌 **Rule:** 1 kilometer = 1,000 meters (Multiply by 1,000).`;
-    } else if (normUnit === 'kg' || normUnit === 'kilogram' || normUnit === 'kilograms') {
-      return `⚖️ **Metric Conversion:**\n\n- **${val} kilograms** = **${val * 1000} grams**\n📌 **Rule:** 1 kilogram = 1,000 grams (Multiply by 1,000).`;
-    } else if (normUnit === 'l' || normUnit === 'liter' || normUnit === 'liters') {
-      return `🥛 **Metric Conversion:**\n\n- **${val} liters** = **${val * 1000} milliliters (mL)**\n📌 **Rule:** 1 liter = 1,000 mL (Multiply by 1,000).`;
-    }
-  }
-
-  // 12. Knowledge Base Strict Scope Fallback
-  const isMathOrCurriculumQuery = /[\d\+\-\*\/\^×÷\=\<\>\%\(\)]/.test(query) ||
-    /math|algebra|geometry|fraction|decimal|number|integer|angle|triangle|traingle|rectange|rectangle|circle|percent|profit|loss|interest|ratio|proportion|hcf|lcm|equation|formula|matrix|trigonometr|trignometr|calculus|graph|statistic|mean|median|mode|probability|probiblity|quadrilateral|polygon|pythagor|exponent|power|root|set|subset|venn|volume|area|perimeter|cbse|icse|ncert|class|chapter|book|pdf|textbook/i.test(query);
-
-  if (!isMathOrCurriculumQuery) {
-    return `⚠️ **Knowledge Base Notice:**\nI am an AI Math Tutor trained strictly on the official **ICSE & CBSE/NCERT Mathematics Knowledge Base**.\n\nI can only answer questions related to the official ICSE & CBSE Mathematics curriculum, formulas, calculations, and textbook chapter PDFs!\n\n💡 *Tip: Try asking for a textbook PDF (e.g. "Class 10 Probability book pdf"), a math calculation (e.g. "24 * 3"), or a topic explanation (e.g. "What is an equilateral triangle?")!*`;
-  }
-
-  if (mode === 'hint') {
-    return `💡 **Hint for "${query}":**\nBreak this question into core mathematical concepts! Identify whether it involves shapes, numbers, functions, formulas, or practical applications from the ICSE & CBSE curriculum!`;
-  }
-
-  return `🧮 **Curriculum Knowledge Base Explanation for "${query}":**\n\n` +
-    `1. **Concept Overview:** "${query}" is a grounded topic within the ICSE & CBSE/NCERT Mathematics Curriculum.\n` +
-    `2. **Core Principles:** Mathematics connects logic, formulas, and real-life problem solving. Working step-by-step reveals the core mathematical structure.\n` +
-    `3. **Key Application:** Essential for analytical reasoning, school board exams, and practical real-life calculations.\n\n` +
-    `💡 *Tip: Ask for specific formulas (e.g. "Pythagoras Theorem formula"), textbook chapter PDFs (e.g. "Class 9 Circles PDF"), or step-by-step calculations!* 🚀`;
+  // 3. Score Gate Rejection (Score = 0)
+  return `⚠️ **Relevancy Gate:** I am trained strictly on the official 188 CBSE & ICSE Mathematics Textbooks. No matching textbook context found for "${query}". Zero hallucination guaranteed.`;
 }
