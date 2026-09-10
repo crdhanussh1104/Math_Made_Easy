@@ -159,18 +159,20 @@ export const FloatingPiBot = ({ onNavigate }) => {
   return (
     <>
       {/* Global Floating Action Button */}
-      <div
-        onClick={toggleOpen}
-        className="pibot-floating-btn animate-float hover-lift"
-        title={t('pibot_title') || 'Ask Pi-Bot'}
-        aria-label="Open AI Math Assistant"
-      >
-        <Bot size={22} />
-        <span style={{
-          position: 'absolute', top: -2, right: -2, width: '10px', height: '10px',
-          backgroundColor: 'var(--primary)', borderRadius: '50%', border: '2px solid #fff'
-        }} />
-      </div>
+      {!isOpen && (
+        <div
+          onClick={toggleOpen}
+          className="pibot-floating-btn animate-float hover-lift"
+          title={t('pibot_title') || 'Ask Pi-Bot'}
+          aria-label="Open AI Math Assistant"
+        >
+          <Bot size={22} />
+          <span style={{
+            position: 'absolute', top: -2, right: -2, width: '10px', height: '10px',
+            backgroundColor: 'var(--primary)', borderRadius: '50%', border: '2px solid #fff'
+          }} />
+        </div>
+      )}
 
       {/* Floating Chat Modal Window */}
       {isOpen && (
