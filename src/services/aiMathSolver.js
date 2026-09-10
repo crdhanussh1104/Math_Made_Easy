@@ -1,6 +1,6 @@
 /**
  * Universal AI Math Solver & Grounded RAG Engine with Fuzzy Typo Correction
- * Supports 188 CBSE & ICSE Mathematics Textbooks (Classes 1–10)
+ * Supports 316 CBSE & ICSE Mathematics Textbooks (Classes 1–10)
  */
 
 import chunksData from '../data/chunks.json';
@@ -261,5 +261,5 @@ export function solveMathQuestion(query, mode = 'full') {
     return `🔢 **Step-by-Step Calculation:**\n\n${num1} ${op} ${num2} = **${result}**`;
   }
 
-  return `⚠️ **Relevancy Gate:** I am trained strictly on the official 188 CBSE & ICSE Mathematics Textbooks. No matching textbook context found for "${query}". Zero hallucination guaranteed.`;
+  return `⚠️ **Relevancy Gate:** I am trained strictly on the official 316 CBSE & ICSE Mathematics Textbooks. No matching textbook context found for "${query}". Zero hallucination guaranteed.`;
 }
