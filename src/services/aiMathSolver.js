@@ -3,15 +3,24 @@
  * Supports 188 CBSE & ICSE Mathematics Textbooks (Classes 1–10)
  */
 
-import chunksData from '../../../browser-rag-bundle/chunks.json';
+import chunksData from '../data/chunks.json';
 
-const MATH_DICTIONARY = [
-  "triangle", "triangles", "arithmetic", "commercial", "algebra", "quadratic", "geometry",
-  "perimeter", "area", "fractions", "decimals", "pythagoras", "pythagorean", "hypotenuse",
-  "integers", "factors", "multiples", "percentage", "probability", "statistics", "calculus",
-  "trigonometry", "derivative", "integral", "matrices", "matrix", "symmetry", "euler",
-  "equation", "formula", "exponent", "polynomial", "linear", "ratio", "proportion"
-];
+const STOP_WORDS = new Set([
+  'what', 'is', 'a', 'an', 'the', 'of', 'in', 'to', 'for', 'on', 'with', 'and', 'or',
+  'it', 'this', 'that', 'by', 'as', 'at', 'from', 'how', 'why', 'explain', 'tell',
+  'me', 'about', 'can', 'you', 'show', 'give', 'does', 'do', 'are', 'were', 'was', 'define'
+]);
+
+const VALID_WORDS = new Set([
+  "number", "numbers", "system", "digit", "digits", "place", "value", "whole", "natural",
+  "rational", "irrational", "real", "prime", "composite", "even", "odd", "roman", "numerals",
+  "cardinal", "ordinal", "set", "sets", "triangle", "triangles", "arithmetic", "commercial",
+  "algebra", "quadratic", "geometry", "perimeter", "area", "fractions", "decimals",
+  "pythagoras", "pythagorean", "hypotenuse", "integers", "factors", "multiples",
+  "percentage", "probability", "statistics", "calculus", "trigonometry", "derivative",
+  "integral", "matrices", "matrix", "symmetry", "euler", "equation", "formula", "exponent",
+  "polynomial", "linear", "ratio", "proportion", "hcf", "lcm"
+]);
 
 function levenshtein(a, b) {
   if (a === b) return 0;
@@ -38,9 +47,11 @@ function levenshtein(a, b) {
 
 function correctWord(word) {
   if (!word || word.length <= 3) return word;
+  if (VALID_WORDS.has(word)) return word;
+  
   let bestWord = word;
   let minDistance = 999;
-  for (const dictWord of MATH_DICTIONARY) {
+  for (const dictWord of VALID_WORDS) {
     const dist = levenshtein(word, dictWord);
     if (dist <= 2 && dist < minDistance && Math.abs(word.length - dictWord.length) <= 2) {
       minDistance = dist;
@@ -68,9 +79,8 @@ class BM25Engine {
     const rawTokens = text.toLowerCase()
       .replace(/[^\w\s]/g, '')
       .split(/\s+/)
-      .filter(t => t.length > 1);
+      .filter(t => t.length > 1 && !STOP_WORDS.has(t));
 
-    // Apply fuzzy typo correction to every token
     return rawTokens.map(t => correctWord(t));
   }
 
@@ -83,7 +93,7 @@ class BM25Engine {
     this.docLens = [];
 
     this.documents.forEach((doc) => {
-      const tokens = this.tokenize(doc.text);
+      const tokens = this.tokenize(doc.text + " " + (doc.topic || ""));
       this.docTokens.push(tokens);
       this.docLens.push(tokens.length);
       totalLen += tokens.length;
@@ -156,9 +166,38 @@ export function solveMathQuestion(query, mode = 'full') {
     return "Please enter a math question or textbook topic!";
   }
 
+  let searchQuery = query.trim();
+
+  // 1. Perform Grounded BM25 Textbook RAG Search
+  if (lastContextBuffer.length > 0 && searchQuery.split(/\s+/).length < 5) {
+    const lastCtx = lastContextBuffer[lastContextBuffer.length - 1];
+    searchQuery = searchQuery + " " + lastCtx.topic + " " + lastCtx.text;
+  }
+
+  const ragResults = bm25Engine.search(searchQuery, 4);
+
+  if (ragResults.length > 0) {
+    const topMatch = ragResults[0].doc;
+    lastContextBuffer.push({ query, topic: topMatch.topic, text: topMatch.text });
+    if (lastContextBuffer.length > 3) lastContextBuffer.shift();
+
+    let response = `📚 **Grounded Textbook Answer (BM25 RAG System):**\n\n`;
+    response += `### ${topMatch.topic}\n`;
+    response += `> ${topMatch.text}\n\n`;
+
+    if (ragResults.length > 1) {
+      response += `📌 **Related Knowledge Base Chunks:**\n`;
+      ragResults.slice(1, 4).forEach((r) => {
+        response += `• **${r.doc.topic}:** ${r.doc.text.slice(0, 140)}...\n`;
+      });
+    }
+
+    return response;
+  }
+
+  // 2. Direct Fallback Rule Handlers for Key Concepts & Formulas
   const rawQ = query.trim().toLowerCase();
 
-  // 1. Direct Rule Handlers for Key Concepts & Formulas
   if (rawQ.includes('triangle') || rawQ.includes('trainagle') || rawQ.includes('traingle')) {
     return `📐 **Concept Definition: Triangle (ICSE & CBSE Geometry)**\n\n` +
       `A **Triangle** is a 3-sided closed 2D polygon formed by connecting 3 non-collinear line segments.\n\n` +
@@ -204,56 +243,6 @@ export function solveMathQuestion(query, mode = 'full') {
       `In a right-angled triangle with legs $a, b$ and hypotenuse $c$:\n` +
       `$$a^2 + b^2 = c^2 \\quad \\Rightarrow \\quad c = \\sqrt{a^2 + b^2}$$\n\n` +
       `✨ **Famous Triple:** $3 - 4 - 5$ right triangle ($3^2 + 4^2 = 9 + 16 = 25 = 5^2$).`;
-  }
-
-  if (rawQ.includes('fraction') && (rawQ.includes('unlike') || rawQ.includes('add') || rawQ.includes('denominator'))) {
-    return `🍕 **How to Add Fractions with Unlike Denominators:**\n\n` +
-      `**Example:** $\\frac{1}{4} + \\frac{2}{3}$\n\n` +
-      `1. **Find LCM of Denominators:** $\\text{LCM}(4, 3) = 12$.\n` +
-      `2. **Convert to Equivalent Fractions:**\n` +
-      `   • $\\frac{1 \\times 3}{4 \\times 3} = \\frac{3}{12}$\n` +
-      `   • $\\frac{2 \\times 4}{3 \\times 4} = \\frac{8}{12}$\n` +
-      `3. **Add Numerators Keep Denominator:** $\\frac{3 + 8}{12} = \\mathbf{\\frac{11}{12}}$.`;
-  }
-
-  const hcfMatch = rawQ.match(/(hcf|lcm|gcd).*?(\d+).*?(\d+)/);
-  if (hcfMatch) {
-    const a = parseInt(hcfMatch[2], 10);
-    const b = parseInt(hcfMatch[3], 10);
-    const hcfVal = getHCF(a, b);
-    const lcmVal = getLCM(a, b);
-    return `📊 **HCF & LCM of ${a} and ${b}:**\n\n` +
-      `• **HCF (Highest Common Factor):** **${hcfVal}**\n` +
-      `• **LCM (Lowest Common Multiple):** **${lcmVal}**\n` +
-      `• **Verification:** $\\text{HCF} \\times \\text{LCM} = ${hcfVal} \\times ${lcmVal} = ${hcfVal * lcmVal} = ${a} \\times ${b}$.`;
-  }
-
-  // 2. Perform Grounded BM25 Textbook RAG Search with Fuzzy Typo Correction
-  let searchQuery = query.trim();
-  if (lastContextBuffer.length > 0 && searchQuery.split(/\s+/).length < 5) {
-    const lastCtx = lastContextBuffer[lastContextBuffer.length - 1];
-    searchQuery = searchQuery + " " + lastCtx.topic + " " + lastCtx.text;
-  }
-
-  const ragResults = bm25Engine.search(searchQuery, 4);
-
-  if (ragResults.length > 0) {
-    const topMatch = ragResults[0].doc;
-    lastContextBuffer.push({ query, topic: topMatch.topic, text: topMatch.text });
-    if (lastContextBuffer.length > 3) lastContextBuffer.shift();
-
-    let response = `📚 **Grounded Textbook Answer (BM25 RAG System):**\n\n`;
-    response += `### Source: ${topMatch.topic}\n`;
-    response += `> ${topMatch.text}\n\n`;
-
-    if (ragResults.length > 1) {
-      response += `📌 **Related Knowledge Base Chunks:**\n`;
-      ragResults.slice(1, 4).forEach((r) => {
-        response += `• **${r.doc.topic}:** ${r.doc.text.slice(0, 120)}...\n`;
-      });
-    }
-
-    return response;
   }
 
   // 3. Direct Arithmetic Calculations
